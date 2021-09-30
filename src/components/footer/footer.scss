@@ -1,0 +1,9 @@
+@import "./../../scss/import.scss";
+
+.v-footer {
+    @include v-component-1;
+    padding: $padding;
+    border: 1px solid rgba($color-grey-1, .5);
+    box-shadow: $color-grey-1 0 1px 2px;
+    background-color: $color-white-1;
+}

@@ -1,0 +1,21 @@
+@import "./../../scss/import.scss";
+
+.v-header {
+    @include v-component-1;
+    display: flex;
+    justify-content: space-between;
+    padding: $padding;
+    border: 1px solid rgba($color-grey-1, .5);
+    box-shadow: $color-grey-1 0 1px 2px;
+    background-color: $color-white-1;
+
+    .items {
+        &:before {
+            @include glyph-solid-1;
+            content: "\f015";
+            color: $color-black-1;
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+    }
+}

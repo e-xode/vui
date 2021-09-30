@@ -1,0 +1,8 @@
+version: '3'
+services:
+    node:
+        container_name: v-ui_node
+        build:
+            context: 'docker/dev'
+        volumes:
+            - '.:/app'

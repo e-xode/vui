@@ -1,0 +1,70 @@
+@import "./../../scss/import.scss";
+
+.v-list {
+    @include v-component-1;
+
+    &:not(.v-list--nav) {
+        border: 1px solid rgba($color-grey-1, .5);
+
+        .items {
+            .item {
+                padding: $padding;
+                border-top: .1rem solid $color-grey-1;
+
+                &:first-of-type {
+                    border-top: none;
+                }
+            }
+
+            &.items--disabled {
+                .item {
+                    cursor: default;
+                    background-color: rgba($color-grey-1, .2);
+
+                    &:hover {
+                        background-color: rgba($color-grey-1, .2);
+                    }
+                }
+            }
+
+            &:not(.items--disabled) {
+                .item {
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $color-white-1;
+                        background-color: $color-green-1;
+                    }
+
+                    &.item--active {
+                        color: $color-white-1;
+                        background-color: $color-green-1;
+                    }
+                }
+            }
+        }
+    }
+
+    &.v-list--nav {
+
+        .items {
+            display: flex;
+
+            .item {
+                padding: $padding;
+                margin: 0 1rem;
+                cursor: pointer;
+
+                &:hover {
+                    color: $color-green-1;
+                    background-color: $color-white-1;
+                }
+
+                &.item--active {
+                    color: $color-green-1;
+                    background-color: $color-white-1;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+@import "./../../../../../node_modules/highlight.js/scss/default.scss";
+@import "./../../../../scss/import.scss";
+
+.v-page-body {
+    @include page-body-1;
+}

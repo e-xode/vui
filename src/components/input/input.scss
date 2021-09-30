@@ -1,0 +1,12 @@
+@import "./../../scss/import.scss";
+
+.v-input {
+    @include v-component-1;
+
+    input {
+        display: block;
+        width: 100%;
+        padding: $padding;
+        outline: none;
+    }
+}

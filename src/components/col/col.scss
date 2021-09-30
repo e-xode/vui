@@ -1,0 +1,6 @@
+@import "./../../scss/import.scss";
+
+.v-col {
+    @include v-component-1;
+    padding: 1rem;
+}
