@@ -1,8 +1,12 @@
 version: '3'
 services:
     node:
-        container_name: v-ui_node
+        container_name: e-xode.vui
         build:
             context: 'docker/dev'
         volumes:
             - '.:/app'
+        ports:
+            - 3001:3001
+        env_file:
+            - ./.env

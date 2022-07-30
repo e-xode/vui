@@ -14,6 +14,6 @@ WORKDIR /app
 
 RUN npm install -g npm@latest
 
-EXPOSE 80 443
+EXPOSE 3001
 
 CMD ["/bin/sh", "/scripts/run.sh"]
