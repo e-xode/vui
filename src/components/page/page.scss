@@ -1,11 +1,22 @@
-@import "./../../scss/import.scss";
+@import "@/scss/import.scss";
 
-.v-page {
-    @include v-component-1;
-    min-height: calc(100vh - ($padding-page * 2));
-    margin: $margin-page;
-    padding: $padding-page;
-    background-color: $color-white-1;
-    border: 1px solid rgba($color-grey-1, .5);
-    box-shadow: $color-grey-1 0 1px 2px;
+.vui-page {
+    display: flex;
+    flex-flow: column;
+    min-height: calc(100vh - 2rem);
+    background-color: $vui-color-white;
+    border-radius: .25rem;
+    @include vui-box-shadow;
+
+    .vui-page-header {
+    }
+
+    .vui-page-body {
+        flex: 1 1 auto;
+        padding: 2rem 1rem;
+    }
+
+    .vui-page-footer {
+
+    }
 }

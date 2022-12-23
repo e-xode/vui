@@ -1,68 +1,38 @@
-@import "./../../scss/import.scss";
+@import "@/scss/import.scss";
 
-.v-list {
-    @include v-component-1;
+.vui-list {
+    display: inline-block;
+    width: auto;
+    padding: 1rem 0;
+    border-radius: .25rem;
+    @include vui-box-shadow;
 
-    &:not(.v-list--nav) {
-        border: 1px solid rgba($color-grey-1, .5);
-
-        .items {
-            .item {
-                padding: $padding;
-                border-top: .1rem solid $color-grey-1;
-
-                &:first-of-type {
-                    border-top: none;
-                }
-            }
-
-            &.items--disabled {
-                .item {
-                    cursor: default;
-                    background-color: rgba($color-grey-1, .2);
-
-                    &:hover {
-                        background-color: rgba($color-grey-1, .2);
-                    }
-                }
-            }
-
-            &:not(.items--disabled) {
-                .item {
-                    cursor: pointer;
-
-                    &:hover {
-                        color: $color-white-1;
-                        background-color: $color-green-1;
-                    }
-
-                    &.item--active {
-                        color: $color-white-1;
-                        background-color: $color-green-1;
-                    }
-                }
-            }
-        }
+    .vui-list-title {
+        padding: 0 1rem 1rem 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
     }
 
-    &.v-list--nav {
+    .vui-list-items {
 
-        .items {
-            display: flex;
+        .vui-list-items-item {
+            padding: .75rem 1rem .75rem .75rem;
 
-            .item {
-                padding: $padding;
-                margin: 0 1rem;
-                cursor: pointer;
+            .vui-list-items-item-label {
+                padding: 0 .5rem;
+            }
 
-                &:hover {
-                    color: $color-green-1;
-                    background-color: $color-white-1;
-                }
+            &:before {
+                @include vui-glyph-solid;
+                color: $vui-color-grey-light;
+                content: '\f111';
+            }
 
-                &.item--active {
-                    color: $color-green-1;
-                    background-color: $color-white-1;
+            &:hover {
+                background-color: $vui-color-grey-light;
+
+                &:before {
+                    color: $vui-color-grey;
                 }
             }
         }

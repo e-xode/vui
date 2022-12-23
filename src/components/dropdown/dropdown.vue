@@ -1,31 +1,23 @@
 <template>
-    <div :class="[
-        'v-dropdown'
-    ]">
+    <div class="vui-dropdown">
         <div
-            @click.stop="focus"
             :class="[
-                'v-form-field',
-                { 'v-form-field--focus': isOpen }
+                'ui-dropdown-placeholder',
+                { 'ui-dropdown-placeholder--active': animation }
             ]"
+            @click.stop="toggle"
         >
-            <v-input
-                type="text"
-                :onkey="onKey"
-                :placeholder="placeholder"
-                :value="text"
-            />
-            <div
-                @click.stop="toggle()"
-                class="toggler"
-            />
+            <span class="ui-dropdown-placeholder-label">
+                {{ getPlaceholder }}
+            </span>
         </div>
-        <v-list
-            class="options"
-            v-if="isOpen"
+        <vui-list
+            v-show="open"
             :items="items"
-            :translate="translate"
-            :onclick="select"
+            :item-label="itemLabel"
+            :item-value="itemValue"
+            class="ui-dropdown-list"
+            @set="toggleItem"
         />
     </div>
 </template>

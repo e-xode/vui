@@ -1,49 +1,43 @@
+import langs from '@/components/form/translate/index.mjs'
+import { locale } from '@/composables/index.mjs'
+
 export default {
-    name: 'v-list',
-    mounted() {
+    name: 'VuiList',
+    setup() {
+        locale(langs)
+        return {}
     },
     props: {
-        disabled: {
-            type: Boolean,
-            required: false,
-            default: false
-        },
-        onclick: {
-            type: Function,
-            required: false
-        },
         items: {
             type: Array,
-            default: [],
             required: true
         },
-        translate: {
-            type: Boolean,
-            default: false,
-            required: false
+        itemLabel: {
+            type: String,
+            required: true
+        },
+        itemValue: {
+            type: String,
+            required: true
+        },
+        title: {
+            type: String
         }
+    },
+    mounted() {
     },
     data() {
         return {
-            current: {}
+            selected: {}
         }
     },
     computed: {
     },
     methods: {
-        label(item) {
-            const label = item.label || item.value
-            return this.translate
-                ? this.$t(label)
-                : label
-        },
-        onClick(item) {
-            if (!this.disabled) {
-                this.current = item
-                if (this.onclick) {
-                    this.onclick(item)
-                }
-            }
+        onClick (item) {
+            this.selected = item
+            this.$emit('set', item)
+            console.log(this.selected)
         }
     },
     components: {

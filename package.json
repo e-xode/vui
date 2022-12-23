@@ -1,42 +1,32 @@
 {
-    "name": "v-ui",
-    "main": "dist/index.umd.js",
-    "description": "",
-    "license": "MIT",
-    "version": "0.0.1",
-    "scripts": {
-        "build": "npm run build:components & npm run build:doc",
-        "build:components": "rollup --config rollup.components.js",
-        "build:doc": "rollup --config rollup.doc.js",
-        "dev": "npm run dev:components & npm run dev:doc",
-        "dev:components": "rollup --watch --config rollup.components.js",
-        "dev:doc": "rollup --watch --config rollup.doc.js",
-        "install": "npm rebuild node-sass"
-    },
-    "dependencies": {
-        "@fortawesome/fontawesome-free": "5.15.4",
-        "@koffeine/rollup-plugin-sass-postcss": "2.1.1",
-        "@rollup/plugin-alias": "3.1.5",
-        "@rollup/plugin-json": "4.1.0",
-        "@rollup/plugin-node-resolve": "13.0.5",
-        "@rollup/plugin-commonjs": "^21.0.0",
-        "@vue/compiler-sfc": "^3.2.19",
-        "autoprefixer": "10.3.6",
-        "highlight.js": "11.3.1",
-        "mitt": "^3.0.0",
-        "moment": "^2.29.1",
-        "node-sass": "^6.0",
-        "npm-check-updates": "^11.8.5",
-        "rollup": "2.58.0",
-        "rollup-plugin-copy": "3.4.0",
-        "rollup-plugin-inject-process-env": "1.3.1",
-        "rollup-plugin-scss": "3.0.0",
-        "rollup-plugin-serve": "1.1.0",
-        "rollup-plugin-vue": "6.0.0",
-        "vue": "^3.0.7",
-        "vue-i18n": "9.0.0-beta.16",
-        "vue-router": "4.0.4",
-        "vuex": "4.0.0",
-        "vuex-persistedstate": "^4.1.0"
-    }
+  "description": "Another yet Vue UI library",
+  "name": "vui",
+  "files": ["dist"],
+  "main": "./dist/vui.umd.cjs",
+  "module": "./dist/vui.js",
+  "type": "module",
+  "license": "MIT",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "npm run build:components && npm run build:doc",
+    "build:components": "vite --config vite.components.mjs build",
+    "build:doc": "vite --config vite.doc.mjs build src/doc",
+    "dev": "vite --config vite.doc.mjs src/doc",
+    "preview": "vite --config vite.doc.mjs preview src/doc"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "6.2.1",
+    "mitt": "3.0.0",
+    "vue": "^3.2.45",
+    "vue-i18n": "9.2.2",
+    "vue-router": "4.1.6",
+    "vuex": "4.1.0"
+  },
+  "peerDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "vite": "^4.0.0",
+    "vite-plugin-rewrite-all": "1.0.1",
+    "vite-plugin-static-copy": "0.13.0",
+    "sass": "1.57.1"
+  }
 }

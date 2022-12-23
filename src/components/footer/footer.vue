@@ -1,7 +1,5 @@
 <template>
-    <footer :class="[
-        'v-footer'
-    ]">
+    <footer class="vui-footer">
         <slot />
     </footer>
 </template>

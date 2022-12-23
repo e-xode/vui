@@ -1,5 +1,5 @@
-import en from './en/en.json'
-import fr from './fr/fr.json'
+import en from './en.json'
+import fr from './fr.json'
 
 export {
     en,

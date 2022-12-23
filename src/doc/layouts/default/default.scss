@@ -1,0 +1,11 @@
+.layout-default {
+
+    .vui-header {
+        display: flex;
+        justify-content: space-between;
+
+        .legend {
+            line-height: 2.1rem
+        }
+    }
+}

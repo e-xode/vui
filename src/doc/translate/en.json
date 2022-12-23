@@ -1,0 +1,11 @@
+{
+    "component.header.dropdown.components": "List of components",
+    "page.component.h1": "component",
+    "page.component.form.email": "Enter an email",
+    "page.component.form.password": "Enter a password",
+    "page.component.form.submit": "Submit",
+    "page.index.h1": "Another yet Vue library",
+    "page.index.header.home": "Home",
+    "page.index.footer": "Footer",
+    "page.index.button": "Get started"
+}

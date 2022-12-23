@@ -1,7 +1,12 @@
 <template>
-    <button :class="[
-        'v-btn'
-    ]">
+    <button
+        :type="type"
+        :class="[
+            'vui-button',
+            { 'vui-button--active' : animation }
+        ]"
+        @click="onClick"
+    >
         <slot />
     </button>
 </template>

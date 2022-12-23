@@ -1,9 +1,6 @@
-@import "./../../scss/import.scss";
+@import "@/scss/import.scss";
 
-.v-footer {
-    @include v-component-1;
-    padding: $padding;
-    border: 1px solid rgba($color-grey-1, .5);
-    box-shadow: $color-grey-1 0 1px 2px;
-    background-color: $color-white-1;
+.vui-footer {
+    padding: 1rem;
+    border-top: 1px solid $vui-color-grey-light;
 }

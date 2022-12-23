@@ -1,5 +1,9 @@
 
-$color-black-1: rgb(61, 79, 88);
-$color-green-1: rgb(green, 1);
-$color-grey-1: rgb(137, 151, 155);
-$color-white-1: rgb(249, 251, 250);
+$vui-color-black: rgb(0, 0, 0, 1);
+$vui-color-blue: rgba(41, 128, 185, 1);
+$vui-color-green: rgba(39, 174, 96, 1);
+$vui-color-grey: rgba(137, 151, 155, 1);
+$vui-color-white: rgba(255, 255, 255, 1);
+
+$vui-color-grey-light: lighten($vui-color-grey, 35%);
+$vui-color-grey-extra-light: lighten($vui-color-grey-light, 3%);
