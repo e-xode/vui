@@ -17,12 +17,10 @@ export default {
             required: true
         },
         itemLabel: {
-            type: String,
-            required: true,
+            type: String
         },
         itemValue: {
-            type: String,
-            required: true
+            type: String
         },
         placeholder: {
             type: String
@@ -43,6 +41,11 @@ export default {
         }
     },
     computed: {
+        getValue () {
+            return this.selected[this.itemValue]
+                ? this.selected[this.itemLabel]
+                : this.getPlaceholder
+        },
         getPlaceholder () {
             return this.placeholder
                 ? this.placeholder
@@ -54,9 +57,9 @@ export default {
             this.open = !this.open
             this.animate()
         },
-        toggleItem (item) {
-            this.selected = item
-            this.$emit('set', item)
+        toggleItem (selected) {
+            this.selected = selected
+            this.$emit('set', selected)
         }
     },
     components: {
