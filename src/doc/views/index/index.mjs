@@ -1,32 +1,13 @@
-import { mapGetters } from 'vuex'
-import routes from '@/components.json'
-
 export default {
-    name: 'index',
+    name: 'ViewIndex',
     mounted() {
     },
     data() {
         return {
-            code: `
-            `,
-            routes
         }
     },
-    computed: {
-        ...mapGetters({
-            user: 'user/getItem'
-        }),
-        navItems() {
-            return [
-                {
-                    label: this.$t('page.index.nav.home'),
-                    value: 'pageIndex'
-                }
-            ]
-        }
-    },
+    computed: {},
     methods: {
-
     },
     components: {
     }

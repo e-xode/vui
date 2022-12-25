@@ -1,23 +1,26 @@
 <template>
-    <div :class="[
-        'v-list'
-    ]">
-        <div :class="[
-            'items',
-            { 'items--disabled': disabled }
-        ]">
-            <div
-                v-for="item in items"
-                v-on:click="onClick(item)"
-                :key="item.value"
-                :class="[
-                    'item',
-                    { 'item--active': current.value === item.value }
-                ]"
-            >
-                {{ label(item) }}
-            </div>
+    <div class="vui-list">
+        <div
+            class="vui-list-title"
+            v-if="title"
+        >
+            {{  title }}
         </div>
+        <ul class="vui-list-items">
+            <li
+                v-for="(item, index) in items"
+                :key="`item--${index}`"
+                :class="[
+                    'vui-list-items-item',
+                    { 'vui-list-items-item--active': item[itemValue] === selected[itemValue] }
+                ]"
+                @click="() => onClick(item)"
+            >
+                <span class="vui-list-items-item-label">
+                    {{ item[itemLabel] }}
+                </span>
+            </li>
+        </ul>
     </div>
 </template>
 

@@ -1,35 +1,19 @@
+import langs from '@/components/form/translate/index.mjs'
+import { locale } from '@/composables/index.mjs'
+
 export default {
-    name: 'v-header',
-    mounted() {
+    name: 'VuiHeader',
+    setup() {
+        locale(langs)
+        return {}
     },
-    props: {
-        onclick: {
-            type: Function,
-            required: false
-        },
-        items: {
-            type: Array,
-            default: [],
-            required: false
-        },
-        translate: {
-            type: Boolean,
-            default: false,
-            required: false
-        }
+    mounted() {
     },
     data() {
         return {
         }
     },
     computed: {
-    },
-    methods: {
-        onClick(option) {
-            if(this.onclick) {
-                this.onclick(option)
-            }
-        }
     },
     components: {
     }

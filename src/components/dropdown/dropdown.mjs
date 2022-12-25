@@ -1,85 +1,62 @@
-export default {
-    name: 'v-dropdown',
-    beforeUnmount() {
-    },
-    mounted() {
-        if (this.vInitial) {
-            this.select(this.vInitial)
-        } else {
+import langs from '@/components/dropdown/translate/index.mjs'
+import {
+    animated,
+    locale
+} from '@/composables/index.mjs'
 
-        }
+export default {
+    name: 'VuiDropdown',
+    mixins: [animated],
+    setup() {
+        locale(langs)
+        return {}
     },
     props: {
-        onchange: {
-            type: Function
-        },
         items: {
             type: Array,
-            default: []
+            required: true
+        },
+        itemLabel: {
+            type: String,
+            required: true,
+        },
+        itemValue: {
+            type: String,
+            required: true
         },
         placeholder: {
-            type: String,
-            default: ''
-        },
-        translate: {
-            type: Boolean,
-            default: false,
-            required: false
-        },
-        value: {
-            type: Object,
-            default: null
+            type: String
         }
+    },
+    mounted() {
+        this.$bus.on('outclick', () => {
+            if (this.open) {
+                this.animate()
+            }
+            this.open = false
+        })
     },
     data() {
         return {
-            current: {},
-            isOpen: false,
-            text: ''
+            open: false,
+            selected: {}
         }
     },
     computed: {
-        options() {
-            return this.items.filter((item) => {
-                const label = item.label || item.value
-                return !this.text.length || label.includes(this.text)
-            })
+        getPlaceholder () {
+            return this.placeholder
+                ? this.placeholder
+                : this.$t('placeholder')
         }
     },
     methods: {
-        blur() {
-            this.isOpen = false
+        toggle () {
+            this.open = !this.open
+            this.animate()
         },
-        focus() {
-            this.isOpen = true
-        },
-        label(item) {
-            const label = item.label || item.value
-            return this.translate
-                ? this.$t(label)
-                : label
-        },
-        onKey(e) {
-            this.text = e.target.value
-            if (e.keyCode === 13) {
-                const { vOptions, current } = this
-                const option = vOptions.find((item) => {
-                    return item.label && item.label.includes(current.label)
-                })
-                if (item) {
-                    this.select(item)
-                }
-                this.isOpen = false
-            }
-        },
-        select(item) {
-            this.current = item
-            this.text = item.value
-            this.onchange(this.current)
-            this.isOpen = false
-        },
-        toggle() {
-            this.isOpen = !this.isOpen
+        toggleItem (item) {
+            this.selected = item
+            this.$emit('set', item)
         }
     },
     components: {

@@ -1,18 +1,24 @@
+import langs from '@/components/form/translate/index.mjs'
+import { locale } from '@/composables/index.mjs'
+
 export default {
-    name: 'v-page',
-    mounted() {
+    name: 'VuiPage',
+    setup() {
+        locale(langs)
+        return {}
     },
-    props: {
-        vClass: {
-            type: String,
-            default: null
-        }
+    mounted() {
     },
     data() {
         return {
         }
     },
     computed: {
+    },
+    methods: {
+        outclick ()  {
+            this.$bus.emit('outclick')
+        }
     },
     components: {
     }

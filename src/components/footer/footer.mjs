@@ -1,16 +1,19 @@
+import langs from '@/components/footer/translate/index.mjs'
+import { locale } from '@/composables/index.mjs'
+
 export default {
-    name: 'v-footer',
-    mounted() {
+    name: 'VuiFooter',
+    setup() {
+        locale(langs)
+        return {}
     },
-    props: {
+    mounted() {
     },
     data() {
         return {
         }
     },
     computed: {
-    },
-    methods: {
     },
     components: {
     }

@@ -1,5 +1,25 @@
-@import "./../../../scss/import.scss";
+@import "@/scss/import.scss";
 
-.page-index {
-    @include page-1;
+.view-index {
+    text-align: center;
+
+    h1 {
+    }
+
+    .logo {
+        display: block;
+        font-size: 15rem;
+        line-height: 15rem;
+        text-align: center;
+
+        &:before {
+            @include vui-glyph-brands;
+            color: $vui-color-green;
+            content: '\f41f';
+        }
+    }
+
+    .vui-button {
+        margin: 0 auto;
+    }
 }
