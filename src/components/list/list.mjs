@@ -3,7 +3,7 @@ import { locale } from '@/composables/index.mjs'
 
 export default {
     name: 'VuiList',
-    setup() {
+    setup () {
         locale(langs)
         return {}
     },
@@ -13,20 +13,29 @@ export default {
             required: true
         },
         itemLabel: {
-            type: String,
-            required: true
+            type: String
         },
         itemValue: {
-            type: String,
-            required: true
+            type: String
         },
         title: {
             type: String
+        },
+        value: {
+            type: Object
         }
     },
-    mounted() {
+    mounted () {
+        if (this.value) {
+            this.selected = this.value
+        }
     },
-    data() {
+    watch: {
+        value(selected) {
+            this.selected = selected
+        }
+    },
+    data () {
         return {
             selected: {}
         }
@@ -34,10 +43,9 @@ export default {
     computed: {
     },
     methods: {
-        onClick (item) {
-            this.selected = item
-            this.$emit('set', item)
-            console.log(this.selected)
+        onClick (selected) {
+            this.selected = selected
+            this.$emit('set', selected)
         }
     },
     components: {

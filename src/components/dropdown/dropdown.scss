@@ -3,6 +3,7 @@
 .vui-dropdown {
     position: relative;
     display: inline-block;
+    min-width: 200px;
 
     .ui-dropdown-placeholder {
         @include animate-hover('ui-dropdown-placeholder');

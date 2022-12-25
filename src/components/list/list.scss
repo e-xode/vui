@@ -35,6 +35,10 @@
                     color: $vui-color-grey;
                 }
             }
+
+            &.vui-list-items-item--active {
+                background-color: $vui-color-green;
+            }
         }
     }
 }

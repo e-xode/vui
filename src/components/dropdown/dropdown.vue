@@ -8,14 +8,15 @@
             @click.stop="toggle"
         >
             <span class="ui-dropdown-placeholder-label">
-                {{ getPlaceholder }}
+                {{ getValue }}
             </span>
         </div>
         <vui-list
-            v-show="open"
+            v-if="open"
             :items="items"
             :item-label="itemLabel"
             :item-value="itemValue"
+            :value="selected"
             class="ui-dropdown-list"
             @set="toggleItem"
         />
