@@ -1,6 +1,8 @@
 {
     "component.header.dropdown.components": "List of components",
     "page.component.h1": "component",
+    "page.component.dropdown.example-1": "Array of strings, numbers",
+    "page.component.dropdown.example-2": "Array of objects",
     "page.component.form.email": "Enter an email",
     "page.component.form.password": "Enter a password",
     "page.component.form.submit": "Submit",
