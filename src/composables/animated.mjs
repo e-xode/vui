@@ -8,7 +8,7 @@ const animated = {
     deactivated () {
         this.$bus.off('outclick')
     },
-    created () {
+    beforeCreate () {
         this.$bus.on('outclick', (uuid) => {
             console.log(['outclik', uuid, this.uuid])
             if (uuid !== this.uuid) {
