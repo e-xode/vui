@@ -12,11 +12,18 @@
                 :key="`item--${index}`"
                 :class="[
                     'vui-list-items-item',
-                    { 'vui-list-items-item--active': isActive(item) }
+                    { 'vui-list-items-item--selected': isSelected(item) }
                 ]"
                 @click="() => onClick(item)"
             >
                 <span class="vui-list-items-item-label">
+                    <i
+                        v-if="item.icon"
+                        :class="[
+                            'vui-list-items-item-label',
+                            item.icon
+                        ]"
+                    />
                     {{
                         itemValue
                             ? item[itemLabel]

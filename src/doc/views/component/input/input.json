@@ -1,0 +1,8 @@
+[
+    {
+        "code": "<vui-input \n \t v-model=\"text\" \n \t type=\"text\" \n />"
+    },
+    {
+        "code": "<vui-input \n \t v-model=\"email\" \n \t type=\"email\" \n />"
+    }
+]

@@ -1,25 +1,39 @@
 import langs from '@/components/html/button/translate/index.mjs'
 import {
     animated,
-    locale
+    locale,
+    uuid
 } from '@/composables/index.mjs'
 
 export default {
     name: 'VuiButton',
-    mixins: [animated],
-    setup() {
+    mixins: [
+        animated,
+        uuid
+    ],
+    setup () {
         locale(langs)
         return {}
     },
     props: {
+        disabled: {
+            type: Boolean
+        },
+        icon: {
+            type: String
+        },
+        text: {
+            type: String
+        },
         type: {
             type: String,
             default: 'button'
         }
     },
-    mounted() {
+    mounted () {
+
     },
-    data() {
+    data () {
         return {
         }
     },
@@ -27,8 +41,10 @@ export default {
     },
     methods: {
         onClick () {
-            this.animate()
-            this.$emit('click')
+            if (!this.disabled) {
+                this.onToggle()
+                this.$emit('click')
+            }
         }
     },
     components: {

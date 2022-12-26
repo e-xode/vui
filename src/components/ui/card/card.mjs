@@ -1,10 +1,14 @@
 import langs from '@/components/ui/card/translate/index.mjs'
 import {
-    locale
+    locale,
+    uuid
 } from '@/composables/index.mjs'
 
 export default {
     name: 'VuiCard',
+    mixins: [
+        uuid
+    ],
     setup() {
         locale(langs)
         return {}

@@ -16,28 +16,22 @@
     .vui-list-items {
 
         .vui-list-items-item {
-            padding: .75rem 1rem .75rem .75rem;
+            padding: .75rem;
 
             .vui-list-items-item-label {
                 padding: 0 .5rem;
             }
 
-            &:before {
-                @include vui-glyph-solid;
-                color: $vui-color-grey-light;
-                content: '\f111';
-            }
-
             &:hover {
                 background-color: $vui-color-grey-light;
-
-                &:before {
-                    color: $vui-color-grey;
-                }
             }
 
-            &.vui-list-items-item--active {
-                background-color: $vui-color-green;
+            &.vui-list-items-item--selected {
+                background-color: $vui-color-blue;
+
+                .vui-list-items-item-label {
+                    color: $vui-color-white;
+                }
             }
         }
     }

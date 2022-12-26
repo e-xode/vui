@@ -3,14 +3,14 @@
         <template #header>
             <vui-header>
                 <router-link
-                    class="legend"
+                    class="home"
                     :to="{ name: 'ViewIndex' }"
                 >
                     {{ $t('page.index.header.home') }}
                 </router-link>
                 <vui-dropdown
                     :items="components"
-                    item-label="name"
+                    item-label="label"
                     item-value="path"
                     :placeholder="$t('component.header.dropdown.components')"
                     @input="toggleComponent"
@@ -22,7 +22,12 @@
         </template>
         <template #footer>
             <vui-footer>
-                {{ $t('page.index.footer') }}
+                <span class="copyright">
+                    {{ $t(('page.index.footer.copyright')) }}
+                    <a href="https://www.e-xode.net">
+                        www.e-xode.net
+                    </a>
+                </span>
             </vui-footer>
         </template>
     </vui-page>

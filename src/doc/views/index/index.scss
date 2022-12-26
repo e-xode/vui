@@ -4,19 +4,15 @@
     text-align: center;
 
     h1 {
+        font-size: 2rem;
+        text-transform: none;
     }
 
-    .logo {
+    .fa-brands.fa-vuejs {
         display: block;
         font-size: 15rem;
         line-height: 15rem;
-        text-align: center;
-
-        &:before {
-            @include vui-glyph-brands;
-            color: $vui-color-green;
-            content: '\f41f';
-        }
+        color: $vui-color-green;
     }
 
     .vui-button {

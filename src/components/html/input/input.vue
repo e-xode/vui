@@ -2,6 +2,7 @@
     <div class="vui-input">
         <input
             v-bind="$attrs"
+            :disabled="disabled"
             :type="type"
             :value="modelValue"
             @input="onInput"

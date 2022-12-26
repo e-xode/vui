@@ -1,9 +1,13 @@
 @import "@/scss/import.scss";
 
 .vui-button {
-    @include animate-hover('vui-button');
+    @include animate('vui-button');
     @include vui-box-shadow;
     display: inline-block;
     padding: .5rem 1rem;
     cursor: pointer;
+
+    .vui-button-icon {
+        margin-right: .75rem;
+    }
 }
