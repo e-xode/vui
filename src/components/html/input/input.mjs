@@ -1,13 +1,22 @@
 import langs from '@/components/html/input/translate/index.mjs'
-import { locale } from '@/composables/index.mjs'
+import {
+    locale,
+    uuid
+} from '@/composables/index.mjs'
 
 export default {
     name: 'VuiInput',
+    mixins: [
+        uuid
+    ],
     setup() {
         locale(langs)
         return {}
     },
     props: {
+        disabled: {
+            type: Boolean
+        },
         placeholder: {
             type: String,
             default: null

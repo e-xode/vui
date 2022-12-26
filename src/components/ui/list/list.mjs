@@ -1,8 +1,14 @@
 import langs from '@/components/ui/list/translate/index.mjs'
-import { locale } from '@/composables/index.mjs'
+import {
+    locale,
+    uuid
+} from '@/composables/index.mjs'
 
 export default {
     name: 'VuiList',
+    mixins: [
+        uuid
+    ],
     setup () {
         locale(langs)
         return {}
@@ -47,7 +53,7 @@ export default {
     computed: {
     },
     methods: {
-        isActive (item) {
+        isSelected (item) {
             const { itemValue, selected } = this
             return itemValue && selected
                 ? selected[itemValue] === item[itemValue]

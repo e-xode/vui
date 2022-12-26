@@ -1,11 +1,39 @@
+@import "@/scss/import.scss";
+
 .layout-default {
 
     .vui-header {
         display: flex;
         justify-content: space-between;
+        background-color: $vui-color-green-light;
+        border-bottom: 1px solid $vui-color-green;
 
-        .legend {
-            line-height: 2.1rem
+        .home {
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 2.1rem;
+            color: $vui-color-green-dark;
+
+            &:before {
+                @include vui-glyph-solid;
+                position: absolute;
+                top: -.1rem;
+                left: 0;
+                content: '\f015';
+            }
+        }
+    }
+
+    .vui-footer {
+        text-align: right;
+        background-color: $vui-color-grey-light;
+        border-top: 1px solid $vui-color-grey;
+
+        .copyright {
+
+            a {
+                color: $vui-color-blue-dark;
+            }
         }
     }
 }

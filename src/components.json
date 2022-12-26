@@ -1,13 +1,23 @@
 [
     {
+        "icon": "fa-brands fa-vuejs",
+        "label": "Button",
         "name": "vui-button",
-        "path": "./components/html/button/button.vue"
+        "path": "./components/html/button/button.vue",
+        "doc": {
+            "name": "view-button",
+            "path": "./views/component/button/button.vue"
+        }
     },
     {
+        "icon": "fa-brands fa-vuejs",
+        "label": "Card",
         "name": "vui-card",
         "path": "./components/ui/card/card.vue"
     },
     {
+        "icon": "fa-brands fa-vuejs",
+        "label": "Dropdown",
         "name": "vui-dropdown",
         "path": "./components/ui/dropdown/dropdown.vue",
         "doc": {
@@ -16,10 +26,14 @@
         }
     },
     {
+        "icon": "fa-brands fa-vuejs",
+        "label": "Footer",
         "name": "vui-footer",
         "path": "./components/html/footer/footer.vue"
     },
     {
+        "icon": "fa-brands fa-vuejs",
+        "label": "Form",
         "name": "vui-form",
         "path": "./components/html/form/form.vue",
         "doc": {
@@ -28,18 +42,30 @@
         }
     },
     {
+        "icon": "fa-brands fa-vuejs",
+        "label": "Header",
         "name": "vui-header",
         "path": "./components/html/header/header.vue"
     },
     {
+        "icon": "fa-brands fa-vuejs",
+        "label": "Input",
         "name": "vui-input",
-        "path": "./components/html/input/input.vue"
+        "path": "./components/html/input/input.vue",
+        "doc": {
+            "name": "view-input",
+            "path": "./views/component/input/input.vue"
+        }
     },
     {
+        "icon": "fa-brands fa-vuejs",
+        "label": "List",
         "name": "vui-list",
         "path": "./components/ui/list/list.vue"
     },
     {
+        "icon": "fa-brands fa-vuejs",
+        "label": "Page",
         "name": "vui-page",
         "path": "./components/ui/page/page.vue"
     }

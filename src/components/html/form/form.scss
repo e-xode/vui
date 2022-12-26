@@ -22,15 +22,6 @@
 
                 .input {
                     flex: 0 0 50%;
-
-                    input[type="text"],
-                    input[type="email"],
-                    input[type="password"] {
-                        padding: .25rem;
-                        color: $vui-color-black;
-                        border: 1px solid $vui-color-grey;
-                        border-radius: .25rem;
-                    }
                 }
             }
         }

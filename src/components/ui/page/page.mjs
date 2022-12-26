@@ -1,8 +1,14 @@
 import langs from '@/components/ui/page/translate/index.mjs'
-import { locale } from '@/composables/index.mjs'
+import {
+    locale,
+    uuid
+} from '@/composables/index.mjs'
 
 export default {
     name: 'VuiPage',
+    mixins: [
+        uuid
+    ],
     setup() {
         locale(langs)
         return {}
@@ -17,7 +23,7 @@ export default {
     },
     methods: {
         outclick ()  {
-            this.$bus.emit('outclick')
+            this.$bus.emit('outclick', this.uuid)
         }
     },
     components: {

@@ -3,7 +3,9 @@
         <div
             :class="[
                 'ui-dropdown-placeholder',
-                { 'ui-dropdown-placeholder--active': animation }
+                { 'ui-dropdown-placeholder--toggled': toggled },
+                { 'ui-dropdown-placeholder--animating': animating },
+                { 'ui-dropdown-placeholder--disabled': disabled }
             ]"
             @click.stop="onToggle"
         >
@@ -12,7 +14,7 @@
             </span>
         </div>
         <vui-list
-            v-if="open"
+            v-if="toggled"
             :items="items"
             :item-label="itemLabel"
             :item-value="itemValue"
