@@ -8,6 +8,10 @@ export default {
     },
     data() {
         return {
+            form: {
+                email: null,
+                text: null,
+            },
             codes: samples.map((json) => {
                 return hljs.highlight(
                     json.code,

@@ -6,10 +6,12 @@
             </template>
             <template #body>
                 <vui-input
+                    v-model="form.text"
                     type="text"
                 />
-                <div class="code"
+                <div
                     v-html="codes[0]"
+                    class="code"
                 />
             </template>
         </vui-card>
@@ -19,10 +21,12 @@
             </template>
             <template #body>
                 <vui-input
+                    v-model="form.email"
                     type="email"
                 />
-                <div class="code"
+                <div
                     v-html="codes[1]"
+                    class="code"
                 />
             </template>
         </vui-card>
