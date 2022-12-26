@@ -1,4 +1,4 @@
-import langs from '@/components/form/translate/index.mjs'
+import langs from '@/components/ui/list/translate/index.mjs'
 import { locale } from '@/composables/index.mjs'
 
 export default {
@@ -55,7 +55,7 @@ export default {
         },
         onClick (selected) {
             this.selected = selected
-            this.$emit('set', selected)
+            this.$emit('input', selected)
         }
     },
     components: {

@@ -5,7 +5,7 @@ export default {
     data() {
         return {
             form: {
-                login: null,
+                email: null,
                 password: null
             }
         }

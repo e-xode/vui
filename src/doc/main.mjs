@@ -1,10 +1,5 @@
 import buildApp from './app.mjs'
 
-const { app, router, store } = buildApp()
-const state = window.INITIAL_DATA
-
-if (state) {
-    // store.commit('user/replace', state.user)
-}
+const { app, router } = buildApp()
 
 router.isReady().then(() => app.mount('#app'))

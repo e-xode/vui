@@ -1,15 +1,11 @@
-import langs from '@/components/card/translate/index.mjs'
-import {
-    locale
-} from '@/composables/index.mjs'
+import langs from '@/components/html/form/translate/index.mjs'
+import { locale } from '@/composables/index.mjs'
 
 export default {
-    name: 'VuiCard',
+    name: 'VuiForm',
     setup() {
         locale(langs)
         return {}
-    },
-    props: {
     },
     mounted() {
     },
@@ -18,8 +14,6 @@ export default {
         }
     },
     computed: {
-    },
-    methods: {
     },
     components: {
     }

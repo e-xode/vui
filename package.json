@@ -10,7 +10,7 @@
   "scripts": {
     "build": "npm run build:components && npm run build:doc",
     "build:components": "vite --config vite.components.mjs build",
-    "build:doc": "vite --config vite.doc.mjs build src/doc",
+    "build:doc": "vite --config vite.doc.mjs build",
     "dev": "vite --config vite.doc.mjs src/doc",
     "preview": "vite --config vite.doc.mjs preview src/doc"
   },
@@ -19,14 +19,14 @@
     "mitt": "3.0.0",
     "vue": "^3.2.45",
     "vue-i18n": "9.2.2",
-    "vue-router": "4.1.6",
-    "vuex": "4.1.0"
+    "vue-router": "4.1.6"
   },
   "peerDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
     "vite": "^4.0.0",
     "vite-plugin-rewrite-all": "1.0.1",
     "vite-plugin-static-copy": "0.13.0",
+    "highlight.js": "11.7.0",
     "sass": "1.57.1"
   }
 }

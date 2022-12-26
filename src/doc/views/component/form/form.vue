@@ -8,7 +8,7 @@
                             {{ $t('page.component.form.email') }}
                         </label>
                         <div class="input">
-                            <input
+                            <vui-input
                                 v-model="form.email"
                                 type="email"
                                 name="email"
@@ -16,6 +16,10 @@
                                 class="input"
                                 required
                             />
+                            <p>
+                                {{ $t('page.component.form.email.v-model') }}:
+                                {{ form.email }}
+                            </p>
                         </div>
                     </p>
                 </fieldset>
@@ -27,13 +31,18 @@
                             {{ $t('page.component.form.password') }}
                         </label>
                         <div class="input">
-                            <input
+                            <vui-input
                                 v-model="form.password"
                                 type="password"
                                 name="password"
                                 id="password"
+                                class="input"
                                 required
                             />
+                            <p>
+                                {{ $t('page.component.form.password.v-model') }}:
+                                {{ form.password }}
+                            </p>
                         </div>
                     </p>
                 </fieldset>

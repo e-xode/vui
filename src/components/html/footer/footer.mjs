@@ -1,4 +1,4 @@
-import langs from '@/components/footer/translate/index.mjs'
+import langs from '@/components/html/footer/translate/index.mjs'
 import { locale } from '@/composables/index.mjs'
 
 export default {

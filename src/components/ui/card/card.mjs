@@ -1,21 +1,15 @@
-import langs from '@/components/button/translate/index.mjs'
+import langs from '@/components/ui/card/translate/index.mjs'
 import {
-    animated,
     locale
 } from '@/composables/index.mjs'
 
 export default {
-    name: 'VuiButton',
-    mixins: [animated],
+    name: 'VuiCard',
     setup() {
         locale(langs)
         return {}
     },
     props: {
-        type: {
-            type: String,
-            default: 'button'
-        }
     },
     mounted() {
     },
@@ -26,10 +20,6 @@ export default {
     computed: {
     },
     methods: {
-        onClick () {
-            this.animate()
-            this.$emit('click')
-        }
     },
     components: {
     }

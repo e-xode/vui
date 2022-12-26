@@ -1,4 +1,4 @@
-import langs from '@/components/form/translate/index.mjs'
+import langs from '@/components/html/header/translate/index.mjs'
 import { locale } from '@/composables/index.mjs'
 
 export default {
