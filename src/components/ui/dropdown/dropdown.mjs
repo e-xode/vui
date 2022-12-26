@@ -1,4 +1,4 @@
-import langs from '@/components/dropdown/translate/index.mjs'
+import langs from '@/components/ui/dropdown/translate/index.mjs'
 import {
     animated,
     locale
@@ -63,7 +63,7 @@ export default {
         },
         toggleItem (selected) {
             this.selected = selected
-            this.$emit('set', selected)
+            this.$emit('input', selected)
         }
     },
     components: {

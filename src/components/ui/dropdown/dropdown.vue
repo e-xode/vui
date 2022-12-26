@@ -18,7 +18,7 @@
             :item-value="itemValue"
             :value="selected"
             class="ui-dropdown-list"
-            @set="toggleItem"
+            @input="toggleItem"
         />
     </div>
 </template>

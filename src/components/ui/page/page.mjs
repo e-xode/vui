@@ -1,8 +1,8 @@
-import langs from '@/components/form/translate/index.mjs'
+import langs from '@/components/ui/page/translate/index.mjs'
 import { locale } from '@/composables/index.mjs'
 
 export default {
-    name: 'VuiForm',
+    name: 'VuiPage',
     setup() {
         locale(langs)
         return {}
@@ -14,6 +14,11 @@ export default {
         }
     },
     computed: {
+    },
+    methods: {
+        outclick ()  {
+            this.$bus.emit('outclick')
+        }
     },
     components: {
     }

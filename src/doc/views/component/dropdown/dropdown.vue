@@ -8,6 +8,9 @@
                 <vui-dropdown
                     :items="[1,2,3,4]"
                 />
+                <div class="code"
+                    v-html="codes[0]"
+                />
             </template>
         </vui-card>
         <vui-card>
@@ -17,11 +20,14 @@
             <template #body>
                 <vui-dropdown
                     :items="[
-                        { label: 'foo', value: 'foo' },
-                        { label: 'bar', value: 'bar' }
+                        { label: 'label1', value: 'value1' },
+                        { label: 'lable2', value: 'value2' }
                     ]"
                     itemLabel="label"
                     itemValue="value"
+                />
+                <div class="code"
+                    v-html="codes[1]"
                 />
             </template>
         </vui-card>

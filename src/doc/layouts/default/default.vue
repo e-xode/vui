@@ -13,7 +13,7 @@
                     item-label="name"
                     item-value="path"
                     :placeholder="$t('component.header.dropdown.components')"
-                    @set="toggleComponent"
+                    @input="toggleComponent"
                 />
             </vui-header>
         </template>

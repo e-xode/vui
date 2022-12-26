@@ -1,15 +1,15 @@
 [
     {
         "name": "vui-button",
-        "path": "./components/button/button.vue"
+        "path": "./components/html/button/button.vue"
     },
     {
         "name": "vui-card",
-        "path": "./components/card/card.vue"
+        "path": "./components/ui/card/card.vue"
     },
     {
         "name": "vui-dropdown",
-        "path": "./components/dropdown/dropdown.vue",
+        "path": "./components/ui/dropdown/dropdown.vue",
         "doc": {
             "name": "view-dropdown",
             "path": "./views/component/dropdown/dropdown.vue"
@@ -17,11 +17,11 @@
     },
     {
         "name": "vui-footer",
-        "path": "./components/footer/footer.vue"
+        "path": "./components/html/footer/footer.vue"
     },
     {
         "name": "vui-form",
-        "path": "./components/form/form.vue",
+        "path": "./components/html/form/form.vue",
         "doc": {
             "name": "view-form",
             "path": "./views/component/form/form.vue"
@@ -29,14 +29,18 @@
     },
     {
         "name": "vui-header",
-        "path": "./components/header/header.vue"
+        "path": "./components/html/header/header.vue"
+    },
+    {
+        "name": "vui-input",
+        "path": "./components/html/input/input.vue"
     },
     {
         "name": "vui-list",
-        "path": "./components/list/list.vue"
+        "path": "./components/ui/list/list.vue"
     },
     {
         "name": "vui-page",
-        "path": "./components/page/page.vue"
+        "path": "./components/ui/page/page.vue"
     }
 ]

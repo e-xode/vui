@@ -1,6 +1,5 @@
 import { dirname, resolve } from 'path'
 import { defineConfig } from 'vite'
-import { viteStaticCopy } from 'vite-plugin-static-copy'
 import vue from '@vitejs/plugin-vue'
 
 const __dirname = dirname('./')
@@ -30,14 +29,6 @@ export default defineConfig({
     }
   },
   plugins: [
-    vue(),
-    // viteStaticCopy({
-    //   targets: [
-    //     {
-    //       src: resolve(__dirname, 'node_modules/@fortawesome/fontawesome-free/webfonts'),
-    //       dest: resolve(__dirname, 'public')
-    //     }
-    //   ]
-    // })
+    vue()
   ]
 })
