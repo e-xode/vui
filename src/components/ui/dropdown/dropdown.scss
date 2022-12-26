@@ -4,6 +4,7 @@
     position: relative;
     display: inline-block;
     min-width: 200px;
+    border-radius: .25rem;
 
     .ui-dropdown-placeholder {
         @include animate('ui-dropdown-placeholder');
