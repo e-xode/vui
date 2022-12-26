@@ -22,7 +22,11 @@ export default {
             type: String
         },
         value: {
-            type: Object
+            types: [
+                Number,
+                Object,
+                String
+            ]
         }
     },
     mounted () {
@@ -37,12 +41,18 @@ export default {
     },
     data () {
         return {
-            selected: {}
+            selected: null
         }
     },
     computed: {
     },
     methods: {
+        isActive (item) {
+            const { itemValue, selected } = this
+            return itemValue && selected
+                ? selected[itemValue] === item[itemValue]
+                : selected === item
+        },
         onClick (selected) {
             this.selected = selected
             this.$emit('set', selected)

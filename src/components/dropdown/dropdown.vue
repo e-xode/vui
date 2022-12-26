@@ -5,10 +5,10 @@
                 'ui-dropdown-placeholder',
                 { 'ui-dropdown-placeholder--active': animation }
             ]"
-            @click.stop="toggle"
+            @click.stop="onToggle"
         >
             <span class="ui-dropdown-placeholder-label">
-                {{ getValue }}
+                {{ placeholderValue }}
             </span>
         </div>
         <vui-list

@@ -26,7 +26,7 @@ export default {
             type: String
         }
     },
-    mounted() {
+    mounted () {
         this.$bus.on('outclick', () => {
             if (this.open) {
                 this.animate()
@@ -34,26 +34,30 @@ export default {
             this.open = false
         })
     },
-    data() {
+    data () {
         return {
             open: false,
-            selected: {}
+            selected: null
         }
     },
     computed: {
-        getValue () {
-            return this.selected[this.itemValue]
-                ? this.selected[this.itemLabel]
-                : this.getPlaceholder
+        placeholderValue () {
+            const { itemLabel, selected } = this
+            if (selected) {
+                return itemLabel
+                    ? selected[itemLabel]
+                    : selected
+            }
+            return this.placeholderLabel
         },
-        getPlaceholder () {
+        placeholderLabel () {
             return this.placeholder
                 ? this.placeholder
                 : this.$t('placeholder')
         }
     },
     methods: {
-        toggle () {
+        onToggle () {
             this.open = !this.open
             this.animate()
         },

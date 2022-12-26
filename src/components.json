@@ -9,7 +9,11 @@
     },
     {
         "name": "vui-dropdown",
-        "path": "./components/dropdown/dropdown.vue"
+        "path": "./components/dropdown/dropdown.vue",
+        "doc": {
+            "name": "view-dropdown",
+            "path": "./views/component/dropdown/dropdown.vue"
+        }
     },
     {
         "name": "vui-footer",
