@@ -5,11 +5,12 @@ const animated = {
             animating: false
         }
     },
-    beforeUnmount () {
+    deactivated () {
         this.$bus.off('outclick')
     },
-    mounted () {
+    created () {
         this.$bus.on('outclick', (uuid) => {
+            console.log(['outclik', uuid, this.uuid])
             if (uuid !== this.uuid) {
                 this.blur()
             }
