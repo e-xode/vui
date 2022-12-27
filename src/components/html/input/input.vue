@@ -6,7 +6,7 @@
             :type="type"
             :value="modelValue"
             @input="onInput"
-        />
+        >
     </div>
 </template>
 

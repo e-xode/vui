@@ -1,4 +1,5 @@
 const uuid = {
+    inject: ['$bus'],
     created () {
         this.uuid = Math.random().toString(36).slice(-6)
     },

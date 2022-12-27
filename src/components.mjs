@@ -4,7 +4,7 @@ import components from '@/components.json'
 
 export default {
     install(app) {
-        app.config.globalProperties.$bus = mitt()
+        app.provide('$bus', mitt())
         components.forEach(({ name, path }) => {
             app.component(
                 name,

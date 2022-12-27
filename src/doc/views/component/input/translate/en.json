@@ -1,0 +1,7 @@
+{
+    "page.component.form.email": "Enter an email",
+    "page.component.form.email.v-model": "The current v-model value for email is",
+    "page.component.form.password": "Enter a password",
+    "page.component.form.password.v-model": "The current v-model value for password is",
+    "page.component.form.submit": "Submit"
+}

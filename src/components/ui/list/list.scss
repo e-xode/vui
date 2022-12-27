@@ -27,10 +27,10 @@
             }
 
             &.vui-list-items-item--selected {
-                background-color: $vui-color-blue;
+                background-color: $vui-color-green-light;
 
                 .vui-list-items-item-label {
-                    color: $vui-color-white;
+                    color: $vui-color-green-dark;
                 }
             }
         }

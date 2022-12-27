@@ -14,11 +14,7 @@ export default defineConfig({
     },
     build: {
         outDir: resolve(__dirname, 'dist/doc'),
-        emptyOutDir: true//,
-        // lib: {
-        //     entry: resolve(__dirname, 'src/doc'),
-        //     name: 'doc'
-        // }
+        emptyOutDir: true
     },
     plugins: [
         vue(),

@@ -1,10 +1,10 @@
 <template>
     <div class="vui-list">
         <div
-            class="vui-list-title"
             v-if="title"
+            class="vui-list-title"
         >
-            {{  title }}
+            {{ title }}
         </div>
         <ul class="vui-list-items">
             <li
