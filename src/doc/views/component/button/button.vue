@@ -2,7 +2,7 @@
     <div class="view-button">
         <vui-card>
             <template #header>
-                {{  $t('page.component.button.example-1') }}
+                {{ $t('page.component.button.example-1') }}
             </template>
             <template #body>
                 <vui-button
@@ -10,14 +10,15 @@
                 >
                     {{ $t('page.component.button.click') }}
                 </vui-button>
-                <div class="code"
+                <div
+                    class="code"
                     v-html="codes[0]"
                 />
             </template>
         </vui-card>
         <vui-card>
             <template #header>
-                {{  $t('page.component.button.example-2') }}
+                {{ $t('page.component.button.example-2') }}
             </template>
             <template #body>
                 <vui-button
@@ -25,7 +26,8 @@
                 >
                     {{ $t('page.component.button.click') }}
                 </vui-button>
-                <div class="code"
+                <div
+                    class="code"
                     v-html="codes[1]"
                 />
             </template>

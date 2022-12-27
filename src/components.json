@@ -49,6 +49,12 @@
     },
     {
         "icon": "fa-brands fa-vuejs",
+        "label": "Grid",
+        "name": "vui-grid",
+        "path": "./components/ui/grid/grid.vue"
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
         "label": "Input",
         "name": "vui-input",
         "path": "./components/html/input/input.vue",
@@ -68,5 +74,11 @@
         "label": "Page",
         "name": "vui-page",
         "path": "./components/ui/page/page.vue"
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
+        "label": "Unit",
+        "name": "vui-grid-unit",
+        "path": "./components/ui/grid/unit/unit.vue"
     }
 ]

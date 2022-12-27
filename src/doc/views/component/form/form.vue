@@ -3,16 +3,19 @@
         <vui-form>
             <section class="section">
                 <fieldset class="fieldset">
-                    <p class="fieldset-item">
-                        <label class="label" for="email">
+                    <div class="fieldset-item">
+                        <label
+                            class="label"
+                            for="email"
+                        >
                             {{ $t('page.component.form.email') }}
                         </label>
                         <div class="input">
                             <vui-input
+                                id="email"
                                 v-model="form.email"
                                 type="email"
                                 name="email"
-                                id="email"
                                 class="input"
                                 required
                             />
@@ -21,21 +24,24 @@
                                 {{ form.email }}
                             </p>
                         </div>
-                    </p>
+                    </div>
                 </fieldset>
             </section>
             <section class="section">
                 <fieldset class="fieldset">
-                    <p class="fieldset-item">
-                        <label class="label" for="password">
+                    <div class="fieldset-item">
+                        <label
+                            class="label"
+                            for="password"
+                        >
                             {{ $t('page.component.form.password') }}
                         </label>
                         <div class="input">
                             <vui-input
+                                id="password"
                                 v-model="form.password"
                                 type="password"
                                 name="password"
-                                id="password"
                                 class="input"
                                 required
                             />
@@ -44,7 +50,7 @@
                                 {{ form.password }}
                             </p>
                         </div>
-                    </p>
+                    </div>
                 </fieldset>
             </section>
             <section class="section section-submit">
@@ -52,7 +58,7 @@
                     type="button"
                     @click.prevent="submit"
                 >
-                    {{  $t('page.component.form.submit')  }}
+                    {{ $t('page.component.form.submit') }}
                 </vui-button>
             </section>
         </vui-form>

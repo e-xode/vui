@@ -6,7 +6,7 @@
                     class="home"
                     :to="{ name: 'ViewIndex' }"
                 >
-                    {{ $t('page.index.header.home') }}
+                    {{ $t('component.header.home') }}
                 </router-link>
                 <vui-dropdown
                     :items="components"
@@ -23,7 +23,7 @@
         <template #footer>
             <vui-footer>
                 <span class="copyright">
-                    {{ $t(('page.index.footer.copyright')) }}
+                    {{ $t(('component.footer.copyright')) }}
                     <a href="https://www.e-xode.net">
                         www.e-xode.net
                     </a>

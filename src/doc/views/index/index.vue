@@ -4,6 +4,11 @@
             {{ $t('page.index.h1') }}
         </h1>
         <i class="fa-brands fa-vuejs" />
+        <div class="description">
+            <p>
+                {{ $t('page.index.description') }}
+            </p>
+        </div>
         <vui-button
             icon="fa-sharp fa-solid fa-book-open-reader"
         >

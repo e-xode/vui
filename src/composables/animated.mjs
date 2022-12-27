@@ -1,3 +1,4 @@
+
 const animated = {
     data () {
         return {
@@ -8,9 +9,8 @@ const animated = {
     deactivated () {
         this.$bus.off('outclick')
     },
-    beforeCreate () {
+    created () {
         this.$bus.on('outclick', (uuid) => {
-            console.log(['outclik', uuid, this.uuid])
             if (uuid !== this.uuid) {
                 this.blur()
             }

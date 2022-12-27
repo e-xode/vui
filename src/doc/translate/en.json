@@ -1,20 +1,9 @@
 {
+    "component.footer.copyright": "Powered by",
+    "component.header.home": "Home",
     "component.header.dropdown.components": "List of components",
     "page.component.h1": "component",
-    "page.component.button.click": "Click me",
-    "page.component.button.example-1": "Button as button",
-    "page.component.button.example-2": "Button as submit",
-    "page.component.dropdown.example-1": "Dropdown with an array of strings, numbers, ...",
-    "page.component.dropdown.example-2": "Dropdown with an array of objects",
-    "page.component.form.email": "Enter an email",
-    "page.component.form.email.v-model": "The current v-model value for email is",
-    "page.component.form.password": "Enter a password",
-    "page.component.form.password.v-model": "The current v-model value for password is",
-    "page.component.form.submit": "Submit",
-    "page.component.input.example-1": "Input type as text",
-    "page.component.input.example-2": "Input type as email",
     "page.index.h1": "Another yet Vue library",
-    "page.index.header.home": "Home",
-    "page.index.footer.copyright": "Powered by",
+    "page.index.description": "VUI is built for developers wanting to quickly setup and customize their vue application",
     "page.index.button": "Get started"
 }

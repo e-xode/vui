@@ -2,7 +2,7 @@
     <div class="view-input">
         <vui-card>
             <template #header>
-                {{  $t('page.component.input.example-1') }}
+                {{ $t('page.component.input.example-1') }}
             </template>
             <template #body>
                 <vui-input
@@ -10,14 +10,14 @@
                     type="text"
                 />
                 <div
-                    v-html="codes[0]"
                     class="code"
+                    v-html="codes[0]"
                 />
             </template>
         </vui-card>
         <vui-card>
             <template #header>
-                {{  $t('page.component.input.example-2') }}
+                {{ $t('page.component.input.example-2') }}
             </template>
             <template #body>
                 <vui-input
@@ -25,8 +25,8 @@
                     type="email"
                 />
                 <div
-                    v-html="codes[1]"
                     class="code"
+                    v-html="codes[1]"
                 />
             </template>
         </vui-card>

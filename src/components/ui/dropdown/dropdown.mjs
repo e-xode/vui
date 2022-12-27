@@ -1,4 +1,6 @@
 import langs from '@/components/ui/dropdown/translate/index.mjs'
+import { props } from '@/components/ui/dropdown/dropdown.constant.mjs'
+
 import {
     animated,
     locale,
@@ -15,24 +17,7 @@ export default {
         locale(langs)
         return {}
     },
-    props: {
-        disabled: {
-            type: Boolean
-        },
-        items: {
-            type: Array,
-            required: true
-        },
-        itemLabel: {
-            type: String
-        },
-        itemValue: {
-            type: String
-        },
-        placeholder: {
-            type: String
-        }
-    },
+    props,
     mounted () {
     },
     data () {
@@ -65,6 +50,7 @@ export default {
         },
         toggleItem (selected) {
             this.selected = selected
+            this.$emit('update:modelValue', selected)
             this.$emit('input', selected)
             this.blur()
         }
