@@ -9,7 +9,6 @@ import App from '@/doc/app.vue'
 
 export default function buildApp() {
     const app = createApp(App)
-
     app.use(router)
     app.use(vui)
     app.use(new createI18n({
@@ -17,6 +16,5 @@ export default function buildApp() {
         locale: 'en',
         messages: { en, fr }
     }))
-
     return { app, router }
 }

@@ -11,23 +11,13 @@ export default {
             createI18n({
                 legacy: false,
                 missingWarn: false,
-                fallbackWarn: false,
-                silentTranslationWarn: true
+                fallbackWarn: false
             })
         ],
         provide: {
             $bus: mitt()
         },
         mocks: {
-            $route: {
-                params: {},
-                query: {}
-            },
-            $router: {
-                push: jest.fn(),
-                replace: jest.fn()
-            },
-            $t: (str) => str
         },
         stubs: {
             RouterLink: RouterLinkStub,
