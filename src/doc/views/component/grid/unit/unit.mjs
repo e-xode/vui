@@ -1,10 +1,10 @@
-import { locale } from '@/composables/index.mjs'
+import { translatable } from '@/composables/index.mjs'
 
 import langs from '@/doc/views/component/grid/unit/translate/index.mjs'
 export default {
     name: 'ViewGridUnit',
     setup() {
-        locale(langs)
+        translatable(langs)
         return {}
     },
     mounted() {

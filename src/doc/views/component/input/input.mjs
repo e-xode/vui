@@ -1,9 +1,8 @@
 import {
     demonstrable,
-    locale
+    translatable
 } from '@/composables/index.mjs'
 
-import VuiInput from '@/components/html/input/input.vue'
 import langs from '@/doc/views/component/input/translate/index.mjs'
 import { examples } from '@/doc/views/component/input/input.examples.mjs'
 
@@ -11,7 +10,7 @@ export default {
     name: 'ViewInput',
     mixins: [demonstrable],
     setup() {
-        locale(langs)
+        translatable(langs)
         return {}
     },
     mounted() {
@@ -26,10 +25,7 @@ export default {
     },
     computed: {
         examples() {
-            return this.nodes(
-                VuiInput,
-                examples
-            )
+            return this.nodes(examples)
         },
         emailValue () {
             return this.form.email?.length

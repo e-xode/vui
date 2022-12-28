@@ -1,5 +1,5 @@
 
-const animated = {
+const animable = {
     data () {
         return {
             toggled: false,
@@ -44,6 +44,6 @@ const animated = {
 }
 
 export {
-    animated
+    animable
 }
 

@@ -1,6 +1,6 @@
 import langs from '@/components/html/footer/translate/index.mjs'
 import {
-    locale,
+    translatable,
     uuid
 } from '@/composables/index.mjs'
 
@@ -10,7 +10,7 @@ export default {
         uuid
     ],
     setup() {
-        locale(langs)
+        translatable(langs)
         return {}
     },
     mounted() {
