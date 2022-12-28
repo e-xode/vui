@@ -1,4 +1,6 @@
 import langs from '@/components/ui/list/translate/index.mjs'
+import { props } from '@/components/ui/list/list.constant.mjs'
+
 import {
     locale,
     uuid
@@ -13,28 +15,7 @@ export default {
         locale(langs)
         return {}
     },
-    props: {
-        items: {
-            type: Array,
-            required: true
-        },
-        itemLabel: {
-            type: String
-        },
-        itemValue: {
-            type: String
-        },
-        title: {
-            type: String
-        },
-        value: {
-            types: [
-                Number,
-                Object,
-                String
-            ]
-        }
-    },
+    props,
     mounted () {
         if (this.value) {
             this.selected = this.value

@@ -1,0 +1,9 @@
+@import "@/scss/import.scss";
+
+.vui-tag {
+    display: inline-flex;
+    padding: .5rem .5rem;
+    background-color: $vui-color-grey-light;
+    border: 1px solid $vui-color-grey;
+    border-radius: .25rem;
+}

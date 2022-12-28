@@ -6,9 +6,20 @@
 
         .vui-card-body {
             display: flex;
-            flex-flow: column;
+            flex-flow: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .vui-tag {
+                flex: 0 0 48%;
+            }
+
+            .vui-input {
+                flex: 0 0 50%;
+            }
 
             .code {
+                flex: 0 0 100%;
                 padding: 1rem;
                 margin: 1rem 0 0 0;
                 white-space: pre;

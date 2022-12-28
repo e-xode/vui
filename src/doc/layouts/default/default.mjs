@@ -4,8 +4,9 @@ export default {
     name: 'LayoutDefault',
     mounted() {
     },
-    data() {
+    data () {
         return {
+            component: null
         }
     },
     computed: {
@@ -14,9 +15,16 @@ export default {
         }
     },
     methods: {
-        toggleComponent ({ doc }) {
+        home () {
+            this.component = null
+            this.$router.push({
+                name: 'ViewIndex'
+            })
+        },
+        toggleComponent (component) {
+            this.component = component
             this.$router.replace({
-                name: doc?.name
+                name: component.doc?.name
             })
         }
     },

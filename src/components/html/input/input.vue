@@ -3,6 +3,7 @@
         <input
             v-bind="$attrs"
             :disabled="disabled"
+            :placeholder="placeholderValue"
             :type="type"
             :value="modelValue"
             @input="onInput"

@@ -1,37 +1,36 @@
 <template>
     <div class="view-button">
-        <vui-card>
-            <template #header>
-                {{ $t('page.component.button.example-1') }}
-            </template>
-            <template #body>
-                <vui-button
-                    type="button"
+        <vui-grid>
+            <vui-grid-unit class="examples">
+                <vui-card
+                    v-for="(example,i) in examples"
+                    :key="`button-example--${i}`"
                 >
-                    {{ $t('page.component.button.click') }}
-                </vui-button>
-                <div
-                    class="code"
-                    v-html="codes[0]"
-                />
-            </template>
-        </vui-card>
-        <vui-card>
-            <template #header>
-                {{ $t('page.component.button.example-2') }}
-            </template>
-            <template #body>
-                <vui-button
-                    type="submit"
-                >
-                    {{ $t('page.component.button.click') }}
-                </vui-button>
-                <div
-                    class="code"
-                    v-html="codes[1]"
-                />
-            </template>
-        </vui-card>
+                    <template #header>
+                        {{ $t(example.title) }}
+                    </template>
+                    <template #body>
+                        <component
+                            :is="example.vnode"
+                            :key="`button--${i}`"
+                        />
+                        <div
+                            class="code"
+                            v-html="example.highlighted"
+                        />
+                    </template>
+                </vui-card>
+            </vui-grid-unit>
+            <vui-grid-unit class="api-options">
+                <vui-card>
+                    <template #header>
+                        <h2>
+                            {{ $t('page.component.button.h2.api') }}
+                        </h2>
+                    </template>
+                </vui-card>
+            </vui-grid-unit>
+        </vui-grid>
     </div>
 </template>
 

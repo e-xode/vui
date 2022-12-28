@@ -1,11 +1,15 @@
-import hljs from 'highlight.js'
-import { locale } from '@/composables/index.mjs'
+import {
+    demonstrable,
+    locale
+} from '@/composables/index.mjs'
 
+import VuiDropdown from '@/components/ui/dropdown/dropdown.vue'
 import langs from '@/doc/views/component/dropdown/translate/index.mjs'
-import samples from './dropdown.json'
+import { examples } from '@/doc/views/component/dropdown/dropdown.examples.mjs'
 
 export default {
     name: 'ViewDropdown',
+    mixins: [demonstrable],
     setup() {
         locale(langs)
         return {}
@@ -14,15 +18,15 @@ export default {
     },
     data() {
         return {
-            codes: samples.map((json) => {
-                return hljs.highlight(
-                    json.code,
-                    { language: 'html' }
-                ).value
-            })
         }
     },
     computed: {
+        examples() {
+            return this.nodes(
+                VuiDropdown,
+                examples
+            )
+        }
     },
     methods: {
     },

@@ -2,13 +2,14 @@
 
 .vui-dropdown {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
     min-width: 200px;
     border-radius: .25rem;
 
     .ui-dropdown-placeholder {
         @include animate('ui-dropdown-placeholder');
         @include vui-box-shadow;
+        width: 100%;
         padding: .5rem .5rem .5rem 1rem;
         cursor: pointer;
 

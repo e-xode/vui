@@ -14,10 +14,6 @@ export default {
         return {}
     },
     props: {
-        justifyContent: {
-            type: String,
-            default: 'space-between'
-        },
     },
     mounted() {
     },

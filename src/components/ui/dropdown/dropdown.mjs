@@ -20,12 +20,22 @@ export default {
     props,
     mounted () {
     },
+    watch: {
+        modelValue(value) {
+            this.selected = value
+        }
+    },
     data () {
         return {
             selected: null
         }
     },
     computed: {
+        listTitle () {
+            return this.selected
+                ? this.placeholderLabel
+                : null
+        },
         placeholderValue () {
             const { itemLabel, selected } = this
             if (selected) {
@@ -38,7 +48,7 @@ export default {
         placeholderLabel () {
             return this.placeholder
                 ? this.placeholder
-                : this.$t('placeholder')
+                : this.$t('component.dropdown.placeholder')
         }
     },
     methods: {
