@@ -1,6 +1,6 @@
 # VUI, another yet Vue Library
 
-[![e-xode](https://circleci.com/github/e-xode/v-ui/tree/master.svg?style=svg&circle-token=76e9a4cf9b8fac35afc86bbb505025a5216cc457)](https://circleci.com/github/e-xode/v-ui/?branch=master&circle-token=76e9a4cf9b8fac35afc86bbb505025a5216cc457)
+[![e-xode](https://circleci.com/gh/e-xode/v-ui/tree/master.svg?style=svg&circle-token=76e9a4cf9b8fac35afc86bbb505025a5216cc457)](https://circleci.com/gh/e-xode/v-ui/?branch=master&circle-token=76e9a4cf9b8fac35afc86bbb505025a5216cc457)
 
 VUI is built for developers wanting to quickly setup and customize theirs VUE applications
 
