@@ -1,10 +1,10 @@
-import { locale } from '@/composables/index.mjs'
+import { translatable } from '@/composables/index.mjs'
 
 import langs from '@/doc/views/component/footer/translate/index.mjs'
 export default {
     name: 'ViewFooter',
     setup() {
-        locale(langs)
+        translatable(langs)
         return {}
     },
     mounted() {

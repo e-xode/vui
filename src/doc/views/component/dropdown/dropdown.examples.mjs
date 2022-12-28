@@ -6,10 +6,7 @@ const examples = [
             ':disabled': 'disabled'
         },
         props: {
-            items: [1, 2, 3, 4],
-            onClick: () => {
-                console.log('click')
-            }
+            items: [1, 2, 3, 4]
         },
         slot: null,
         tag: 'vui-dropdown'
@@ -26,10 +23,7 @@ const examples = [
                 { key: 'key 2', value: 'value 2' }
             ],
             itemLabel: 'key',
-            itemValue: 'value',
-            onClick: () => {
-                console.log('click')
-            }
+            itemValue: 'value'
         },
         slot: null,
         tag: 'vui-dropdown'

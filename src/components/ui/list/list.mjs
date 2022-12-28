@@ -2,7 +2,7 @@ import langs from '@/components/ui/list/translate/index.mjs'
 import { props } from '@/components/ui/list/list.constant.mjs'
 
 import {
-    locale,
+    translatable,
     uuid
 } from '@/composables/index.mjs'
 
@@ -12,7 +12,7 @@ export default {
         uuid
     ],
     setup () {
-        locale(langs)
+        translatable(langs)
         return {}
     },
     props,

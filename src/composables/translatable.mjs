@@ -1,6 +1,6 @@
 import { useI18n } from 'vue-i18n'
 
-const locale  = (messages) => {
+const translatable  = (messages) => {
     const i18n = useI18n()
     Object.keys(messages).forEach((lang) => {
         i18n.mergeLocaleMessage(lang, messages[lang])
@@ -9,5 +9,5 @@ const locale  = (messages) => {
 }
 
 export {
-    locale
+    translatable
 }
