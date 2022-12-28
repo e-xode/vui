@@ -1,6 +1,8 @@
 @import "@/scss/import.scss";
 
 .vui-input {
+    display: inline-flex;
+
     input[type="text"],
     input[type="email"],
     input[type="password"] {

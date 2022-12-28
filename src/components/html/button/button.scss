@@ -3,7 +3,7 @@
 .vui-button {
     @include animate('vui-button');
     @include vui-box-shadow;
-    display: inline-block;
+    display: inline-flex;
     padding: .5rem 1rem;
     cursor: pointer;
 

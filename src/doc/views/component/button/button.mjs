@@ -1,28 +1,33 @@
-import hljs from 'highlight.js'
-import { locale } from '@/composables/index.mjs'
+import {
+    demonstrable,
+    locale
+} from '@/composables/index.mjs'
 
+import VuiButton from '@/components/html/button/button.vue'
 import langs from '@/doc/views/component/button/translate/index.mjs'
-import samples from './button.json'
+import { examples } from '@/doc/views/component/button/button.examples.mjs'
 
 export default {
     name: 'ViewButton',
-    setup() {
+    mixins: [demonstrable],
+    setup () {
         locale(langs)
-        return {}
+        return {
+        }
     },
     mounted() {
     },
     data() {
         return {
-            codes: samples.map((json) => {
-                return hljs.highlight(
-                    json.code,
-                    { language: 'html' }
-                ).value
-            })
         }
     },
     computed: {
+        examples() {
+            return this.nodes(
+                VuiButton,
+                examples
+            )
+        }
     },
     methods: {
     },

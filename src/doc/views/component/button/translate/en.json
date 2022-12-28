@@ -1,4 +1,5 @@
 {
+    "page.component.button.h2.api": "API options",
     "page.component.button.click": "Click me",
     "page.component.button.example-1": "Basic button",
     "page.component.button.example-2": "Button as submit"

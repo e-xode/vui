@@ -1,8 +1,0 @@
-[
-    {
-        "code": "<vui-button \n \t type=\"button\" \n />\n \t Click me \n</vui-button>"
-    },
-    {
-        "code": "<vui-button \n \t type=\"submit\" \n />\n \t Click me \n</vui-button>"
-    }
-]

@@ -2,18 +2,19 @@
     <vui-page class="layout-default">
         <template #header>
             <vui-header>
-                <router-link
+                <span
                     class="home"
-                    :to="{ name: 'ViewIndex' }"
+                    @click="home"
                 >
                     {{ $t('component.header.home') }}
-                </router-link>
+                </span>
                 <vui-dropdown
+                    v-model="component"
                     :items="components"
                     item-label="label"
                     item-value="path"
                     :placeholder="$t('component.header.dropdown.components')"
-                    @input="toggleComponent"
+                    @update:model-value="toggleComponent"
                 />
             </vui-header>
         </template>

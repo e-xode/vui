@@ -1,11 +1,7 @@
 <template>
     <div
         class="vui-unit"
-        :style="{
-            'flex-basis': flexBasis,
-            'flex-grow': flexGrow,
-            'flex-shrink': flexShrink
-        }"
+        :style="style"
     >
         <slot />
     </div>

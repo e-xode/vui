@@ -1,11 +1,15 @@
-import hljs from 'highlight.js'
-import { locale } from '@/composables/index.mjs'
+import {
+    demonstrable,
+    locale
+} from '@/composables/index.mjs'
 
+import VuiInput from '@/components/html/input/input.vue'
 import langs from '@/doc/views/component/input/translate/index.mjs'
-import samples from './input.json'
+import { examples } from '@/doc/views/component/input/input.examples.mjs'
 
 export default {
     name: 'ViewInput',
+    mixins: [demonstrable],
     setup() {
         locale(langs)
         return {}
@@ -17,18 +21,29 @@ export default {
             form: {
                 email: null,
                 text: null,
-            },
-            codes: samples.map((json) => {
-                return hljs.highlight(
-                    json.code,
-                    { language: 'html' }
-                ).value
-            })
+            }
         }
     },
     computed: {
+        examples() {
+            return this.nodes(
+                VuiInput,
+                examples
+            )
+        },
+        emailValue () {
+            return this.form.email?.length
+                ? `${this.form.email.substr(0, 10)}...`
+                : this.$t('page.component.input.vmodel.none')
+        },
+        textValue () {
+            return this.form.text?.length
+                ? `${this.form.text.substr(0, 10)}...`
+                : this.$t('page.component.input.vmodel.none')
+        }
     },
     methods: {
+
     },
     components: {
     }

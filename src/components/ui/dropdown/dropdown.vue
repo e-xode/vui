@@ -18,6 +18,7 @@
             :items="items"
             :item-label="itemLabel"
             :item-value="itemValue"
+            :title="listTitle"
             :value="selected"
             class="ui-dropdown-list"
             @input="toggleItem"

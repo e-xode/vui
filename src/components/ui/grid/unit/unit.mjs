@@ -5,7 +5,7 @@ import {
 } from '@/composables/index.mjs'
 
 export default {
-    name: 'VuiUnit',
+    name: 'VuiGridUnit',
     mixins: [
         uuid
     ],
@@ -14,17 +14,9 @@ export default {
         return {}
     },
     props: {
-        flexBasis: {
+        flex: {
             type: String,
-            default: 'auto'
-        },
-        flexGrow: {
-            type: String,
-            default: "0"
-        },
-        flexShrink: {
-            type: String,
-            default: "0"
+            default: '0 0 49%'
         }
     },
     mounted() {
@@ -34,6 +26,12 @@ export default {
         }
     },
     computed: {
+        style () {
+            const {  flex } = this
+            return [
+                { flex }
+            ]
+        }
     },
     methods: {
     },

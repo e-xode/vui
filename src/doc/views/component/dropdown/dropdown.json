@@ -1,8 +1,0 @@
-[
-    {
-        "code": "<template> \n \t <vui-dropdown \n \t\t :items=\"[1,2,3,4]\" \n \t /> \n </template>"
-    },
-    {
-        "code": "<template> \n \t <vui-dropdown \n \t\t :items=\"[ \n \t\t\t { label: 'label1', value: 'value1' }, \n \t\t\t { label: 'lable2', value: 'value2' } \n \t\t ]\"  \n \t\t itemLabel=\"label\" \n \t\t itemValue=\"value\" \n \t /> \n  </template>"
-    }
-]

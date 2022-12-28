@@ -1,10 +1,5 @@
 <template>
-    <div
-        class="vui-grid"
-        :style="{
-            'justify-content': justifyContent
-        }"
-    >
+    <div class="vui-grid">
         <slot />
     </div>
 </template>

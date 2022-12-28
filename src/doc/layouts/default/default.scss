@@ -13,6 +13,7 @@
             padding-left: 1.5rem;
             line-height: 2.1rem;
             color: $vui-color-green-dark;
+            cursor: pointer;
 
             &:before {
                 @include vui-glyph-solid;

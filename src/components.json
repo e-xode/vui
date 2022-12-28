@@ -13,7 +13,11 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Card",
         "name": "vui-card",
-        "path": "./components/ui/card/card.vue"
+        "path": "./components/ui/card/card.vue",
+        "doc": {
+            "name": "view-card",
+            "path": "./views/component/card/card.vue"
+        }
     },
     {
         "icon": "fa-brands fa-vuejs",
@@ -29,7 +33,11 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Footer",
         "name": "vui-footer",
-        "path": "./components/html/footer/footer.vue"
+        "path": "./components/html/footer/footer.vue",
+        "doc": {
+            "name": "view-footer",
+            "path": "./views/component/footer/footer.vue"
+        }
     },
     {
         "icon": "fa-brands fa-vuejs",
@@ -45,13 +53,31 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Header",
         "name": "vui-header",
-        "path": "./components/html/header/header.vue"
+        "path": "./components/html/header/header.vue",
+        "doc": {
+            "name": "view-header",
+            "path": "./views/component/header/header.vue"
+        }
     },
     {
         "icon": "fa-brands fa-vuejs",
         "label": "Grid",
         "name": "vui-grid",
-        "path": "./components/ui/grid/grid.vue"
+        "path": "./components/ui/grid/grid.vue",
+        "doc": {
+            "name": "view-grid",
+            "path": "./views/component/grid/grid.vue"
+        }
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
+        "label": "Grid unit",
+        "name": "vui-grid-unit",
+        "path": "./components/ui/grid/unit/unit.vue",
+        "doc": {
+            "name": "view-grid-unit",
+            "path": "./views/component/grid/unit/unit.vue"
+        }
     },
     {
         "icon": "fa-brands fa-vuejs",
@@ -67,18 +93,30 @@
         "icon": "fa-brands fa-vuejs",
         "label": "List",
         "name": "vui-list",
-        "path": "./components/ui/list/list.vue"
+        "path": "./components/ui/list/list.vue",
+        "doc": {
+            "name": "view-list",
+            "path": "./views/component/list/list.vue"
+        }
     },
     {
         "icon": "fa-brands fa-vuejs",
         "label": "Page",
         "name": "vui-page",
-        "path": "./components/ui/page/page.vue"
+        "path": "./components/ui/page/page.vue",
+        "doc": {
+            "name": "view-page",
+            "path": "./views/component/page/page.vue"
+        }
     },
     {
         "icon": "fa-brands fa-vuejs",
-        "label": "Unit",
-        "name": "vui-grid-unit",
-        "path": "./components/ui/grid/unit/unit.vue"
+        "label": "Tag",
+        "name": "vui-tag",
+        "path": "./components/ui/tag/tag.vue",
+        "doc": {
+            "name": "view-tag",
+            "path": "./views/component/tag/tag.vue"
+        }
     }
 ]

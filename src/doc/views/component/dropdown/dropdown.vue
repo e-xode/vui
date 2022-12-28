@@ -1,48 +1,27 @@
 <template>
     <div class="view-dropdown">
         <vui-grid>
-            <vui-grid-unit
-                class="cards"
-                flex-basis="49%"
-            >
-                <vui-card>
+            <vui-grid-unit class="examples">
+                <vui-card
+                    v-for="(example,i) in examples"
+                    :key="`dropdown-sample--${i}`"
+                >
                     <template #header>
-                        {{ $t('page.component.dropdown.example-1') }}
+                        {{ $t(example.title) }}
                     </template>
                     <template #body>
-                        <vui-dropdown
-                            :items="[1,2,3,4]"
+                        <component
+                            :is="example.vnode"
+                            :key="`dropdown--${i}`"
                         />
                         <div
                             class="code"
-                            v-html="codes[0]"
-                        />
-                    </template>
-                </vui-card>
-                <vui-card>
-                    <template #header>
-                        {{ $t('page.component.dropdown.example-2') }}
-                    </template>
-                    <template #body>
-                        <vui-dropdown
-                            :items="[
-                                { label: 'label1', value: 'value1' },
-                                { label: 'lable2', value: 'value2' }
-                            ]"
-                            item-label="label"
-                            item-value="value"
-                        />
-                        <div
-                            class="code"
-                            v-html="codes[1]"
+                            v-html="example.highlighted"
                         />
                     </template>
                 </vui-card>
             </vui-grid-unit>
-            <vui-grid-unit
-                class="api-options"
-                flex-basis="49%"
-            >
+            <vui-grid-unit class="api-options">
                 <vui-card>
                     <template #header>
                         <h2>
