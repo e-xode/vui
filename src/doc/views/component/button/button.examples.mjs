@@ -4,13 +4,10 @@ const examples = [
         attrs: {
             'id': 'button-1',
             'type': 'button',
-            '@click': '() => onClick',
+            '@click': '() => onClick()',
             ':disabled': 'disabled'
         },
         props: {
-            onClick: () => {
-                console.log('click')
-            }
         },
         slot: 'click me',
         tag: 'vui-button'
@@ -20,13 +17,10 @@ const examples = [
         attrs: {
             'id': 'button-1',
             'type': 'button',
-            '@click': '() => onClick',
+            '@click': '() => onClick()',
             ':disabled': 'disabled'
         },
         props: {
-            onClick: () => {
-                console.log('click')
-            }
         },
         slot: 'click me',
         tag: 'vui-button'

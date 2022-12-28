@@ -3,13 +3,14 @@
         <vui-grid>
             <vui-grid-unit class="examples">
                 <vui-card
-                    v-for="(example,i) in examples"
+                    v-for="(example, i) in examples"
                     :key="`button-example--${i}`"
                 >
                     <template #header>
                         {{ $t(example.title) }}
                     </template>
                     <template #body>
+                        {{  test  }}
                         <component
                             :is="example.vnode"
                             :key="`button--${i}`"

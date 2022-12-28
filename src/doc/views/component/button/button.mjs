@@ -1,9 +1,8 @@
 import {
     demonstrable,
-    locale
+    translatable
 } from '@/composables/index.mjs'
 
-import VuiButton from '@/components/html/button/button.vue'
 import langs from '@/doc/views/component/button/translate/index.mjs'
 import { examples } from '@/doc/views/component/button/button.examples.mjs'
 
@@ -11,25 +10,27 @@ export default {
     name: 'ViewButton',
     mixins: [demonstrable],
     setup () {
-        locale(langs)
+        translatable(langs)
         return {
         }
     },
-    mounted() {
+    mounted () {
     },
-    data() {
+    data () {
         return {
+            test: 1
         }
     },
     computed: {
-        examples() {
-            return this.nodes(
-                VuiButton,
-                examples
-            )
+        examples () {
+            return this.nodes(examples)
         }
     },
     methods: {
+        onClick () {
+            console.log('onClick1')
+            this.test = 2
+        },
     },
     components: {
     }

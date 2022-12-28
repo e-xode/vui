@@ -2,19 +2,19 @@ import langs from '@/components/ui/dropdown/translate/index.mjs'
 import { props } from '@/components/ui/dropdown/dropdown.constant.mjs'
 
 import {
-    animated,
-    locale,
+    animable,
+    translatable,
     uuid
 } from '@/composables/index.mjs'
 
 export default {
     name: 'VuiDropdown',
     mixins: [
-        animated,
+        animable,
         uuid
     ],
     setup() {
-        locale(langs)
+        translatable(langs)
         return {}
     },
     props,

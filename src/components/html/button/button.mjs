@@ -1,18 +1,18 @@
 import langs from '@/components/html/button/translate/index.mjs'
 import {
-    animated,
-    locale,
+    animable,
+    translatable,
     uuid
 } from '@/composables/index.mjs'
 
 export default {
     name: 'VuiButton',
     mixins: [
-        animated,
+        animable,
         uuid
     ],
     setup () {
-        locale(langs)
+        translatable(langs)
         return {}
     },
     props: {
