@@ -16,6 +16,61 @@
     "preview": "vite --config vite.doc.mjs preview src/doc",
     "test:unit": "jest --clearCache && jest"
   },
+  "babel": {
+    "presets": [
+      [
+          "@babel/preset-env", {
+              "targets": {
+                  "node": "current"
+              }
+          }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:vue/vue3-recommended"
+    ],
+    "rules": {
+      "vue/multi-word-component-names": "off",
+      "vue/html-indent": ["error", 4]
+    }
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "mjs",
+      "json",
+      "vue"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "setupFiles": [
+    ],
+    "testEnvironment": "jsdom",
+    "testEnvironmentOptions": {
+      "customExportConditions": [
+        "node",
+        "node-addons"
+      ]
+    },
+    "testMatch": [
+      "**/?(*.)+(spec).mjs"
+    ],
+    "transform": {
+      "^.+\\.m?js$": "babel-jest",
+      "^.+\\.vue$": "@vue/vue3-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "6.2.1",
     "highlight.js": "11.7.0",
@@ -38,6 +93,5 @@
     "sass": "1.57.1",
     "@vue/test-utils": "2.2.6",
     "@vue/vue3-jest": "29.2.2"
-
   }
 }
