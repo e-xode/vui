@@ -3,8 +3,8 @@
         <vui-grid>
             <vui-grid-unit class="examples">
                 <vui-card
-                    v-for="(example,i) in examples"
-                    :key="`button-example--${i}`"
+                    v-for="(example) in examples"
+                    :key="`button-${example.props.id}`"
                 >
                     <template #header>
                         {{ $t(example.title) }}
@@ -12,13 +12,16 @@
                     <template #body>
                         <vui-tag>
                             {{ $t('page.component.input.vmodel') }}:
+                            {{ form[example.props.type] }}
                         </vui-tag>
                         <component
-                            :is="example.vnode"
-                            :key="`button--${i}`"
+                            :is="example.component"
+                            v-bind="example.props"
+                            v-model="form[example.props.type]"
+                            maxlength="15"
                         />
                         <div
-                            class="code"
+                            class="highlighted-code"
                             v-html="example.highlighted"
                         />
                     </template>

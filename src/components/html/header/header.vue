@@ -1,5 +1,8 @@
 <template>
-    <header class="vui-header">
+    <header
+        :id="identifier"
+        class="vui-header"
+    >
         <slot />
     </header>
 </template>

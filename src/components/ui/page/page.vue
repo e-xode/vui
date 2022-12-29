@@ -1,5 +1,6 @@
 <template>
     <div
+        :id="identifier"
         class="vui-page"
         @click="outclick"
     >

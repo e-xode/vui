@@ -1,13 +1,13 @@
 import langs from '@/components/ui/card/translate/index.mjs'
 import {
-    translatable,
-    uuid
+    composable,
+    translatable
 } from '@/composables/index.mjs'
 
 export default {
     name: 'VuiGrid',
     mixins: [
-        uuid
+        composable
     ],
     setup() {
         translatable(langs)

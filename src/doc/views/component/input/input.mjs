@@ -3,39 +3,30 @@ import {
     translatable
 } from '@/composables/index.mjs'
 
+import VuiInput from '@/components/html/input/input.vue'
 import langs from '@/doc/views/component/input/translate/index.mjs'
-import { examples } from '@/doc/views/component/input/input.examples.mjs'
+import doc from '@/doc/views/component/input/input.doc.mjs'
 
 export default {
     name: 'ViewInput',
     mixins: [demonstrable],
-    setup() {
+    setup () {
         translatable(langs)
         return {}
     },
-    mounted() {
+    mounted () {
     },
-    data() {
+    data () {
         return {
             form: {
-                email: null,
-                text: null,
+                email: '',
+                text: ''
             }
         }
     },
     computed: {
         examples() {
-            return this.nodes(examples)
-        },
-        emailValue () {
-            return this.form.email?.length
-                ? `${this.form.email.substr(0, 10)}...`
-                : this.$t('page.component.input.vmodel.none')
-        },
-        textValue () {
-            return this.form.text?.length
-                ? `${this.form.text.substr(0, 10)}...`
-                : this.$t('page.component.input.vmodel.none')
+            return this.render(VuiInput, doc)
         }
     },
     methods: {

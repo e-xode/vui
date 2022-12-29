@@ -1,13 +1,13 @@
 import langs from '@/components/html/input/translate/index.mjs'
 import {
-    translatable,
-    uuid
+    composable,
+    translatable
 } from '@/composables/index.mjs'
 
 export default {
     name: 'VuiInput',
     mixins: [
-        uuid
+        composable
     ],
     setup() {
         translatable(langs)

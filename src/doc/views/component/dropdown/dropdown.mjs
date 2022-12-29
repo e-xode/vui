@@ -3,8 +3,9 @@ import {
     translatable
 } from '@/composables/index.mjs'
 
+import VuiDropdown from '@/components/ui/dropdown/dropdown.vue'
 import langs from '@/doc/views/component/dropdown/translate/index.mjs'
-import { examples } from '@/doc/views/component/dropdown/dropdown.examples.mjs'
+import doc from '@/doc/views/component/dropdown/dropdown.doc.mjs'
 
 export default {
     name: 'ViewDropdown',
@@ -21,7 +22,7 @@ export default {
     },
     computed: {
         examples() {
-            return this.nodes(examples)
+            return this.render(VuiDropdown, doc)
         }
     },
     methods: {

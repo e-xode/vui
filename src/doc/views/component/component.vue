@@ -1,6 +1,7 @@
 <template>
     <div class="view-component">
         <h1>
+            <i class="fa-brands fa-vuejs" />
             {{ $t('page.component.h1') }}
             {{ component.label }}
         </h1>

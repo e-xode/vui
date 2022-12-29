@@ -1,13 +1,15 @@
 import langs from '@/components/ui/page/translate/index.mjs'
 import {
-    translatable,
-    uuid
+    animable,
+    composable,
+    translatable
 } from '@/composables/index.mjs'
 
 export default {
     name: 'VuiPage',
     mixins: [
-        uuid
+        animable,
+        composable
     ],
     setup() {
         translatable(langs)
@@ -23,7 +25,7 @@ export default {
     },
     methods: {
         outclick ()  {
-            this.$bus.emit('outclick', this.uuid)
+            this.$bus.emit('outclick', this.identifier)
         }
     },
     components: {

@@ -1,13 +1,13 @@
 import langs from '@/components/html/header/translate/index.mjs'
 import {
-    translatable,
-    uuid
+    composable,
+    translatable
 } from '@/composables/index.mjs'
 
 export default {
     name: 'VuiHeader',
     mixins: [
-        uuid
+        composable
     ],
     setup() {
         translatable(langs)
