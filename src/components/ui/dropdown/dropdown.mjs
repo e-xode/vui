@@ -55,7 +55,6 @@ export default {
         onClick () {
             if (!this.disabled) {
                 this.onAnimate()
-                this.$emit('click')
             }
         },
         toggleItem (selected) {
