@@ -26,5 +26,6 @@ describe('components/Input.vue', () => {
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
+        expect(component.vm.placeholderValue).toBeTruthy()
     })
 })

@@ -39,7 +39,7 @@ export default {
     computed: {
     },
     methods: {
-        onClick (e) {
+        onClick () {
             if (!this.disabled) {
                 this.onAnimate()
             }

@@ -14,7 +14,9 @@
     "dev": "vite --config vite.doc.mjs src/doc",
     "lint": "eslint --ext .js,.vue src",
     "preview": "vite --config vite.doc.mjs preview src/doc",
-    "test:unit": "jest --clearCache && jest"
+    "test:unit": "jest --clearCache && jest",
+    "test:coverage": "jest --clearCache && jest --coverage",
+    "watch:unit": "jest --clearCache && jest --watch"
   },
   "babel": {
     "presets": [

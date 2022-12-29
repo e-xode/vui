@@ -1,4 +1,6 @@
-
+const options = {
+    duration: 150
+}
 const animable = {
     inject: ['$bus'],
     data () {
@@ -23,7 +25,7 @@ const animable = {
                 this.animating = true
                 setTimeout(() => {
                     this.animating = false
-                }, 150)
+                }, options.duration)
             }
         },
         blur () {
@@ -45,6 +47,7 @@ const animable = {
 }
 
 export {
-    animable
+    animable,
+    options
 }
 

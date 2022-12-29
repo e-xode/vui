@@ -3,6 +3,7 @@
         :id="identifier"
         :class="[
             'vui-button',
+            { 'vui-button--with-icon' : icon },
             { 'vui-button--toggled' : toggled },
             { 'vui-button--animating' : !disabled && animating },
             { 'vui-button--loading' : !disabled && loading },

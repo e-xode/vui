@@ -5,9 +5,13 @@
     @include animate('vui-button');
     position: relative;
     display: inline-flex;
-    padding: .5rem 1rem;
+    padding: .5rem 1rem .5rem 1rem;
     justify-content: center;
     cursor: pointer;
+
+    &.vui-button--with-icon {
+        padding-left: 2.5rem;
+    }
 
     button {
         position: relative;
