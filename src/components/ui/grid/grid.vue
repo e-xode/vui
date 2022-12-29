@@ -1,5 +1,8 @@
 <template>
-    <div class="vui-grid">
+    <div
+        :id="identifier"
+        class="vui-grid"
+    >
         <slot />
     </div>
 </template>

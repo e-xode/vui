@@ -9,15 +9,6 @@
                 .vui-card-body {
                     display: flex;
                     flex-flow: column;
-
-                    .code {
-                        padding: 1rem;
-                        margin: 1rem 0 0 0;
-                        white-space: pre;
-                        background-color: $vui-color-grey-extra-light;
-                        border: 1px solid $vui-color-grey-light;
-                        border-radius: .25rem;
-                    }
                 }
             }
         }
@@ -25,6 +16,7 @@
         .vui-unit.api-options {
             .vui-card {
             }
+
             h2 {
                 text-align: center;
             }

@@ -1,5 +1,8 @@
 <template>
-    <div class="vui-card">
+    <div
+        :id="identifier"
+        class="vui-card"
+    >
         <div class="vui-card-header">
             <slot name="header" />
         </div>

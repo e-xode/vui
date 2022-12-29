@@ -1,5 +1,8 @@
 <template>
-    <span class="vui-tag">
+    <span
+        :id="identifier"
+        class="vui-tag"
+    >
         <slot />
     </span>
 </template>

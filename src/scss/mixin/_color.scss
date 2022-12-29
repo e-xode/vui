@@ -13,6 +13,7 @@ $vui-color-blue-dark: darken($vui-color-blue, 10%);
 $vui-color-blue-light: lighten($vui-color-blue, 40%);
 $vui-color-blue-extra-light: lighten($vui-color-blue-light, 10%);
 
-$vui-color-grey-light: rgb(238, 238, 238);
-$vui-color-grey: darken($vui-color-grey-light, 10%);
-$vui-color-grey-extra-light: lighten($vui-color-grey-light, 10%);
+$vui-color-grey: rgba(189, 195, 199, 1);
+$vui-color-grey-light: lighten($vui-color-grey, 10%);
+$vui-color-grey-extra-light: lighten($vui-color-grey, 20%);
+$vui-color-grey-dark: darken($vui-color-grey, 25%);

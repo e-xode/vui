@@ -1,5 +1,6 @@
 
 const animable = {
+    inject: ['$bus'],
     data () {
         return {
             toggled: false,
@@ -10,8 +11,8 @@ const animable = {
         this.$bus.off('outclick')
     },
     created () {
-        this.$bus.on('outclick', (uuid) => {
-            if (uuid !== this.uuid) {
+        this.$bus.on('outclick', (identifier) => {
+            if (identifier !== this.identifier) {
                 this.blur()
             }
         })
@@ -30,9 +31,9 @@ const animable = {
         },
         focus () {
             this.toggled = true
-            this.$bus.emit('outclick', this.uuid)
+            this.$bus.emit('outclick', this.identifier)
         },
-        onToggle () {
+        onAnimate () {
             this.animate()
             if (!this.toggled) {
                 this.focus()

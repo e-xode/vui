@@ -1,15 +1,15 @@
 import langs from '@/components/html/button/translate/index.mjs'
 import {
     animable,
-    translatable,
-    uuid
+    composable,
+    translatable
 } from '@/composables/index.mjs'
 
 export default {
     name: 'VuiButton',
     mixins: [
         animable,
-        uuid
+        composable
     ],
     setup () {
         translatable(langs)
@@ -31,7 +31,6 @@ export default {
         }
     },
     mounted () {
-
     },
     data () {
         return {
@@ -40,10 +39,9 @@ export default {
     computed: {
     },
     methods: {
-        onClick () {
+        onClick (e) {
             if (!this.disabled) {
-                this.onToggle()
-                this.$emit('click')
+                this.onAnimate()
             }
         }
     },

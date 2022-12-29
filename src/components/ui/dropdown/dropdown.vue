@@ -1,5 +1,8 @@
 <template>
-    <div class="vui-dropdown">
+    <div
+        :id="identifier"
+        class="vui-dropdown"
+    >
         <div
             :class="[
                 'ui-dropdown-placeholder',
@@ -7,7 +10,7 @@
                 { 'ui-dropdown-placeholder--animating': animating },
                 { 'ui-dropdown-placeholder--disabled': disabled }
             ]"
-            @click.stop="onToggle"
+            @click.stop="onAnimate"
         >
             <span class="ui-dropdown-placeholder-label">
                 {{ placeholderValue }}

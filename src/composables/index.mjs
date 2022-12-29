@@ -1,11 +1,11 @@
 import { animable } from '@/composables/animable.mjs'
+import { composable } from '@/composables/composable.mjs'
 import { demonstrable } from '@/composables/demonstrable.mjs'
 import { translatable } from '@/composables/translatable.mjs'
-import { uuid } from '@/composables/uuid.mjs'
 
 export {
     animable,
+    composable,
     demonstrable,
-    translatable,
-    uuid
+    translatable
 }

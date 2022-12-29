@@ -1,5 +1,8 @@
 <template>
-    <div class="vui-list">
+    <div
+        :id="identifier"
+        class="vui-list"
+    >
         <div
             v-if="title"
             class="vui-list-title"

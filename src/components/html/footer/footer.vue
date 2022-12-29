@@ -1,5 +1,8 @@
 <template>
-    <footer class="vui-footer">
+    <footer
+        :id="identifier"
+        class="vui-footer"
+    >
         <slot />
     </footer>
 </template>

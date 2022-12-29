@@ -1,4 +1,22 @@
 @import "@/scss/import.scss";
 
 .view-component {
+    .vui-card {
+        .vui-card-body {
+
+            .highlighted-code {
+                padding: 1rem;
+                margin: 1rem 0 0 0;
+                white-space: pre-wrap;
+                // font-family:Verdana, Geneva, Tahoma, sans-serif;
+                background-color: $vui-color-grey-light;
+                border: 1px solid $vui-color-grey;
+                border-radius: .25rem;
+
+                .hljs-tag {
+
+                }
+            }
+        }
+    }
 }

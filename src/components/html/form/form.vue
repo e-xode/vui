@@ -1,5 +1,8 @@
 <template>
-    <form class="vui-form">
+    <form
+        :id="identifier"
+        class="vui-form"
+    >
         <slot />
     </form>
 </template>

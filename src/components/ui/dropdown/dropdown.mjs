@@ -2,16 +2,16 @@ import langs from '@/components/ui/dropdown/translate/index.mjs'
 import { props } from '@/components/ui/dropdown/dropdown.constant.mjs'
 
 import {
+    composable,
     animable,
-    translatable,
-    uuid
+    translatable
 } from '@/composables/index.mjs'
 
 export default {
     name: 'VuiDropdown',
     mixins: [
         animable,
-        uuid
+        composable
     ],
     setup() {
         translatable(langs)
@@ -54,7 +54,7 @@ export default {
     methods: {
         onClick () {
             if (!this.disabled) {
-                this.onToggle()
+                this.onAnimate()
                 this.$emit('click')
             }
         },

@@ -11,11 +11,11 @@
                     </template>
                     <template #body>
                         <component
-                            :is="example.vnode"
-                            :key="`dropdown--${i}`"
+                            :is="example.component"
+                            v-bind="example.props"
                         />
                         <div
-                            class="code"
+                            class="highlighted-code"
                             v-html="example.highlighted"
                         />
                     </template>

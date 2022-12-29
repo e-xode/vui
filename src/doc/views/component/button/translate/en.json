@@ -2,5 +2,7 @@
     "page.component.button.h2.api": "API options",
     "page.component.button.click": "Click me",
     "page.component.button.example-1": "Basic button",
-    "page.component.button.example-2": "Button as submit"
+    "page.component.button.example-2": "Submit button",
+    "page.component.button.example-3": "Disabled button",
+    "page.component.button.not-clickable": "Not clickable"
 }

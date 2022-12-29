@@ -1,13 +1,59 @@
 @import "@/scss/import.scss";
 
 .vui-button {
-    @include animate('vui-button');
     @include vui-box-shadow;
+    @include animate('vui-button');
+    position: relative;
     display: inline-flex;
     padding: .5rem 1rem;
+    justify-content: center;
     cursor: pointer;
 
-    .vui-button-icon {
-        margin-right: .75rem;
+    button {
+        position: relative;
+        line-height: 1rem;
+        background-color: transparent;
+
+        .vui-button-icon {
+            position: absolute;
+            top: -.2rem;
+            left: -1.5rem;
+            font-size: 1.3rem;
+            margin-right: .75rem;
+            color: $vui-color-grey-dark;
+        }
+    }
+
+    .vui-button-loader {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 30%;
+        height: 2px;
+        background-color: transparent;
+    }
+
+    &.vui-button--loading {
+        .vui-button-loader {
+            animation: linear infinite;
+            animation-name: loading;
+            animation-duration: .8s;
+            background-color: $vui-color-grey-dark;
+        }
+    }
+
+    &.vui-button--disabled {
+        background-color: $vui-color-grey;
+        border: 1px solid $vui-color-grey-light;
+        cursor: default;
+        box-shadow: none;
+
+        button {
+            color: $vui-color-grey-dark;
+
+            .vui-button-icon {
+                color: $vui-color-grey-dark;
+            }
+        }
     }
 }

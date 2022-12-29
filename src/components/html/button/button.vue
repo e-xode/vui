@@ -1,21 +1,27 @@
 <template>
-    <button
-        :type="type"
-        :disabled="disabled"
+    <div
+        :id="identifier"
         :class="[
             'vui-button',
             { 'vui-button--toggled' : toggled },
-            { 'vui-button--animating' : animating },
+            { 'vui-button--animating' : !disabled && animating },
+            { 'vui-button--loading' : !disabled && loading },
             { 'vui-button--disabled' : disabled }
         ]"
         @click.stop="onClick"
     >
-        <i
-            v-if="icon"
-            :class="['vui-button-icon', icon]"
-        />
-        <slot />
-    </button>
+        <button
+            :disabled="disabled"
+            :type="type"
+        >
+            <i
+                v-if="icon"
+                :class="['vui-button-icon', icon]"
+            />
+            <slot />
+        </button>
+        <div class="vui-button-loader" />
+    </div>
 </template>
 
 <script

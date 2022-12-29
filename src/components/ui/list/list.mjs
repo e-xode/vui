@@ -2,14 +2,14 @@ import langs from '@/components/ui/list/translate/index.mjs'
 import { props } from '@/components/ui/list/list.constant.mjs'
 
 import {
-    translatable,
-    uuid
+    composable,
+    translatable
 } from '@/composables/index.mjs'
 
 export default {
     name: 'VuiList',
     mixins: [
-        uuid
+        composable
     ],
     setup () {
         translatable(langs)
