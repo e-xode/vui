@@ -1,5 +1,7 @@
 {
-    "page.component.dropdown.h2.api": "API options",
     "page.component.dropdown.example-1": "Dropdown with an array of strings, numbers, ...",
-    "page.component.dropdown.example-2": "Dropdown with an array of objects"
+    "page.component.dropdown.example-2": "Dropdown with an array of objects",
+    "page.component.dropdown.doc.tag.disabled": "Binds the disabled state",
+    "page.component.dropdown.doc.tag.icon": "Class name of the icon to prepend",
+    "page.component.dropdown.doc.tag.loading": "Binds the loading state"
 }

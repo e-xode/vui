@@ -3,7 +3,9 @@
         <h1>
             <i class="fa-brands fa-vuejs" />
             {{ $t('page.component.h1') }}
-            {{ component.label }}
+            <span class="view-component-name">
+                {{ component.label }}
+            </span>
         </h1>
         <router-view />
     </div>

@@ -1,9 +1,16 @@
-import { translatable } from '@/composables/index.mjs'
+import {
+    demonstrable,
+    translatable
+} from '@/composables/index.mjs'
 
+import VuiGrid from '@/components/ui/grid/grid.vue'
 import langs from '@/doc/views/component/grid/translate/index.mjs'
+import doc from '@/doc/views/component/grid/grid.doc.mjs'
+
 export default {
     name: 'ViewGrid',
-    setup() {
+    mixins: [demonstrable],
+    setup () {
         translatable(langs)
         return {}
     },
@@ -14,6 +21,12 @@ export default {
         }
     },
     computed: {
+        doc () {
+            return doc
+        },
+        examples () {
+            return this.docExamples(VuiGrid, doc)
+        }
     },
     methods: {
         submit () {

@@ -1,7 +1,17 @@
+import {
+    translatable
+} from '@/composables/index.mjs'
+
+import langs from '@/doc/views/component/translate/index.mjs'
 import components from '@/components.json'
 
 export default {
     name: 'ViewComponent',
+    setup () {
+        translatable(langs)
+        return {
+        }
+    },
     mounted() {
     },
     data() {

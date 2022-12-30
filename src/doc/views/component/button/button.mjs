@@ -9,15 +9,17 @@ import doc from '@/doc/views/component/button/button.doc.mjs'
 
 export default {
     name: 'ViewButton',
-    mixins: [demonstrable],
+    mixins: [
+        demonstrable
+    ],
     setup () {
         translatable(langs)
         return {
         }
     },
     mounted () {
-        this.buttons = doc.examples.map(({ props }) => ({
-            id: props.id
+        this.buttons = doc.examples.map((button) => ({
+            id: button.props.id
         }))
     },
     data () {
@@ -26,14 +28,28 @@ export default {
         }
     },
     computed: {
+        doc () {
+            return doc
+        },
         examples () {
-            return this.render(VuiButton, doc)
+            return this.docExamples(VuiButton, {
+                attrs: doc.attrs,
+                examples: doc.examples.map((example) => ({
+                    ...example,
+                    props: {
+                        ...example.props,
+                        text: example.props.text
+                            ? this.$t(example.props.text)
+                            : null
+                    }
+                }))
+            })
         }
     },
     methods: {
         isLoading (id) {
             const button = this.buttons.find((button) => button.id === id )
-            return button.loading
+            return button?.loading
         },
         onClick (id) {
             const { buttons } = this
@@ -43,7 +59,5 @@ export default {
                     : button
             })
         },
-    },
-    components: {
     }
 }

@@ -1,10 +1,20 @@
 <template>
-    <span
+    <div
         :id="identifier"
-        class="vui-tag"
+        :class="[
+            'vui-tag',
+            { 'vui-tag--with-icon' : icon }
+        ]"
     >
-        <slot />
-    </span>
+        <i
+            v-if="icon"
+            :class="['vui-tag-icon', icon]"
+        />
+        <slot v-if="!!$slots.default" />
+        <template v-if="text">
+            {{ text }}
+        </template>
+    </div>
 </template>
 
 <script

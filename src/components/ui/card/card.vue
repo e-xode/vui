@@ -3,13 +3,22 @@
         :id="identifier"
         class="vui-card"
     >
-        <div class="vui-card-header">
+        <div
+            v-if="!!$slots.header"
+            class="vui-card-header"
+        >
             <slot name="header" />
         </div>
-        <div class="vui-card-body">
+        <div
+            v-if="!!$slots.body"
+            class="vui-card-body"
+        >
             <slot name="body" />
         </div>
-        <div class="vui-card-footer">
+        <div
+            v-if="!!$slots.footer"
+            class="vui-card-footer"
+        >
             <slot name="footer" />
         </div>
     </div>

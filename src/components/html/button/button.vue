@@ -19,7 +19,10 @@
                 v-if="icon"
                 :class="['vui-button-icon', icon]"
             />
-            <slot />
+            <slot v-if="!!$slots.default" />
+            <template v-if="text">
+                {{ text }}
+            </template>
         </button>
         <div class="vui-button-loader" />
     </div>

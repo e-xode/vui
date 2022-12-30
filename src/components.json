@@ -111,6 +111,16 @@
     },
     {
         "icon": "fa-brands fa-vuejs",
+        "label": "Table",
+        "name": "vui-table",
+        "path": "./components/html/table/table.vue",
+        "doc": {
+            "name": "view-table",
+            "path": "./views/component/table/table.vue"
+        }
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
         "label": "Tag",
         "name": "vui-tag",
         "path": "./components/ui/tag/tag.vue",

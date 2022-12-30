@@ -8,6 +8,7 @@
     padding: .5rem 1rem .5rem 1rem;
     justify-content: center;
     cursor: pointer;
+    border-radius: .5rem;
 
     &.vui-button--with-icon {
         padding-left: 2.5rem;
@@ -17,12 +18,15 @@
         position: relative;
         line-height: 1rem;
         background-color: transparent;
+        font-size: .85rem;
+        font-weight: 600;
+        text-transform: uppercase;
 
         .vui-button-icon {
             position: absolute;
-            top: -.2rem;
+            top: 0;
             left: -1.5rem;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-right: .75rem;
             color: $vui-color-grey-dark;
         }
@@ -48,9 +52,8 @@
 
     &.vui-button--disabled {
         background-color: $vui-color-grey;
-        border: 1px solid $vui-color-grey-light;
+        border: 1px solid $vui-color-grey-dark;
         cursor: default;
-        box-shadow: none;
 
         button {
             color: $vui-color-grey-dark;

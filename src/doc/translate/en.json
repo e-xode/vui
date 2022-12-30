@@ -1,9 +1,5 @@
 {
     "component.footer.copyright": "Powered by",
     "component.header.home": "Home",
-    "component.header.dropdown.components": "List of components",
-    "page.component.h1": "component",
-    "page.index.h1": "Another yet Vue library",
-    "page.index.description": "VUI is built for developers wanting to quickly setup and customize their vue application",
-    "page.index.button": "Get started"
+    "component.header.dropdown.components": "List of components"
 }

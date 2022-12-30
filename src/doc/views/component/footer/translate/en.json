@@ -1,2 +1,5 @@
 {
+    "page.component.footer.example-1.content": "My footer content",
+    "page.component.footer.doc.tag.icon": "Class name of the icon to prepend",
+    "page.component.footer.doc.tag.loading": "Binds the loading state"
 }
