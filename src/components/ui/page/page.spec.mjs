@@ -23,4 +23,15 @@ describe('components/Page.vue', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
     })
+
+    it('Should emit outclick', () => {
+        const component = mountComponent()
+        const { identifier } = component.vm
+        const emit = jest.spyOn(component.vm.$bus, 'emit')
+
+        component.vm.outclick()
+
+        expect(emit).toHaveBeenCalledWith('outclick', identifier)
+
+    })
 })
