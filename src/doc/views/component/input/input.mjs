@@ -25,8 +25,11 @@ export default {
         }
     },
     computed: {
+        doc () {
+            return doc
+        },
         examples() {
-            return this.render(VuiInput, doc)
+            return this.docExamples(VuiInput, doc)
         }
     },
     methods: {

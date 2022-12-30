@@ -1,4 +1,21 @@
 export default {
+    attrs: [
+        {
+            tag: 'disabled',
+            type: 'Boolean',
+            text: 'page.component.dropdown.doc.tag.disabled'
+        },
+        {
+            tag: 'icon',
+            type: 'String',
+            text: 'page.component.dropdown.doc.tag.icon'
+        },
+        {
+            tag: 'loading',
+            type: 'Boolean',
+            text: 'page.component.dropdown.doc.tag.loading'
+        }
+    ],
     examples: [
         {
             markup: `
@@ -12,7 +29,6 @@ export default {
                 id: 'example-dropdown-1',
                 items: [1, 2, 3, 4]
             },
-            slot: null,
             title: 'page.component.dropdown.example-1'
         },
         {
@@ -37,7 +53,6 @@ export default {
                 itemLabel: 'key',
                 itemValue: 'value'
             },
-            slot: null,
             title: 'page.component.dropdown.example-2'
         }
     ]

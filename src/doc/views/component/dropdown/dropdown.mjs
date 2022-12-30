@@ -10,19 +10,22 @@ import doc from '@/doc/views/component/dropdown/dropdown.doc.mjs'
 export default {
     name: 'ViewDropdown',
     mixins: [demonstrable],
-    setup() {
+    setup () {
         translatable(langs)
         return {}
     },
-    mounted() {
+    mounted () {
     },
-    data() {
+    data () {
         return {
         }
     },
     computed: {
-        examples() {
-            return this.render(VuiDropdown, doc)
+        doc () {
+            return doc
+        },
+        examples () {
+            return this.docExamples(VuiDropdown, doc)
         }
     },
     methods: {

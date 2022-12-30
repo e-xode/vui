@@ -9,15 +9,21 @@ export default {
     mixins: [
         composable
     ],
-    setup() {
+    setup () {
         translatable(langs)
         return {}
     },
     props: {
+        icon: {
+            type: String
+        },
+        text: {
+            type: String
+        }
     },
-    mounted() {
+    mounted () {
     },
-    data() {
+    data () {
         return {
         }
     },

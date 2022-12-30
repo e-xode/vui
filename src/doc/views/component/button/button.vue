@@ -18,7 +18,9 @@
                             v-bind="example.props"
                             @click="() => onClick(example.props.id)"
                         >
-                            {{ $t(example.slot) }}
+                            <template v-if="example.text">
+                                {{ $t(example.text) }}
+                            </template>
                         </component>
                         <div
                             class="highlighted-code"
@@ -31,12 +33,15 @@
                 <vui-card>
                     <template #header>
                         <h2 class="title">
-                            {{ $t('page.component.button.h2.api') }}
+                            {{ $t('page.component.h2.api') }}
                         </h2>
                     </template>
                     <template #body>
-                        <vui-list
-                            :items="[]"
+                        <vui-table
+                            item-label="label"
+                            item-value="value"
+                            :headers="docHeaders"
+                            :items="docItems(doc)"
                         />
                     </template>
                 </vui-card>

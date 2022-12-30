@@ -3,5 +3,8 @@
     "page.component.input.example-2": "Input type as email",
     "page.component.input.vmodel": "v-model",
     "page.component.input.vmodel.none": "none",
-    "page.component.input.h2.api-options": "API options"
+    "page.component.input.doc.tag.disabled": "Binds the disabled state",
+    "page.component.input.doc.tag.icon": "Class name of the icon to prepend",
+    "page.component.input.doc.tag.loading": "Binds the loading state",
+    "page.component.input.doc.tag.type": "Type of button: submit, button, .."
 }

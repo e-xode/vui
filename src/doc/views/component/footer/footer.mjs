@@ -1,9 +1,18 @@
-import { translatable } from '@/composables/index.mjs'
+import {
+    demonstrable,
+    translatable
+} from '@/composables/index.mjs'
 
+import VuiFooter from '@/components/html/footer/footer.vue'
+import doc from '@/doc/views/component/footer/footer.doc.mjs'
 import langs from '@/doc/views/component/footer/translate/index.mjs'
+
 export default {
     name: 'ViewFooter',
-    setup() {
+    mixins: [
+        demonstrable
+    ],
+    setup () {
         translatable(langs)
         return {}
     },
@@ -14,9 +23,15 @@ export default {
         }
     },
     computed: {
+        doc () {
+            return doc
+        },
+        examples () {
+            return this.docExamples(VuiFooter, doc)
+        }
     },
     methods: {
-        submit () {
+        isLoading () {
         }
     },
     components: {

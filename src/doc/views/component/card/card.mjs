@@ -1,22 +1,37 @@
-import { translatable } from '@/composables/index.mjs'
+import {
+    demonstrable,
+    translatable
+} from '@/composables/index.mjs'
 
+import VuiCard from '@/components/ui/card/card.vue'
+import doc from '@/doc/views/component/card/card.doc.mjs'
 import langs from '@/doc/views/component/card/translate/index.mjs'
+
 export default {
     name: 'ViewCard',
-    setup() {
+    mixins: [
+        demonstrable
+    ],
+    setup () {
         translatable(langs)
         return {}
     },
-    mounted() {
+    mounted () {
     },
-    data() {
+    data () {
         return {
         }
     },
     computed: {
+        doc () {
+            return doc
+        },
+        examples () {
+            return this.docExamples(VuiCard, doc)
+        }
     },
     methods: {
-        submit () {
+        isLoading () {
         }
     },
     components: {

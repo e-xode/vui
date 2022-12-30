@@ -1,2 +1,5 @@
 {
+    "page.component.page.example-1.header": "My page header",
+    "page.component.page.example-1.body": "My page content",
+    "page.component.page.example-1.footer": "My page footer"
 }

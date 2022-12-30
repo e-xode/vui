@@ -1,22 +1,45 @@
 @import "@/scss/import.scss";
 
 .view-component {
+    > h1 {
+        position: relative;
+        padding-left: 2.5rem;
+
+        i {
+            position: absolute;
+            top: .75rem;
+            left: .5rem;
+            color: $vui-color-green;
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+
+        .view-component-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+    }
     .vui-card {
-        .vui-card-body {
-
-            .highlighted-code {
-                padding: 1rem;
-                margin: 1rem 0 0 0;
-                white-space: pre-wrap;
-                // font-family:Verdana, Geneva, Tahoma, sans-serif;
-                background-color: $vui-color-grey-light;
-                border: 1px solid $vui-color-grey;
-                border-radius: .25rem;
-
-                .hljs-tag {
-
-                }
+        .vui-card-header {
+            .title {
+                padding: 0;
+                margin: 0;
+                font-size: 1.15rem;
+                text-transform: none;
             }
+        }
+        .vui-card-body {
+        }
+    }
+    .highlighted-code {
+        padding: 1rem;
+        margin: 1rem 0 0 0;
+        white-space: pre-wrap;
+        background-color: $vui-color-grey-light;
+        border: 1px solid $vui-color-grey;
+        border-radius: .25rem;
+
+        .hljs-tag {
         }
     }
 }

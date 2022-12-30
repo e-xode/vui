@@ -1,8 +1,11 @@
 {
-    "page.component.button.h2.api": "API options",
     "page.component.button.click": "Click me",
     "page.component.button.example-1": "Basic button",
     "page.component.button.example-2": "Submit button",
     "page.component.button.example-3": "Disabled button",
-    "page.component.button.not-clickable": "Not clickable"
+    "page.component.button.not-clickable": "Not clickable",
+    "page.component.button.doc.tag.disabled": "Binds the disabled state",
+    "page.component.button.doc.tag.icon": "Class name of the icon to prepend",
+    "page.component.button.doc.tag.loading": "Binds the loading state",
+    "page.component.button.doc.tag.type": "Type of button: submit, button, .."
 }

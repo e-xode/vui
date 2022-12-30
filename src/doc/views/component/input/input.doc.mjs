@@ -1,4 +1,26 @@
 export default {
+    attrs: [
+        {
+            tag: 'disabled',
+            type: 'Boolean',
+            text: 'page.component.input.doc.tag.disabled'
+        },
+        {
+            tag: 'icon',
+            type: 'String',
+            text: 'page.component.input.doc.tag.icon'
+        },
+        {
+            tag: 'loading',
+            type: 'Boolean',
+            text: 'page.component.input.doc.tag.loading'
+        },
+        {
+            tag: 'type',
+            type: 'String',
+            text: 'page.component.input.doc.tag.type'
+        }
+    ],
     examples: [
         {
             markup: `
@@ -15,7 +37,6 @@ export default {
                 placeholder: 'Type a value',
                 type: 'text'
             },
-            slot: null,
             title: 'page.component.input.example-1'
         },
         {
@@ -33,7 +54,6 @@ export default {
                 placeholder: 'Type a value',
                 type: 'email'
             },
-            slot: null,
             title: 'page.component.input.example-2'
         }
     ]

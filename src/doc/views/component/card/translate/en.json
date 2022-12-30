@@ -1,2 +1,7 @@
 {
+    "page.component.card.doc.tag.icon": "Class name of the icon to prepend",
+    "page.component.card.doc.tag.loading": "Binds the loading state",
+    "page.component.card.example-1.title": "My card title",
+    "page.component.card.example-1.content": "My card content",
+    "page.component.card.example-1.footer": "My card footer"
 }

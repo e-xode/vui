@@ -1,9 +1,16 @@
-import { translatable } from '@/composables/index.mjs'
+import {
+    demonstrable,
+    translatable
+} from '@/composables/index.mjs'
 
+import VuiInput from '@/components/ui/list/list.vue'
 import langs from '@/doc/views/component/list/translate/index.mjs'
+import doc from '@/doc/views/component/list/list.doc.mjs'
+
 export default {
     name: 'ViewList',
-    setup() {
+    mixins: [demonstrable],
+    setup () {
         translatable(langs)
         return {}
     },
@@ -14,6 +21,9 @@ export default {
         }
     },
     computed: {
+        examples() {
+            return this.docExamples(VuiInput, doc)
+        }
     },
     methods: {
         submit () {
