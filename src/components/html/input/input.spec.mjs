@@ -28,4 +28,14 @@ describe('components/Input.vue', () => {
         expect(component.exists()).toBeTruthy()
         expect(component.vm.placeholderValue).toBeTruthy()
     })
+
+    it('Should emit on Input', () => {
+        const component = mountComponent()
+        const $e = { target: { value: 'foo' }}
+
+        component.vm.onInput($e)
+
+        const emitted = component.emitted()
+        expect(emitted['update:modelValue'][0]).toEqual([$e.target.value])
+    })
 })
