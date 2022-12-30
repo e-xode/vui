@@ -8,7 +8,7 @@ describe('components/List.vue', () => {
         return shallowMount(List, {
             ...setup,
             propsData: {
-                items: []
+                items: [1, 2, 3, 4]
             }
         })
     }
@@ -25,5 +25,24 @@ describe('components/List.vue', () => {
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
+    })
+
+    it('Should return if selected', () => {
+        const component = mountComponent()
+
+        component.vm.selected = 1
+
+        expect(component.vm.isSelected(0)).toBeFalsy()
+        expect(component.vm.isSelected(1)).toBeTruthy()
+    })
+
+    it('Should emit onClick', () => {
+        const component = mountComponent()
+        const selected = 1
+
+        component.vm.onClick(selected)
+
+        const emitted = component.emitted()
+        expect(emitted['input'][0]).toEqual([selected])
     })
 })
