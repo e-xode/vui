@@ -6,7 +6,7 @@
         "path": "./components/html/button/button.vue",
         "doc": {
             "name": "view-button",
-            "path": "./views/component/button/button.vue"
+            "path": "./views/component/html/button/button.vue"
         }
     },
     {
@@ -16,7 +16,7 @@
         "path": "./components/ui/card/card.vue",
         "doc": {
             "name": "view-card",
-            "path": "./views/component/card/card.vue"
+            "path": "./views/component/ui/card/card.vue"
         }
     },
     {
@@ -26,7 +26,7 @@
         "path": "./components/ui/dropdown/dropdown.vue",
         "doc": {
             "name": "view-dropdown",
-            "path": "./views/component/dropdown/dropdown.vue"
+            "path": "./views/component/ui/dropdown/dropdown.vue"
         }
     },
     {
@@ -36,7 +36,7 @@
         "path": "./components/html/footer/footer.vue",
         "doc": {
             "name": "view-footer",
-            "path": "./views/component/footer/footer.vue"
+            "path": "./views/component/html/footer/footer.vue"
         }
     },
     {
@@ -46,7 +46,7 @@
         "path": "./components/html/form/form.vue",
         "doc": {
             "name": "view-form",
-            "path": "./views/component/form/form.vue"
+            "path": "./views/component/html/form/form.vue"
         }
     },
     {
@@ -56,7 +56,7 @@
         "path": "./components/html/header/header.vue",
         "doc": {
             "name": "view-header",
-            "path": "./views/component/header/header.vue"
+            "path": "./views/component/html/header/header.vue"
         }
     },
     {
@@ -66,7 +66,7 @@
         "path": "./components/ui/grid/grid.vue",
         "doc": {
             "name": "view-grid",
-            "path": "./views/component/grid/grid.vue"
+            "path": "./views/component/ui/grid/grid.vue"
         }
     },
     {
@@ -76,7 +76,7 @@
         "path": "./components/ui/grid/unit/unit.vue",
         "doc": {
             "name": "view-grid-unit",
-            "path": "./views/component/grid/unit/unit.vue"
+            "path": "./views/component/ui/grid/unit/unit.vue"
         }
     },
     {
@@ -86,7 +86,7 @@
         "path": "./components/html/input/input.vue",
         "doc": {
             "name": "view-input",
-            "path": "./views/component/input/input.vue"
+            "path": "./views/component/html/input/input.vue"
         }
     },
     {
@@ -96,7 +96,17 @@
         "path": "./components/ui/list/list.vue",
         "doc": {
             "name": "view-list",
-            "path": "./views/component/list/list.vue"
+            "path": "./views/component/ui/list/list.vue"
+        }
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
+        "label": "Modal",
+        "name": "vui-modal",
+        "path": "./components/ui/modal/modal.vue",
+        "doc": {
+            "name": "view-modal",
+            "path": "./views/component/ui/modal/modal.vue"
         }
     },
     {
@@ -106,7 +116,7 @@
         "path": "./components/ui/page/page.vue",
         "doc": {
             "name": "view-page",
-            "path": "./views/component/page/page.vue"
+            "path": "./views/component/ui/page/page.vue"
         }
     },
     {
@@ -116,7 +126,7 @@
         "path": "./components/html/table/table.vue",
         "doc": {
             "name": "view-table",
-            "path": "./views/component/table/table.vue"
+            "path": "./views/component/html/table/table.vue"
         }
     },
     {
@@ -126,7 +136,7 @@
         "path": "./components/ui/tag/tag.vue",
         "doc": {
             "name": "view-tag",
-            "path": "./views/component/tag/tag.vue"
+            "path": "./views/component/ui/tag/tag.vue"
         }
     }
 ]

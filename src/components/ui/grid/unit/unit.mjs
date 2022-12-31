@@ -1,4 +1,4 @@
-import langs from '@/components/ui/card/translate/index.mjs'
+import langs from '@/components/ui/grid/unit/translate/index.mjs'
 import {
     composable,
     translatable
