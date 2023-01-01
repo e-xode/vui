@@ -158,17 +158,17 @@ describe('components/List.vue', () => {
             component.vm.onToggle(0)
 
             expect(component.vm.open).toBe(0)
-            expect(component.vm.toggled).toBeTruthy()
-            expect(component.vm.animating).toBeTruthy()
+            expect(component.vm.isToggled(0)).toBeTruthy()
+            expect(component.vm.isAnimating(0)).toBeTruthy()
 
             jest.advanceTimersByTime(options.duration)
 
-            expect(component.vm.toggled).toBeTruthy()
-            expect(component.vm.animating).toBeFalsy()
+            expect(component.vm.isToggled(0)).toBeTruthy()
+            expect(component.vm.isAnimating(0)).toBeFalsy()
 
             component.vm.onToggle(0)
 
-            expect(component.vm.toggled).toBeFalsy()
+            expect(component.vm.isToggled(0)).toBeFalsy()
         })
 
         describe('disabled', () => {

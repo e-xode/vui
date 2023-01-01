@@ -26,6 +26,7 @@ describe('components/form/Button.vue', () => {
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
+        expect(component.vm.type).toBe('button')
     })
 
     it('Should animate and be toggled on click', () => {

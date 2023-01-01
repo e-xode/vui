@@ -2,14 +2,14 @@ import { shallowMount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import { options } from '@/composables/animable.mjs'
 
-import Drdopdown from './dropdown.vue'
+import Dropdown from './dropdown.vue'
 
 describe('components/Drdopdown.vue', () => {
 
     const items = [1, 2, 3, 4]
 
     const mountComponent = () => {
-        return shallowMount(Drdopdown, {
+        return shallowMount(Dropdown, {
             ...setup,
             propsData: {
                 items
