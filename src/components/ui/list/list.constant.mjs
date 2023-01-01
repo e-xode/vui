@@ -1,4 +1,7 @@
 const props = {
+    disabled: {
+        type: Boolean
+    },
     items: {
         type: Array,
         required: true
@@ -9,8 +12,8 @@ const props = {
     itemValue: {
         type: String
     },
-    placeholder: {
-        type: String
+    selectable: {
+        type: Boolean
     },
     title: {
         type: String

@@ -1,6 +1,6 @@
 <template>
     <form
-        :id="identifier"
+        :id="componentId"
         class="vui-form"
     >
         <slot />

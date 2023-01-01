@@ -19,6 +19,7 @@
             font-weight: 600;
         }
     }
+
     .vui-card {
         .vui-card-header {
             .title {
@@ -28,18 +29,23 @@
                 text-transform: none;
             }
         }
+
         .vui-card-body {
         }
     }
+
     .highlighted-code {
-        padding: 1rem;
-        margin: 1rem 0 0 0;
+        margin: .5rem 0 2rem 0;
         white-space: pre-wrap;
         background-color: $vui-color-grey-light;
         border: 1px solid $vui-color-grey;
         border-radius: .25rem;
 
-        .hljs-tag {
+        .hljs-attr,
+        .hljs-name,
+        .hljs-tag,
+        .hljs-string {
+            font-size: .85rem;
         }
     }
 }

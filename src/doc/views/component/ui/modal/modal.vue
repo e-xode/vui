@@ -11,9 +11,21 @@
                             {{ $t('page.component.modal.example-1') }}
                         </template>
                         <template #body>
-                            <vui-modal />
+                            <vui-modal
+                                :visible="isVisible"
+                                v-bind="example.props"
+                                :onClose="onClose"
+                                :title="$t('page.component.modal.title')"
+                            >
+                                <template #body>
+                                    <p>
+                                        {{ $t('page.component.modal.content') }}
+                                    </p>
+                                </template>
+                            </vui-modal>
                             <vui-button
-                                :text="$t('page.component.modal.click-top-open')"
+                                :text="$t('page.component.modal.click-to-open')"
+                                @click="onClick"
                             />
                         </template>
                     </vui-card>
@@ -24,21 +36,15 @@
                 </template>
             </vui-grid-unit>
             <vui-grid-unit class="api-options">
-                <vui-card>
-                    <template #header>
-                        <h2 class="title">
-                            {{ $t('page.component.h2.api') }}
-                        </h2>
-                    </template>
-                    <template #body>
-                        <vui-table
-                            item-label="label"
-                            item-value="value"
-                            :headers="docHeaders"
-                            :items="docItems(doc)"
-                        />
-                    </template>
-                </vui-card>
+                <h2 class="title">
+                    {{ $t('page.component.h2.api') }}
+                </h2>
+                <vui-table
+                    item-label="label"
+                    item-value="value"
+                    :headers="docHeaders"
+                    :items="docAttrs(doc)"
+                />
             </vui-grid-unit>
         </vui-grid>
     </div>

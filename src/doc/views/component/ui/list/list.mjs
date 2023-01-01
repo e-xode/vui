@@ -3,7 +3,7 @@ import {
     translatable
 } from '@/composables/index.mjs'
 
-import VuiInput from '@/components/ui/list/list.vue'
+import VuiList from '@/components/ui/list/list.vue'
 import langs from '@/doc/views/component/ui/list/translate/index.mjs'
 import doc from '@/doc/views/component/ui/list/list.doc.mjs'
 
@@ -21,8 +21,11 @@ export default {
         }
     },
     computed: {
+        doc () {
+            return doc
+        },
         examples() {
-            return this.docExamples(VuiInput, doc)
+            return this.docExamples(VuiList, doc)
         }
     },
     methods: {

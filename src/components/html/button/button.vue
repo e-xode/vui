@@ -1,6 +1,6 @@
 <template>
     <div
-        :id="identifier"
+        :id="componentId"
         :class="[
             'vui-button',
             { 'vui-button--with-icon' : icon },
@@ -12,6 +12,7 @@
         @click.stop="onClick"
     >
         <button
+            class="vui-button-holder"
             :disabled="disabled"
             :type="type"
         >

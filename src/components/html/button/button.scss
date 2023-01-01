@@ -7,33 +7,29 @@
     display: inline-flex;
     padding: .5rem 1rem .5rem 1rem;
     justify-content: center;
-    cursor: pointer;
+    color: $vui-color-grey-dark;
     border-radius: .5rem;
+    cursor: pointer;
 
     &.vui-button--with-icon {
-        padding-left: 2.5rem;
+        padding-left: 3rem;
     }
 
-    &.vui-button--with-icon {
-        padding-left: 2.5rem;
-    }
-
-    &.vui-button--with-icon {
-        padding-left: 2.5rem;
-    }
-
-    button {
+    .vui-button-holder {
         position: relative;
+        padding-top: .07rem;
         line-height: 1rem;
         background-color: transparent;
         font-size: .85rem;
         font-weight: 600;
+        color: $vui-color-grey-dark;
         text-transform: uppercase;
+        cursor: pointer;
 
         .vui-button-icon {
             position: absolute;
-            top: 0;
-            left: -1.5rem;
+            top: -.15;
+            left: -2rem;
             font-size: 1.1rem;
             margin-right: .75rem;
             color: $vui-color-grey-dark;
@@ -49,12 +45,32 @@
         background-color: transparent;
     }
 
+    &:hover {
+        button {
+            color: $vui-color-grey-extra-dark;
+
+            .vui-button-icon {
+                color: $vui-color-grey-extra-dark;
+            }
+        }
+    }
+
     &.vui-button--loading {
         .vui-button-loader {
             animation: linear infinite;
             animation-name: loading;
             animation-duration: .8s;
-            background-color: $vui-color-grey-dark;
+            background-color: $vui-color-grey-extra-dark;
+        }
+    }
+
+    &.vui-button--toggled {
+        button {
+            color: $vui-color-grey-extra-dark;
+
+            .vui-button-icon {
+                color: $vui-color-grey-extra-dark;
+            }
         }
     }
 
@@ -64,10 +80,10 @@
         cursor: default;
 
         button {
-            color: $vui-color-grey-dark;
+            color: $vui-color-grey-extra-dark;
 
             .vui-button-icon {
-                color: $vui-color-grey-dark;
+                color: $vui-color-grey-extra-dark;
             }
         }
     }

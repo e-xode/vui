@@ -2,23 +2,13 @@
 
 .view-dropdown {
     .vui-grid {
-        .vui-unit.examples {
-            .vui-card {
-                margin-bottom: 2rem;
-
-                .vui-card-body {
-                    display: flex;
-                    flex-flow: column;
-                }
-            }
-        }
-
-        .vui-unit.api-options {
-            .vui-card {
+        .vui-grid-unit.examples {
+            .vui-dropdown {
+                min-width: 400px;
             }
 
-            h2 {
-                text-align: center;
+            .highlighted-code {
+                margin-bottom: 2.5rem;
             }
         }
     }

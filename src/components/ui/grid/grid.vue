@@ -1,6 +1,6 @@
 <template>
     <div
-        :id="identifier"
+        :id="componentId"
         class="vui-grid"
     >
         <slot />

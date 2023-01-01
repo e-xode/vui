@@ -1,5 +1,14 @@
 {
     "page.component.modal.example-1": "modal example",
-    "page.component.modal.click-top-open": "click to open",
-    "page.component.card.doc.tag.loading": "Binds the loading state"
+    "page.component.modal.click-to-open": "click to open",
+    "page.component.modal.content": "My modal content",
+    "page.component.modal.title": "My modal title",
+    "page.component.modal.doc.tag.loading": "Binds the loading state",
+    "page.component.modal.doc.tag.onClose": "Function to execute when modal is closed",
+    "page.component.modal.doc.tag.onOpen": "Function to execute when modal is opened",
+    "page.component.modal.doc.tag.showFooter": "Enables the modal footer",
+    "page.component.modal.doc.tag.showFooterClose": "Displays close button in the modal footer",
+    "page.component.modal.doc.tag.showHeader": "Enables the modal header",
+    "page.component.modal.doc.tag.showHeaderClose": "Display the close button in the modal header",
+    "page.component.modal.doc.tag.visible": "Binds the visible state of the modal"
 }

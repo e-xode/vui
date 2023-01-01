@@ -2,43 +2,31 @@
     <div class="view-dropdown">
         <vui-grid>
             <vui-grid-unit class="examples">
-                <vui-card
+                <template
                     v-for="(example,i) in examples"
                     :key="`dropdown-sample--${i}`"
                 >
-                    <template #header>
-                        <span class="title">
-                            {{ $t(example.title) }}
-                        </span>
-                    </template>
-                    <template #body>
-                        <component
-                            :is="example.component"
-                            v-bind="example.props"
-                        />
-                        <div
-                            class="highlighted-code"
-                            v-html="example.highlighted"
-                        />
-                    </template>
-                </vui-card>
+                <component
+                    :is="example.component"
+                    v-bind="example.props"
+                    :placeholder="$t(example.title)"
+                />
+                <div
+                    class="highlighted-code"
+                    v-html="example.highlighted"
+                />
+                </template>
             </vui-grid-unit>
             <vui-grid-unit class="api-options">
-                <vui-card>
-                    <template #header>
-                        <h2 class="title">
-                            {{ $t('page.component.h2.api') }}
-                        </h2>
-                    </template>
-                    <template #body>
-                        <vui-table
-                            item-label="label"
-                            item-value="value"
-                            :headers="docHeaders"
-                            :items="docItems(doc)"
-                        />
-                    </template>
-                </vui-card>
+                <h2 class="title">
+                    {{ $t('page.component.h2.api') }}
+                </h2>
+                <vui-table
+                    item-label="label"
+                    item-value="value"
+                    :headers="docHeaders"
+                    :items="docAttrs(doc)"
+                />
             </vui-grid-unit>
         </vui-grid>
     </div>

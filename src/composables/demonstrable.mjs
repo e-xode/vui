@@ -21,7 +21,7 @@ const demonstrable = {
         }
     },
     methods: {
-        docItems (doc) {
+        docAttrs (doc) {
             return doc.attrs.map((item) => ({
                 ...item,
                 text: this.$t(item.text)

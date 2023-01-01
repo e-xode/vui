@@ -4,6 +4,7 @@
         "label": "Button",
         "name": "vui-button",
         "path": "./components/html/button/button.vue",
+        "type": "html",
         "doc": {
             "name": "view-button",
             "path": "./views/component/html/button/button.vue"
@@ -14,6 +15,7 @@
         "label": "Card",
         "name": "vui-card",
         "path": "./components/ui/card/card.vue",
+        "type": "ui",
         "doc": {
             "name": "view-card",
             "path": "./views/component/ui/card/card.vue"
@@ -24,6 +26,7 @@
         "label": "Dropdown",
         "name": "vui-dropdown",
         "path": "./components/ui/dropdown/dropdown.vue",
+        "type": "ui",
         "doc": {
             "name": "view-dropdown",
             "path": "./views/component/ui/dropdown/dropdown.vue"
@@ -34,6 +37,7 @@
         "label": "Footer",
         "name": "vui-footer",
         "path": "./components/html/footer/footer.vue",
+        "type": "html",
         "doc": {
             "name": "view-footer",
             "path": "./views/component/html/footer/footer.vue"
@@ -44,6 +48,7 @@
         "label": "Form",
         "name": "vui-form",
         "path": "./components/html/form/form.vue",
+        "type": "html",
         "doc": {
             "name": "view-form",
             "path": "./views/component/html/form/form.vue"
@@ -54,6 +59,7 @@
         "label": "Header",
         "name": "vui-header",
         "path": "./components/html/header/header.vue",
+        "type": "html",
         "doc": {
             "name": "view-header",
             "path": "./views/component/html/header/header.vue"
@@ -64,6 +70,7 @@
         "label": "Grid",
         "name": "vui-grid",
         "path": "./components/ui/grid/grid.vue",
+        "type": "ui",
         "doc": {
             "name": "view-grid",
             "path": "./views/component/ui/grid/grid.vue"
@@ -74,6 +81,7 @@
         "label": "Grid unit",
         "name": "vui-grid-unit",
         "path": "./components/ui/grid/unit/unit.vue",
+        "type": "ui",
         "doc": {
             "name": "view-grid-unit",
             "path": "./views/component/ui/grid/unit/unit.vue"
@@ -84,6 +92,7 @@
         "label": "Input",
         "name": "vui-input",
         "path": "./components/html/input/input.vue",
+        "type": "html",
         "doc": {
             "name": "view-input",
             "path": "./views/component/html/input/input.vue"
@@ -94,6 +103,7 @@
         "label": "List",
         "name": "vui-list",
         "path": "./components/ui/list/list.vue",
+        "type": "ui",
         "doc": {
             "name": "view-list",
             "path": "./views/component/ui/list/list.vue"
@@ -104,6 +114,7 @@
         "label": "Modal",
         "name": "vui-modal",
         "path": "./components/ui/modal/modal.vue",
+        "type": "ui",
         "doc": {
             "name": "view-modal",
             "path": "./views/component/ui/modal/modal.vue"
@@ -114,6 +125,7 @@
         "label": "Page",
         "name": "vui-page",
         "path": "./components/ui/page/page.vue",
+        "type": "ui",
         "doc": {
             "name": "view-page",
             "path": "./views/component/ui/page/page.vue"
@@ -124,6 +136,7 @@
         "label": "Table",
         "name": "vui-table",
         "path": "./components/html/table/table.vue",
+        "type": "html",
         "doc": {
             "name": "view-table",
             "path": "./views/component/html/table/table.vue"
@@ -134,6 +147,7 @@
         "label": "Tag",
         "name": "vui-tag",
         "path": "./components/ui/tag/tag.vue",
+        "type": "ui",
         "doc": {
             "name": "view-tag",
             "path": "./views/component/ui/tag/tag.vue"

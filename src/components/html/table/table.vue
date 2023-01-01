@@ -1,13 +1,13 @@
 <template>
     <table
-        :id="identifier"
+        :id="componentId"
         class="vui-table"
     >
         <thead>
             <tr>
                 <th
                     v-for="(th, a) in headers"
-                    :key="`table-${identifier}-header--${a}`"
+                    :key="`table-${componentId}-header--${a}`"
                 >
                     {{ th[itemLabel] }}
                 </th>
@@ -16,11 +16,11 @@
         <tbody>
             <tr
                 v-for="(td, b) in items"
-                :key="`table-${identifier}-item--${b}`"
+                :key="`table-${componentId}-item--${b}`"
             >
                 <td
                     v-for="(item, c) in headers"
-                    :key="`table-${identifier}-item-td--${c}`"
+                    :key="`table-${componentId}-item-td--${c}`"
                 >
                     {{ td[headers[c][itemValue]] }}
                 </td>

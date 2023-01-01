@@ -1,5 +1,50 @@
 @import "@/scss/import.scss";
 
 .vui-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2rem;
+    background-color: $vui-color-grey-light;
+    z-index: 3;
 
+    .vui-modal-content {
+        display: flex;
+        flex-flow: column;
+        min-height: calc(100vh - 4rem);
+        background-color: $vui-color-white;
+        border-radius: .25rem;
+        @include vui-box-shadow;
+
+        .vui-modal-content-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            font-size: 1.15rem;
+            line-height: 1.2rem;
+            font-weight: 500;
+            text-transform: none;
+            background-color: $vui-color-grey-extra-light;
+            border-bottom: 1px solid $vui-color-grey-light;
+
+            .fa-regular.fa-circle-xmark {
+                font-size: 1.2rem;
+                cursor: pointer;
+            }
+        }
+
+        .vui-modal-content-body {
+            flex: 1 1 auto;
+            padding: 2rem 1rem;
+        }
+
+        .vui-modal-content-footer {
+            padding: .5rem 1rem .5rem 1rem;
+            text-align: center;
+            background-color: $vui-color-grey-extra-light;
+            border-top: 1px solid $vui-color-grey-light;
+        }
+    }
 }

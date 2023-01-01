@@ -1,5 +1,6 @@
 {
-    "page.index.h1": "Another yet Vue library",
+    "page.index.h1": "Yet another Vue library",
     "page.index.description": "VUI is built for developers wanting to quickly setup and customize their vue application",
-    "page.index.button": "Get started"
+    "page.index.get-started": "Get started",
+    "page.index.github": "Github"
 }

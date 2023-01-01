@@ -2,35 +2,31 @@
     <div class="view-table">
         <vui-grid>
             <vui-grid-unit class="examples">
-                <vui-card
+                <template
                     v-for="(example) in examples"
                     :key="`button-${example.props.id}`"
                 >
-                    <template #header>
-                        <span class="title">
-                            {{ $t(example.title) }}
-                        </span>
-                    </template>
-                    <template #body>
-                        <component
-                            :is="example.component"
-                            v-bind="example.props"
-                        />
-                        <div
-                            class="highlighted-code"
-                            v-html="example.highlighted"
-                        />
-                    </template>
-                </vui-card>
+                    <vui-card>
+                        <template #header>
+                            <span class="title">
+                                {{ $t(example.title) }}
+                            </span>
+                        </template>
+                    </vui-card>
+                    <component
+                        :is="example.component"
+                        v-bind="example.props"
+                    />
+                    <div
+                        class="highlighted-code"
+                        v-html="example.highlighted"
+                    />
+                </template>
             </vui-grid-unit>
             <vui-grid-unit>
-                <vui-card>
-                    <template #header>
-                        <h2 class="title">
-                            {{ $t('page.component.h2.api') }}
-                        </h2>
-                    </template>
-                </vui-card>
+                <h2 class="title">
+                    {{ $t('page.component.h2.api') }}
+                </h2>
             </vui-grid-unit>
         </vui-grid>
     </div>

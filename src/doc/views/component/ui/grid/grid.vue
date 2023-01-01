@@ -23,7 +23,7 @@
                             item-label="label"
                             item-value="value"
                             :headers="docHeaders"
-                            :items="docItems(doc)"
+                            :items="docAttrs(doc)"
                         />
                     </template>
                 </vui-card>

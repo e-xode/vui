@@ -1,6 +1,6 @@
 <template>
     <header
-        :id="identifier"
+        :id="componentId"
         class="vui-header"
     >
         <slot />

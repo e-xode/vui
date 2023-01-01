@@ -25,7 +25,7 @@ export default {
     },
     methods: {
         outclick ()  {
-            this.$bus.emit('outclick', this.identifier)
+            this.$bus.emit('outclick', this.componentGroupId)
         }
     },
     components: {

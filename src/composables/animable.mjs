@@ -1,5 +1,5 @@
 const options = {
-    duration: 150
+    duration: 125
 }
 const animable = {
     inject: ['$bus'],
@@ -13,8 +13,8 @@ const animable = {
         this.$bus.off('outclick')
     },
     created () {
-        this.$bus.on('outclick', (identifier) => {
-            if (identifier !== this.identifier) {
+        this.$bus.on('outclick', (groupId) => {
+            if (this.toggled && this.componentGroupId !== groupId) {
                 this.blur()
             }
         })
@@ -33,11 +33,11 @@ const animable = {
         },
         focus () {
             this.toggled = true
-            this.$bus.emit('outclick', this.identifier)
+            this.$bus.emit('outclick', this.componentGroupId)
         },
-        onAnimate () {
+        onAnimate (open = false) {
             this.animate()
-            if (!this.toggled) {
+            if (open || !this.toggled) {
                 this.focus()
             } else {
                 this.blur()

@@ -14,6 +14,33 @@ export default {
         return {}
     },
     props: {
+        loading: {
+            type: Boolean
+        },
+        onClose: {
+            type: Function
+        },
+        onOpen: {
+            type: Function
+        },
+        showFooter: {
+            type: Boolean
+        },
+        showFooterClose: {
+            type: Boolean
+        },
+        showHeader: {
+            type: Boolean
+        },
+        showHeaderClose: {
+            type: Boolean
+        },
+        title: {
+            type: String
+        },
+        visible: {
+            type: Boolean
+        }
     },
     mounted() {
     },
@@ -22,9 +49,17 @@ export default {
         }
     },
     computed: {
+        isHeaderVisible () {
+            return !!this.$slots.header ||
+                this.showHeader ||
+                this.showHeaderClose
+        },
+        isFooterVisible () {
+            return !!this.$slots.footer ||
+                this.showFooter ||
+                this.showFooterClose
+        }
     },
     methods: {
-    },
-    components: {
     }
 }
