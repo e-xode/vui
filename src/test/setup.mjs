@@ -22,6 +22,7 @@ export default {
         stubs: {
             RouterLink: RouterLinkStub,
             RouterView: RouterViewStub,
+            'vui-button': true,
             'vui-list': true
         },
         directives: {

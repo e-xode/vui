@@ -44,7 +44,5 @@ export default {
                 this.onAnimate()
             }
         }
-    },
-    components: {
     }
 }

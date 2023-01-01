@@ -63,7 +63,5 @@ export default {
             this.$emit('input', selected)
             this.blur()
         }
-    },
-    components: {
     }
 }
