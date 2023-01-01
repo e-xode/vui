@@ -3,6 +3,9 @@ const composable = {
         id: {
             type: String
         },
+        groupId: {
+            type: String
+        },
         loading: {
             type: Boolean
         }
@@ -18,9 +21,14 @@ const composable = {
         }
     },
     computed: {
-        identifier () {
+        componentId () {
             return this.id
                 ? this.id
+                : this.uuid
+        },
+        componentGroupId () {
+            return this.groupId
+                ? this.groupId
                 : this.uuid
         }
     }

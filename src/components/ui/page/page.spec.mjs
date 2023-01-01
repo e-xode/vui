@@ -26,12 +26,12 @@ describe('components/Page.vue', () => {
 
     it('Should emit outclick', () => {
         const component = mountComponent()
-        const { identifier } = component.vm
+        const { componentGroupId } = component.vm
         const emit = jest.spyOn(component.vm.$bus, 'emit')
 
         component.vm.outclick()
 
-        expect(emit).toHaveBeenCalledWith('outclick', identifier)
+        expect(emit).toHaveBeenCalledWith('outclick', componentGroupId)
 
     })
 })

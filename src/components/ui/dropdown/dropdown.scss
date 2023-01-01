@@ -6,14 +6,14 @@
     min-width: 200px;
     border-radius: .25rem;
 
-    .ui-dropdown-placeholder {
-        @include animate('ui-dropdown-placeholder');
+    .vui-dropdown-placeholder {
+        @include animate('vui-dropdown-placeholder');
         @include vui-box-shadow;
         width: 100%;
         padding: .5rem .5rem .5rem 1rem;
         cursor: pointer;
 
-        .ui-dropdown-placeholder-label {
+        .vui-dropdown-placeholder-label {
         }
 
         &:before {
@@ -25,7 +25,7 @@
         }
     }
 
-    .vui-list.ui-dropdown-list {
+    .vui-list.vui-dropdown-list {
         position: absolute;
         top: 2.2rem;
         left: 0;

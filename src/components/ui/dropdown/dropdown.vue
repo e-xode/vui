@@ -1,29 +1,32 @@
 <template>
     <div
-        :id="identifier"
+        :id="componentId"
         class="vui-dropdown"
     >
         <div
             :class="[
-                'ui-dropdown-placeholder',
-                { 'ui-dropdown-placeholder--toggled': toggled },
-                { 'ui-dropdown-placeholder--animating': animating },
-                { 'ui-dropdown-placeholder--disabled': disabled }
+                'vui-dropdown-placeholder',
+                { 'vui-dropdown-placeholder--toggled': toggled },
+                { 'vui-dropdown-placeholder--animating': animating },
+                { 'vui-dropdown-placeholder--disabled': disabled }
             ]"
-            @click.stop="onAnimate"
+            @click.stop="onClick"
         >
-            <span class="ui-dropdown-placeholder-label">
+            <span class="vui-dropdown-placeholder-label">
                 {{ placeholderValue }}
             </span>
         </div>
         <vui-list
             v-if="toggled"
+            class="vui-dropdown-list"
+            :group-id="componentGroupId"
+            :disabled="disabled"
             :items="items"
             :item-label="itemLabel"
             :item-value="itemValue"
+            :selectable="true"
             :title="listTitle"
             :value="selected"
-            class="ui-dropdown-list"
             @input="toggleItem"
         />
     </div>

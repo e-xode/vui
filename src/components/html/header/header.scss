@@ -2,7 +2,8 @@
 
 .vui-header {
     padding: 1rem;
-    border-bottom: 1px solid $vui-color-grey-light;
+    background-color: $vui-color-grey-light;
+    border-bottom: 1px solid $vui-color-grey;
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
 }

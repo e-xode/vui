@@ -1,5 +1,7 @@
 {
     "component.footer.copyright": "Powered by",
     "component.header.home": "Home",
-    "component.header.dropdown.components": "List of components"
+    "component.header.dropdown.components": "List of components",
+    "component.header.dropdown.components.html": "HTML components",
+    "component.header.dropdown.components.ui": "UI components"
 }

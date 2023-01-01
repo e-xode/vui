@@ -18,20 +18,23 @@
     background-repeat: no-repeat;
     background-size: 0 0;
     background-position: 50% 50%;
-    transition: background-size .15s, color .15s;
+    transition: background-size .125s, color .125s;
     border: 1px solid transparent;
     border-radius: .25rem;
 
-    &.#{$class}--toggled,
     &:hover {
+        background-color: $vui-color-grey-light;
+    }
+
+    &.#{$class}--toggled {
         background-color: $vui-color-grey-light;
     }
 
     &.#{$class}--animating {
         background-size: 100% 100%;
         background-image: linear-gradient(
-            lighten($vui-color-grey-light, 5%),
-            lighten($vui-color-grey-light, 5%)
+            $vui-color-grey-extra-light,
+            $vui-color-grey-extra-light
         );
     }
 }

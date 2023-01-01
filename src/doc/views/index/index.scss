@@ -11,7 +11,6 @@
     .fa-brands.fa-vuejs {
         display: block;
         font-size: 15rem;
-        line-height: 15rem;
         color: $vui-color-green;
     }
 
@@ -25,6 +24,23 @@
     }
 
     .vui-button {
-        margin: 1rem auto;
+        margin: 1rem;
+
+        &.vui-button--get-started {
+
+        }
+
+        &.vui-button--github {
+            background-color: $vui-color-black;
+
+            .vui-button-holder,
+            .vui-button-icon {
+                color: $vui-color-grey-light;
+            }
+
+            &:hover {
+                background-color: lighten($vui-color-black, 30%);
+            }
+        }
     }
 }

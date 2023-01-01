@@ -1,39 +1,44 @@
 @import "@/scss/import.scss";
 
-.layout-default {
+.vui-page.layout-default {
 
-    .vui-header {
-        display: flex;
-        justify-content: space-between;
-        background-color: $vui-color-green-light;
-        border-bottom: 1px solid $vui-color-green;
+    > .vui-page-header {
+        padding: 0;
 
-        .home {
-            position: relative;
-            padding-left: 1.5rem;
-            line-height: 2.1rem;
-            color: $vui-color-green-dark;
-            cursor: pointer;
+        .vui-header {
+            display: flex;
+            justify-content: space-between;
+            background-color: $vui-color-green-light;
+            border-bottom: 1px solid $vui-color-green;
 
-            &:before {
-                @include vui-glyph-solid;
-                position: absolute;
-                top: -.1rem;
-                left: 0;
-                content: '\f015';
+            .home {
+                position: relative;
+                padding-left: 1.5rem;
+                line-height: 2.1rem;
+                color: $vui-color-green-dark;
+                cursor: pointer;
+
+                &:before {
+                    @include vui-glyph-solid;
+                    position: absolute;
+                    top: -.1rem;
+                    left: 0;
+                    content: '\f015';
+                }
             }
         }
     }
 
-    .vui-footer {
-        text-align: right;
-        background-color: $vui-color-grey-light;
-        border-top: 1px solid $vui-color-grey;
+    > .vui-page-footer {
+        padding: 0;
 
-        .copyright {
+        .vui-footer {
 
-            a {
-                color: $vui-color-blue-dark;
+            .copyright {
+
+                a {
+                    color: $vui-color-blue-dark;
+                }
             }
         }
     }

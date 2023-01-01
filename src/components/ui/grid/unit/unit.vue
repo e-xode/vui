@@ -1,6 +1,6 @@
 <template>
     <div
-        class="vui-unit"
+        class="vui-grid-unit"
         :style="style"
     >
         <slot />

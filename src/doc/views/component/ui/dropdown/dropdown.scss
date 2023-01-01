@@ -1,0 +1,15 @@
+@import "@/scss/import.scss";
+
+.view-dropdown {
+    .vui-grid {
+        .vui-grid-unit.examples {
+            .vui-dropdown {
+                min-width: 400px;
+            }
+
+            .highlighted-code {
+                margin-bottom: 2.5rem;
+            }
+        }
+    }
+}

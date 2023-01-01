@@ -2,7 +2,7 @@
     <div class="vui-input">
         <input
             v-bind="$attrs"
-            :id="identifier"
+            :id="componentId"
             :disabled="disabled"
             :placeholder="placeholderValue"
             :type="type"

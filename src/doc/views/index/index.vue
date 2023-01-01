@@ -10,10 +10,20 @@
             </p>
         </div>
         <vui-button
+            class="vui-button--get-started"
             icon="fa-sharp fa-solid fa-book-open-reader"
         >
-            {{ $t('page.index.button') }}
+            {{ $t('page.index.get-started') }}
         </vui-button>
+        <a
+            class="vui-button vui-button--with-icon vui-button--github"
+            href="https://github.com/e-xode/v-ui"
+        >
+            <span class="vui-button-holder">
+                <i class="vui-button-icon fa-brands fa-github" />
+                {{ $t('page.index.github') }}
+            </span>
+        </a>
     </div>
 </template>
 

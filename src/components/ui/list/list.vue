@@ -1,6 +1,6 @@
 <template>
     <div
-        :id="identifier"
+        :id="componentId"
         class="vui-list"
     >
         <div
@@ -9,32 +9,81 @@
         >
             {{ title }}
         </div>
-        <ul class="vui-list-items">
-            <li
+        <div class="vui-list-items">
+            <div
                 v-for="(item, index) in items"
-                :key="`item--${index}`"
+                :key="`list-item-${index}`"
                 :class="[
-                    'vui-list-items-item',
-                    { 'vui-list-items-item--selected': isSelected(item) }
+                    { 'vui-list-items-item': !isGroup(item) },
+                    { 'vui-list-items-group-item': isGroup(item) }
                 ]"
-                @click="() => onClick(item)"
             >
-                <span class="vui-list-items-item-label">
-                    <i
-                        v-if="item.icon"
+                <template v-if="!isGroup(item)">
+                    <div
+                        :class="[
+                            { 'vui-list-items-item-label': !isGroup(item) },
+                            { 'vui-list-items-item-label--selectable': selectable },
+                            { 'vui-list-items-item-label--selected': isSelected(item) }
+                        ]"
+                        @click="() => onClick(item)"
+                    >
+                        <i
+                            v-if="item.icon"
+                            :class="[
+                                'vui-list-items-item-label-icon',
+                                item.icon
+                            ]"
+                        />
+                        {{
+                            itemValue
+                                ? item[itemLabel]
+                                : item
+                        }}
+                    </div>
+                </template>
+                <template v-if="isGroup(item)">
+                    <div
+                        :class="[
+                            'vui-list-items-item-group-label',
+                            { 'vui-list-items-item-group-label--toggled': isToggled(index) },
+                            { 'vui-list-items-item-group-label--animating': isAnimating(index) },
+                            { 'vui-list-items-item-group-label--open': open === index }
+                        ]"
+                        @click.stop="() => onToggle(index)"
+                    >
+                        {{
+                            itemValue
+                                ? item[itemLabel]
+                                : item
+                        }}
+                    </div>
+                    <div
+                        v-if="open === index"
+                        v-for="(item, j) in item[itemValue]"
+                        :key="`list-group-item-${j}`"
                         :class="[
                             'vui-list-items-item-label',
-                            item.icon
+                            { 'vui-list-items-item-label--selectable': selectable },
+                            { 'vui-list-items-item-label--selected': isSelected(item) },
                         ]"
-                    />
-                    {{
-                        itemValue
-                            ? item[itemLabel]
-                            : item
-                    }}
-                </span>
-            </li>
-        </ul>
+                        @click="() => onClick(item)"
+                    >
+                        <i
+                            v-if="item.icon"
+                            :class="[
+                                'vui-list-items-item-label-icon',
+                                item.icon
+                            ]"
+                        />
+                        {{
+                            itemValue
+                                ? item[itemLabel]
+                                : item
+                        }}
+                    </div>
+                </template>
+            </div>
+        </div>
     </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
     <footer
-        :id="identifier"
+        :id="componentId"
         class="vui-footer"
     >
         <slot />
