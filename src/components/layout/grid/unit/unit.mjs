@@ -1,11 +1,11 @@
-import langs from '@/components/ui/grid/translate/index.mjs'
+import langs from '@/components/layout/grid/unit/translate/index.mjs'
 import {
     composable,
     translatable
 } from '@/composables/index.mjs'
 
 export default {
-    name: 'VuiGrid',
+    name: 'VuiGridUnit',
     mixins: [
         composable
     ],
@@ -14,6 +14,10 @@ export default {
         return {}
     },
     props: {
+        flex: {
+            type: String,
+            default: '0 0 49%'
+        }
     },
     mounted() {
     },
@@ -22,6 +26,12 @@ export default {
         }
     },
     computed: {
+        style () {
+            const {  flex } = this
+            return [
+                { flex }
+            ]
+        }
     },
     methods: {
     },

@@ -69,22 +69,22 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Grid",
         "name": "vui-grid",
-        "path": "./components/ui/grid/grid.vue",
-        "type": "ui",
+        "path": "./components/layout/grid/grid.vue",
+        "type": "layout",
         "doc": {
             "name": "view-grid",
-            "path": "./views/component/ui/grid/grid.vue"
+            "path": "./views/component/layout/grid/grid.vue"
         }
     },
     {
         "icon": "fa-brands fa-vuejs",
         "label": "Grid unit",
         "name": "vui-grid-unit",
-        "path": "./components/ui/grid/unit/unit.vue",
-        "type": "ui",
+        "path": "./components/layout/grid/unit/unit.vue",
+        "type": "layout",
         "doc": {
             "name": "view-grid-unit",
-            "path": "./views/component/ui/grid/unit/unit.vue"
+            "path": "./views/component/layout/grid/unit/unit.vue"
         }
     },
     {
@@ -151,6 +151,17 @@
         "doc": {
             "name": "view-tag",
             "path": "./views/component/ui/tag/tag.vue"
+        }
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
+        "label": "Tooltip",
+        "name": "vui-tooltip",
+        "path": "./components/ui/tooltip/tooltip.vue",
+        "type": "ui",
+        "doc": {
+            "name": "view-tooltip",
+            "path": "./views/component/ui/tooltip/tooltip.vue"
         }
     }
 ]

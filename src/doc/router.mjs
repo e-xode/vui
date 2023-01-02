@@ -29,6 +29,13 @@ const routes = [
             },
             {
                 component: () => import(
+                    '@/doc/views/start/start.vue'
+                ),
+                name: 'ViewStart',
+                path: 'start'
+            },
+            {
+                component: () => import(
                     '@/doc/views/index/index.vue'
                 ),
                 name: 'ViewIndex',

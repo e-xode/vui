@@ -21,12 +21,9 @@
                 position: relative;
                 padding: .75rem;
                 border-radius: 0;
+                border-top: 1px solid $vui-color-grey-light;
+                border-bottom: 1px solid $vui-color-grey-light;
                 cursor: pointer;
-
-                &:first-of-type {
-                    border-top: 1px solid $vui-color-grey-light;
-                    border-bottom: 1px solid $vui-color-grey-light;
-                }
 
                 &:after {
                     @include vui-glyph-solid;
@@ -34,6 +31,16 @@
                     position: absolute;
                     top: .75rem;
                     right: 1rem;
+                }
+
+                &:hover {
+                    border-top: 1px solid $vui-color-grey;
+                    border-bottom: 1px solid $vui-color-grey;
+                }
+
+                &.vui-list-items-item-group-label--toggled {
+                    border-top: 1px solid $vui-color-grey;
+                    border-bottom: 1px solid $vui-color-grey;
                 }
 
                 &.vui-list-items-item-group-label--open {
@@ -54,6 +61,7 @@
 
             &:hover {
                 background-color: $vui-color-grey-light;
+                border-bottom: 1px solid $vui-color-grey;
             }
 
             &.vui-list-items-item-label--selectable {
