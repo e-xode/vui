@@ -2,9 +2,9 @@ import {
     translatable
 } from '@/composables/index.mjs'
 
-import langs from '@/doc/views/index/translate/index.mjs'
+import langs from '@/doc/views/start/translate/index.mjs'
 export default {
-    name: 'ViewIndex',
+    name: 'ViewStart',
     setup () {
         translatable(langs)
         return {

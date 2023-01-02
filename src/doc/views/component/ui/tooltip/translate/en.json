@@ -1,0 +1,6 @@
+{
+    "page.component.tooltip.button.show": "click to show",
+    "page.component.tooltip.text-1": "My tooltip content",
+    "page.component.tooltip.text-2": "My tooltip content",
+    "page.component.tooltip.doc.tooltip.icon": "Class name of the icon to prepend"
+}

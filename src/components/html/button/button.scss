@@ -5,9 +5,8 @@
     @include animate('vui-button');
     position: relative;
     display: inline-flex;
-    padding: .5rem 1rem .5rem 1rem;
+    padding: 0 1rem;
     justify-content: center;
-    color: $vui-color-grey-dark;
     border-radius: .5rem;
     cursor: pointer;
 
@@ -17,20 +16,20 @@
 
     .vui-button-holder {
         position: relative;
-        padding-top: .07rem;
-        line-height: 1rem;
-        background-color: transparent;
+        margin-top: .15rem;
         font-size: .85rem;
         font-weight: 600;
-        color: $vui-color-grey-dark;
+        line-height: 2rem;
+        color: $vui-color-grey-extra-dark;
+        background-color: transparent;
         text-transform: uppercase;
         cursor: pointer;
 
         .vui-button-icon {
             position: absolute;
-            top: -.15;
-            left: -2rem;
-            font-size: 1.1rem;
+            top: .45rem;
+            left: -1.5rem;
+            font-size: 1rem;
             margin-right: .75rem;
             color: $vui-color-grey-dark;
         }
@@ -47,10 +46,7 @@
 
     &:hover {
         button {
-            color: $vui-color-grey-extra-dark;
-
             .vui-button-icon {
-                color: $vui-color-grey-extra-dark;
             }
         }
     }
@@ -66,10 +62,7 @@
 
     &.vui-button--toggled {
         button {
-            color: $vui-color-grey-extra-dark;
-
             .vui-button-icon {
-                color: $vui-color-grey-extra-dark;
             }
         }
     }
@@ -81,9 +74,10 @@
 
         button {
             color: $vui-color-grey-extra-dark;
+            cursor: default;
 
             .vui-button-icon {
-                color: $vui-color-grey-extra-dark;
+                color: $vui-color-grey-dark;
             }
         }
     }

@@ -14,7 +14,7 @@ export default {
             const list = components.reduce((list, component) => {
                 list[component.type].push(component)
                 return list
-            }, { html: [], ui: [] })
+            }, { html: [], layout:[], ui: [] })
             return Object.keys(list).map((key) => ({
                 label: this.$t(`component.header.dropdown.components.${key}`),
                 path: list[key]

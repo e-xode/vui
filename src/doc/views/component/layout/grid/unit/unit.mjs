@@ -3,9 +3,9 @@ import {
     translatable
 } from '@/composables/index.mjs'
 
-import VuiGridUnit from '@/components/ui/grid/unit/unit.vue'
-import langs from '@/doc/views/component/ui/grid/unit/translate/index.mjs'
-import doc from '@/doc/views/component/ui/grid/unit/unit.doc.mjs'
+import VuiGridUnit from '@/components/layout/grid/unit/unit.vue'
+import langs from '@/doc/views/component/layout/grid/unit/translate/index.mjs'
+import doc from '@/doc/views/component/layout/grid/unit/unit.doc.mjs'
 
 export default {
     name: 'ViewGridUnit',

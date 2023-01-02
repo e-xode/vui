@@ -9,12 +9,15 @@
                 {{ $t('page.index.description') }}
             </p>
         </div>
-        <vui-button
-            class="vui-button--get-started"
-            icon="fa-sharp fa-solid fa-book-open-reader"
+        <router-link
+            :to="{ name: 'ViewStart' }"
+            class="vui-button vui-button--with-icon vui-button--get-started"
         >
-            {{ $t('page.index.get-started') }}
-        </vui-button>
+            <span class="vui-button-holder">
+                <i class="vui-button-icon fa-solid fa-book-open-reader" />
+                {{ $t('page.index.get-started') }}
+            </span>
+        </router-link>
         <a
             class="vui-button vui-button--with-icon vui-button--github"
             href="https://github.com/e-xode/v-ui"

@@ -24,13 +24,16 @@
     }
 
     .vui-button {
+        display: inline-flex;
+        padding: .5rem 1rem;
         margin: 1rem;
 
         &.vui-button--get-started {
-
+            @include animate('vui-button--get-started');
         }
 
         &.vui-button--github {
+            @include animate('vui-button--get-started');
             background-color: $vui-color-black;
 
             .vui-button-holder,
