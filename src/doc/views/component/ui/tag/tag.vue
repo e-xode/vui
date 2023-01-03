@@ -6,14 +6,14 @@
                     v-for="(example) in examples"
                     :key="`button-${example.props.id}`"
                 >
-                <component
-                    :is="example.component"
-                    :text="$t(example.title) "
-                />
-                <div
-                    class="highlighted-code"
-                    v-html="example.highlighted"
-                />
+                    <component
+                        :is="example.component"
+                        :text="$t(example.title) "
+                    />
+                    <div
+                        class="highlighted-code"
+                        v-html="example.highlighted"
+                    />
                 </template>
             </vui-grid-unit>
             <vui-grid-unit>

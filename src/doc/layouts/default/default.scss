@@ -1,6 +1,7 @@
 @import "@/scss/import.scss";
 
 .vui-page.layout-default {
+    min-height: calc(100vh - 2rem);
 
     > .vui-page-header {
         padding: 0;

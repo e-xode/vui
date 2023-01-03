@@ -1,6 +1,5 @@
 <template>
-    <div class="view-start">
-    </div>
+    <div class="view-start" />
 </template>
 
 <script

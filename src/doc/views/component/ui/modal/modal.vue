@@ -14,7 +14,7 @@
                             <vui-modal
                                 :visible="isVisible"
                                 v-bind="example.props"
-                                :onClose="onClose"
+                                :on-close="onClose"
                                 :title="$t('page.component.modal.title')"
                             >
                                 <template #body>
