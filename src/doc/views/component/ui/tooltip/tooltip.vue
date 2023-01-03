@@ -6,21 +6,22 @@
                     v-for="(example, index) in examples"
                     :key="`button-${example.props.id}`"
                 >
-                <vui-button
-                    :id="`button-holder-${index}`"
-                    @click="() => onClick(index)"
-                    :text="$t('page.component.tooltip.button.show')"
-                />
-                <component
-                    :is="example.component"
-                    v-bind="example.props"
-                    :holder="`button-holder-${index}`"
-                    :visible="tooltips[index]"
-                />
-                <div
-                    class="highlighted-code"
-                    v-html="example.highlighted"
-                />
+                    <vui-button
+                        :id="`button-holder-${index}`"
+                        :ref="`button-holder-${index}`"
+                        :text="example.props.text"
+                        @click="() => onClick(index)"
+                    />
+                    <component
+                        :is="example.component"
+                        v-bind="example.props"
+                        :holder="$el.querySelector(`#button-holder-${index}`)"
+                        :visible="tooltips[index]"
+                    />
+                    <div
+                        class="highlighted-code"
+                        v-html="example.highlighted"
+                    />
                 </template>
             </vui-grid-unit>
             <vui-grid-unit>

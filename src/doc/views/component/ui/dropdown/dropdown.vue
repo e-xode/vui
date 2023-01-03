@@ -6,15 +6,15 @@
                     v-for="(example,i) in examples"
                     :key="`dropdown-sample--${i}`"
                 >
-                <component
-                    :is="example.component"
-                    v-bind="example.props"
-                    :placeholder="$t(example.title)"
-                />
-                <div
-                    class="highlighted-code"
-                    v-html="example.highlighted"
-                />
+                    <component
+                        :is="example.component"
+                        v-bind="example.props"
+                        :placeholder="$t(example.title)"
+                    />
+                    <div
+                        class="highlighted-code"
+                        v-html="example.highlighted"
+                    />
                 </template>
             </vui-grid-unit>
             <vui-grid-unit class="api-options">

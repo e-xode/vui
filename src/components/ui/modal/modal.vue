@@ -1,8 +1,8 @@
 <template>
     <div
+        v-if="visible"
         :id="componentId"
         class="vui-modal"
-        v-if="visible"
     >
         <div class="vui-modal-content">
             <div
@@ -23,7 +23,7 @@
                 <slot name="header" />
             </div>
             <div
-                v-if="!!this.$slots.body || !!this.$slots.default"
+                v-if="!!$slots.body || !!$slots.default"
                 class="vui-modal-content-body"
             >
                 <slot name="body" />
@@ -35,8 +35,8 @@
             >
                 <template v-if="showHeaderClose">
                     <vui-button
-                        @click="onClose"
                         :text="$t('component.button.close')"
+                        @click="onClose"
                     />
                 </template>
                 <slot name="footer" />

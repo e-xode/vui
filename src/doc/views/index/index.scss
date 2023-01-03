@@ -18,15 +18,16 @@
         p {
             max-width: 400px;
             margin: 0 auto;
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.2rem;
         }
     }
 
     .vui-button {
-        display: inline-flex;
-        padding: .5rem 1rem;
         margin: 1rem;
+
+        .vui-button-holder {
+        }
 
         &.vui-button--get-started {
             @include animate('vui-button--get-started');
