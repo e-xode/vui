@@ -57,30 +57,31 @@
                                 : item
                         }}
                     </div>
-                    <div
-                        v-if="open === index"
-                        v-for="(item, j) in item[itemValue]"
-                        :key="`list-group-item-${j}`"
-                        :class="[
-                            'vui-list-items-item-label',
-                            { 'vui-list-items-item-label--selectable': selectable },
-                            { 'vui-list-items-item-label--selected': isSelected(item) },
-                        ]"
-                        @click="() => onClick(item)"
-                    >
-                        <i
-                            v-if="item.icon"
+                    <template v-if="open === index">
+                        <div
+                            v-for="(childitem, j) in item[itemValue]"
+                            :key="`list-group-item-${j}`"
                             :class="[
-                                'vui-list-items-item-label-icon',
-                                item.icon
+                                'vui-list-items-item-label',
+                                { 'vui-list-items-item-label--selectable': selectable },
+                                { 'vui-list-items-item-label--selected': isSelected(childitem) },
                             ]"
-                        />
-                        {{
-                            itemValue
-                                ? item[itemLabel]
-                                : item
-                        }}
-                    </div>
+                            @click="() => onClick(childitem)"
+                        >
+                            <i
+                                v-if="childitem.icon"
+                                :class="[
+                                    'vui-list-items-item-label-icon',
+                                    childitem.icon
+                                ]"
+                            />
+                            {{
+                                itemValue
+                                    ? childitem[itemLabel]
+                                    : childitem
+                            }}
+                        </div>
+                    </template>
                 </template>
             </div>
         </div>

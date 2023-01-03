@@ -1,12 +1,24 @@
 <template>
     <div
-        v-if="visible"
         :id="componentId"
+        ref="tooltip"
         :class="[
             'vui-tooltip',
             { 'vui-tooltip--with-icon': icon }
         ]"
+        :style="{
+            position: 'fixed',
+            display,
+            top,
+            left
+        }"
     >
+        <i
+            :class="[
+                'vui-tooltip-pointer',
+                `vui-tooltip-pointer--${position}`
+            ]"
+        />
         <i
             v-if="icon"
             :class="['vui-tooltip-icon', icon]"

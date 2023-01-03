@@ -1,5 +1,21 @@
 @import "@/scss/reset.scss";
-@import "@/scss/import.scss";
+
+@import "@/components/html/button/button.scss";
+@import "@/components/html/footer/footer.scss";
+@import "@/components/html/form/form.scss";
+@import "@/components/html/header/header.scss";
+@import "@/components/html/input/input.scss";
+@import "@/components/html/table/table.scss";
+@import "@/components/layout/grid/grid.scss";
+@import "@/components/layout/grid/unit/unit.scss";
+@import "@/components/ui/card/card.scss";
+@import "@/components/ui/dropdown/dropdown.scss";
+@import "@/components/ui/list/list.scss";
+@import "@/components/ui/modal/modal.scss";
+@import "@/components/ui/page/page.scss";
+@import "@/components/ui/tag/tag.scss";
+@import "@/components/ui/tooltip/tooltip.scss";
+
 @import "highlight.js/styles/github.css";
 
 body {

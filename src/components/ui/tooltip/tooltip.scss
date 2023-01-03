@@ -1,12 +1,12 @@
 @import "@/scss/import.scss";
 
 .vui-tooltip {
-    display: inline-flex;
+    @include vui-box-shadow;
     position: relative;
+    display: none;
     padding: .5rem .5rem;
     color: $vui-color-grey-extra-light;
     background-color: $vui-color-grey-dark;
-    border: 1px solid $vui-color-grey;
     border-radius: .25rem;
 
     &.vui-tooltip--with-icon {
@@ -23,6 +23,27 @@
 
         &:before {
             color: $vui-color-grey-extra-light;
+        }
+    }
+
+    .vui-tooltip-pointer {
+        &:before {
+            @include vui-glyph-solid;
+            position: absolute;
+            font-size: 1.1rem;
+            color: $vui-color-grey-dark;
+        }
+
+        &.vui-tooltip-pointer--right:before {
+            top: 35%;
+            left: -.5rem;
+            content: '\f0d9';
+        }
+
+        &.vui-tooltip-pointer--top:before {
+            top: 90%;
+            left: calc(50% - 1rem);
+            content: '\f0d7';
         }
     }
 }
