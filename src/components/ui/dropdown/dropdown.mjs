@@ -2,8 +2,8 @@ import langs from '@/components/ui/dropdown/translate/index.mjs'
 import { props } from '@/components/ui/dropdown/dropdown.constant.mjs'
 
 import {
-    composable,
     animable,
+    composable,
     translatable
 } from '@/composables/index.mjs'
 

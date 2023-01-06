@@ -2,7 +2,7 @@
 
 .vui-tooltip {
     @include vui-box-shadow;
-    position: relative;
+    max-width: 300px;;
     display: none;
     padding: .5rem .5rem;
     color: $vui-color-grey-extra-light;
@@ -34,16 +34,28 @@
             color: $vui-color-grey-dark;
         }
 
-        &.vui-tooltip-pointer--right:before {
-            top: 35%;
-            left: -.5rem;
-            content: '\f0d9';
+        &.vui-tooltip-pointer--bottom:before {
+            top: -.65rem;
+            left: calc(50% - 1rem);
+            content: '\f0d8';
+        }
+
+        &.vui-tooltip-pointer--left:before {
+            top: 40%;
+            left: 100%;
+            content: '\f0da';
         }
 
         &.vui-tooltip-pointer--top:before {
-            top: 90%;
+            top: 95%;
             left: calc(50% - 1rem);
             content: '\f0d7';
+        }
+
+        &.vui-tooltip-pointer--right:before {
+            top: 40%;
+            left: -.5rem;
+            content: '\f0d9';
         }
     }
 }

@@ -2,11 +2,11 @@
 
 [![e-xode](https://circleci.com/gh/e-xode/v-ui/tree/master.svg?style=svg&circle-token=76e9a4cf9b8fac35afc86bbb505025a5216cc457)](https://circleci.com/gh/e-xode/v-ui/?branch=master&circle-token=76e9a4cf9b8fac35afc86bbb505025a5216cc457)
 
-VUI is built to provide open functionality to facilitate a quick & easily customizable implementation for developers.
+VUI is an open Vue library that focus to provide easy and quick implementation for developpers.
 
 ## Features
 - Native ehanced html components: button, table, form, input, header, footer, ...
-- UI and layout components: dropdown, list, modal, card, page, grid, ...
+- UI and layout components: dropdown, list, modal, card, page, tooltip, grid, ...
 - Integrates fontawesome-free Icons library
 - Documentation and unit tests
 
@@ -35,10 +35,9 @@ main.use(new createI18n({
 }))
 ```
 
-Note: The current version of VUI works only with vue-i18n and option legacy = false
-( Translations are components isolated )
+Note: The current version of VUI works only with vue-i18n and option legacy = false (translations are components isolated)
 
-## Dev into vui
+## Develop and customize vui sources
 ```sh
 copy .env_sample .env
 ```

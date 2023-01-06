@@ -8,6 +8,9 @@
             <p>
                 {{ $t('page.index.description') }}
             </p>
+            <p>
+                v{{ version }}
+            </p>
         </div>
         <router-link
             :to="{ name: 'ViewStart' }"
