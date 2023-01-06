@@ -3,6 +3,8 @@ import {
 } from '@/composables/index.mjs'
 
 import langs from '@/doc/views/index/translate/index.mjs'
+import jsonPackage from '@/../package.json'
+
 export default {
     name: 'ViewIndex',
     setup () {
@@ -16,7 +18,11 @@ export default {
         return {
         }
     },
-    computed: {},
+    computed: {
+        version () {
+            return jsonPackage.version
+        }
+    },
     methods: {
     }
 }

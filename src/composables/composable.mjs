@@ -1,4 +1,5 @@
 const composable = {
+    inject: ['$bus'],
     props: {
         id: {
             type: String
@@ -10,7 +11,8 @@ const composable = {
             type: Boolean
         }
     },
-    beforeCreate () {
+    deactivated () {
+        this.$bus.off('outclick')
     },
     created () {
         this.uuid = Math.random().toString(36).slice(-6)

@@ -5,16 +5,15 @@
                 <template
                     v-for="(example, index) in examples"
                     :key="`button-${example.props.id}`"
-                >
+                    >
                     <vui-button
                         :id="`button-holder-${index}`"
-                        :ref="`button-holder-${index}`"
-                        :text="example.props.text"
+                        :text="$t(example.button)"
                         @click="() => onClick(index)"
                     />
                     <component
-                        :is="example.component"
                         v-bind="example.props"
+                        :is="example.component"
                         :holder="$el.querySelector(`#button-holder-${index}`)"
                         :visible="tooltips[index]"
                     />

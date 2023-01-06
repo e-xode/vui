@@ -2,15 +2,11 @@ const options = {
     duration: 125
 }
 const animable = {
-    inject: ['$bus'],
     data () {
         return {
             toggled: false,
             animating: false
         }
-    },
-    deactivated () {
-        this.$bus.off('outclick')
     },
     created () {
         this.$bus.on('outclick', (groupId) => {

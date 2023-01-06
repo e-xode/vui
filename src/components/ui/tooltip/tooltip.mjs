@@ -1,4 +1,3 @@
-import { toRaw, ref, toRef } from 'vue'
 import langs from '@/components/ui/card/translate/index.mjs'
 import {
     composable,
@@ -33,10 +32,13 @@ export default {
         }
     },
     watch: {
-        holder(element) {
-            this.setPosition(element)
+        holder: {
+            handler(element) {
+                this.setPosition(element)
+            },
+            deep: true
         },
-        visible(value) {
+        visible (value) {
             if (value) {
                 this.setContentPosition()
             }
@@ -49,8 +51,10 @@ export default {
     data () {
         return {
             dimension: {
-                content: {},
-                holder: {}
+                content: {
+                },
+                holder: {
+                }
             },
             show: false
         }
@@ -59,27 +63,34 @@ export default {
         display () {
             return this.show
                 ? 'block'
-                : 'hidden'
+                : 'none'
         },
         left () {
-            const { holder } = this.dimension
+            const { content, holder } = this.dimension
             switch (this.position) {
+                case 'left':
+                    return holder.left - (content.width + 15)
+                case 'bottom':
                 case 'top':
-                    return holder.left
+                    const diff = content.width - holder.width
+                    return holder.left - (diff / 2)
                 case 'right':
                 default:
-                    return holder.left + holder.width + 25
+                    return holder.right + 15
             }
 
         },
         top () {
-            const { holder } = this.dimension
+            const { content, holder } = this.dimension
             switch (this.position) {
+                case 'bottom':
+                    return holder.top + holder.height + 15
                 case 'top':
-                    return holder.top - holder.height - 10
+                    return holder.top - content.height - 15
+                case 'left':
                 case 'right':
                 default:
-                    return holder.top + 1
+                    return holder.top - (holder.height / 2)
             }
         }
     },

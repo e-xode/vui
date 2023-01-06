@@ -3,7 +3,7 @@ export default {
         {
             tag: 'holder',
             type: 'String',
-            text: 'page.component.tooltip.doc.holder.icon'
+            text: 'page.component.tooltip.doc.tooltip.holder'
         },
         {
             tag: 'icon',
@@ -13,17 +13,17 @@ export default {
         {
             tag: 'position',
             type: 'String',
-            text: 'page.component.tooltip.doc.position.icon'
+            text: 'page.component.tooltip.doc.tooltip.position'
         },
         {
             tag: 'text',
             type: 'String',
-            text: 'page.component.tooltip.doc.text.icon'
+            text: 'page.component.tooltip.doc.tooltip.text'
         },
         {
             tag: 'visible',
             type: 'String',
-            text: 'page.component.tooltip.doc.visible.icon'
+            text: 'page.component.tooltip.doc.tooltip.visible'
         }
     ],
     examples: [
@@ -39,9 +39,10 @@ export default {
             props: {
                 id: 'example-tooltip-1',
                 icon: 'fa-solid fa-message',
-                text: 'page.component.tooltip.button.show-right',
+                text: 'page.component.tooltip.text',
                 position: 'right'
-            }
+            },
+            button: 'page.component.tooltip.button.show-right'
         },
         {
             markup: `
@@ -54,9 +55,42 @@ export default {
             props: {
                 id: 'example-tooltip-2',
                 icon: 'fa-solid fa-message',
-                text: 'page.component.tooltip.button.show-top',
+                text: 'page.component.tooltip.text',
                 position: 'top'
-            }
+            },
+            button: 'page.component.tooltip.button.show-top'
+        },
+        {
+            markup: `
+                <vui-tooltip
+                    id="example-tooltip-3",
+                    icon="fa-solid fa-message"
+                    text="My content tooltip"
+                />
+            `,
+            props: {
+                id: 'example-tooltip-3',
+                icon: 'fa-solid fa-message',
+                text: 'page.component.tooltip.text',
+                position: 'bottom'
+            },
+            button: 'page.component.tooltip.button.show-bottom'
+        },
+        {
+            markup: `
+                <vui-tooltip
+                    id="example-tooltip-4",
+                    icon="fa-solid fa-message"
+                    text="My content tooltip"
+                />
+            `,
+            props: {
+                id: 'example-tooltip-4',
+                icon: 'fa-solid fa-message',
+                text: 'page.component.tooltip.text',
+                position: 'left'
+            },
+            button: 'page.component.tooltip.button.show-left'
         }
     ]
 }
