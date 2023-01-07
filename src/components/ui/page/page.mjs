@@ -11,9 +11,8 @@ export default {
         animable,
         composable
     ],
-    setup() {
+    created () {
         translatable(langs)
-        return {}
     },
     mounted() {
     },

@@ -9,10 +9,6 @@ export default {
     mixins: [
         composable
     ],
-    setup () {
-        translatable(langs)
-        return {}
-    },
     props: {
         holder: {
             type: HTMLElement
@@ -30,6 +26,9 @@ export default {
         visible: {
             type: Boolean
         }
+    },
+    created () {
+        translatable(langs)
     },
     watch: {
         holder: {

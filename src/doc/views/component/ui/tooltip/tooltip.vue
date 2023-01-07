@@ -14,7 +14,7 @@
                     <component
                         v-bind="example.props"
                         :is="example.component"
-                        :holder="$el.querySelector(`#button-holder-${index}`)"
+                        :holder="holder(index)"
                         :visible="tooltips[index]"
                     />
                     <div

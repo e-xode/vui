@@ -1,14 +1,15 @@
 import mitt from 'mitt'
-import { defineAsyncComponent  as component } from 'vue'
-import components from '@/components.json'
+import { defineAsyncComponent, defineComponent } from 'vue'
 
 export default {
     install(app) {
         app.provide('$bus', mitt())
-        components.forEach(({ name, path }) => {
+        const modules = import.meta.glob('@/components/**/*.vue', { eager: true })
+        Object.keys(modules).forEach((key) => {
+            const component = modules[key].default
             app.component(
-                name,
-                component(() => import(/* @vite-ignore */path))
+                component.name,
+                defineComponent(component)
             )
         })
     }

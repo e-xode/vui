@@ -9,9 +9,8 @@ export default {
     mixins: [
         composable
     ],
-    setup() {
+    created () {
         translatable(langs)
-        return {}
     },
     mounted() {
     },

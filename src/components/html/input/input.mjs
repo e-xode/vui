@@ -9,10 +9,6 @@ export default {
     mixins: [
         composable
     ],
-    setup() {
-        translatable(langs)
-        return {}
-    },
     props: {
         disabled: {
             type: Boolean
@@ -29,6 +25,9 @@ export default {
             type: [String, Number, null],
             required: true,
         }
+    },
+    created () {
+        translatable(langs)
     },
     mounted() {
     },

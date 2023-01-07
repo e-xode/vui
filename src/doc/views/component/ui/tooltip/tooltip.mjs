@@ -42,6 +42,11 @@ export default {
         }
     },
     methods: {
+        holder (index) {
+            return this.tooltips?.length
+                ? this.$el.querySelector(`#button-holder-${index}`)
+                : null
+        },
         onClick (index) {
             const tooltip = this.tooltips[index]
             this.tooltips[index] = !tooltip

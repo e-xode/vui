@@ -7,10 +7,8 @@ import jsonPackage from '@/../package.json'
 
 export default {
     name: 'ViewIndex',
-    setup () {
+    created () {
         translatable(langs)
-        return {
-        }
     },
     mounted() {
     },

@@ -11,10 +11,6 @@ export default {
         animable,
         composable
     ],
-    setup () {
-        translatable(langs)
-        return {}
-    },
     props: {
         disabled: {
             type: Boolean
@@ -31,6 +27,9 @@ export default {
         items: {
             type: Array
         }
+    },
+    created () {
+        translatable(langs)
     },
     mounted () {
     },

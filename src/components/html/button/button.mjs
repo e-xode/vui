@@ -11,10 +11,6 @@ export default {
         animable,
         composable
     ],
-    setup () {
-        translatable(langs)
-        return {}
-    },
     props: {
         disabled: {
             type: Boolean
@@ -29,6 +25,9 @@ export default {
             type: String,
             default: 'button'
         }
+    },
+    created () {
+        translatable(langs)
     },
     mounted () {
     },

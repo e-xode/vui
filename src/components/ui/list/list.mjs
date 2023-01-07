@@ -13,11 +13,10 @@ export default {
         animable,
         composable
     ],
-    setup () {
-        translatable(langs)
-        return {}
-    },
     props,
+    created () {
+        translatable(langs)
+    },
     mounted () {
         if (this.value) {
             this.selected = this.value
