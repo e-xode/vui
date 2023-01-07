@@ -5,10 +5,8 @@ import {
 import langs from '@/doc/views/start/translate/index.mjs'
 export default {
     name: 'ViewStart',
-    setup () {
+    created () {
         translatable(langs)
-        return {
-        }
     },
     mounted() {
     },

@@ -9,10 +9,6 @@ export default {
     mixins: [
         composable
     ],
-    setup () {
-        translatable(langs)
-        return {}
-    },
     props: {
         icon: {
             type: String
@@ -20,6 +16,9 @@ export default {
         text: {
             type: String
         }
+    },
+    created () {
+        translatable(langs)
     },
     mounted () {
     },

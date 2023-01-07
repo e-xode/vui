@@ -7,10 +7,8 @@ import components from '@/components.json'
 
 export default {
     name: 'ViewComponent',
-    setup () {
+    created () {
         translatable(langs)
-        return {
-        }
     },
     mounted() {
     },

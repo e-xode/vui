@@ -9,10 +9,6 @@ export default {
     mixins: [
         composable
     ],
-    setup() {
-        translatable(langs)
-        return {}
-    },
     props: {
         loading: {
             type: Boolean
@@ -41,6 +37,9 @@ export default {
         visible: {
             type: Boolean
         }
+    },
+    created () {
+        translatable(langs)
     },
     mounted() {
     },

@@ -9,15 +9,14 @@ export default {
     mixins: [
         composable
     ],
-    setup() {
-        translatable(langs)
-        return {}
-    },
     props: {
         flex: {
             type: String,
             default: '0 0 49%'
         }
+    },
+    created () {
+        translatable(langs)
     },
     mounted() {
     },
