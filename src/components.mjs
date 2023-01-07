@@ -1,5 +1,5 @@
 import mitt from 'mitt'
-import { defineAsyncComponent, defineComponent } from 'vue'
+import { defineComponent } from 'vue'
 
 export default {
     install(app) {

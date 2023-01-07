@@ -15,7 +15,12 @@ export default defineConfig({
     },
     build: {
         outDir: resolve(__dirname, 'dist/doc'),
-        emptyOutDir: true
+        emptyOutDir: true,
+        rollupOptions: {
+            output: {
+              assetFileNames: "[name].[ext]",
+            }
+        }
     },
     plugins: [
         vue(),
