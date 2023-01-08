@@ -1,6 +1,6 @@
 # VUI, Yet another Vue Library
 
-[![e-xode](https://circleci.com/gh/e-xode/v-ui/tree/master.svg?style=svg&circle-token=cdf12a2f57f64449cce76bf10cf7d0e768e686c9)](https://circleci.com/gh/e-xode/v-ui/?branch=master&circle-token=cdf12a2f57f64449cce76bf10cf7d0e768e686c9)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/e-xode/vui/tree/master.svg?style=svg&circle-token=d8353b320a36159da949b935eba5cbdb41502a60)](https://dl.circleci.com/status-badge/redirect/gh/e-xode/vui/tree/master)
 
 VUI is an open Vue library that focus to provide easy and quick implementation for developpers.
 

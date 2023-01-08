@@ -18,12 +18,15 @@ export default defineConfig({
         emptyOutDir: true,
         rollupOptions: {
             output: {
-              assetFileNames: "[name].[ext]",
+              assetFileNames: "[name].[ext]"
             }
         }
     },
     plugins: [
         vue(),
         rewrite()
-    ]
+    ],
+    server: {
+        port: 3001
+    }
 })
