@@ -1,8 +1,6 @@
-FROM node:16-alpine3.11 AS builder
+FROM node:19-alpine3.15 AS builder
 
 ARG NODE_ENV=production
-
-RUN apk add g++ make python
 
 RUN mkdir -p /app
 ADD . /app
@@ -19,7 +17,7 @@ RUN npm run build
 
 # ----------------------------------------
 
-FROM node:16-alpine3.11 AS runner
+FROM node:19-alpine3.15 AS runner
 
 RUN apk update
 RUN apk --no-cache add nginx supervisor
