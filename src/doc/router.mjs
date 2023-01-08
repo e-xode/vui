@@ -1,9 +1,11 @@
+import { defineComponent } from 'vue'
 import {
     createRouter,
     createWebHistory
 } from 'vue-router'
 
 import components from '@/components.json'
+const modules = import.meta.glob('@/doc/views/component/**/*.vue', { eager: true })
 
 const history = createWebHistory()
 const routes = [
@@ -20,12 +22,21 @@ const routes = [
                 ),
                 name: 'ViewComponent',
                 path: 'component',
-                children: components.filter((page) => page.doc)
-                    .map((component) => ({
-                        component: () => import(/* @vite-ignore */component.doc.path),
-                        path: component.name,
-                        name: component.doc.name
-                    }))
+                children: components
+                    .filter((page) => page.doc)
+                    .map((component) => {
+                        const name = component.doc.name
+                            .replace(/(^|[\s-])\S/g, (s) => s.toUpperCase())
+                            .replace(/-/g, '')
+                        const key = Object.keys(modules).find((key) => {
+                            return modules[key].default.name === name
+                        })
+                        return {
+                            component: defineComponent(modules[key].default),
+                            path: component.name,
+                            name: component.doc.name
+                        }
+                    })
             },
             {
                 component: () => import(
