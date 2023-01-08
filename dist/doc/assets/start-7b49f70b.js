@@ -1,0 +1,1 @@
+import{f as t,_ as e,o as s,g as a}from"./index-cdd758d4.js";const n={},o={},r={en:n,fr:o},c={name:"ViewStart",created(){t(r)},mounted(){},data(){return{}},computed:{},methods:{}};const _={class:"view-start"};function d(l,p,i,u,f,m){return s(),a("div",_)}const $=e(c,[["render",d]]);export{$ as default};
