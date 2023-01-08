@@ -22,7 +22,7 @@
                 &:before {
                     @include vui-glyph-solid;
                     position: absolute;
-                    top: -.1rem;
+                    top: 0;
                     left: 0;
                     content: '\f015';
                 }
