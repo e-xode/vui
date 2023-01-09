@@ -10,6 +10,18 @@ export default {
         composable
     ],
     props: {
+        colXs() {
+            type: Number
+        },
+        colSm() {
+            type: Number
+        },
+        colMd() {
+            type: Number
+        },
+        colXl() {
+            type: Number
+        }
     },
     created () {
         translatable(langs)

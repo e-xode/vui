@@ -1,15 +1,11 @@
 <template>
     <div class="view-grid-unit">
-        <vui-grid>
+        <vui-grid
+            col-sm="1"
+            col-md="2"
+        >
             <vui-grid-unit class="examples">
-                <vui-card>
-                    <template #header>
-                        {{ $t('page.component.grid-unit.example-1') }}
-                    </template>
-                    <template #body>
-                        <!-- -->
-                    </template>
-                </vui-card>
+
             </vui-grid-unit>
             <vui-grid-unit class="api-options">
                 <vui-card>

@@ -1,6 +1,9 @@
 <template>
     <div class="view-dropdown">
-        <vui-grid>
+        <vui-grid
+            col-sm="1"
+            col-md="2"
+        >
             <vui-grid-unit class="examples">
                 <template
                     v-for="(example,i) in examples"
