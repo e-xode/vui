@@ -1,7 +1,6 @@
 <template>
     <div
         class="vui-grid-unit"
-        :style="style"
     >
         <slot />
     </div>

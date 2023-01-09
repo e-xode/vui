@@ -1,12 +1,16 @@
-import { defineComponent } from 'vue'
 import {
     createRouter,
     createWebHistory
 } from 'vue-router'
 
-import components from '@/components.json'
+import jsonComponents from '@/components.json'
 const modules = import.meta.glob('@/doc/views/component/**/*.vue', { eager: true })
 
+const capitalize = (name) => {
+    return name
+        .replace(/(^|[\s-])\S/g, (s) => s.toUpperCase())
+        .replace(/-/g, '')
+}
 const history = createWebHistory()
 const routes = [
     {
@@ -22,17 +26,15 @@ const routes = [
                 ),
                 name: 'ViewComponent',
                 path: 'component',
-                children: components
+                children: jsonComponents
                     .filter((page) => page.doc)
                     .map((component) => {
-                        const name = component.doc.name
-                            .replace(/(^|[\s-])\S/g, (s) => s.toUpperCase())
-                            .replace(/-/g, '')
-                        const key = Object.keys(modules).find((key) => {
-                            return modules[key].default.name === name
-                        })
+                        const name = capitalize(component.doc.name)
+                        const key = Object.keys(modules).find((key) =>
+                            modules[key].default.name === name
+                        )
                         return {
-                            component: defineComponent(modules[key].default),
+                            component: modules[key].default,
                             path: component.name,
                             name: component.doc.name
                         }

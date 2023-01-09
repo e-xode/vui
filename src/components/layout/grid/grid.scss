@@ -1,6 +1,40 @@
 @import "@/scss/import.scss";
 
+@mixin col($classname) {
+    @for $i from 1 through 12 {
+        &.#{$classname}--#{$i} {
+            > .vui-grid-unit {
+                flex: 0 0 calc(100 / $i) * 1%;
+            }
+        }
+    }
+}
+
 .vui-grid {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media(min-width: 1200px) {
+    .vui-grid {
+        @include col('vui-grid--col-xl');
+    }
+}
+
+@media (max-width: 1199px) {
+    .vui-grid {
+        @include col('vui-grid--col-md');
+    }
+}
+
+@media (max-width: 991px) {
+    .vui-grid {
+        @include col('vui-grid--col-sm');
+    }
+}
+
+@media (max-width: 599px) {
+    .vui-grid {
+        @include col('vui-grid--col-xs');
+    }
 }

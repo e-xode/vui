@@ -1,5 +1,12 @@
 @import "@/scss/import.scss";
 
 .view-grid {
+    #vui-grid-1 {
+        padding: 1rem;
+        border: 1px solid $vui-color-grey;
 
+        .vui-grid-unit {
+            border: 1px solid $vui-color-grey;
+        }
+    }
 }

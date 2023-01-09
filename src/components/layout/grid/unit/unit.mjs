@@ -10,10 +10,6 @@ export default {
         composable
     ],
     props: {
-        flex: {
-            type: String,
-            default: '0 0 49%'
-        }
     },
     created () {
         translatable(langs)
@@ -25,12 +21,7 @@ export default {
         }
     },
     computed: {
-        style () {
-            const {  flex } = this
-            return [
-                { flex }
-            ]
-        }
+
     },
     methods: {
     },
