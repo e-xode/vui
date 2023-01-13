@@ -10,6 +10,9 @@ export default {
         composable
     ],
     props: {
+        col() {
+            type: String
+        }
     },
     created () {
         translatable(langs)
@@ -21,7 +24,6 @@ export default {
         }
     },
     computed: {
-
     },
     methods: {
     },

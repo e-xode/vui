@@ -3,8 +3,8 @@
 @mixin col($classname) {
     @for $i from 1 through 12 {
         &.#{$classname}--#{$i} {
-            > .vui-grid-unit {
-                flex: 0 0 calc(100 / $i) * 1%;
+            > .vui-grid-unit:not([class*="vui-grid-unit-col--"]) {
+                flex: 1 1 calc(100 / $i) * 1%;
             }
         }
     }
