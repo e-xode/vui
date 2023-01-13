@@ -1,7 +1,6 @@
 {
     "page.component.tag.example-1": "Basic tag",
-    "page.component.tag.text-1": "My tag content",
     "page.component.tag.example-2": "Advanced tag",
-    "page.component.tag.text-2": "My tag content",
-    "page.component.tag.doc.tag.icon": "Class name of the icon to prepend"
+    "page.component.tag.doc.tag.icon": "Class name of the icon to prepend",
+    "page.component.tag.doc.tag.text": "Text content of the tag"
 }

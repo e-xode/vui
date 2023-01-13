@@ -1,7 +1,10 @@
 <template>
     <div
         :id="componentId"
-        class="vui-list"
+        :class="[
+            'vui-list',
+            { 'vui-list--flat': attr('flat') }
+        ]"
     >
         <div
             v-if="title"
@@ -34,11 +37,15 @@
                                 item.icon
                             ]"
                         />
-                        {{
-                            itemValue
-                                ? item[itemLabel]
-                                : item
-                        }}
+                        <slot
+                            :item="item"
+                        >
+                            {{
+                                itemValue
+                                    ? item[itemLabel]
+                                    : item
+                            }}
+                        </slot>
                     </div>
                 </template>
                 <template v-if="isGroup(item)">
@@ -51,11 +58,15 @@
                         ]"
                         @click.stop="() => onToggle(index)"
                     >
-                        {{
-                            itemValue
-                                ? item[itemLabel]
-                                : item
-                        }}
+                        <slot
+                            :item="item"
+                        >
+                            {{
+                                itemValue
+                                    ? item[itemLabel]
+                                    : item
+                            }}
+                        </slot>
                     </div>
                     <template v-if="open === index">
                         <div
@@ -75,11 +86,15 @@
                                     childitem.icon
                                 ]"
                             />
-                            {{
-                                itemValue
-                                    ? childitem[itemLabel]
-                                    : childitem
-                            }}
+                            <slot
+                                :item="item"
+                            >
+                                {{
+                                    itemValue
+                                        ? childitem[itemLabel]
+                                        : childitem
+                                }}
+                            </slot>
                         </div>
                     </template>
                 </template>

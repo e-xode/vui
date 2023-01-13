@@ -4,6 +4,11 @@ export default {
             tag: 'icon',
             type: 'String',
             text: 'page.component.tag.doc.tag.icon'
+        },
+        {
+            tag: 'text',
+            type: 'String',
+            text: 'page.component.tag.doc.tag.text'
         }
     ],
     examples: [
@@ -13,30 +18,28 @@ export default {
                     id="example-tag-1"
                     icon="fa-solid fa-tag"
                 >
-                    <span>My content tag</span>
+                    Basic tag
                 </vui-tag>
             `,
             props: {
                 id: 'example-tag-1',
                 icon: 'fa-solid fa-tag'
             },
-            text: 'page.component.tag.text-1',
-            title: 'page.component.tag.example-1'
+            text: 'page.component.tag.example-1'
         },
         {
             markup: `
                 <vui-tag
                     id="example-tag-2",
                     icon="fa-solid fa-tag"
-                    text="My content tag"
+                    text="Advanced tag"
                 />
             `,
             props: {
                 id: 'example-tag-2',
                 icon: 'fa-solid fa-tag',
-                text: 'page.component.tag.text-2',
-            },
-            title: 'page.component.tag.example-2'
+                text: 'page.component.tag.example-2',
+            }
         }
     ]
 }

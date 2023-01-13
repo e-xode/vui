@@ -10,17 +10,17 @@ export default {
         composable
     ],
     props: {
-        colXs() {
-            type: Number
+        colXs: {
+            type: [String, Number]
         },
-        colSm() {
-            type: Number
+        colSm: {
+            type: [String, Number]
         },
-        colMd() {
-            type: Number
+        colMd: {
+            type: [String, Number]
         },
-        colXl() {
-            type: Number
+        colXl: {
+            type: [String, Number]
         }
     },
     created () {
