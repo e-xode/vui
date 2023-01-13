@@ -1,2 +1,6 @@
 {
+    "page.component.grid-unit.example-1": "Grid unit example",
+    "page.component.grid-unit.left": "Col 1 content",
+    "page.component.grid-unit.right": "Col 2 content",
+    "page.component.grid-unit.doc.tag.col": "Defines flex basis percentage for grid-unit column"
 }
