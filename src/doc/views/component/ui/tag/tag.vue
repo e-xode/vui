@@ -11,8 +11,12 @@
                 >
                     <component
                         :is="example.component"
-                        :text="$t(example.title) "
-                    />
+                        v-bind="example.props"
+                    >
+                        <template v-if="example.text">
+                            {{ $t(example.text) }}
+                        </template>
+                    </component>
                     <div
                         class="highlighted-code"
                         v-html="example.highlighted"

@@ -1,8 +1,7 @@
 {
-    "page.component.table.example-1": "Basic page",
-    "page.component.table.example-2": "Advanced table",
-    "page.component.table.doc.tag": "Tag",
-    "page.component.table.doc.type": "Types",
-    "page.component.table.doc.text": "Description"
+    "page.component.table.doc.tag.headers": "Array containing text / value foreach item header",
+    "page.component.table.doc.tag.item-label": "Label key for each item in table",
+    "page.component.table.doc.tag.item-value": "Value key for each item in table",
+    "page.component.table.doc.tag.items": "Array of items to display in table"
 }
 

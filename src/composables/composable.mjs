@@ -33,6 +33,13 @@ const composable = {
                 ? this.groupId
                 : this.uuid
         }
+    },
+    methods: {
+        attr (tag) {
+            return Object
+                .keys(this.$attrs)
+                .find((attr) => attr === tag)
+        }
     }
 }
 

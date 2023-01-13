@@ -3,19 +3,12 @@
         <vui-grid
             col-sm="1"
             col-md="2"
-        >>
+        >
             <vui-grid-unit class="examples">
                 <template
                     v-for="(example) in examples"
                     :key="`button-${example.props.id}`"
                 >
-                    <vui-card>
-                        <template #header>
-                            <span class="title">
-                                {{ $t(example.title) }}
-                            </span>
-                        </template>
-                    </vui-card>
                     <component
                         :is="example.component"
                         v-bind="example.props"
@@ -30,6 +23,12 @@
                 <h2 class="title">
                     {{ $t('page.component.h2.api') }}
                 </h2>
+                <vui-table
+                    item-label="label"
+                    item-value="value"
+                    :headers="docHeaders"
+                    :items="docAttrs(doc)"
+                />
             </vui-grid-unit>
         </vui-grid>
     </div>

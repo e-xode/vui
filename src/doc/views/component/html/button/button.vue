@@ -13,9 +13,12 @@
                         :is="example.component"
                         :loading="isLoading(example.props.id)"
                         v-bind="example.props"
-                        :text="$t(example.title) "
                         @click="() => onClick(example.props.id)"
-                    />
+                    >
+                        <template v-if="example.text">
+                            {{ $t(example.text) }}
+                        </template>
+                    </component>
                     <div
                         class="highlighted-code"
                         v-html="example.highlighted"

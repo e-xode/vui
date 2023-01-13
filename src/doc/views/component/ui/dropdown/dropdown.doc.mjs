@@ -13,12 +13,12 @@ export default {
         {
             tag: 'itemLabel',
             type: 'String',
-            text: 'page.component.dropdown.doc.tag.itemLabel'
+            text: 'page.component.dropdown.doc.tag.item-label'
         },
         {
             tag: 'itemValue',
             type: 'String',
-            text: 'page.component.dropdown.doc.tag.itemValue'
+            text: 'page.component.dropdown.doc.tag.item-value'
         },
         {
             tag: 'items',

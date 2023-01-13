@@ -29,15 +29,14 @@ export default {
                     :disabled="disabled"
                     type="button"
                 >
-                    click me
+                    basic button
                 </vui-button>
             `,
             props: {
                 id: 'example-button-1',
                 icon: 'fa-sharp fa-solid fa-file-arrow-up',
             },
-            text: 'page.component.button.click',
-            title: 'page.component.button.example-1'
+            text: 'page.component.button.example-1'
         },
         {
             markup: `
@@ -45,16 +44,15 @@ export default {
                     id="example-button-2"
                     icon="fa-sharp fa-solid fa-file-arrow-up"
                     :disabled="true"
-                    text="click me"
+                    text="submit button"
                     type="submit"
                 />
             `,
             props: {
                 id: 'example-button-2',
                 icon: 'fa-sharp fa-solid fa-file-arrow-up',
-                text: 'page.component.button.click'
-            },
-            title: 'page.component.button.example-2'
+                text: 'page.component.button.example-2'
+            }
         },
         {
             markup: `
@@ -62,17 +60,16 @@ export default {
                     id="example-button-3"
                     icon="fa-sharp fa-solid fa-file-arrow-up"
                     :disabled="true"
-                    text="click me"
+                    text="disabled button"
                     type="submit"
                 />
             `,
             props: {
                 id: 'example-button-3',
                 icon: 'fa-sharp fa-solid fa-file-arrow-up',
-                text: 'page.component.button.not-clickable',
+                text: 'page.component.button.example-3',
                 disabled: true
-            },
-            title: 'page.component.button.example-3'
+            }
         }
     ]
 }

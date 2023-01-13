@@ -23,7 +23,7 @@
                 <slot name="header" />
             </div>
             <div
-                v-if="!!$slots.body || !!$slots.default"
+                v-if="$slots.body || $slots.default"
                 class="vui-modal-content-body"
             >
                 <slot name="body" />

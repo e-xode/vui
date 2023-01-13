@@ -40,7 +40,7 @@ export default {
                         ...example.props,
                         text: example.props.text
                             ? this.$t(example.props.text)
-                            : null
+                            : undefined
                     }
                 }))
             })

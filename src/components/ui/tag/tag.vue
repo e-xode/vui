@@ -10,10 +10,9 @@
             v-if="icon"
             :class="['vui-tag-icon', icon]"
         />
-        <slot v-if="!!$slots.default" />
-        <template v-if="text">
+        <slot>
             {{ text }}
-        </template>
+        </slot>
     </div>
 </template>
 

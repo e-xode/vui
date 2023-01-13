@@ -21,6 +21,9 @@ export default {
         }
     },
     computed: {
+        doc () {
+            return doc
+        },
         examples() {
             return this.docExamples(VuiTable, doc)
         }

@@ -5,7 +5,16 @@
     flex-flow: column;
     padding: 0;
     border-radius: .25rem;
-    @include vui-box-shadow;
+
+    &:not(.vui-list--flat) {
+        @include vui-box-shadow;
+    }
+
+    &.vui-list--flat {
+        border-top: 1px solid $vui-color-grey-light;
+        border-left: 1px solid $vui-color-grey-light;
+        border-right: 1px solid $vui-color-grey-light;
+    }
 
     .vui-list-title {
         padding: 1rem;
@@ -57,6 +66,7 @@
         }
 
         .vui-list-items-item-label {
+            display: flex;
             padding: .75rem;
             border-bottom: 1px solid $vui-color-grey-light;
 
@@ -72,6 +82,10 @@
             &.vui-list-items-item-label--selected {
                 color: $vui-color-green-dark;
                 background-color: $vui-color-green-light;
+            }
+
+            .vui-list-items-item-label-icon {
+                padding-right: .5rem;
             }
         }
     }

@@ -1,4 +1,26 @@
 export default {
+    attrs: [
+        {
+            tag: 'headers',
+            type: 'Array',
+            text: 'page.component.table.doc.tag.headers'
+        },
+        {
+            tag: 'item-label',
+            type: 'String',
+            text: 'page.component.table.doc.tag.item-label'
+        },
+        {
+            tag: 'item-value',
+            type: 'String',
+            text: 'page.component.table.doc.tag.item-value'
+        },
+        {
+            tag: 'items',
+            type: 'Array',
+            text: 'page.component.table.doc.tag.items'
+        }
+    ],
     examples: [
         {
             markup: `
@@ -52,8 +74,7 @@ export default {
                 ],
                 itemLabel: 'label',
                 itemValue: 'value'
-            },
-            title: 'page.component.table.example-2'
+            }
         }
     ]
 }
