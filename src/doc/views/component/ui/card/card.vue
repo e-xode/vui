@@ -10,13 +10,22 @@
                     :key="`button-example--${example.props.id}`"
                 >
                     <vui-card>
-                        <template #header v-if="example.header">
+                        <template
+                            v-if="example.header"
+                            #header
+                        >
                             {{ $t(example.header) }}
                         </template>
-                        <template #body v-if="example.body">
+                        <template
+                            v-if="example.body"
+                            #body
+                        >
                             {{ $t(example.body) }}
                         </template>
-                        <template #footer v-if="example.footer">
+                        <template
+                            v-if="example.footer"
+                            #footer
+                        >
                             {{ $t(example.footer) }}
                         </template>
                     </vui-card>
