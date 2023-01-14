@@ -8,17 +8,17 @@
                 <template
                     v-for="(example, index) in examples"
                     :key="`button-${example.props.id}`"
-                    >
+                >
                     <vui-button
                         :id="`button-holder-${index}`"
                         :text="$t(example.button)"
                         @click="() => onClick(index)"
                     />
                     <component
-                        v-bind="example.props"
                         :is="example.component"
-                        :holder="holder(index)"
                         v-model="tooltips[index]"
+                        v-bind="example.props"
+                        :holder="holder(index)"
                     />
                     <div
                         class="highlighted-code"

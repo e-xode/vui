@@ -39,7 +39,7 @@ export default {
                     }
                 }))
             })
-        }
+        },
     },
     methods: {
         holder (index) {

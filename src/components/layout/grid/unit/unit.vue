@@ -3,7 +3,8 @@
         :class="[
             'vui-grid-unit',
             { [`vui-grid-unit-col--${col}`]: col }
-        ]">
+        ]"
+    >
         <slot />
     </div>
 </template>
