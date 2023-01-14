@@ -1,0 +1,14 @@
+{
+    "page.component.list.text-1": "List an array of strings, numbers, ...",
+    "page.component.list.text-2": "List an array of objects",
+    "page.component.list.text-3": "List with groups of objects arrays",
+    "page.component.list.doc.prop.disabled": "Binds the disabled state condition",
+    "page.component.list.doc.prop.icon": "Class name of the icon to display before each item label",
+    "page.component.list.doc.prop.loading": "Binds the loading state",
+    "page.component.list.doc.prop.item-label": "Label key foreach list item",
+    "page.component.list.doc.prop.item-value": "Value key foreach list item",
+    "page.component.list.doc.prop.items": "Array of values that composes the list",
+    "page.component.list.doc.prop.selectable": "Determine if list items are selectable",
+    "page.component.list.doc.prop.title": "Display a title above the list items",
+    "page.component.list.doc.slot.default": "The default slot foreach item of the list"
+}

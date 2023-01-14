@@ -1,0 +1,4 @@
+{
+    "page.component.header.text": "My header content",
+    "page.component.header.doc.slot.default": "Default slot for header content"
+}

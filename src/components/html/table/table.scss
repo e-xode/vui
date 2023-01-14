@@ -1,0 +1,24 @@
+@import "@/scss/import.scss";
+
+.vui-table {
+    border-collapse: collapse;
+
+    thead {
+        tr {
+            background-color: $vui-color-grey-light;
+
+            th {
+                padding: .5rem;
+                border: 1px solid $vui-color-grey;
+            }
+        }
+    }
+    tbody {
+        tr {
+            td  {
+                padding: .5rem;
+                border: 1px solid $vui-color-grey;
+            }
+        }
+    }
+}

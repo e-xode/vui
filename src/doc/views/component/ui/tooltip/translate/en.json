@@ -1,0 +1,13 @@
+{
+    "page.component.tooltip.button.show-bottom": "show tooltip on bottom",
+    "page.component.tooltip.button.show-right": "show tooltip on right",
+    "page.component.tooltip.button.show-left": "show tooltip on left",
+    "page.component.tooltip.button.show-top": "show tooltip on top",
+    "page.component.tooltip.text": "My tooltip content My tooltip content My tooltip content My tooltip content My tooltip content My tooltip content",
+    "page.component.tooltip.doc.prop.text": "Text of the tooltip",
+    "page.component.tooltip.doc.prop.icon": "Class name of the icon to prepend",
+    "page.component.tooltip.doc.prop.holder": "Id of the element which tooltip refers to",
+    "page.component.tooltip.doc.prop.position": "Position of the tooltip from holder",
+    "page.component.tooltip.doc.prop.v-model": "Binds the visible state of the tooltip",
+    "page.component.tooltip.doc.slot.default": "Default slot for tooltip content"
+}

@@ -1,0 +1,28 @@
+@import "@/scss/import.scss";
+
+.vui-tag {
+    position: relative;
+    display: inline-flex;
+    padding: .5rem .5rem;
+    color: $vui-color-grey-extra-light;
+    background-color: $vui-color-grey-dark;
+    border: 1px solid $vui-color-grey;
+    border-radius: .25rem;
+
+    &.vui-tag--with-icon {
+        padding-left: 2.5rem;
+    }
+
+    .vui-tag-icon {
+        position: absolute;
+        top: .5rem;
+        left: .75rem;
+        font-size: 1.1rem;
+        margin-right: .75rem;
+        color: $vui-color-grey-dark;
+
+        &:before {
+            color: $vui-color-grey-extra-light;
+        }
+    }
+}

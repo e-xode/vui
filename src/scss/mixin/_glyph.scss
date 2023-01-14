@@ -1,0 +1,27 @@
+@mixin vui-glyph-brands {
+    display: inline-flex;
+    vertical-align: middle;
+    font-family: 'Font Awesome 5 Brands';
+    font-style: normal;
+    font-weight: 400;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+@mixin vui-glyph-regular {
+    display: inline-flex;
+    vertical-align: middle;
+    font-family: 'Font Awesome 5 Regular';
+    font-style: normal;
+    font-weight: 400;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+@mixin vui-glyph-solid {
+    display: inline-flex;
+    vertical-align: middle;
+    font-family: 'Font Awesome 5 Solid';
+    font-style: normal;
+    font-weight: 900;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}

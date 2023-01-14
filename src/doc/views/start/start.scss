@@ -1,0 +1,19 @@
+@import "@/scss/import.scss";
+
+.view-start {
+
+    h1 {
+        font-size: 2rem;
+        text-transform: none;
+    }
+
+    .vui-list {
+        .vui-list-items-item {
+            .vui-list-items-item-label {
+                .vui-list-items-item-label-icon {
+                    color: darken($vui-color-green, 10%);
+                }
+            }
+        }
+    }
+}

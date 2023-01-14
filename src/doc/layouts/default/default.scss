@@ -1,0 +1,45 @@
+@import "@/scss/import.scss";
+
+.vui-page.layout-default {
+    min-height: calc(100vh - 2rem);
+
+    > .vui-page-header {
+        padding: 0;
+
+        .vui-header {
+            display: flex;
+            justify-content: space-between;
+            background-color: $vui-color-green-light;
+            border-bottom: 1px solid $vui-color-green;
+
+            .home {
+                position: relative;
+                padding-left: 1.5rem;
+                line-height: 2.1rem;
+                color: $vui-color-green-dark;
+                cursor: pointer;
+
+                &:before {
+                    @include vui-glyph-solid;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: '\f015';
+                }
+            }
+        }
+    }
+
+    > .vui-page-footer {
+        padding: 0;
+
+        .vui-footer {
+
+            .copyright {
+
+                a {
+                }
+            }
+        }
+    }
+}

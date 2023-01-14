@@ -1,0 +1,34 @@
+@import "@/scss/import.scss";
+
+.vui-form {
+    border: 1px solid $vui-color-grey;
+
+    .section {
+        padding: 1rem;
+        border-bottom: 1px solid $vui-color-grey;
+
+        .fieldset {
+
+            .legend {
+            }
+
+            .fieldset-item {
+                display: flex;
+
+                .label {
+                    flex: 0 0 50%;
+                    line-height: 2rem;
+                }
+
+                .input {
+                    flex: 0 0 50%;
+                }
+            }
+        }
+    }
+
+    .section.section-submit {
+        text-align: center;
+        border-bottom: none;
+    }
+}

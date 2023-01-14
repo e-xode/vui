@@ -1,0 +1,12 @@
+{
+    "page.component.dropdown.text-1": "Dropdown with an array of strings or numbers",
+    "page.component.dropdown.text-2": "Dropdown with an array of objects",
+    "page.component.dropdown.text-3": "Dropdown with groups of array of objects",
+    "page.component.dropdown.doc.prop.disabled": "Binds the disabled state",
+    "page.component.dropdown.doc.prop.icon": "Class name of the icon to prepend",
+    "page.component.dropdown.doc.prop.loading": "Binds the loading state",
+    "page.component.dropdown.doc.prop.item-label": "Label key foreach list item",
+    "page.component.dropdown.doc.prop.item-value": "Value key foreach list item",
+    "page.component.dropdown.doc.prop.items": "Array of values that composes the list",
+    "page.component.dropdown.doc.prop.placeholder": "Determines the placeholder of dropdown"
+}

@@ -1,0 +1,84 @@
+@import "@/scss/import.scss";
+
+.vui-button {
+    @include vui-box-shadow;
+    @include animate('vui-button');
+    position: relative;
+    display: inline-flex;
+    padding: 0 1rem;
+    justify-content: center;
+    border-radius: .5rem;
+    cursor: pointer;
+
+    &.vui-button--with-icon {
+        padding-left: 2.5rem;
+    }
+
+    .vui-button-holder {
+        position: relative;
+        margin-top: .15rem;
+        font-size: .85rem;
+        font-weight: 600;
+        line-height: 2rem;
+        color: $vui-color-grey-extra-dark;
+        background-color: transparent;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        .vui-button-icon {
+            position: absolute;
+            top: .45rem;
+            left: -1.5rem;
+            font-size: 1rem;
+            margin-right: .75rem;
+            color: $vui-color-grey-dark;
+        }
+    }
+
+    .vui-button-loader {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 30%;
+        height: 2px;
+        background-color: transparent;
+    }
+
+    &:hover {
+        button {
+            .vui-button-icon {
+            }
+        }
+    }
+
+    &.vui-button--loading {
+        .vui-button-loader {
+            animation: linear infinite;
+            animation-name: loading;
+            animation-duration: .8s;
+            background-color: $vui-color-grey-extra-dark;
+        }
+    }
+
+    &.vui-button--toggled {
+        button {
+            .vui-button-icon {
+            }
+        }
+    }
+
+    &.vui-button--disabled {
+        background-color: $vui-color-grey;
+        border: 1px solid $vui-color-grey-dark;
+        cursor: default;
+
+        button {
+            color: $vui-color-grey-extra-dark;
+            cursor: default;
+
+            .vui-button-icon {
+                color: $vui-color-grey-dark;
+            }
+        }
+    }
+}

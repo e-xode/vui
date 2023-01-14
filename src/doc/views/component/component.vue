@@ -1,0 +1,21 @@
+<template>
+    <div class="view-component">
+        <h1>
+            <i class="fa-brands fa-vuejs" />
+            {{ $t('page.component.h1') }}
+            <span class="view-component-name">
+                {{ component.label }}
+            </span>
+        </h1>
+        <router-view />
+    </div>
+</template>
+
+<script
+    src="./component.mjs"
+/>
+
+<style
+    lang="scss"
+    src="./component.scss"
+/>

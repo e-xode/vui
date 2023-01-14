@@ -1,0 +1,4 @@
+{
+    "page.component.footer.text": "My footer content",
+    "page.component.footer.doc.slot.default": "Default slot for footer content"
+}

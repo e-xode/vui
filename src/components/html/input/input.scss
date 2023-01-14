@@ -1,0 +1,15 @@
+@import "@/scss/import.scss";
+
+.vui-input {
+    display: inline-flex;
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: .5rem .25rem .25rem .5rem;
+        color: $vui-color-black;
+        border: 1px solid $vui-color-grey;
+        border-radius: .25rem;
+    }
+}

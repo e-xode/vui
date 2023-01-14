@@ -1,0 +1,21 @@
+
+$vui-color-black: rgb(0, 0, 0, 1);
+$vui-color-orange: rgba(243, 156, 18, 1);
+$vui-color-white: rgba(255, 255, 255, 1);
+
+$vui-color-green: rgba(39, 174, 96, 1);
+$vui-color-green-light: lighten($vui-color-green, 20%);
+$vui-color-green-dark: darken($vui-color-green, 20%);
+
+$vui-color-blue: rgba(0, 151, 230, 1);
+$vui-color-blue-dark: darken($vui-color-blue, 15%);
+$vui-color-blue-extra-dark: darken($vui-color-blue, 30%);
+
+$vui-color-blue-light: lighten($vui-color-blue, 40%);
+$vui-color-blue-extra-light: lighten($vui-color-blue-light, 10%);
+
+$vui-color-grey: rgba(189, 195, 199, 1);
+$vui-color-grey-light: lighten($vui-color-grey, 10%);
+$vui-color-grey-extra-light: lighten($vui-color-grey, 15%);
+$vui-color-grey-dark: darken($vui-color-grey, 20%);
+$vui-color-grey-extra-dark: darken($vui-color-grey, 40%);
