@@ -1,10 +1,5 @@
 export default {
     attrs: [
-        {
-            tag: 'col',
-            type: 'Number',
-            text: 'page.component.grid-unit.doc.tag.col'
-        }
     ],
     examples: [
         {
@@ -17,12 +12,12 @@ export default {
                     <vui-grid-unit
                         col="30"
                     >
-                        <p>Col 1 content</p>
+                        Col 1 content
                     </vui-grid-unit>
                     <vui-grid-unit
                         col="70"
                     >
-                        <p>Col 2 content</p>
+                        Col 2 content
                     </vui-grid-unit>
                 </vui-grid>
             `,
@@ -32,5 +27,14 @@ export default {
             },
             gridid: 'vui-grid-1'
         }
+    ],
+    props: [
+        {
+            tag: 'col',
+            type: 'Number',
+            text: 'page.component.grid-unit.doc.tag.col'
+        }
+    ],
+    slots: [
     ]
 }

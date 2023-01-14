@@ -10,13 +10,13 @@
                     :key="`button-example--${example.props.id}`"
                 >
                     <vui-card>
-                        <template #header>
+                        <template #header v-if="example.header">
                             {{ $t(example.header) }}
                         </template>
-                        <template #body>
+                        <template #body v-if="example.body">
                             {{ $t(example.body) }}
                         </template>
-                        <template #footer>
+                        <template #footer v-if="example.footer">
                             {{ $t(example.footer) }}
                         </template>
                     </vui-card>
@@ -33,8 +33,26 @@
                 <vui-table
                     item-label="label"
                     item-value="value"
-                    :headers="docHeaders"
-                    :items="docAttrs(doc)"
+                    :headers="docPropsHeaders"
+                    :items="docProps"
+                />
+                <h2 class="title">
+                    {{ $t('page.component.h2.attrs') }}
+                </h2>
+                <vui-table
+                    item-label="label"
+                    item-value="value"
+                    :headers="docAttrsHeaders"
+                    :items="docAttrs"
+                />
+                <h2 class="title">
+                    {{ $t('page.component.h2.slots') }}
+                </h2>
+                <vui-table
+                    item-label="label"
+                    item-value="value"
+                    :headers="docSlotsHeaders"
+                    :items="docSlots"
                 />
             </vui-grid-unit>
         </vui-grid>

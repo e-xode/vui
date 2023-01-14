@@ -18,7 +18,7 @@
                         v-bind="example.props"
                         :is="example.component"
                         :holder="holder(index)"
-                        :visible="tooltips[index]"
+                        v-model="tooltips[index]"
                     />
                     <div
                         class="highlighted-code"
@@ -26,15 +26,24 @@
                     />
                 </template>
             </vui-grid-unit>
-            <vui-grid-unit>
+            <vui-grid-unit class="api-options">
                 <h2 class="title">
                     {{ $t('page.component.h2.api') }}
                 </h2>
                 <vui-table
                     item-label="label"
                     item-value="value"
-                    :headers="docHeaders"
-                    :items="docAttrs(doc)"
+                    :headers="docPropsHeaders"
+                    :items="docProps"
+                />
+                <h2 class="title">
+                    {{ $t('page.component.h2.slots') }}
+                </h2>
+                <vui-table
+                    item-label="label"
+                    item-value="value"
+                    :headers="docSlotsHeaders"
+                    :items="docSlots"
                 />
             </vui-grid-unit>
         </vui-grid>

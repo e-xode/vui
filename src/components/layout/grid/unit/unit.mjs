@@ -10,8 +10,8 @@ export default {
         composable
     ],
     props: {
-        col() {
-            type: String
+        col: {
+            type: [String, Number]
         }
     },
     created () {

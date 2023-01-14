@@ -1,31 +1,10 @@
 export default {
     attrs: [
-        {
-            tag: 'headers',
-            type: 'Array',
-            text: 'page.component.table.doc.tag.headers'
-        },
-        {
-            tag: 'item-label',
-            type: 'String',
-            text: 'page.component.table.doc.tag.item-label'
-        },
-        {
-            tag: 'item-value',
-            type: 'String',
-            text: 'page.component.table.doc.tag.item-value'
-        },
-        {
-            tag: 'items',
-            type: 'Array',
-            text: 'page.component.table.doc.tag.items'
-        }
     ],
     examples: [
         {
             markup: `
                 <vui-table
-                    id="example-table-2"
                     itemLabel="label",
                     itemValue="value"
                     headers="[
@@ -51,7 +30,7 @@ export default {
                 />
             `,
             props: {
-                id: 'example-table-2',
+                id: 'vui-table-1',
                 headers: [
                     { label: 'Start date', value: 'startDate' },
                     { label: 'Quantity', value: 'quantity' },
@@ -76,5 +55,29 @@ export default {
                 itemValue: 'value'
             }
         }
+    ],
+    props: [
+        {
+            tag: 'headers',
+            type: 'Array',
+            text: 'page.component.table.doc.prop.headers'
+        },
+        {
+            tag: 'item-label',
+            type: 'String',
+            text: 'page.component.table.doc.prop.item-label'
+        },
+        {
+            tag: 'item-value',
+            type: 'String',
+            text: 'page.component.table.doc.prop.item-value'
+        },
+        {
+            tag: 'items',
+            type: 'Array',
+            text: 'page.component.table.doc.prop.items'
+        }
+    ],
+    slots: [
     ]
 }

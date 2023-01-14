@@ -1,7 +1,7 @@
 {
-    "page.component.table.doc.tag.headers": "Array containing text / value foreach item header",
-    "page.component.table.doc.tag.item-label": "Label key for each item in table",
-    "page.component.table.doc.tag.item-value": "Value key for each item in table",
-    "page.component.table.doc.tag.items": "Array of items to display in table"
+    "page.component.table.doc.prop.headers": "Array containing text / value foreach item header",
+    "page.component.table.doc.prop.item-label": "Label key for each item in table",
+    "page.component.table.doc.prop.item-value": "Value key for each item in table",
+    "page.component.table.doc.prop.items": "Array of items to display in table"
 }
 

@@ -16,12 +16,12 @@
                     >
                         <vui-grid-unit>
                             <p>
-                                {{ $t('page.component.grid-unit.left') }}
+                                {{ $t('page.component.grid.left') }}
                             </p>
                         </vui-grid-unit>
                         <vui-grid-unit>
                             <p>
-                                {{ $t('page.component.grid-unit.right') }}
+                                {{ $t('page.component.grid.right') }}
                             </p>
                         </vui-grid-unit>
                     </vui-grid>
@@ -32,21 +32,15 @@
                 </template>
             </vui-grid-unit>
             <vui-grid-unit class="api-options">
-                <vui-card>
-                    <template #header>
-                        <h2 class="title">
-                            {{ $t('page.component.h2.api') }}
-                        </h2>
-                    </template>
-                    <template #body>
-                        <vui-table
-                            item-label="label"
-                            item-value="value"
-                            :headers="docHeaders"
-                            :items="docAttrs(doc)"
-                        />
-                    </template>
-                </vui-card>
+                <h2 class="title">
+                    {{ $t('page.component.h2.api') }}
+                </h2>
+                <vui-table
+                    item-label="label"
+                    item-value="value"
+                    :headers="docPropsHeaders"
+                    :items="docProps"
+                />
             </vui-grid-unit>
         </vui-grid>
     </div>

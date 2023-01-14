@@ -27,8 +27,8 @@
                 <vui-table
                     item-label="label"
                     item-value="value"
-                    :headers="docHeaders"
-                    :items="docAttrs(doc)"
+                    :headers="docPropsHeaders"
+                    :items="docProps"
                 />
             </vui-grid-unit>
         </vui-grid>

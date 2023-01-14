@@ -1,9 +1,10 @@
 {
-    "page.component.button.example-1": "Basic button",
-    "page.component.button.example-2": "Submit button",
-    "page.component.button.example-3": "Disabled button",
-    "page.component.button.doc.tag.disabled": "Binds the disabled state",
-    "page.component.button.doc.tag.icon": "Class name of the icon to prepend",
-    "page.component.button.doc.tag.loading": "Binds the loading state",
-    "page.component.button.doc.tag.type": "Type of button: submit, button, .."
+    "page.component.button.text-1": "Basic button",
+    "page.component.button.text-2": "Submit button",
+    "page.component.button.text-3": "Disabled button",
+    "page.component.button.doc.prop.disabled": "Binds the disabled state",
+    "page.component.button.doc.prop.icon": "Class name of the icon to prepend",
+    "page.component.button.doc.prop.loading": "Binds the loading state",
+    "page.component.button.doc.prop.type": "Type of button: submit or button",
+    "page.component.button.doc.slot.default": "Default slot for button content"
 }

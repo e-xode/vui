@@ -20,17 +20,21 @@
         }
     }
 
-    .vui-card {
-        .vui-card-header {
-            .title {
-                padding: 0;
-                margin: 0;
-                font-size: 1.15rem;
-                text-transform: none;
-            }
+    .vui-grid {
+        .vui-grid-unit.examples {
         }
 
-        .vui-card-body {
+        .vui-grid-unit.api-options {
+
+            .vui-table {
+                width: 100%;
+            }
+
+            h2 {
+                &:not(:first-of-type) {
+                    margin-top: 2rem;
+                }
+            }
         }
     }
 

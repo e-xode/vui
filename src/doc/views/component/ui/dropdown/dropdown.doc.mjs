@@ -1,40 +1,5 @@
 export default {
     attrs: [
-        {
-            tag: 'disabled',
-            type: 'Boolean',
-            text: 'page.component.dropdown.doc.tag.disabled'
-        },
-        {
-            tag: 'icon',
-            type: 'String',
-            text: 'page.component.dropdown.doc.tag.icon'
-        },
-        {
-            tag: 'itemLabel',
-            type: 'String',
-            text: 'page.component.dropdown.doc.tag.item-label'
-        },
-        {
-            tag: 'itemValue',
-            type: 'String',
-            text: 'page.component.dropdown.doc.tag.item-value'
-        },
-        {
-            tag: 'items',
-            type: 'String',
-            text: 'page.component.dropdown.doc.tag.items'
-        },
-        {
-            tag: 'loading',
-            type: 'Boolean',
-            text: 'page.component.dropdown.doc.tag.loading'
-        },
-        {
-            tag: 'placeholder',
-            type: 'String',
-            text: 'page.component.dropdown.doc.tag.placeholder'
-        }
     ],
     examples: [
         {
@@ -51,7 +16,7 @@ export default {
                 id: 'example-dropdown-1',
                 items: [1, 2, 3, 4]
             },
-            title: 'page.component.dropdown.example-1'
+            title: 'page.component.dropdown.text-1'
         },
         {
             markup: `
@@ -75,7 +40,7 @@ export default {
                 itemLabel: 'label',
                 itemValue: 'value'
             },
-            title: 'page.component.dropdown.example-2'
+            title: 'page.component.dropdown.text-2'
         },
         {
             markup: `
@@ -111,7 +76,46 @@ export default {
                 itemLabel: 'label',
                 itemValue: 'value'
             },
-            title: 'page.component.dropdown.example-3'
+            title: 'page.component.dropdown.text-3'
         }
+    ],
+    props: [
+        {
+            tag: 'disabled',
+            type: 'Boolean',
+            text: 'page.component.dropdown.doc.prop.disabled'
+        },
+        {
+            tag: 'icon',
+            type: 'String',
+            text: 'page.component.dropdown.doc.prop.icon'
+        },
+        {
+            tag: 'itemLabel',
+            type: 'String',
+            text: 'page.component.dropdown.doc.prop.item-label'
+        },
+        {
+            tag: 'itemValue',
+            type: 'String',
+            text: 'page.component.dropdown.doc.prop.item-value'
+        },
+        {
+            tag: 'items',
+            type: 'String',
+            text: 'page.component.dropdown.doc.prop.items'
+        },
+        {
+            tag: 'loading',
+            type: 'Boolean',
+            text: 'page.component.dropdown.doc.prop.loading'
+        },
+        {
+            tag: 'placeholder',
+            type: 'String',
+            text: 'page.component.dropdown.doc.prop.placeholder'
+        }
+    ],
+    slots: [
     ]
 }

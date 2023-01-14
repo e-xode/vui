@@ -1,9 +1,8 @@
 {
-    "page.component.grid.example-1": "Grid unit example",
     "page.component.grid.left": "Col 1 content",
     "page.component.grid.right": "Col 2 content",
-    "page.component.grid.doc.tag.col-xs": "Defines number of columns for xs class",
-    "page.component.grid.doc.tag.col-sm": "Defines number of columns for sm class",
-    "page.component.grid.doc.tag.col-md": "Defines number of columns for md class",
-    "page.component.grid.doc.tag.col-xl": "Defines number of columns for xl class"
+    "page.component.grid.doc.prop.col-xs": "Defines number of columns for xs class",
+    "page.component.grid.doc.prop.col-sm": "Defines number of columns for sm class",
+    "page.component.grid.doc.prop.col-md": "Defines number of columns for md class",
+    "page.component.grid.doc.prop.col-xl": "Defines number of columns for xl class"
 }

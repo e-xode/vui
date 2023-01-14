@@ -5,7 +5,7 @@ export default {
         {
             markup: `
                 <vui-page
-                    id="example-page-1"
+                    id="vui-page-1"
                 >
                     <template #header>
                         My page header
@@ -21,9 +21,25 @@ export default {
             props: {
                 id: 'example-page-2'
             },
-            footer: 'page.component.page.example-1.footer',
-            body: 'page.component.page.example-1.body',
-            header: 'page.component.page.example-1.header'
+            footer: 'page.component.page.footer',
+            body: 'page.component.page.body',
+            header: 'page.component.page.header'
+        }
+    ],
+    props: [
+    ],
+    slots: [
+        {
+            name: '#header',
+            text: 'page.component.page.doc.slot.header'
+        },
+        {
+            name: '#body',
+            text: 'page.component.page.doc.slot.body'
+        },
+        {
+            name: '#footer',
+            text: 'page.component.page.doc.slot.footer'
         }
     ]
 }

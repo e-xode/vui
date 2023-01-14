@@ -1,10 +1,12 @@
 {
-    "page.component.input.example-1": "Input type as text",
-    "page.component.input.example-2": "Input type as email",
+    "page.component.input.title-1": "Input type as text",
+    "page.component.input.title-2": "Input type as email",
     "page.component.input.vmodel": "v-model",
     "page.component.input.vmodel.none": "none",
-    "page.component.input.doc.tag.disabled": "Binds the disabled state",
-    "page.component.input.doc.tag.icon": "Class name of the icon to prepend",
-    "page.component.input.doc.tag.loading": "Binds the loading state",
-    "page.component.input.doc.tag.type": "Type of button: submit, button, .."
+    "page.component.input.doc.prop.disabled": "Binds the disabled state",
+    "page.component.input.doc.prop.icon": "Class name of the icon to prepend",
+    "page.component.input.doc.prop.loading": "Binds the loading state",
+    "page.component.input.doc.prop.type": "Type of input: email, text, number",
+    "page.component.input.doc.prop.value": "Value of the input",
+    "page.component.input.doc.prop.v-model": "Binds the value  of input"
 }

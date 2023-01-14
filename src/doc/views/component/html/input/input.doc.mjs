@@ -1,25 +1,5 @@
 export default {
     attrs: [
-        {
-            tag: 'disabled',
-            type: 'Boolean',
-            text: 'page.component.input.doc.tag.disabled'
-        },
-        {
-            tag: 'icon',
-            type: 'String',
-            text: 'page.component.input.doc.tag.icon'
-        },
-        {
-            tag: 'loading',
-            type: 'Boolean',
-            text: 'page.component.input.doc.tag.loading'
-        },
-        {
-            tag: 'type',
-            type: 'String',
-            text: 'page.component.input.doc.tag.type'
-        }
     ],
     examples: [
         {
@@ -37,7 +17,7 @@ export default {
                 placeholder: 'Type a value',
                 type: 'text'
             },
-            title: 'page.component.input.example-1'
+            title: 'page.component.input.title-1'
         },
         {
             markup: `
@@ -54,7 +34,41 @@ export default {
                 placeholder: 'Type a value',
                 type: 'email'
             },
-            title: 'page.component.input.example-2'
+            title: 'page.component.input.title-2'
         }
+    ],
+    props: [
+        {
+            tag: 'disabled',
+            type: 'Boolean',
+            text: 'page.component.input.doc.prop.disabled'
+        },
+        {
+            tag: 'icon',
+            type: 'String',
+            text: 'page.component.input.doc.prop.icon'
+        },
+        {
+            tag: 'loading',
+            type: 'Boolean',
+            text: 'page.component.input.doc.prop.loading'
+        },
+        {
+            tag: 'type',
+            type: 'String',
+            text: 'page.component.input.doc.prop.type'
+        },
+        {
+            tag: 'value',
+            type: 'Number, String',
+            text: 'page.component.input.doc.prop.value'
+        },
+        {
+            tag: 'v-model',
+            type: 'Number, String',
+            text: 'page.component.input.doc.prop.v-model'
+        }
+    ],
+    slots: [
     ]
 }

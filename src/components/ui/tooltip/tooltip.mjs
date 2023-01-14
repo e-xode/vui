@@ -23,12 +23,16 @@ export default {
         text: {
             type: String
         },
-        visible: {
+        modelValue: {
             type: Boolean
         }
     },
     created () {
         translatable(langs)
+        this.$bus.on('outclick', (groupId) => {
+            this.$emit('update:modelValue', false)
+            this.show = false
+        })
     },
     watch: {
         holder: {
@@ -37,7 +41,7 @@ export default {
             },
             deep: true
         },
-        visible (value) {
+        modelValue (value) {
             if (value) {
                 this.setContentPosition()
             }

@@ -9,7 +9,9 @@
                     v-for="example in examples"
                     :key="`footer-example--${example.props.id}`"
                 >
-                    <vui-footer>
+                    <vui-footer
+                        v-bind="example.props"
+                    >
                         {{ $t(example.text) }}
                     </vui-footer>
                     <div
@@ -25,8 +27,17 @@
                 <vui-table
                     item-label="label"
                     item-value="value"
-                    :headers="docHeaders"
-                    :items="docAttrs(doc)"
+                    :headers="docPropsHeaders"
+                    :items="docProps"
+                />
+                <h2 class="title">
+                    {{ $t('page.component.h2.slots') }}
+                </h2>
+                <vui-table
+                    item-label="label"
+                    item-value="value"
+                    :headers="docSlotsHeaders"
+                    :items="docSlots"
                 />
             </vui-grid-unit>
         </vui-grid>

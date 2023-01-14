@@ -1,7 +1,13 @@
 {
     "page.component.h1": "component",
     "page.component.h2.api": "API options",
-    "page.component.doc.tag": "Tag",
-    "page.component.doc.type": "Values",
-    "page.component.doc.text": "Description"
+    "page.component.h2.attrs": "Attributes",
+    "page.component.h2.slots": "Slots",
+    "page.component.doc.attr.name": "Name",
+    "page.component.doc.attr.text": "Description",
+    "page.component.doc.prop.tag": "Prop",
+    "page.component.doc.prop.type": "Values",
+    "page.component.doc.prop.text": "Description",
+    "page.component.doc.slot.name": "Name",
+    "page.component.doc.slot.text": "Description"
 }

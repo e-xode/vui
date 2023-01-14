@@ -1,31 +1,56 @@
 export default {
     attrs: [
         {
-            tag: 'icon',
-            type: 'String',
-            text: 'page.component.card.doc.tag.icon'
+            name: 'flat',
+            text: 'page.component.card.doc.attr.flat'
         },
-        {
-            tag: 'loading',
-            type: 'Boolean',
-            text: 'page.component.card.doc.tag.loading'
-        }
     ],
     examples: [
         {
             markup: `
-                <vui-card
-                    id="example-card-1"
-                    icon="fa-sharp fa-solid fa-file-arrow-up""
-                />
+                <vui-card>
+                    <template #header>
+                        My card header content
+                    </template>
+                    <template #body>
+                        My card body content
+                    </template>
+                    <template #footer>
+                        My card footer content
+                    </template>
+                </vui-card>
             `,
             props: {
-                id: 'example-card-1',
-                icon: 'fa-sharp fa-solid fa-file-arrow-up',
             },
-            body: 'page.component.card.example-1.content',
-            header: 'page.component.card.example-1.title',
-            footer: 'page.component.card.example-1.footer'
+            body: 'page.component.card.example.content',
+            header: 'page.component.card.example.title',
+            footer: 'page.component.card.example.footer'
+        },
+        {
+            markup: `
+                <vui-card flat>
+                    My card body content
+                </vui-card>
+            `,
+            props: {
+            },
+            body: 'page.component.card.example.content'
+        }
+    ],
+    props: [
+    ],
+    slots: [
+        {
+            name: '#header',
+            text: 'page.component.card.doc.slot.header'
+        },
+        {
+            name: '#body',
+            text: 'page.component.card.doc.slot.body'
+        },
+        {
+            name: '#footer',
+            text: 'page.component.card.doc.slot.footer'
         }
     ]
 }
