@@ -1,6 +1,7 @@
 import { dirname, resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import pkg from './package.json'
 
 const __dirname = dirname('./')
 
@@ -18,15 +19,11 @@ export default defineConfig({
     emptyOutDir: true,
     lib: {
       entry: resolve(__dirname, 'src/components.mjs'),
+      fileName: (format) => `vui.${format}.js`,
       name: 'vui'
     },
     rollupOptions: {
-      external: ['vue'],
-      output: {
-        globals: {
-          vue: 'Vue'
-        }
-      }
+      external: Object.keys(pkg.dependencies || {})
     }
   },
   plugins: [

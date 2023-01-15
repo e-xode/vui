@@ -7,8 +7,7 @@
     "files": [
         "dist"
     ],
-    "main": "./dist/vui.umd.cjs",
-    "module": "./dist/vui.umd.cjs",
+    "main": "./dist/vui.umd.js",
     "type": "module",
     "version": "0.1.5",
     "repository": {
@@ -32,20 +31,12 @@
     "babel": {
         "presets": [
             [
-                "@babel/preset-env",
-                {
-                    "targets": {
-                        "node": "current"
-                    }
-                }
+                "@babel/preset-env"
             ]
         ]
     },
     "eslintConfig": {
         "root": true,
-        "env": {
-            "node": true
-        },
         "extends": [
             "eslint:recommended",
             "plugin:vue/vue3-recommended"
