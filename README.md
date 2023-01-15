@@ -17,7 +17,7 @@ Online documentation and demo are available [here](https://vui.e-xode.net/)
 
 Install first dependency:
 ```sh
-npm install -s v-ui
+npm install -s @e-xode/vui
 ```
 
 ### setup vui in your vue app
@@ -26,7 +26,7 @@ In your Vue application:
 import { createApp } from 'vue'
 import { createI18n } from 'vue-i18n'
 import App from './App.vue'
-import vui from 'vui'
+import vui from '@e-xode/vui'
 
 const main = createApp(App)
 main.use(vui)
@@ -39,7 +39,7 @@ main.use(new createI18n({
 
 ### load vui style
 ```scss
-@import "vui/dist/style.css";
+@import "@e-xode/vui/dist/style.css";
 ```
 
 ### load @fontawesome icons
