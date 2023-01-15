@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import jsonComponents from '@/components.json'
 
-const modules = import.meta.glob('@/doc/views/component/**/*.vue')
+const modules = import.meta.glob('@/doc/views/component/**/*.vue', {
+    import: 'default'
+})
 const history = createWebHistory()
 const childrens = []
 
@@ -9,7 +11,7 @@ for (const path in modules) {
     const component = jsonComponents.find(({ doc }) => doc.path === path)
     if (component) {
         childrens.push({
-            component: modules[path](),
+            component: modules[path],
             path: component.name,
             name: component.doc.name
         })
