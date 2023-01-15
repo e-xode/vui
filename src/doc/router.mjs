@@ -1,17 +1,21 @@
-import {
-    createRouter,
-    createWebHistory
-} from 'vue-router'
-
+import { createRouter, createWebHistory } from 'vue-router'
 import jsonComponents from '@/components.json'
-const modules = import.meta.glob('@/doc/views/component/**/*.vue', { eager: true })
 
-const capitalize = (name) => {
-    return name
-        .replace(/(^|[\s-])\S/g, (s) => s.toUpperCase())
-        .replace(/-/g, '')
-}
+const modules = import.meta.glob('@/doc/views/component/**/*.vue')
 const history = createWebHistory()
+const childrens = []
+
+for (const path in modules) {
+    const component = jsonComponents.find(({ doc }) => doc.path === path)
+    if (component) {
+        childrens.push({
+            component: modules[path](),
+            path: component.name,
+            name: component.doc.name
+        })
+    }
+}
+
 const routes = [
     {
         component: () => import(
@@ -26,19 +30,7 @@ const routes = [
                 ),
                 name: 'ViewComponent',
                 path: 'component',
-                children: jsonComponents
-                    .filter((page) => page.doc)
-                    .map((component) => {
-                        const name = capitalize(component.doc.name)
-                        const key = Object.keys(modules).find((key) =>
-                            modules[key].default.name === name
-                        )
-                        return {
-                            component: modules[key].default,
-                            path: component.name,
-                            name: component.doc.name
-                        }
-                    })
+                children: childrens
             },
             {
                 component: () => import(
