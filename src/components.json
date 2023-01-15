@@ -3,7 +3,7 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Button",
         "name": "vui-button",
-        "path": "../components/html/button/button.vue",
+        "path": "/components/html/button/button.vue",
         "type": "html",
         "doc": {
             "name": "view-button",
@@ -14,7 +14,7 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Card",
         "name": "vui-card",
-        "path": "../components/ui/card/card.vue",
+        "path": "/components/ui/card/card.vue",
         "type": "ui",
         "doc": {
             "name": "view-card",
@@ -25,7 +25,7 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Dropdown",
         "name": "vui-dropdown",
-        "path": "../components/ui/dropdown/dropdown.vue",
+        "path": "/components/ui/dropdown/dropdown.vue",
         "type": "ui",
         "doc": {
             "name": "view-dropdown",
@@ -36,7 +36,7 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Footer",
         "name": "vui-footer",
-        "path": "../components/html/footer/footer.vue",
+        "path": "/components/html/footer/footer.vue",
         "type": "html",
         "doc": {
             "name": "view-footer",
@@ -47,7 +47,7 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Form",
         "name": "vui-form",
-        "path": "../components/html/form/form.vue",
+        "path": "/components/html/form/form.vue",
         "type": "html",
         "doc": {
             "name": "view-form",
@@ -58,7 +58,7 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Header",
         "name": "vui-header",
-        "path": "../components/html/header/header.vue",
+        "path": "/components/html/header/header.vue",
         "type": "html",
         "doc": {
             "name": "view-header",
@@ -69,7 +69,7 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Grid",
         "name": "vui-grid",
-        "path": "../components/layout/grid/grid.vue",
+        "path": "/components/layout/grid/grid.vue",
         "type": "layout",
         "doc": {
             "name": "view-grid",
@@ -80,7 +80,7 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Grid unit",
         "name": "vui-grid-unit",
-        "path": "../components/layout/grid/unit/unit.vue",
+        "path": "/components/layout/grid/unit/unit.vue",
         "type": "layout",
         "doc": {
             "name": "view-grid-unit",
@@ -91,7 +91,7 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Input",
         "name": "vui-input",
-        "path": "../components/html/input/input.vue",
+        "path": "/components/html/input/input.vue",
         "type": "html",
         "doc": {
             "name": "view-input",
@@ -102,7 +102,7 @@
         "icon": "fa-brands fa-vuejs",
         "label": "List",
         "name": "vui-list",
-        "path": "../components/ui/list/list.vue",
+        "path": "/components/ui/list/list.vue",
         "type": "ui",
         "doc": {
             "name": "view-list",
@@ -113,7 +113,7 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Modal",
         "name": "vui-modal",
-        "path": "../components/ui/modal/modal.vue",
+        "path": "/components/ui/modal/modal.vue",
         "type": "ui",
         "doc": {
             "name": "view-modal",
@@ -124,7 +124,7 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Page",
         "name": "vui-page",
-        "path": "../components/ui/page/page.vue",
+        "path": "/components/ui/page/page.vue",
         "type": "ui",
         "doc": {
             "name": "view-page",
@@ -135,7 +135,7 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Table",
         "name": "vui-table",
-        "path": "../components/html/table/table.vue",
+        "path": "/components/html/table/table.vue",
         "type": "html",
         "doc": {
             "name": "view-table",
@@ -146,7 +146,7 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Tag",
         "name": "vui-tag",
-        "path": "../components/ui/tag/tag.vue",
+        "path": "/components/ui/tag/tag.vue",
         "type": "ui",
         "doc": {
             "name": "view-tag",
@@ -157,7 +157,7 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Tooltip",
         "name": "vui-tooltip",
-        "path": "../components/ui/tooltip/tooltip.vue",
+        "path": "/components/ui/tooltip/tooltip.vue",
         "type": "ui",
         "doc": {
             "name": "view-tooltip",
