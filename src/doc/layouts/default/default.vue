@@ -2,12 +2,12 @@
     <vui-page class="layout-default">
         <template #header>
             <vui-header>
-                <span
+                <router-link
                     class="home"
-                    @click="home"
+                    :to="{ name: 'ViewIndex' }"
                 >
                     {{ $t('component.header.home') }}
-                </span>
+                </router-link>
                 <vui-dropdown
                     v-model="component"
                     :items="components"
