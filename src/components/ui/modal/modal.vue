@@ -1,6 +1,6 @@
 <template>
     <div
-        v-if="visible"
+        v-if="isVisible"
         :id="componentId"
         class="vui-modal"
     >
@@ -17,7 +17,7 @@
                 <template v-if="showHeaderClose">
                     <i
                         class="fa-regular fa-circle-xmark"
-                        @click="onClose"
+                        @click="onToggle"
                     />
                 </template>
                 <slot name="header" />
@@ -36,7 +36,7 @@
                 <template v-if="showHeaderClose">
                     <vui-button
                         :text="$t('component.button.close')"
-                        @click="onClose"
+                        @click="onToggle"
                     />
                 </template>
                 <slot name="footer" />
