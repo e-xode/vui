@@ -1,4 +1,6 @@
 import langs from '@/components/ui/modal/translate/index.mjs'
+import { props } from '@/components/ui/modal/modal.constant.mjs'
+
 import {
     composable,
     translatable
@@ -9,56 +11,39 @@ export default {
     mixins: [
         composable
     ],
-    props: {
-        loading: {
-            type: Boolean
-        },
-        onClose: {
-            type: Function
-        },
-        onOpen: {
-            type: Function
-        },
-        showFooter: {
-            type: Boolean
-        },
-        showFooterClose: {
-            type: Boolean
-        },
-        showHeader: {
-            type: Boolean
-        },
-        showHeaderClose: {
-            type: Boolean
-        },
-        title: {
-            type: String
-        },
-        visible: {
-            type: Boolean
-        }
-    },
+    props,
     created () {
         translatable(langs)
     },
-    mounted() {
+    mounted () {
+        this.isVisible = this.modelValue
     },
-    data() {
+    watch: {
+        modelValue(value) {
+            this.isVisible = value
+        }
+    },
+    data () {
         return {
+            isVisible: false
         }
     },
     computed: {
         isHeaderVisible () {
-            return !!this.$slots.header ||
+            return this.$slots.header ||
                 this.showHeader ||
                 this.showHeaderClose
         },
         isFooterVisible () {
-            return !!this.$slots.footer ||
+            return this.$slots.footer ||
                 this.showFooter ||
                 this.showFooterClose
         }
     },
     methods: {
+        onToggle () {
+            this.isVisible = !this.isVisible
+            this.$emit('update:modelValue', this.isVisible)
+        }
     }
 }

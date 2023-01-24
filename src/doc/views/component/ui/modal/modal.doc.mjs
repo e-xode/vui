@@ -6,10 +6,9 @@ export default {
             markup: `
                 <vui-modal
                     id="vui-modal-1"
-                    :onClose="onClose"
                     :showHeaderClose="true"
                     :showFooterClose="true"
-                    :visible="isVisible"
+                    v-model="isVisible"
                 >
                     <template #header>
                         My modal title
@@ -36,16 +35,6 @@ export default {
             text: 'page.component.modal.doc.prop.loading'
         },
         {
-            tag: 'onClose',
-            type: 'Boolean',
-            text: 'page.component.modal.doc.prop.onClose'
-        },
-        {
-            tag: 'onOpen',
-            type: 'Boolean',
-            text: 'page.component.modal.doc.prop.onOpen'
-        },
-        {
             tag: 'showFooter',
             type: 'Boolean',
             text: 'page.component.modal.doc.prop.showFooter'
@@ -66,9 +55,9 @@ export default {
             text: 'page.component.modal.doc.prop.showHeaderClose'
         },
         {
-            tag: 'visible',
+            tag: 'vmodel',
             type: 'Boolean',
-            text: 'page.component.modal.doc.prop.visible'
+            text: 'page.component.modal.doc.prop.vmodel'
         }
     ],
     slots: [

@@ -10,14 +10,6 @@ import doc from '@/doc/views/component/ui/modal/modal.doc.mjs'
 export default {
     name: 'ViewModal',
     mixins: [demonstrable],
-    props: {
-        loading: {
-            type: Boolean
-        },
-        open: {
-            type: Boolean
-        }
-    },
     setup () {
         translatable(langs)
         return {}
@@ -40,9 +32,6 @@ export default {
     methods: {
         onClick () {
             this.isVisible = true
-        },
-        onClose () {
-            this.isVisible = false
         }
     },
     components: {

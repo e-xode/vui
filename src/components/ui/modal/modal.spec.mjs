@@ -35,4 +35,15 @@ describe('components/Modal.vue', () => {
         expect(component.vm.isHeaderVisible).toBeTruthy()
         expect(component.vm.isFooterVisible).toBeTruthy()
     })
+
+    it('Should onToggle', () => {
+        const component = mountComponent()
+        expect(component.vm.isVisible).toBeFalsy()
+
+        component.vm.onToggle()
+
+        const emitted = component.emitted()
+        expect(component.vm.isVisible).toBeTruthy()
+        expect(emitted['update:modelValue'][0]).toEqual([true])
+    })
 })
