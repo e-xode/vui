@@ -58,6 +58,6 @@ export default {
                     ? { ...button, loading: !button.loading }
                     : button
             })
-        },
+        }
     }
 }

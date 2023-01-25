@@ -9,7 +9,9 @@
                     v-for="example in examples"
                     :key="`button-example--${example.props.id}`"
                 >
-                    <vui-card>
+                    <vui-card
+                        v-bind="example.props"
+                    >
                         <template
                             v-if="example.header"
                             #header

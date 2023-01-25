@@ -12,13 +12,13 @@ export default {
     mixins: [
         demonstrable
     ],
-    setup() {
+    setup () {
         translatable(langs)
         return {}
     },
-    mounted() {
+    mounted () {
     },
-    data() {
+    data () {
         return {
             form: {
                 email: null,
