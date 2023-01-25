@@ -1,7 +1,10 @@
 <template>
     <div
         :id="componentId"
-        class="vui-card"
+        :class="[
+            'vui-card',
+            { 'vui-card--flat': attr('flat') }
+        ]"
     >
         <div
             v-if="$slots.header"

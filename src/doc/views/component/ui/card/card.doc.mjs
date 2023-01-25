@@ -33,6 +33,7 @@ export default {
                 </vui-card>
             `,
             props: {
+                flat: true
             },
             body: 'page.component.card.example.content'
         }

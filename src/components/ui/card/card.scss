@@ -5,7 +5,14 @@
     flex-flow: column;
     background-color: $vui-color-white;
     border-radius: .25rem;
-    @include vui-box-shadow;
+
+    &:not(.vui-card--flat) {
+        @include vui-box-shadow;
+    }
+
+    &.vui-card--flat {
+        border: 1px solid $vui-color-grey-light;
+    }
 
     .vui-card-header {
         padding: 1rem;

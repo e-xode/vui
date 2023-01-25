@@ -6,13 +6,10 @@
         >
             <vui-grid-unit class="examples">
                 <vui-form>
-                    <section class="section">
-                        <fieldset class="fieldset">
+                    <section>
+                        <fieldset>
                             <div class="fieldset-item">
-                                <label
-                                    class="label"
-                                    for="email"
-                                >
+                                <label for="email">
                                     {{ $t('page.component.form.email') }}
                                 </label>
                                 <div class="input">
@@ -21,7 +18,6 @@
                                         v-model="form.email"
                                         type="email"
                                         name="email"
-                                        class="input"
                                         required
                                     />
                                     <p>
@@ -32,13 +28,10 @@
                             </div>
                         </fieldset>
                     </section>
-                    <section class="section">
-                        <fieldset class="fieldset">
+                    <section>
+                        <fieldset>
                             <div class="fieldset-item">
-                                <label
-                                    class="label"
-                                    for="password"
-                                >
+                                <label for="password">
                                     {{ $t('page.component.form.password') }}
                                 </label>
                                 <div class="input">
@@ -47,7 +40,6 @@
                                         v-model="form.password"
                                         type="password"
                                         name="password"
-                                        class="input"
                                         required
                                     />
                                     <p>
@@ -58,7 +50,7 @@
                             </div>
                         </fieldset>
                     </section>
-                    <section class="section section-submit">
+                    <section class="section--submit">
                         <vui-button
                             type="button"
                             @click.prevent="submit"
@@ -67,6 +59,10 @@
                         </vui-button>
                     </section>
                 </vui-form>
+                <div
+                    class="highlighted-code"
+                    v-html="examples[0].highlighted"
+                />
             </vui-grid-unit>
             <vui-grid-unit class="api-options">
                 <h2 class="title">
