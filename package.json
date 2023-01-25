@@ -7,7 +7,8 @@
     "files": [
         "dist"
     ],
-    "main": "./dist/vui.umd.js",
+    "main": "./dist/vui.cjs.js",
+    "module": "./dist/vui.esm.js",
     "type": "module",
     "version": "0.1.7",
     "repository": {
