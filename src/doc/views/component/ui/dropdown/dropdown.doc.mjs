@@ -6,8 +6,6 @@ export default {
             markup: `
                 <vui-dropdown
                     id="example-dropdown-1",
-                    :disabled="disabled"
-                    :loading="isLoading"
                     :items="[1, 2, 3, 4]"
                 />
             `,
@@ -22,13 +20,12 @@ export default {
             markup: `
                 <vui-dropdown
                     id="example-dropdown-2",
-                    :disabled="disabled"
                     :items: [
                         { label: "Label 1", value: "value 1" },
                         { label: "Label 2", value: "value 2" }
                     ]
-                    itemLabel="label",
-                    itemValue="value"
+                    item-label="label",
+                    item-value="value"
                 />
             `,
             props: {
@@ -45,20 +42,19 @@ export default {
         {
             markup: `
                 <vui-dropdown
-                    id="example-dropdown-2",
-                    :disabled="disabled"
+                    id="example-dropdown-3",
                     :items: [
                         { label: "Group label 1", value: [
                             { label: "Label 1", value: "value 1" },
                             { label: "Label 2", value: "value 2" }
                         ]},
                         { label: 'Group label 2', value: [
-                            { label: "Label 3", value: 'value 3" },
-                            { label: "Label 4", value: 'value 4" }
+                            { label: "Label 3", value: "value 3" },
+                            { label: "Label 4", value: "value 4" }
                         ]}
                     ]
-                    itemLabel="label",
-                    itemValue="value"
+                    item-label="label",
+                    item-value="value"
                 />
             `,
             props: {
@@ -91,12 +87,12 @@ export default {
             text: 'page.component.dropdown.doc.prop.icon'
         },
         {
-            tag: 'itemLabel',
+            tag: 'item-label',
             type: 'String',
             text: 'page.component.dropdown.doc.prop.item-label'
         },
         {
-            tag: 'itemValue',
+            tag: 'item-value',
             type: 'String',
             text: 'page.component.dropdown.doc.prop.item-value'
         },
@@ -114,6 +110,16 @@ export default {
             tag: 'placeholder',
             type: 'String',
             text: 'page.component.dropdown.doc.prop.placeholder'
+        },
+        {
+            tag: 'value',
+            type: '[Object, Number, String]',
+            text: 'page.component.dropdown.doc.prop.value'
+        },
+        {
+            tag: 'v-model',
+            type: '[Object, Number, String]',
+            text: 'page.component.dropdown.doc.prop.v-model'
         }
     ],
     slots: [

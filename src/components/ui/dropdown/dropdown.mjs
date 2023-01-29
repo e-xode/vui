@@ -16,11 +16,19 @@ export default {
     props,
     created () {
         translatable(langs)
+        if (this.hasModelValue) {
+            this.selected = this.modelValue
+        } else if (this.hasValue) {
+            this.selected = this.value
+        }
     },
     mounted () {
     },
     watch: {
-        modelValue(value) {
+        value (value) {
+            this.selected = value
+        },
+        modelValue (value) {
             this.selected = value
         }
     },

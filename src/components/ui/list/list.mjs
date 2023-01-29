@@ -18,12 +18,10 @@ export default {
         translatable(langs)
     },
     mounted () {
-        if (this.value) {
-            this.selected = this.value
-        }
+        this.selected = this.value
     },
     watch: {
-        value(selected) {
+        value (selected) {
             this.selected = selected
         }
     },
