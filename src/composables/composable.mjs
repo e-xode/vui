@@ -36,6 +36,15 @@ const composable = {
             return this.groupId
                 ? this.groupId
                 : this.uuid
+        },
+        novalues () {
+            return [null, undefined]
+        },
+        hasModelValue () {
+            return !this.novalues.includes(this.modelValue)
+        },
+        hasValue () {
+            return !this.novalues.includes(this.value)
         }
     },
     methods: {

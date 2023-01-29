@@ -8,5 +8,5 @@
     "page.component.input.doc.prop.loading": "Binds the loading state",
     "page.component.input.doc.prop.type": "Type of input: email, text, number",
     "page.component.input.doc.prop.value": "Value of the input",
-    "page.component.input.doc.prop.v-model": "Binds the value  of input"
+    "page.component.input.doc.prop.v-model": "Binds the value of input"
 }
