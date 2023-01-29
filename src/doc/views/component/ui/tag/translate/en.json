@@ -1,6 +1,9 @@
 {
-    "page.component.tag.text-1": "Basic tag",
-    "page.component.tag.text-2": "Advanced tag",
+    "page.component.tag.default": "Default type tag",
+    "page.component.tag.error": "Error type tag",
+    "page.component.tag.success": "Success type tag",
+    "page.component.tag.warning": "Warning type tag",
     "page.component.tag.doc.prop.icon": "Class name of the icon to prepend",
-    "page.component.tag.doc.prop.text": "Text content of the tag"
+    "page.component.tag.doc.prop.text": "Text content of the tag",
+    "page.component.tag.doc.prop.layout": "Layout of the tag"
 }

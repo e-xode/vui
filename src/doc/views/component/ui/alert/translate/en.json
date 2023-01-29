@@ -1,0 +1,11 @@
+{
+    "page.component.alert.default": "Default alert",
+    "page.component.alert.error": "Error custom alert",
+    "page.component.alert.success": "Success custom alert",
+    "page.component.alert.warning": "Warning custom alert",
+    "page.component.alert.text-2": "Advanced alert",
+    "page.component.alert.doc.prop.icon": "Class name of the icon to prepend",
+    "page.component.alert.doc.prop.text": "Text content of the alert",
+    "page.component.alert.doc.prop.layout": "The alert layout: [error, success, warning]",
+    "page.component.card.doc.slot.default": "Default slot content"
+}

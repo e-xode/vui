@@ -1,5 +1,5 @@
 <template>
-    <div class="view-tag">
+    <div class="view-alert">
         <vui-grid
             col-sm="1"
             col-md="2"
@@ -48,10 +48,10 @@
 </template>
 
 <script
-    src="./tag.mjs"
+    src="./alert.mjs"
 />
 
 <style
     lang="scss"
-    src="./tag.scss"
+    src="./alert.scss"
 />

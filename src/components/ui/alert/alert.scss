@@ -1,20 +1,21 @@
 @import "@/scss/import.scss";
 
-.vui-tag {
-    @include compose('vui-tag');
+.vui-alert {
+    @include compose('vui-alert');
     position: relative;
+    width: 100%;
+    padding: .75rem;
 
-    &.vui-tag--with-icon {
+    &.vui-alert--with-icon {
         padding-left: 2.5rem;
     }
 
-    .vui-tag-icon {
+    .vui-alert-icon {
         position: absolute;
-        top: .5rem;
+        top: .55rem;
         left: .75rem;
         font-size: 1.1rem;
         margin-right: .75rem;
-        color: $vui-color-grey-dark;
 
         &:before {
             color: $vui-color-grey-dark;

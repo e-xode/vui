@@ -1,0 +1,50 @@
+@mixin compose($class) {
+    display: inline-flex;
+    padding: .5rem;
+    color: $vui-color-grey-extra-dark;
+    background-color: $vui-color-grey-light;
+    border: 1px solid $vui-color-grey;
+    border-radius: .25rem;
+
+    &.#{$class}--error {
+        color: darken( $vui-color-red, 20%);
+        background-color: lighten($vui-color-red, 20%);
+        border: 1px solid $vui-color-red;
+
+        .#{$class}-icon {
+            &:before {
+                color: darken( $vui-color-red, 20%);
+            }
+        }
+
+        &.#{$class}--loading {
+            .#{$class}-loader {
+                background-color: darken( $vui-color-red, 20%);
+            }
+        }
+    }
+
+    &.#{$class}--success {
+        color: darken( $vui-color-green, 20%);
+        background-color: lighten($vui-color-green, 20%);
+        border: 1px solid $vui-color-green;
+
+        .#{$class}-icon {
+            &:before {
+                color: darken( $vui-color-green, 20%);
+            }
+        }
+    }
+
+    &.#{$class}--warning {
+        color: darken( $vui-color-orange, 20%);
+        background-color: lighten($vui-color-orange, 20%);
+        border: 1px solid $vui-color-orange;
+
+        .#{$class}-icon {
+            &:before {
+                color: darken( $vui-color-orange, 20%);
+            }
+        }
+    }
+}

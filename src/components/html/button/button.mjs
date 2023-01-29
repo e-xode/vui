@@ -5,27 +5,15 @@ import {
     translatable
 } from '@/composables/index.mjs'
 
+import { props } from './button.constant.mjs'
+
 export default {
     name: 'VuiButton',
     mixins: [
         animable,
         composable
     ],
-    props: {
-        disabled: {
-            type: Boolean
-        },
-        icon: {
-            type: String
-        },
-        text: {
-            type: String
-        },
-        type: {
-            type: String,
-            default: 'button'
-        }
-    },
+    props,
     created () {
         translatable(langs)
     },

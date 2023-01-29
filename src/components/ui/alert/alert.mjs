@@ -1,13 +1,13 @@
-import langs from '@/components/ui/card/translate/index.mjs'
+import langs from '@/components/ui/alert/translate/index.mjs'
 import {
     composable,
     translatable
 } from '@/composables/index.mjs'
 
-import { props } from './tag.constant.mjs'
+import { props } from './alert.constant.mjs'
 
 export default {
-    name: 'VuiTag',
+    name: 'VuiAlert',
     mixins: [
         composable
     ],

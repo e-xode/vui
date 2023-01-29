@@ -7,6 +7,10 @@ const composable = {
         groupId: {
             type: String
         },
+        layout: {
+            type: String,
+            default: 'default'
+        },
         loading: {
             type: Boolean
         }

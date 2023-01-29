@@ -2,14 +2,14 @@
     <div
         :id="componentId"
         :class="[
-            'vui-tag',
-            `vui-tag--${layout}`,
-            { 'vui-tag--with-icon' : icon }
+            'vui-alert',
+            `vui-alert--${layout}`,
+            { 'vui-alert--with-icon' : icon }
         ]"
     >
         <i
             v-if="icon"
-            :class="['vui-tag-icon', icon]"
+            :class="['vui-alert-icon', icon]"
         />
         <slot>
             {{ text }}
@@ -18,10 +18,10 @@
 </template>
 
 <script
-    src="./tag.mjs"
+    src="./alert.mjs"
 />
 
 <style
     lang="scss"
-    src="./tag.scss"
+    src="./alert.scss"
 />
