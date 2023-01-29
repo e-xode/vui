@@ -14,9 +14,9 @@ export default {
     props,
     created () {
         translatable(langs)
+        this.isVisible = this.modelValue
     },
     mounted () {
-        this.isVisible = this.modelValue
     },
     watch: {
         modelValue(value) {
