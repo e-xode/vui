@@ -2,6 +2,7 @@
 
 .vui-button {
     @include vui-box-shadow;
+    @include compose('vui-button');
     @include animate('vui-button');
     position: relative;
     display: inline-flex;
@@ -20,7 +21,7 @@
         font-size: .85rem;
         font-weight: 600;
         line-height: 2rem;
-        color: $vui-color-grey-extra-dark;
+        color: inherit;
         background-color: transparent;
         text-transform: uppercase;
         border: none;
@@ -36,49 +37,18 @@
         }
     }
 
-    .vui-button-loader {
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 30%;
-        height: 2px;
-        background-color: transparent;
-    }
-
-    &:hover {
-        button {
-            .vui-button-icon {
-            }
-        }
-    }
-
-    &.vui-button--loading {
-        .vui-button-loader {
-            animation: linear infinite;
-            animation-name: loading;
-            animation-duration: .8s;
-            background-color: $vui-color-grey-extra-dark;
-        }
-    }
-
-    &.vui-button--toggled {
-        button {
-            .vui-button-icon {
-            }
-        }
-    }
-
     &.vui-button--disabled {
+        color: $vui-color-grey-dark;
         background-color: $vui-color-grey;
         border: 1px solid $vui-color-grey-dark;
         cursor: default;
 
         button {
-            color: $vui-color-grey-extra-dark;
+            color: inherit;
             cursor: default;
 
             .vui-button-icon {
-                color: $vui-color-grey-dark;
+                color: inherit;
             }
         }
     }

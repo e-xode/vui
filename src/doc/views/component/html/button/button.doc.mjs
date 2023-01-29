@@ -8,28 +8,59 @@ export default {
                     :disabled="disabled"
                     type="button"
                 >
-                    basic button
+                    Default button
                 </vui-button>
             `,
             props: {
                 id: 'vui-button-1',
                 icon: 'fa-sharp fa-solid fa-file-arrow-up',
             },
-            text: 'page.component.button.text-1'
+            text: 'page.component.button.default'
         },
         {
             markup: `
                 <vui-button
-                    icon="fa-sharp fa-solid fa-file-arrow-up"
-                    :disabled="true"
-                    text="submit button"
+                    icon="fa-sharp fa-solid fa-bug"
+                    layout="error",
+                    text="Error submit button"
                     type="submit"
                 />
             `,
             props: {
                 id: 'vui-button-2',
-                icon: 'fa-sharp fa-solid fa-file-arrow-up',
-                text: 'page.component.button.text-2'
+                icon: 'fa-sharp fa-solid fa-bug',
+                text: 'page.component.button.error',
+                layout: 'error'
+            }
+        },
+        {
+            markup: `
+                <vui-button
+                    icon="fa-sharp fa-solid fa-check"
+                    text="submit button"
+                    type="submit"
+                />
+            `,
+            props: {
+                id: 'vui-button-3',
+                icon: 'fa-sharp fa-solid fa-check',
+                text: 'page.component.button.success',
+                layout: 'success'
+            }
+        },
+        {
+            markup: `
+                <vui-button
+                    icon="fa-sharp fa-solid fa-warning"
+                    text="submit button"
+                    type="submit"
+                />
+            `,
+            props: {
+                id: 'vui-button-4',
+                icon: 'fa-sharp fa-solid fa-warning',
+                text: 'page.component.button.warning',
+                layout: 'warning'
             }
         },
         {
@@ -42,9 +73,9 @@ export default {
                 />
             `,
             props: {
-                id: 'vui-button-3',
+                id: 'vui-button-5',
                 icon: 'fa-sharp fa-solid fa-file-arrow-up',
-                text: 'page.component.button.text-3',
+                text: 'page.component.button.disabled',
                 disabled: true
             }
         }

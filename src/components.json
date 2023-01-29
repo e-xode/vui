@@ -1,6 +1,17 @@
 [
     {
         "icon": "fa-brands fa-vuejs",
+        "label": "Alert",
+        "name": "vui-alert",
+        "path": "/components/ui/alert/alert.vue",
+        "type": "html",
+        "doc": {
+            "name": "view-alert",
+            "path": "/views/component/ui/alert/alert.vue"
+        }
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
         "label": "Button",
         "name": "vui-button",
         "path": "/components/html/button/button.vue",

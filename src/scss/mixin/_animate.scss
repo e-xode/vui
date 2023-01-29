@@ -22,6 +22,15 @@
     border: 1px solid transparent;
     border-radius: .25rem;
 
+    .#{$class}-loader {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 30%;
+        height: 2px;
+        background-color: transparent;
+    }
+
     &:hover {
         background-color: $vui-color-grey-light;
     }
@@ -36,5 +45,59 @@
             $vui-color-grey-extra-light,
             $vui-color-grey-extra-light
         );
+    }
+
+    &.#{$class}--loading {
+        .#{$class}-loader {
+            animation: linear infinite;
+            animation-name: loading;
+            animation-duration: .8s;
+            background-color: $vui-color-grey-extra-dark;
+        }
+    }
+
+    &.#{$class}--error {
+        &:hover {
+            background-color: lighten($vui-color-red, 30%);
+        }
+        &.#{$class}--toggled {
+            background-color: lighten($vui-color-red, 30%);
+        }
+        &.#{$class}--animating {
+            background-image: linear-gradient(
+                lighten($vui-color-red, 20%),
+                lighten($vui-color-red, 20%),
+            );
+        }
+    }
+
+    &.#{$class}--success {
+        &:hover {
+            background-color: lighten($vui-color-green, 30%);
+        }
+        &.#{$class}--toggled {
+            background-color: lighten($vui-color-green, 30%);
+        }
+        &.#{$class}--animating {
+            background-image: linear-gradient(
+                lighten($vui-color-green, 20%),
+                lighten($vui-color-green, 20%),
+            );
+        }
+    }
+
+    &.#{$class}--warning {
+        &:hover {
+            background-color: lighten($vui-color-orange, 30%);
+        }
+        &.#{$class}--toggled {
+            background-color: lighten($vui-color-orange, 30%);
+        }
+        &.#{$class}--animating {
+            background-image: linear-gradient(
+                lighten($vui-color-orange, 20%),
+                lighten($vui-color-orange, 20%),
+            );
+        }
     }
 }

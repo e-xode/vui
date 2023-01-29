@@ -6,9 +6,15 @@ import Button from '@/components/html/button/button.vue'
 
 describe('components/form/Button.vue', () => {
 
+    const propsData = {
+        type: 'submit',
+        layout: 'success'
+    }
+
     const mountComponent = () => {
         return shallowMount(Button, {
-            ...setup
+            ...setup,
+            propsData
         })
     }
 
@@ -26,23 +32,30 @@ describe('components/form/Button.vue', () => {
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
-        expect(component.vm.type).toBe('button')
+        expect(component.vm.type).toBe('submit')
+        expect(component.classes('vui-button--success')).toBeTruthy()
     })
 
-    it('Should animate and be toggled on click', () => {
+    it('Should toggle and animate on click', async() => {
         const component = mountComponent()
 
         component.vm.onClick()
-
         expect(component.vm.animating).toBeTruthy()
         expect(component.vm.toggled).toBeTruthy()
+        await component.vm.$nextTick()
+        expect(component.classes('vui-button--animating')).toBeTruthy()
+
+        await component.vm.$nextTick()
+        expect(component.classes('vui-button--toggled')).toBeTruthy()
 
         jest.advanceTimersByTime(options.duration)
-
         expect(component.vm.animating).toBeFalsy()
+        await component.vm.$nextTick()
+        expect(component.classes('vui-button--animating')).toBeFalsy()
 
         component.vm.onClick()
-
         expect(component.vm.toggled).toBeFalsy()
+        await component.vm.$nextTick()
+        expect(component.classes('vui-button--toggled')).toBeFalsy()
     })
 })

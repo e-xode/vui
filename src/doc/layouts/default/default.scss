@@ -34,8 +34,11 @@
         .vui-footer {
 
             .copyright {
+                font-size: .9rem;
 
                 a {
+                    font-size: inherit;
+                    border-bottom: 1px solid $vui-color-blue;
                 }
             }
         }

@@ -1,15 +1,15 @@
 import { shallowMount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Tag from './tag.vue'
+import Alert from './alert.vue'
 
-describe('components/Tag.vue', () => {
+describe('components/Alert.vue', () => {
 
     const propsData = {
-        layout: 'warning'
+        layout: 'error'
     }
 
     const mountComponent = () => {
-        return shallowMount(Tag, {
+        return shallowMount(Alert, {
             ...setup,
             propsData
         })
@@ -29,6 +29,6 @@ describe('components/Tag.vue', () => {
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
-        expect(component.classes('vui-tag--warning')).toBeTruthy()
+        expect(component.classes('vui-alert--error')).toBeTruthy()
     })
 })

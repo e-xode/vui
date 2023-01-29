@@ -3,6 +3,7 @@
         :id="componentId"
         :class="[
             'vui-button',
+            `vui-button--${layout}`,
             { 'vui-button--with-icon' : icon },
             { 'vui-button--toggled' : toggled },
             { 'vui-button--animating' : !disabled && animating },
