@@ -16,9 +16,9 @@ export default {
     props,
     created () {
         translatable(langs)
+        this.selected = this.value
     },
     mounted () {
-        this.selected = this.value
     },
     watch: {
         value (selected) {

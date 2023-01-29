@@ -4,28 +4,14 @@ import {
     translatable
 } from '@/composables/index.mjs'
 
+import { props } from './input.constant.mjs'
+
 export default {
     name: 'VuiInput',
     mixins: [
         composable
     ],
-    props: {
-        disabled: {
-            type: Boolean
-        },
-        placeholder: {
-            type: String,
-            default: null
-        },
-        type: {
-            type: String,
-            required: true
-        },
-        modelValue: {
-            type: [String, Number, null],
-            required: true,
-        }
-    },
+    props,
     created () {
         translatable(langs)
     },
