@@ -15,12 +15,14 @@ export default {
         return {}
     },
     mounted () {
+        this.form = doc.examples.reduce((obj, { props }) => {
+            obj[props.id] = 'test'
+            return obj
+        }, {})
     },
     data () {
         return {
             form: {
-                email: '',
-                text: ''
             }
         }
     },
