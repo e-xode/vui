@@ -10,7 +10,7 @@
     "main": "./dist/vui.cjs.js",
     "module": "./dist/vui.esm.js",
     "type": "module",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/e-xode/vui.git"
@@ -23,7 +23,7 @@
         "build:components": "vite --config vite.components.mjs build",
         "build:doc": "vite --config vite.doc.mjs build src/doc",
         "dev": "vite --host --config vite.doc.mjs src/doc",
-        "lint": "eslint --ext .js,.vue src",
+        "lint": "eslint --ext .js,.mjs,.vue src",
         "preview": "vite --config vite.doc.mjs preview src/doc",
         "test:unit": "jest --clearCache && jest",
         "test:unit:coverage": "jest --clearCache && jest --coverage",
@@ -37,6 +37,9 @@
         ]
     },
     "eslintConfig": {
+        "env": {
+            "jest": true
+        },
         "root": true,
         "extends": [
             "eslint:recommended",
@@ -44,6 +47,7 @@
         ],
         "rules": {
             "comma-dangle": ["error", "never"],
+            "no-console": ["error"],
             "quotes": ["error", "single"],
             "semi": ["error", "never"],
             "vue/html-closing-bracket-newline": ["error"],

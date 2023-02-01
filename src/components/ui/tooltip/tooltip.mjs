@@ -29,7 +29,7 @@ export default {
     },
     created () {
         translatable(langs)
-        this.$bus.on('outclick', (groupId) => {
+        this.$bus.on('outclick', () => {
             this.$emit('update:modelValue', false)
             this.show = false
         })
@@ -74,9 +74,10 @@ export default {
                 case 'left':
                     return holder.left - (content.width + 15)
                 case 'bottom':
-                case 'top':
+                case 'top': {
                     const diff = content.width - holder.width
                     return holder.left - (diff / 2)
+                }
                 case 'right':
                 default:
                     return holder.right + 15

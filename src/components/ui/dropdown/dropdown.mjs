@@ -22,8 +22,6 @@ export default {
             this.selected = this.value
         }
     },
-    mounted () {
-    },
     watch: {
         value (value) {
             this.selected = value

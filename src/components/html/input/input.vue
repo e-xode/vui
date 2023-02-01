@@ -6,7 +6,7 @@
             :disabled="disabled"
             :placeholder="placeholderValue"
             :type="type"
-            :value="modelValue"
+            :value="typed"
             @input="onInput"
         >
     </div>

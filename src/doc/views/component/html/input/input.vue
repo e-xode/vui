@@ -18,12 +18,12 @@
                         <template #body>
                             <vui-tag>
                                 {{ $t('page.component.input.vmodel') }}:
-                                {{ form[example.props.type] }}
+                                {{ form[example.props.id] }}
                             </vui-tag>
                             <component
                                 :is="example.component"
                                 v-bind="example.props"
-                                v-model="form[example.props.type]"
+                                v-model="form[example.props.id]"
                                 maxlength="15"
                             />
                         </template>

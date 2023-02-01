@@ -41,7 +41,7 @@ export default {
                 id: 'vui-alert-2',
                 icon: 'fa-solid fa-check',
                 layout: 'success',
-                text: 'page.component.alert.success',
+                text: 'page.component.alert.success'
             }
         },
         {
@@ -56,7 +56,7 @@ export default {
                 id: 'vui-alert-2',
                 icon: 'fa-solid fa-warning',
                 layout: 'warning',
-                text: 'page.component.alert.warning',
+                text: 'page.component.alert.warning'
             }
         }
     ],

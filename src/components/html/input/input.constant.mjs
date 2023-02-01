@@ -12,7 +12,11 @@ const props = {
     },
     modelValue: {
         type: [String, Number, null],
-        required: true,
+        required: false
+    },
+    value: {
+        type: [String, Number, null],
+        required: false
     }
 }
 

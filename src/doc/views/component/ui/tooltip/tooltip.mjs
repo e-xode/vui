@@ -15,7 +15,7 @@ export default {
         return {}
     },
     mounted () {
-        this.tooltips = doc.examples.map(_ => false)
+        this.tooltips = doc.examples.map(() => false)
     },
     data () {
         return {
@@ -39,7 +39,7 @@ export default {
                     }
                 }))
             })
-        },
+        }
     },
     methods: {
         holder (index) {

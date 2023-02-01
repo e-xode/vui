@@ -3,14 +3,14 @@ import setup from '@/test/setup.mjs'
 import Input from './input.vue'
 
 describe('components/Input.vue', () => {
-
+    const propsData = {
+        modelValue: null,
+        type: 'text'
+    }
     const mountComponent = () => {
         return shallowMount(Input, {
             ...setup,
-            propsData: {
-                modelValue: null,
-                type: 'text'
-            }
+            propsData
         })
     }
 
@@ -36,6 +36,8 @@ describe('components/Input.vue', () => {
         component.vm.onInput($e)
 
         const emitted = component.emitted()
+        expect(component.vm.typed).toBe($e.target.value)
+        expect(emitted['input'][0]).toEqual([$e.target.value])
         expect(emitted['update:modelValue'][0]).toEqual([$e.target.value])
     })
 })

@@ -14,11 +14,23 @@ export default {
     props,
     created () {
         translatable(langs)
+        if (this.hasModelValue) {
+            this.typed = this.modelValue
+        } else if (this.hasValue) {
+            this.typed = this.value
+        }
     },
-    mounted() {
+    watch: {
+        value (value) {
+            this.typed = value
+        },
+        modelValue (value) {
+            this.typed = value
+        }
     },
     data() {
         return {
+            typed: null
         }
     },
     computed: {
@@ -31,6 +43,8 @@ export default {
     methods: {
         onInput ($e) {
             const { value } = $e.target
+            this.typed = value
+            this.$emit('input', value)
             this.$emit('update:modelValue', value)
         }
     },
