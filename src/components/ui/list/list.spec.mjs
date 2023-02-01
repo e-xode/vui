@@ -126,7 +126,7 @@ describe('components/List.vue', () => {
             { label: 'groupLabel2', value: [
                 { label: 'label3', value: 'value3'},
                 { label: 'label4', value: 'value4'}
-            ]},
+            ]}
         ]
         const item = items[1].value[1]
 

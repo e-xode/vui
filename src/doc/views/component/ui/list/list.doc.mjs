@@ -35,8 +35,8 @@ export default {
                     { label: 'Label 1', value: 'value 1' },
                     { label: 'Label 2', value: 'value 2' }
                 ],
-                itemLabel: "label",
-                itemValue: "value",
+                itemLabel: 'label',
+                itemValue: 'value',
                 selectable: true
             },
             title: 'page.component.list.text-2'
@@ -71,8 +71,8 @@ export default {
                         { label: 'label 3', value: 'value 4'}
                     ]}
                 ],
-                itemLabel: "label",
-                itemValue: "value",
+                itemLabel: 'label',
+                itemValue: 'value',
                 selectable: true
             },
             title: 'page.component.list.text-3'

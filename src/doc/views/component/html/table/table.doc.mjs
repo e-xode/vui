@@ -35,18 +35,16 @@ export default {
                     { label: 'Start date', value: 'startDate' },
                     { label: 'Quantity', value: 'quantity' },
                     { label: 'End date', value: 'endDate' },
-                    { label: 'Quantity', value: 'quantity' },
+                    { label: 'Quantity', value: 'quantity' }
                 ],
                 items: [
                     {
                         startDate: '2022-01-01',
-                        quantity: '2 187',
                         endDate: '2022-12-01',
                         quantity: '1 239'
                     },
                     {
                         startDate: '2021-01-01',
-                        quantity: '2 037',
                         endDate: '2021-12-01',
                         quantity: '1 448'
                     }

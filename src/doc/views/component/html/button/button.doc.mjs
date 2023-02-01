@@ -13,7 +13,7 @@ export default {
             `,
             props: {
                 id: 'vui-button-1',
-                icon: 'fa-sharp fa-solid fa-file-arrow-up',
+                icon: 'fa-sharp fa-solid fa-file-arrow-up'
             },
             text: 'page.component.button.default'
         },

@@ -3,7 +3,7 @@ export default {
         {
             name: 'flat',
             text: 'page.component.card.doc.attr.flat'
-        },
+        }
     ],
     examples: [
         {

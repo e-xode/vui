@@ -4,13 +4,16 @@ orbs:
   node: circleci/node@4.7
 
 jobs:
-  build-and-test:
+  test:
     docker:
-      - image: cimg/node:16.10
+      - image: cimg/node:19.5.0
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: npm
+      - run:
+          name: run front-end lint
+          command: npm run lint
       - run:
           name: run front-end unit tests
           command: npm run test:unit
@@ -18,4 +21,4 @@ jobs:
 workflows:
   unit-testing:
     jobs:
-      - build-and-test
+      - test

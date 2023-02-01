@@ -10,7 +10,7 @@ export default {
             `,
             props: {
                 id: 'example-footer-2',
-                icon: 'fa-sharp fa-solid fa-file-arrow-up',
+                icon: 'fa-sharp fa-solid fa-file-arrow-up'
             },
             text: 'page.component.footer.text'
         }

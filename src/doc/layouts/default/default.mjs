@@ -1,4 +1,4 @@
-import components from "@/components.json"
+import components from '@/components.json'
 
 export default {
     name: 'LayoutDefault',
