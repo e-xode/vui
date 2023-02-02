@@ -2,7 +2,7 @@
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/e-xode/vui/tree/master.svg?style=svg&circle-token=d8353b320a36159da949b935eba5cbdb41502a60)](https://dl.circleci.com/status-badge/redirect/gh/e-xode/vui/tree/master)
 
-VUI is an open Vue library that focus to quickly implements and customize rich web components for Vue.js.
+VUI is an open source UI library focusing on providing customizable web components for Vue.js.
 
 ## Features
 - Provides web components with minimum functionalities and easy customization

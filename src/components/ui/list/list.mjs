@@ -32,6 +32,26 @@ export default {
         }
     },
     computed: {
+        filteredItems () {
+            if (!this.keyword) {
+                return this.items
+            }
+            return this.items.reduce((items, item) => {
+                if (this.isGroup(item)) {
+                    items.push({
+                        ...item,
+                        value: item.value.reduce((values, value) =>
+                            this.match(value)
+                                ? [...values, value]
+                                : values
+                        , [])
+                    })
+                } else if (this.match(item)) {
+                    items.push(item)
+                }
+                return items
+            }, [])
+        }
     },
     methods: {
         isAnimating (index) {
@@ -48,6 +68,11 @@ export default {
         },
         isToggled (index) {
             return this.open === index && this.toggled
+        },
+        match (item) {
+            return this.itemValue
+                ? `${item[this.itemValue]}`.includes(this.keyword)
+                : `${item}`.includes(this.keyword)
         },
         onClick (item) {
             if (!this.disabled && this.selectable) {

@@ -57,7 +57,7 @@ describe('components/Dropdown.vue', () => {
             await component.vm.$nextTick()
             expect(placeholder.classes(`${rootclass}--animating`)).toBeFalsy()
 
-            component.vm.onClick()
+            component.vm.$bus.emit('outclick')
             expect(component.vm.toggled).toBeFalsy()
             await component.vm.$nextTick()
             expect(placeholder.classes(`${rootclass}--toggled`)).toBeFalsy()

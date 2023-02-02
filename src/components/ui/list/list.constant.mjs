@@ -2,6 +2,10 @@ const props = {
     disabled: {
         type: Boolean
     },
+    keyword: {
+        type: String,
+        default: null
+    },
     items: {
         type: Array,
         required: true

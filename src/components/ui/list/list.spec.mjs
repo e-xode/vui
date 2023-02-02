@@ -20,6 +20,7 @@ describe('components/List.vue', () => {
         propsData.selectable = false
         propsData.items = [1, 2, 3, 4]
         propsData.value = 4
+        propsData.keyword = null
     })
 
     afterEach(() => {
@@ -79,6 +80,21 @@ describe('components/List.vue', () => {
         })
     })
 
+    describe('with filtered items', () => {
+
+        beforeEach(() => {
+            propsData.selectable = true
+            propsData.keyword = '1'
+        })
+
+        it('Should return only one item', () => {
+            const component = mountComponent()
+
+            expect(component.vm.filteredItems.length).toBe(1)
+            expect(component.vm.filteredItems[0]).toBe(1)
+        })
+    })
+
     describe('enabled & unselectable', () => {
         beforeEach(() => {
             propsData.selectable = false
@@ -114,6 +130,21 @@ describe('components/List.vue', () => {
             expect(component.exists()).toBeTruthy()
             expect(component.vm.selected).toEqual(items[1])
             expect(component.vm.isSelected(items[1])).toBeTruthy()
+        })
+
+        describe('with filtered items', () => {
+
+            beforeEach(() => {
+                propsData.selectable = true
+                propsData.keyword = 'value1'
+            })
+
+            it('Should return only one item', () => {
+                const component = mountComponent()
+
+                expect(component.vm.filteredItems.length).toBe(1)
+                expect(component.vm.filteredItems[0].value).toBe('value1')
+            })
         })
     })
 
@@ -183,6 +214,21 @@ describe('components/List.vue', () => {
 
                 expect(component.vm.open).toBe(null)
                 expect(component.vm.toggled).toBeFalsy()
+            })
+        })
+
+        describe('with filtered items', () => {
+
+            beforeEach(() => {
+                propsData.selectable = true
+                propsData.keyword = 'value1'
+            })
+
+            it('Should return only one item', () => {
+                const component = mountComponent()
+
+                expect(component.vm.filteredItems[0].value.length).toBe(1)
+                expect(component.vm.filteredItems[0].value[0].value).toBe('value1')
             })
         })
     })

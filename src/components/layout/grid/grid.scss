@@ -15,26 +15,33 @@
     flex-wrap: wrap;
 }
 
+
+@media (min-width: 576px) {
+    .vui-grid {
+        @include col('vui-grid--col-xs');
+    }
+}
+
+@media (min-width: 768px) {
+    .vui-grid {
+        @include col('vui-grid--col-sm');
+    }
+}
+
+@media (min-width: 992px) {
+    .vui-grid {
+        @include col('vui-grid--col-md');
+    }
+}
+
 @media(min-width: 1200px) {
     .vui-grid {
         @include col('vui-grid--col-xl');
     }
 }
 
-@media (max-width: 1199px) {
+@media(min-width: 1400px) {
     .vui-grid {
-        @include col('vui-grid--col-md');
-    }
-}
-
-@media (max-width: 991px) {
-    .vui-grid {
-        @include col('vui-grid--col-sm');
-    }
-}
-
-@media (max-width: 599px) {
-    .vui-grid {
-        @include col('vui-grid--col-xs');
+        @include col('vui-grid--col-xxl');
     }
 }

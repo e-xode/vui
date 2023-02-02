@@ -11,24 +11,38 @@
         @include vui-box-shadow;
         background-color: $vui-color-white;
         width: 100%;
-        padding: .5rem .5rem .5rem 1rem;
         cursor: pointer;
-
-        .vui-dropdown-placeholder-label {
-        }
 
         &:before {
             @include vui-glyph-solid;
+            position: absolute;
+            top: .35rem;
+            right: 1rem;
             content: '\f0dd';
-            float: right;
-            margin: -.25rem .5rem 0 .5rem;
             color: $vui-color-grey;
+        }
+
+        &:hover:before {
+            color: $vui-color-grey-dark;
+        }
+
+        &.vui-dropdown-placeholder--toggled:before {
+            content: '\f0d8';
+            top: .7rem;
+            color: $vui-color-grey-dark;
+        }
+
+        .vui-dropdown-placeholder-label {
+            width: 100%;
+            padding: .5rem .5rem .5rem 1rem;
+            background-color: transparent;
+            outline: none;
         }
     }
 
     .vui-list.vui-dropdown-list {
         position: absolute;
-        top: 2.2rem;
+        top: 2.35rem;
         left: 0;
         right: 0;
         background-color: $vui-color-white;

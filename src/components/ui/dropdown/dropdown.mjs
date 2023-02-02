@@ -32,6 +32,7 @@ export default {
     },
     data () {
         return {
+            keyword: null,
             selected: null
         }
     },
@@ -59,7 +60,7 @@ export default {
     methods: {
         onClick () {
             if (!this.disabled) {
-                this.onAnimate()
+                this.onAnimate(true)
             }
         },
         toggleItem (selected) {

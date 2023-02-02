@@ -14,7 +14,7 @@
         </div>
         <div class="vui-list-items">
             <div
-                v-for="(item, index) in items"
+                v-for="(item, index) in filteredItems"
                 :key="`list-item-${index}`"
                 :class="[
                     { 'vui-list-items-item': !isGroup(item) },
