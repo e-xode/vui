@@ -5,11 +5,11 @@
 VUI is an open source UI library focusing on providing customizable web components for Vue.js.
 
 ## Features
-- Provides web components with minimum functionalities and easy customization
-- 3 components types: Html (button, input, table, ...), U.I ( card, dropdown, modal, ...) and layout (vui-grid, vui-grid-item)
-- Styles and layouts allow CSS overrides (no inline definitions, no !importants, ...)
-- Integrates fontawesome-free Icons library
-- Provided with documentation and unit tests
+- 3 families of web components: Html (button, input, ...), UI ( card, dropdown, ...) and layout ( grid, responsive ) focusing on functionalities and quick customization.
+- Styles and layouts allow easy CSS overriding (no inline definitions, no !importants, ...).
+- Compatible with server rendering ( SSR ).
+- Integrates fontawesome-free Icons library.
+- Provides documentation and tests.
 
 Online documentation and demo are available [here](https://vui.e-xode.net/)
 
@@ -20,7 +20,7 @@ Install first dependency:
 npm install -s @e-xode/vui
 ```
 
-### setup vui in your vue app
+### use vui in your vue app
 In your Vue application:
 ```javascript
 import { createApp } from 'vue'
@@ -45,6 +45,30 @@ main.use(new createI18n({
 ### load @fontawesome icons
 ```scss
 @import "@fortawesome/fontawesome-free/css/all.css";
+@font-face {
+    font-family: 'Font Awesome 5 Brands';
+    font-style: normal;
+    font-weight: 400;
+    src:
+    url('@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2') format('woff2'),
+    url('@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf') format('truetype')
+}
+@font-face {
+    font-family: 'Font Awesome 5 Regular';
+    font-style: normal;
+    font-weight: 400;
+    src:
+    url('@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2') format('woff2'),
+    url('@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf') format('truetype')
+}
+@font-face {
+    font-family: 'Font Awesome 5 Solid';
+    font-style: normal;
+    font-weight: 900;
+    src:
+    url('@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2') format('woff2'),
+    url('@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf') format('truetype')
+}
 ```
 
 Note: The current version of VUI works only with vue-i18n and option legacy = false (translations are components isolated)
@@ -60,7 +84,7 @@ Optional: Edit .env file and update values according to your config
 docker-compose up
 ```
 
-### local Node / NPM
+### or local with Node / NPM
 ```sh
 npm install
 npm run dev
