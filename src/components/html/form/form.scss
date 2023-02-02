@@ -2,6 +2,7 @@
 
 .vui-form {
     border: 1px solid $vui-color-grey;
+    border-radius: .25rem;
 
     section {
         padding: 1rem;
@@ -20,6 +21,10 @@
 
                 .input {
                     flex: 0 0 50%;
+
+                    input {
+                        width: 100%;
+                    }
                 }
             }
         }

@@ -12,9 +12,12 @@
             ]"
             @click.stop="onClick"
         >
-            <span class="vui-dropdown-placeholder-label">
-                {{ placeholderValue }}
-            </span>
+            <input
+                type="text"
+                class="vui-dropdown-placeholder-label"
+                :placeholder="placeholderValue"
+                v-model="keyword"
+            />
         </div>
         <vui-list
             v-if="toggled"
@@ -24,6 +27,7 @@
             :items="items"
             :item-label="itemLabel"
             :item-value="itemValue"
+            :keyword="keyword"
             :selectable="true"
             :title="listTitle"
             :value="selected"

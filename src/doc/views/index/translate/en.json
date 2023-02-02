@@ -1,6 +1,6 @@
 {
     "page.index.h1": "Yet another Vue library",
-    "page.index.description": "VUI is an open Vue library that focus to provide easy and quick implementation for developpers.",
+    "page.index.description": "VUI is an open source UI library focusing on providing customizable web components for Vue.js.",
     "page.index.get-started": "Get started",
     "page.index.github": "Github"
 }
