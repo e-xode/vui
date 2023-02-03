@@ -18,7 +18,18 @@ export default {
     },
     computed: {
         components () {
-            return components
+            return components.reduce((array, component) => {
+                const index = array.findIndex((item) => item.label === component.type)
+                if (index === -1) {
+                    array.push({
+                        label: component.type,
+                        value: [component]
+                    })
+                } else {
+                    array[index].value.push(component)
+                }
+                return array
+            }, [])
         }
     },
     methods: {
