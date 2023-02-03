@@ -1,6 +1,14 @@
 const props = {
+    autoclose: {
+        type: Boolean,
+        default: true
+    },
     disabled: {
         type: Boolean
+    },
+    expanded: {
+        type: Boolean,
+        default: false
     },
     keyword: {
         type: String,

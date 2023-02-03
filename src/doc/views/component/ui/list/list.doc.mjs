@@ -80,9 +80,19 @@ export default {
     ],
     props: [
         {
+            tag: 'autoclose',
+            type: 'Boolean',
+            text: 'page.component.list.doc.prop.autoclose'
+        },
+        {
             tag: 'disabled',
             type: 'Boolean',
             text: 'page.component.list.doc.prop.disabled'
+        },
+        {
+            tag: 'expanded',
+            type: 'Boolean',
+            text: 'page.component.list.doc.prop.expanded'
         },
         {
             tag: 'icon',
@@ -90,12 +100,12 @@ export default {
             text: 'page.component.list.doc.prop.icon'
         },
         {
-            tag: 'itemLabel',
+            tag: 'item-label',
             type: 'String',
             text: 'page.component.list.doc.prop.item-label'
         },
         {
-            tag: 'itemValue',
+            tag: 'item-value',
             type: 'String',
             text: 'page.component.list.doc.prop.item-value'
         },
@@ -122,8 +132,12 @@ export default {
     ],
     slots: [
         {
-            name: 'default',
-            text: 'page.component.list.doc.slot.default'
+            name: 'group-item',
+            text: 'page.component.list.doc.slot.group-item'
+        },
+        {
+            name: 'item',
+            text: 'page.component.list.doc.slot.item'
         }
     ]
 }

@@ -16,18 +16,22 @@ export default {
     props,
     created () {
         translatable(langs)
+        this.autoexpand()
         this.selected = this.value
     },
     mounted () {
     },
     watch: {
+        items () {
+            this.autoexpand()
+        },
         value (selected) {
             this.selected = selected
         }
     },
     data () {
         return {
-            open: null,
+            open: {},
             selected: null
         }
     },
@@ -54,8 +58,17 @@ export default {
         }
     },
     methods: {
+        autoexpand () {
+            if (this.expanded) {
+                this.open = this.items.reduce((open, item, i) => {
+                    return this.isGroup(item)
+                        ? { ...open, [i]: true }
+                        : open
+                }, {})
+            }
+        },
         isAnimating (index) {
-            return this.open === index && this.animating
+            return this.open[index] && this.animating
         },
         isGroup (item) {
             return Array.isArray(item?.[this.itemValue])
@@ -67,7 +80,7 @@ export default {
                 : selected === item
         },
         isToggled (index) {
-            return this.open === index && this.toggled
+            return this.open[index] && this.toggled
         },
         match (item) {
             return this.itemValue
@@ -84,10 +97,12 @@ export default {
         },
         onToggle (index) {
             if (!this.disabled) {
-                this.open = this.open === index
-                    ? null
-                    : index
-                this.onAnimate(this.open !== null)
+                if (this.autoclose) {
+                    this.open = { [index]: !this.open[index] }
+                } else {
+                    this.open[index] = !this.open[index]
+                }
+                this.onAnimate(this.open[index])
             }
         }
     }

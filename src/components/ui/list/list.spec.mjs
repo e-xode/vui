@@ -188,9 +188,10 @@ describe('components/List.vue', () => {
 
             component.vm.onToggle(0)
 
-            expect(component.vm.open).toBe(0)
+            expect(component.vm.open[0]).toBeTruthy()
             expect(component.vm.isToggled(0)).toBeTruthy()
             expect(component.vm.isAnimating(0)).toBeTruthy()
+            expect(Object.keys(component.vm.open).length).toBe(1)
 
             jest.advanceTimersByTime(options.duration)
 
@@ -212,7 +213,7 @@ describe('components/List.vue', () => {
 
                 component.vm.onToggle(0)
 
-                expect(component.vm.open).toBe(null)
+                expect(component.vm.open).toEqual({})
                 expect(component.vm.toggled).toBeFalsy()
             })
         })
@@ -229,6 +230,35 @@ describe('components/List.vue', () => {
 
                 expect(component.vm.filteredItems[0].value.length).toBe(1)
                 expect(component.vm.filteredItems[0].value[0].value).toBe('value1')
+            })
+        })
+
+        describe('with autoclose as false', () => {
+
+            beforeEach(() => {
+                propsData.autoclose = false
+            })
+
+            it('Should return only one item', () => {
+                const component = mountComponent()
+
+                component.vm.onToggle(0)
+                component.vm.onToggle(1)
+
+                expect(Object.keys(component.vm.open).length).toBe(2)
+            })
+        })
+
+        describe('with expanded as true', () => {
+
+            beforeEach(() => {
+                propsData.expanded = true
+            })
+
+            it('Should return only one item', () => {
+                const component = mountComponent()
+
+                expect(Object.keys(component.vm.open).length).toBe(2)
             })
         })
     })

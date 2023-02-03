@@ -2,11 +2,16 @@
     <div class="view-start">
         <vui-list
             flat
+            :autoclose="false"
+            :expanded="true"
             :items="components"
             item-label="label"
-            item-value="name"
+            item-value="value"
         >
-            <template #default="{ item }">
+            <template #group-item="{ item }">
+                {{ item.label }}
+            </template>
+            <template #item="{ item }">
                 <router-link :to="{ name: item.doc.name }">
                     {{ item.label }}
                 </router-link>

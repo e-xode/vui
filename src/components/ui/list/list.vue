@@ -38,6 +38,7 @@
                             ]"
                         />
                         <slot
+                            name="item"
                             :item="item"
                         >
                             {{
@@ -54,11 +55,12 @@
                             'vui-list-items-item-group-label',
                             { 'vui-list-items-item-group-label--toggled': isToggled(index) },
                             { 'vui-list-items-item-group-label--animating': isAnimating(index) },
-                            { 'vui-list-items-item-group-label--open': open === index }
+                            { 'vui-list-items-item-group-label--open': open[index] }
                         ]"
                         @click.stop="() => onToggle(index)"
                     >
                         <slot
+                            name="group-item"
                             :item="item"
                         >
                             {{
@@ -68,7 +70,7 @@
                             }}
                         </slot>
                     </div>
-                    <template v-if="open === index">
+                    <template v-if="open[index]">
                         <div
                             v-for="(childitem, j) in item[itemValue]"
                             :key="`list-group-item-${j}`"
@@ -87,7 +89,8 @@
                                 ]"
                             />
                             <slot
-                                :item="item"
+                                name="item"
+                                :item="childitem"
                             >
                                 {{
                                     itemValue

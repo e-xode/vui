@@ -8,10 +8,17 @@
     }
 
     .vui-list {
-        .vui-list-items-item {
-            .vui-list-items-item-label {
-                .vui-list-items-item-label-icon {
-                    color: darken($vui-color-green, 10%);
+        .vui-list-items {
+            .vui-list-items-group-item {
+                .vui-list-items-item-group-label {
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+
+                .vui-list-items-item-label {
+                    a {
+                        color: darken($vui-color-green, 10%);
+                    }
                 }
             }
         }
