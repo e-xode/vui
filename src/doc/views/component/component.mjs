@@ -19,10 +19,7 @@ export default {
     computed: {
         component () {
             const { components, $route } = this
-            const item = components.find(({ doc }) => doc.name === $route.name)
-            return item
-                ? item
-                : {}
+            return components.find(({ doc }) => doc.name === $route.name)
         },
         components () {
             return components

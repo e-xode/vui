@@ -6,7 +6,6 @@ export default {
     },
     data () {
         return {
-            component: null
         }
     },
     computed: {
@@ -22,10 +21,9 @@ export default {
         }
     },
     methods: {
-        toggleComponent (component) {
-            this.component = component
-            this.$router.replace({
-                name: component.doc?.name
+        toggleComponent ({ doc }) {
+            this.$router.push({
+                name: doc?.name
             })
         }
     }

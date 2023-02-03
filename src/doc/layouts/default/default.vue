@@ -9,12 +9,11 @@
                     {{ $t('component.header.home') }}
                 </router-link>
                 <vui-dropdown
-                    v-model="component"
                     :items="components"
                     item-label="label"
                     item-value="path"
                     :placeholder="$t('component.header.dropdown.components')"
-                    @update:model-value="toggleComponent"
+                    @input="toggleComponent"
                 />
             </vui-header>
         </template>

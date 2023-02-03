@@ -4,13 +4,23 @@
         class="vui-page"
         @click="outclick"
     >
-        <div class="vui-page-header">
+        <div
+            v-if="$slots.header"
+            class="vui-page-header"
+        >
             <slot name="header" />
         </div>
-        <div class="vui-page-body">
+        <div
+            v-if="$slots.body || $slots.default"
+            class="vui-page-body"
+        >
             <slot name="body" />
+            <slot />
         </div>
-        <div class="vui-page-footer">
+        <div
+            v-if="$slots.footer"
+            class="vui-page-footer"
+        >
             <slot name="footer" />
         </div>
     </div>
