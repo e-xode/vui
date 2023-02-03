@@ -52,6 +52,7 @@ export default {
                 </vui-form>
             `,
             props: {
+                id: 'form-1'
             }
         }
     ],

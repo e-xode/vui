@@ -3,7 +3,10 @@
         <h1>
             <i class="fa-brands fa-vuejs" />
             {{ $t('page.component.h1') }}
-            <span class="view-component-name">
+            <span
+                v-if="component"
+                class="view-component-name"
+            >
                 {{ component.label }}
             </span>
         </h1>
