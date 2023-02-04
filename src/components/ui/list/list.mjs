@@ -16,8 +16,12 @@ export default {
     props,
     created () {
         translatable(langs)
+        if (this.hasModelValue) {
+            this.selected = this.modelValue
+        } else if (this.hasValue) {
+            this.selected = this.value
+        }
         this.autoexpand()
-        this.selected = this.value
     },
     mounted () {
     },
@@ -25,12 +29,16 @@ export default {
         items () {
             this.autoexpand()
         },
+        modelValue (value) {
+            this.selected = value
+        },
         value (selected) {
             this.selected = selected
         }
     },
     data () {
         return {
+            last: null,
             open: {},
             selected: null
         }
@@ -59,16 +67,20 @@ export default {
     },
     methods: {
         autoexpand () {
-            if (this.expanded) {
-                this.open = this.items.reduce((open, item, i) => {
-                    return this.isGroup(item)
-                        ? { ...open, [i]: true }
-                        : open
-                }, {})
-            }
+            this.open = this.items.reduce((open, item, i) => {
+                if (this.isGroup(item)) {
+                    const items = item[this.itemValue]
+                    const index = items.findIndex((v) => this.isSelected(v))
+                    if (this.expanded || index > -1) {
+                        return { ...open, [i]: true }
+                    }
+                }
+                return open
+            }, {})
         },
         isAnimating (index) {
-            return this.open[index] && this.animating
+            const { animating, last } = this
+            return last === index && animating
         },
         isGroup (item) {
             return Array.isArray(item?.[this.itemValue])
@@ -80,7 +92,8 @@ export default {
                 : selected === item
         },
         isToggled (index) {
-            return this.open[index] && this.toggled
+            const { last, open, toggled } = this
+            return last === index && open[index] && toggled
         },
         match (item) {
             return this.itemValue
@@ -93,10 +106,12 @@ export default {
                     ? null
                     : item
                 this.$emit('input', item)
+                this.$emit('update:modelValue', item)
             }
         },
         onToggle (index) {
             if (!this.disabled) {
+                this.last = index
                 if (this.autoclose) {
                     this.open = { [index]: !this.open[index] }
                 } else {

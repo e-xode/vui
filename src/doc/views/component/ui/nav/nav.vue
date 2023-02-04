@@ -1,28 +1,22 @@
 <template>
-    <div class="view-page">
+    <div class="view-nav">
         <vui-grid
             col-sm="1"
             col-md="2"
         >
             <vui-grid-unit class="examples">
                 <template
-                    v-for="example in examples"
-                    :key="`page-${example.props.id}`"
+                    v-for="nav in examples"
+                    :key="`nav-${nav.props.id}`"
                 >
-                    <vui-page>
-                        <template #header>
-                            {{ $t(example.header) }}
-                        </template>
-                        <template #body>
-                            {{ $t(example.body) }}
-                        </template>
-                        <template #footer>
-                            {{ $t(example.footer) }}
-                        </template>
-                    </vui-page>
+                    <component
+                        :is="nav.component"
+                        v-bind="nav.props"
+                        v-model="selected"
+                    />
                     <div
                         class="highlighted-code"
-                        v-html="example.highlighted"
+                        v-html="nav.highlighted"
                     />
                 </template>
             </vui-grid-unit>
@@ -51,10 +45,10 @@
 </template>
 
 <script
-    src="./page.mjs"
+    src="./nav.mjs"
 />
 
 <style
     lang="scss"
-    src="./page.scss"
+    src="./nav.scss"
 />

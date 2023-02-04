@@ -7,7 +7,7 @@
             <vui-grid-unit class="examples">
                 <template
                     v-for="example in examples"
-                    :key="`example--${example.gridid}`"
+                    :key="`grid-unit-${example.gridid}`"
                 >
                     <vui-grid
                         :id="example.gridid"

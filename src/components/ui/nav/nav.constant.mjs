@@ -1,18 +1,6 @@
 const props = {
-    autoclose: {
-        type: Boolean,
-        default: true
-    },
     disabled: {
         type: Boolean
-    },
-    expanded: {
-        type: Boolean,
-        default: false
-    },
-    keyword: {
-        type: String,
-        default: null
     },
     items: {
         type: Array,
@@ -31,12 +19,6 @@ const props = {
             String
         ]
     },
-    selectable: {
-        type: Boolean
-    },
-    title: {
-        type: String
-    },
     value: {
         types: [
             Number,
@@ -45,6 +27,7 @@ const props = {
         ]
     }
 }
+
 export {
     props
 }

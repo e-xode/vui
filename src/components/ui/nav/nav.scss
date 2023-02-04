@@ -1,0 +1,44 @@
+@import "@/scss/import.scss";
+
+.vui-nav {
+    display: inline-flex;
+
+    .vui-list.vui-nav-list {
+
+        .vui-list-items {
+            display: flex;
+
+            .vui-list-items-item {
+                cursor: pointer;
+
+                .vui-list-items-item-label {
+                    i.fa-solid {
+                        color: $vui-color-grey;
+                    }
+
+                    .vui-list-items-item-label-text {
+                        padding-left: .5rem;
+                    }
+
+                    &.vui-list-items-item-label--selected {
+                        color: $vui-color-green;
+                        background-color: inherit;
+
+                        i.fa-solid {
+                            color: inherit;
+                        }
+                        .vui-list-items-item-label-text {
+                            color: inherit;
+                        }
+                    }
+                }
+
+                &:last-of-type {
+                    .vui-list-items-item-label {
+                        padding-right: 3rem;
+                    }
+                }
+            }
+        }
+    }
+}

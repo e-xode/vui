@@ -128,6 +128,16 @@ export default {
             tag: 'title',
             type: 'String',
             text: 'page.component.list.doc.prop.title'
+        },
+        {
+            tag: 'value',
+            type: '[Object, Number, String]',
+            text: 'page.component.list.doc.prop.value'
+        },
+        {
+            tag: 'v-model',
+            type: '[Object, Number, String]',
+            text: 'page.component.list.doc.prop.v-model'
         }
     ],
     slots: [
@@ -138,6 +148,10 @@ export default {
         {
             name: 'item',
             text: 'page.component.list.doc.slot.item'
+        },
+        {
+            name: 'placeholder',
+            text: 'page.component.list.doc.slot.placeholder'
         }
     ]
 }

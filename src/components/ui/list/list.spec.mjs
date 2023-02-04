@@ -191,11 +191,13 @@ describe('components/List.vue', () => {
             expect(component.vm.open[0]).toBeTruthy()
             expect(component.vm.isToggled(0)).toBeTruthy()
             expect(component.vm.isAnimating(0)).toBeTruthy()
+            expect(component.vm.isAnimating(1)).toBeFalsy()
             expect(Object.keys(component.vm.open).length).toBe(1)
 
             jest.advanceTimersByTime(options.duration)
 
             expect(component.vm.isToggled(0)).toBeTruthy()
+            expect(component.vm.isToggled(1)).toBeFalsy()
             expect(component.vm.isAnimating(0)).toBeFalsy()
 
             component.vm.onToggle(0)
@@ -206,6 +208,7 @@ describe('components/List.vue', () => {
         describe('disabled', () => {
             beforeEach(() => {
                 propsData.disabled = true
+                propsData.value = null
             })
 
             it('Should not onToggle', () => {

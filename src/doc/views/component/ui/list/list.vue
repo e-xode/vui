@@ -7,7 +7,7 @@
             <vui-grid-unit class="examples">
                 <template
                     v-for="(example) in examples"
-                    :key="`button-${example.props.id}`"
+                    :key="`list-${example.props.id}`"
                 >
                     <component
                         :is="example.component"

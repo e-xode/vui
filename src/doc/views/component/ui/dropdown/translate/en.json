@@ -9,6 +9,10 @@
     "page.component.dropdown.doc.prop.item-value": "Value key foreach list item",
     "page.component.dropdown.doc.prop.items": "Array of values that composes the list",
     "page.component.dropdown.doc.prop.placeholder": "Determines the placeholder of dropdown",
-    "page.component.dropdown.doc.prop.value": "Value of the dropdown",
-    "page.component.dropdown.doc.prop.v-model": "Binds the value of dropdown"
+    "page.component.dropdown.doc.prop.value": "Selected item in the dropdown",
+    "page.component.dropdown.doc.prop.v-model": "Binds the model changes of dropdown",
+    "page.component.dropdown.doc.slot.group-item": "Slot to custom each items group of the list",
+    "page.component.dropdown.doc.slot.keyword": "Slot containing the input text with keyword",
+    "page.component.dropdown.doc.slot.item": "Slot to custom each item of the list",
+    "page.component.dropdown.doc.slot.placeholder": "Placeholder slot for the default list title element"
 }

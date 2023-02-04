@@ -19,8 +19,6 @@
     background-size: 0 0;
     background-position: 50% 50%;
     transition: background-size .125s, color .125s;
-    border: 1px solid transparent;
-    border-radius: .25rem;
 
     .#{$class}-loader {
         position: absolute;

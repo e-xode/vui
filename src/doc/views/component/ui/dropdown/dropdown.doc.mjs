@@ -123,5 +123,21 @@ export default {
         }
     ],
     slots: [
+        {
+            name: 'group-item',
+            text: 'page.component.dropdown.doc.slot.group-item'
+        },
+        {
+            name: 'keyword',
+            text: 'page.component.dropdown.doc.slot.keyword'
+        },
+        {
+            name: 'item',
+            text: 'page.component.dropdown.doc.slot.item'
+        },
+        {
+            name: 'placeholder',
+            text: 'page.component.dropdown.doc.slot.placeholder'
+        }
     ]
 }

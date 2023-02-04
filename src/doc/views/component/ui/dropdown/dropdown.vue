@@ -6,8 +6,8 @@
         >
             <vui-grid-unit class="examples">
                 <template
-                    v-for="(example,i) in examples"
-                    :key="`dropdown-sample--${i}`"
+                    v-for="example in examples"
+                    :key="`dropdown-${example.props.id}`"
                 >
                     <component
                         :is="example.component"
@@ -29,6 +29,15 @@
                     item-value="value"
                     :headers="docPropsHeaders"
                     :items="docProps"
+                />
+                <h2 class="title">
+                    {{ $t('page.component.h2.slots') }}
+                </h2>
+                <vui-table
+                    item-label="label"
+                    item-value="value"
+                    :headers="docSlotsHeaders"
+                    :items="docSlots"
                 />
             </vui-grid-unit>
         </vui-grid>

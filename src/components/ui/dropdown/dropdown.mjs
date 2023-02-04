@@ -23,10 +23,10 @@ export default {
         }
     },
     watch: {
-        value (value) {
+        modelValue (value) {
             this.selected = value
         },
-        modelValue (value) {
+        value (value) {
             this.selected = value
         }
     },
@@ -63,7 +63,7 @@ export default {
                 this.onAnimate(true)
             }
         },
-        toggleItem (selected) {
+        onToggle (selected) {
             this.selected = selected
             this.$emit('update:modelValue', selected)
             this.$emit('input', selected)

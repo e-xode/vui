@@ -10,7 +10,12 @@
             v-if="title"
             class="vui-list-title"
         >
-            {{ title }}
+            <slot
+                name="placeholder"
+                :item="title"
+            >
+                {{ title }}
+            </slot>
         </div>
         <div class="vui-list-items">
             <div
@@ -39,7 +44,10 @@
                         />
                         <slot
                             name="item"
+                            :index="index"
                             :item="item"
+                            :item-label="itemLabel"
+                            :item-value="itemValue"
                         >
                             {{
                                 itemValue
@@ -61,7 +69,10 @@
                     >
                         <slot
                             name="group-item"
+                            :index="index"
                             :item="item"
+                            :item-label="itemLabel"
+                            :item-value="itemValue"
                         >
                             {{
                                 itemValue
@@ -90,7 +101,10 @@
                             />
                             <slot
                                 name="item"
+                                :index="j"
                                 :item="childitem"
+                                :item-label="itemLabel"
+                                :item-value="itemValue"
                             >
                                 {{
                                     itemValue
