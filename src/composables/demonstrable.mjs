@@ -9,18 +9,6 @@ const demonstrable = {
                 text: item.text ? this.$t(item.text) : null
             }))
         },
-        docProps () {
-            return this.doc.props.map((item) => ({
-                ...item,
-                text: item.text ? this.$t(item.text) : null
-            }))
-        },
-        docSlots () {
-            return this.doc.slots.map((item) => ({
-                ...item,
-                text: item.text ? this.$t(item.text) : null
-            }))
-        },
         docAttrsHeaders () {
             return [
                 {
@@ -32,6 +20,12 @@ const demonstrable = {
                     value: 'text'
                 }
             ]
+        },
+        docProps () {
+            return this.doc.props.map((item) => ({
+                ...item,
+                text: item.text ? this.$t(item.text) : null
+            }))
         },
         docPropsHeaders () {
             return [
@@ -48,6 +42,12 @@ const demonstrable = {
                     value: 'text'
                 }
             ]
+        },
+        docSlots () {
+            return this.doc.slots.map((item) => ({
+                ...item,
+                text: item.text ? this.$t(item.text) : null
+            }))
         },
         docSlotsHeaders () {
             return [

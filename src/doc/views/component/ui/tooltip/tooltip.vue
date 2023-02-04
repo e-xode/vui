@@ -6,23 +6,23 @@
         >
             <vui-grid-unit class="examples">
                 <template
-                    v-for="(example, index) in examples"
-                    :key="`button-${example.props.id}`"
+                    v-for="tooltip in examples"
+                    :key="`tooltip-${tooltip.props.id}`"
                 >
                     <vui-button
-                        :id="`button-holder-${index}`"
-                        :text="$t(example.button)"
-                        @click="() => onClick(index)"
+                        :id="`button-tooltip-${tooltip.props.id}`"
+                        :text="$t(tooltip.button)"
+                        @click="() => onClick(tooltip.props.id)"
                     />
                     <component
-                        :is="example.component"
-                        v-model="tooltips[index]"
-                        v-bind="example.props"
-                        :holder="holder(index)"
+                        :is="tooltip.component"
+                        v-model="tooltips[tooltip.props.id]"
+                        v-bind="tooltip.props"
+                        :holder="holder(tooltip.props.id)"
                     />
                     <div
                         class="highlighted-code"
-                        v-html="example.highlighted"
+                        v-html="tooltip.highlighted"
                     />
                 </template>
             </vui-grid-unit>

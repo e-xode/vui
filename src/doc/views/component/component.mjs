@@ -18,7 +18,7 @@ export default {
     },
     computed: {
         component () {
-            const { components, $route } = this
+            const { $route } = this
             return components.find(({ doc }) => doc.name === $route.name)
         },
         components () {
@@ -26,7 +26,11 @@ export default {
         }
     },
     methods: {
-    },
-    components: {
+        onRoute(component) {
+            const route = component.name === 'ViewStart'
+                ? { doc: { name: component.name }}
+                : components.find(({ name }) => name === component.name)
+            this.$router.push(route.doc)
+        }
     }
 }

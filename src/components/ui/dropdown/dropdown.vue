@@ -12,15 +12,21 @@
             ]"
             @click.stop="onClick"
         >
-            <input
-                type="text"
-                class="vui-dropdown-placeholder-label"
-                :placeholder="placeholderValue"
-                v-model="keyword"
-            />
+            <slot
+                name="keyword"
+                :keyword="keyword"
+            >
+                <input
+                    v-model="keyword"
+                    type="text"
+                    class="vui-dropdown-placeholder-label"
+                    :placeholder="placeholderValue"
+                >
+            </slot>
         </div>
         <vui-list
             v-if="toggled"
+            v-model="selected"
             class="vui-dropdown-list"
             :group-id="componentGroupId"
             :disabled="disabled"
@@ -30,9 +36,27 @@
             :keyword="keyword"
             :selectable="true"
             :title="listTitle"
-            :value="selected"
-            @input="toggleItem"
-        />
+            @input="onToggle"
+        >
+            <template
+                v-if="$slots.placeholder"
+                #placeholder
+            >
+                <slot name="placeholder" />
+            </template>
+            <template
+                v-if="$slots['group-item']"
+                #group-item
+            >
+                <slot name="group-item" />
+            </template>
+            <template
+                v-if="$slots.item"
+                #item
+            >
+                <slot name="item" />
+            </template>
+        </vui-list>
     </div>
 </template>
 

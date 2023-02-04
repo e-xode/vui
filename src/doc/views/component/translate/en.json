@@ -1,4 +1,5 @@
 {
+    "page.component.nav.start": "Get started",
     "page.component.h1": "component",
     "page.component.h2.api": "API options",
     "page.component.h2.attrs": "Attributes",

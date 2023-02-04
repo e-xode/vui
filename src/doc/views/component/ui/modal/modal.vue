@@ -7,7 +7,7 @@
             <vui-grid-unit class="examples">
                 <template
                     v-for="example in examples"
-                    :key="`modal-example--${example.props.id}`"
+                    :key="`modal-${example.props.id}`"
                 >
                     <vui-card>
                         <template #header>

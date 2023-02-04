@@ -22,8 +22,8 @@ export default {
             `,
             props: {
             },
-            body: 'page.component.card.example.content',
-            header: 'page.component.card.example.title',
+            body: 'page.component.card.example.body',
+            header: 'page.component.card.example.header',
             footer: 'page.component.card.example.footer'
         },
         {

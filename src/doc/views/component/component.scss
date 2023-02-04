@@ -1,22 +1,26 @@
 @import "@/scss/import.scss";
 
 .view-component {
-    > h1 {
-        position: relative;
-        padding-left: 2.5rem;
+    .h1 {
+        padding: 1rem;
 
-        i {
-            position: absolute;
-            top: .9rem;
-            left: .5rem;
-            color: $vui-color-green;
-            font-size: 1.5rem;
-            font-weight: 900;
-        }
+        h1 {
+            position: relative;
+            padding: 2rem 0 1rem 2rem;
 
-        .view-component-name {
-            font-size: 1.15rem;
-            font-weight: 600;
+            i {
+                position: absolute;
+                top: 1.9rem;
+                left: 0;
+                color: $vui-color-green;
+                font-size: 1.5rem;
+                font-weight: 900;
+            }
+
+            .view-component-name {
+                font-size: 1.15rem;
+                font-weight: 600;
+            }
         }
     }
 

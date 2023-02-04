@@ -3,23 +3,22 @@ import {
     translatable
 } from '@/composables/index.mjs'
 
-import VuiTooltip from '@/components/ui/tooltip/tooltip.vue'
-import langs from '@/doc/views/component/ui/tooltip/translate/index.mjs'
-import doc from '@/doc/views/component/ui/tooltip/tooltip.doc.mjs'
+import VuiNav from '@/components/ui/nav/nav.vue'
+import langs from '@/doc/views/component/ui/nav/translate/index.mjs'
+import doc from '@/doc/views/component/ui/nav/nav.doc.mjs'
 
 export default {
-    name: 'ViewTooltip',
+    name: 'ViewNav',
     mixins: [demonstrable],
     setup () {
         translatable(langs)
         return {}
     },
-    mounted () {
-        this.tooltips = doc.examples.map(() => false)
+    mounted() {
     },
-    data () {
+    data() {
         return {
-            tooltips: []
+            selected: null
         }
     },
     computed: {
@@ -27,7 +26,7 @@ export default {
             return doc
         },
         examples () {
-            return this.docExamples(VuiTooltip, {
+            return this.docExamples(VuiNav, {
                 attrs: doc.attrs,
                 examples: doc.examples.map((example) => ({
                     ...example,
@@ -42,14 +41,9 @@ export default {
         }
     },
     methods: {
-        holder (id) {
-            return this.tooltips?.length
-                ? this.$el.querySelector(`#button-tooltip-${id}`)
-                : null
-        },
-        onClick (id) {
-            const tooltip = this.tooltips[id]
-            this.tooltips[id] = !tooltip
+        submit () {
         }
+    },
+    components: {
     }
 }

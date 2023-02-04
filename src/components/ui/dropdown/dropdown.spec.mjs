@@ -67,7 +67,7 @@ describe('components/Dropdown.vue', () => {
             const component = mountComponent()
 
             component.vm.onClick()
-            component.vm.toggleItem(items[1])
+            component.vm.onToggle(items[1])
 
             const emitted = component.emitted()
             expect(emitted['update:modelValue'][0]).toEqual([items[1]])
@@ -105,7 +105,7 @@ describe('components/Dropdown.vue', () => {
             const component = mountComponent()
 
             component.vm.onClick()
-            component.vm.toggleItem(items[1])
+            component.vm.onToggle(items[1])
 
             const emitted = component.emitted()
             expect(emitted['update:modelValue'][0]).toEqual([items[1]])
@@ -149,7 +149,7 @@ describe('components/Dropdown.vue', () => {
             const component = mountComponent()
 
             component.vm.onClick()
-            component.vm.toggleItem(items[1])
+            component.vm.onToggle(items[1])
 
             const emitted = component.emitted()
             expect(emitted['update:modelValue'][0]).toEqual([items[1]])

@@ -7,7 +7,7 @@
             <vui-grid-unit class="examples">
                 <template
                     v-for="example in examples"
-                    :key="`footer-example--${example.props.id}`"
+                    :key="`footer-${example.props.id}`"
                 >
                     <vui-footer
                         v-bind="example.props"

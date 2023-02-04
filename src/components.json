@@ -133,6 +133,17 @@
     },
     {
         "icon": "fa-brands fa-vuejs",
+        "label": "Nav",
+        "name": "vui-nav",
+        "path": "/components/ui/nav/nav.vue",
+        "type": "ui",
+        "doc": {
+            "name": "view-nav",
+            "path": "/views/component/ui/nav/nav.vue"
+        }
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
         "label": "Page",
         "name": "vui-page",
         "path": "/components/ui/page/page.vue",
