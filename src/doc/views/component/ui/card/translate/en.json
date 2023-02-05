@@ -1,9 +1,9 @@
 {
-    "page.component.card.doc.attr.flat": "Uses the flat style layout",
-    "page.component.card.doc.slot.header": "Slot embedding the card header content",
-    "page.component.card.doc.slot.body": "Slot embedding the card body content",
-    "page.component.card.doc.slot.footer": "Slot embedding the card footer content",
+    "page.component.card.doc.attr.flat": "Enables the flat style layout",
     "page.component.card.example.header": "My card header content",
     "page.component.card.example.body": "My card body content",
-    "page.component.card.example.footer": "My card footer content"
+    "page.component.card.example.footer": "My card footer content",
+    "page.component.card.doc.slot.header": "Slot embedding the card header content",
+    "page.component.card.doc.slot.body": "Slot for body content",
+    "page.component.card.doc.slot.footer": "Slot for footer content"
 }

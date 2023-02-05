@@ -34,6 +34,17 @@
     },
     {
         "icon": "fa-brands fa-vuejs",
+        "label": "Checkbox",
+        "name": "vui-checkbox",
+        "path": "/components/html/checkbox/checkbox.vue",
+        "type": "html",
+        "doc": {
+            "name": "view-checkbox",
+            "path": "/views/component/html/checkbox/checkbox.vue"
+        }
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
         "label": "Dropdown",
         "name": "vui-dropdown",
         "path": "/components/ui/dropdown/dropdown.vue",

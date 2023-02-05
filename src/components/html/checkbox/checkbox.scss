@@ -1,0 +1,30 @@
+@import "@/scss/import.scss";
+
+.vui-checkbox {
+    position: relative;
+    display: inline-flex;
+
+    input[type="checkbox"] {
+        opacity: 0;
+    }
+
+    label {
+        padding-left: 1rem;
+    }
+
+    &:before {
+        @include vui-glyph-regular;
+        position: absolute;
+        top: -.15rem;
+        left: 0;
+        content: '\f0c8';
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    &.vui-checkbox--checked {
+        &:before {
+            content: '\f14a';
+        }
+    }
+}

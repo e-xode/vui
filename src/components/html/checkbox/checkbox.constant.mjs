@@ -1,14 +1,14 @@
 const props = {
+    checkedValue: {
+        types: [
+            Boolean,
+            String,
+            Number,
+            null
+        ],
+    },
     disabled: {
         type: Boolean
-    },
-    placeholder: {
-        type: String,
-        default: null
-    },
-    type: {
-        type: String,
-        required: true
     },
     modelValue: {
         types: [
@@ -18,6 +18,14 @@ const props = {
             null
         ],
         required: false
+    },
+    uncheckedValue: {
+        types: [
+            Boolean,
+            String,
+            Number,
+            null
+        ],
     },
     value: {
         types: [

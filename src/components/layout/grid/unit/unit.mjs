@@ -11,7 +11,7 @@ export default {
     ],
     props: {
         col: {
-            type: [String, Number]
+            types: [String, Number]
         }
     },
     created () {

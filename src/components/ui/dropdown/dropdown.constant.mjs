@@ -13,13 +13,25 @@ const props = {
         type: String
     },
     modelValue: {
-        type: [Object, Number, String, null]
+        types: [
+            Boolean,
+            Object,
+            Number,
+            String,
+            null
+        ]
     },
     placeholder: {
         type: String
     },
     value: {
-        type: [Object, Number, String, null]
+        types: [
+            Boolean,
+            Object,
+            Number,
+            String,
+            null
+        ]
     }
 }
 
