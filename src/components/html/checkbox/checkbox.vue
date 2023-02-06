@@ -10,7 +10,7 @@
     >
         <input
             type="checkbox"
-        />
+        >
         <label
             v-if="$slots.default"
             :for="componentId"

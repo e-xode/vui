@@ -1,5 +1,5 @@
 <template>
-    <div class="view-checkbox">
+    <div class="view-toggle">
         <vui-grid
             col-sm="1"
             col-md="2"
@@ -7,7 +7,7 @@
             <vui-grid-unit class="examples">
                 <template
                     v-for="(example) in examples"
-                    :key="`checkbox-${example.props.id}`"
+                    :key="`toggle-${example.props.id}`"
                 >
                     <component
                         :is="example.component"
@@ -22,7 +22,7 @@
                     </component>
                     &nbsp;
                     <vui-tag>
-                        {{ $t('page.component.checkbox.label') }}:
+                        {{ $t('page.component.toggle.label') }}:
                         {{ models[example.props.id] }}
                     </vui-tag>
                     <div
@@ -41,25 +41,16 @@
                     :headers="docPropsHeaders"
                     :items="docProps"
                 />
-                <h2 class="title">
-                    {{ $t('page.component.h2.slots') }}
-                </h2>
-                <vui-table
-                    item-label="label"
-                    item-value="value"
-                    :headers="docSlotsHeaders"
-                    :items="docSlots"
-                />
             </vui-grid-unit>
         </vui-grid>
     </div>
 </template>
 
 <script
-    src="./checkbox.mjs"
+    src="./toggle.mjs"
 />
 
 <style
     lang="scss"
-    src="./checkbox.scss"
+    src="./toggle.scss"
 />

@@ -48,10 +48,8 @@ const composable = {
         }
     },
     methods: {
-        attr (tag) {
-            return Object
-                .keys(this.$attrs)
-                .find((attr) => attr === tag)
+        hasAttribute (tag) {
+            return Object.keys(this.$attrs).find((attr) => attr === tag)
         }
     }
 }

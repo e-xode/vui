@@ -3,12 +3,12 @@ import {
     translatable
 } from '@/composables/index.mjs'
 
-import VuiCheckbox from '@/components/html/checkbox/checkbox.vue'
-import langs from '@/doc/views/component/html/checkbox/translate/index.mjs'
-import doc from '@/doc/views/component/html/checkbox/checkbox.doc.mjs'
+import VuiToggle from '@/components/ui/toggle/toggle.vue'
+import langs from '@/doc/views/component/ui/toggle/translate/index.mjs'
+import doc from '@/doc/views/component/ui/toggle/toggle.doc.mjs'
 
 export default {
-    name: 'ViewCheckbox',
+    name: 'ViewToggle',
     mixins: [demonstrable],
     setup () {
         translatable(langs)
@@ -23,7 +23,6 @@ export default {
     data() {
         return {
             models: {
-
             }
         }
     },
@@ -32,7 +31,7 @@ export default {
             return doc
         },
         examples () {
-            return this.docExamples(VuiCheckbox, {
+            return this.docExamples(VuiToggle, {
                 attrs: doc.attrs,
                 examples: doc.examples.map((example) => ({
                     ...example,
@@ -47,5 +46,7 @@ export default {
         }
     },
     methods: {
+    },
+    components: {
     }
 }

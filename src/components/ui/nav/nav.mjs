@@ -1,5 +1,7 @@
 import langs from '@/components/ui/nav/translate/index.mjs'
-import { props } from '@/components/ui/nav/nav.constant.mjs'
+import {
+    props
+} from '@/components/ui/nav/nav.constant.mjs'
 
 import {
     composable,

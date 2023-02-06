@@ -3,9 +3,11 @@
 .vui-checkbox {
     position: relative;
     display: inline-flex;
+    padding-left: 1rem;
+    cursor: pointer;
 
     input[type="checkbox"] {
-        opacity: 0;
+        display: none;
     }
 
     label {
@@ -14,12 +16,11 @@
 
     &:before {
         @include vui-glyph-regular;
-        position: absolute;
-        top: -.15rem;
-        left: 0;
         content: '\f0c8';
+        position: absolute;
+        top: 0;
+        left: 0;
         font-size: 1.5rem;
-        cursor: pointer;
     }
 
     &.vui-checkbox--checked {

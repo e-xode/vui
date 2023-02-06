@@ -1,22 +1,23 @@
 <template>
     <div class="view-component">
+        <vui-nav
+            flat
+            item-label="label"
+            item-value="name"
+            :items="[
+                {
+                    label: $t('page.component.nav.start'),
+                    name: 'ViewStart'
+                },
+                {
+                    label: component.label,
+                    name: component.name
+                }
+            ]"
+            :value="component"
+            @input="onRoute"
+        />
         <div class="h1">
-            <vui-nav
-                item-label="label"
-                item-value="name"
-                :items="[
-                    {
-                        label: $t('page.component.nav.start'),
-                        name: 'ViewStart'
-                    },
-                    {
-                        label: component.label,
-                        name: component.name
-                    }
-                ]"
-                :value="component"
-                @input="onRoute"
-            />
             <h1>
                 <i class="fa-brands fa-vuejs" />
                 {{ $t('page.component.h1') }}

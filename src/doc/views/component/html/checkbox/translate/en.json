@@ -1,5 +1,6 @@
 {
     "page.component.checkbox.default": "Default checkbox label",
+    "page.component.checkbox.label": "Checked",
     "page.component.checkbox.doc.prop.checked-value": "Checked value of the checkbox",
     "page.component.checkbox.doc.prop.disabled": "Layout of the tag",
     "page.component.checkbox.doc.prop.unchecked-value": "Unchecked value of the checkbox",

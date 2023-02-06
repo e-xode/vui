@@ -188,6 +188,17 @@
     },
     {
         "icon": "fa-brands fa-vuejs",
+        "label": "Toggle",
+        "name": "vui-toggle",
+        "path": "/components/ui/toggle/toggle.vue",
+        "type": "ui",
+        "doc": {
+            "name": "view-toggle",
+            "path": "/views/component/ui/toggle/toggle.vue"
+        }
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
         "label": "Tooltip",
         "name": "vui-tooltip",
         "path": "/components/ui/tooltip/tooltip.vue",
