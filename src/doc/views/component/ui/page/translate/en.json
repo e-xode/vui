@@ -2,7 +2,7 @@
     "page.component.page.header": "My page header",
     "page.component.page.body": "My page content",
     "page.component.page.footer": "My page footer",
-    "page.component.page.doc.slot.header": "Slot for the header content of page",
-    "page.component.page.doc.slot.body": "Slot for the body content of page",
-    "page.component.page.doc.slot.footer": "Slot for the footer content of page"
+    "page.component.page.doc.slot.header": "Slot for the header content",
+    "page.component.page.doc.slot.body": "Slot for the body content",
+    "page.component.page.doc.slot.footer": "Slot for the footer content"
 }

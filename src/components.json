@@ -34,6 +34,17 @@
     },
     {
         "icon": "fa-brands fa-vuejs",
+        "label": "Checkbox",
+        "name": "vui-checkbox",
+        "path": "/components/html/checkbox/checkbox.vue",
+        "type": "html",
+        "doc": {
+            "name": "view-checkbox",
+            "path": "/views/component/html/checkbox/checkbox.vue"
+        }
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
         "label": "Dropdown",
         "name": "vui-dropdown",
         "path": "/components/ui/dropdown/dropdown.vue",
@@ -173,6 +184,17 @@
         "doc": {
             "name": "view-tag",
             "path": "/views/component/ui/tag/tag.vue"
+        }
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
+        "label": "Toggle",
+        "name": "vui-toggle",
+        "path": "/components/ui/toggle/toggle.vue",
+        "type": "ui",
+        "doc": {
+            "name": "view-toggle",
+            "path": "/views/component/ui/toggle/toggle.vue"
         }
     },
     {

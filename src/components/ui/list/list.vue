@@ -3,7 +3,7 @@
         :id="componentId"
         :class="[
             'vui-list',
-            { 'vui-list--flat': attr('flat') }
+            { 'vui-list--flat': hasAttribute('flat') }
         ]"
     >
         <div

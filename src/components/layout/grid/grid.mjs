@@ -11,16 +11,16 @@ export default {
     ],
     props: {
         colXs: {
-            type: [String, Number]
+            types: [String, Number]
         },
         colSm: {
-            type: [String, Number]
+            types: [String, Number]
         },
         colMd: {
-            type: [String, Number]
+            types: [String, Number]
         },
         colXl: {
-            type: [String, Number]
+            types: [String, Number]
         }
     },
     created () {
