@@ -15,7 +15,12 @@
                         padding-left: 0;
                     }
 
+
                     .vui-list-items-item-label {
+
+                        &:hover {
+                            background-color: transparent;
+                        }
 
                         .vui-list-items-item-label-text {
                             padding-bottom: .5rem;
