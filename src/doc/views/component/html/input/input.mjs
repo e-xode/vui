@@ -35,7 +35,5 @@ export default {
         }
     },
     methods: {
-    },
-    components: {
     }
 }
