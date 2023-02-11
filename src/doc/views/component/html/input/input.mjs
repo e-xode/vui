@@ -35,7 +35,6 @@ export default {
         }
     },
     methods: {
-
     },
     components: {
     }
