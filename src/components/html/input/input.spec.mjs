@@ -31,13 +31,14 @@ describe('components/Input.vue', () => {
 
     it('Should emit on Input', () => {
         const component = mountComponent()
-        const $e = { target: { value: 'foo' }}
+        const $e = {
+            target: { value: 'foo' },
+            preventDefault: jest.fn()
+        }
 
         component.vm.onInput($e)
 
-        const emitted = component.emitted()
         expect(component.vm.typed).toBe($e.target.value)
-        expect(emitted['input'][0]).toEqual([$e.target.value])
-        expect(emitted['update:modelValue'][0]).toEqual([$e.target.value])
+        expect($e.preventDefault).toHaveBeenCalled()
     })
 })

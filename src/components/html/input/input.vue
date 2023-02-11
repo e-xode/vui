@@ -7,7 +7,8 @@
             :placeholder="placeholderValue"
             :type="type"
             :value="typed"
-            @input="onInput"
+            @change.stop
+            @input.stop="onInput"
         >
     </div>
 </template>
