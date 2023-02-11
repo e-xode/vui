@@ -37,8 +37,10 @@ describe('components/Input.vue', () => {
         }
 
         component.vm.onInput($e)
+        const emitted = component.emitted()
 
         expect(component.vm.typed).toBe($e.target.value)
         expect($e.preventDefault).toHaveBeenCalled()
+        expect(emitted['update:modelValue'][0]).toEqual([$e.target.value])
     })
 })
