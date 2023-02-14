@@ -1,7 +1,6 @@
 <template>
     <div class="vui-input">
         <input
-            v-bind="$attrs"
             :id="componentId"
             :disabled="disabled"
             :placeholder="placeholderValue"

@@ -23,7 +23,8 @@ export default {
             RouterLink: RouterLinkStub,
             RouterView: RouterViewStub,
             'vui-button': true,
-            'vui-list': true
+            'vui-list': true,
+            'vui-input': true
         },
         directives: {
         }

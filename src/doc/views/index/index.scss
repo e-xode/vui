@@ -35,7 +35,8 @@
 
         &.vui-button--github {
             @include animate('vui-button--get-started');
-            background-color: $vui-color-black;
+            background-color: lighten($vui-color-black, 5%);
+            border-color: $vui-color-black;
 
             .vui-button-holder,
             .vui-button-icon {
