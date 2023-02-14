@@ -29,6 +29,8 @@ export default {
         }
     },
     methods: {
+        onInput () {
+        }
     },
     components: {
     }

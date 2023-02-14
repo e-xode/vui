@@ -16,12 +16,12 @@
                 name="keyword"
                 :keyword="keyword"
             >
-                <input
+                <vui-input
                     v-model="keyword"
                     type="text"
                     class="vui-dropdown-placeholder-label"
                     :placeholder="placeholderValue"
-                >
+                />
             </slot>
         </div>
         <vui-list
