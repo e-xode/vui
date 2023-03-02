@@ -35,7 +35,7 @@ export default {
             props: {
                 flat: true
             },
-            body: 'page.component.card.example.content'
+            body: 'page.component.card.example.body'
         }
     ],
     props: [

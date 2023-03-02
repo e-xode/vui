@@ -4,7 +4,7 @@
         :name="componentId"
         :class="[
             'vui-checkbox',
-            { 'vui-checkbox--checked': toggled }
+            { 'vui-checkbox--checked': isChecked }
         ]"
         @click="onToggle"
     >
