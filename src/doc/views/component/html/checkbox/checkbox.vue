@@ -13,8 +13,6 @@
                         :is="example.component"
                         v-bind="example.props"
                         v-model="models[example.props.id]"
-                        :checked-value="true"
-                        :unchecked-value="false"
                     >
                         <template v-if="example.text">
                             {{ $t(example.text) }}
@@ -30,6 +28,10 @@
                         v-html="example.highlighted"
                     />
                 </template>
+                <vui-checkbox
+                    :disabled="true"
+                    :checked="models['vui-checkbox-1']"
+                />
             </vui-grid-unit>
             <vui-grid-unit class="api-options">
                 <h2 class="title">

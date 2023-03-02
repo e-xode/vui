@@ -23,11 +23,17 @@ export default {
         }
     },
     computed: {
+        isChecked () {
+            if (typeof this.checked !== 'undefined') {
+                return this.checked
+            }
+            return this.toggled
+        }
     },
     methods: {
         onToggle () {
             this.toggled = !this.toggled
-            const value = this.toggled
+            const value = this.isChecked
                 ? this.checkedValue
                 : this.uncheckedValue
             this.$emit('input', value)

@@ -4,7 +4,7 @@
         "label": "Alert",
         "name": "vui-alert",
         "path": "/components/ui/alert/alert.vue",
-        "type": "html",
+        "type": "ui",
         "doc": {
             "name": "view-alert",
             "path": "/views/component/ui/alert/alert.vue"

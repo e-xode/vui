@@ -2,10 +2,7 @@ export default {
     examples: [
         {
             markup: `
-                <vui-checkbox
-                    :checked-value="true"
-                    :unchecked-value="false"
-                >
+                <vui-checkbox>
                     Default checkbox label
                 </vui-tag>
             `,
@@ -25,6 +22,11 @@ export default {
             tag: 'disabled',
             type: 'Boolean',
             text: 'page.component.checkbox.doc.prop.disabled'
+        },
+        {
+            tag: 'checked',
+            type: '[Boolean, String, Number, null]',
+            text: 'page.component.checkbox.doc.prop.checked'
         },
         {
             tag: 'unchecked-value',

@@ -1,5 +1,14 @@
 const props = {
+    checked: {
+        types: [
+            Boolean,
+            String,
+            Number,
+            null
+        ]
+    },
     checkedValue: {
+        default: true,
         types: [
             Boolean,
             String,
@@ -16,10 +25,10 @@ const props = {
             String,
             Number,
             null
-        ],
-        required: false
+        ]
     },
     uncheckedValue: {
+        default: false,
         types: [
             Boolean,
             String,
@@ -33,8 +42,7 @@ const props = {
             String,
             Number,
             null
-        ],
-        required: false
+        ]
     }
 }
 
