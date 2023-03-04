@@ -2,14 +2,29 @@ export default {
     examples: [
         {
             markup: `
-                <vui-checkbox>
+                <vui-checkbox
+                    v-model="states['mycheckbox']"
+                >
                     Default checkbox label
-                </vui-tag>
+                </vui-checkbox>
             `,
             props: {
                 id: 'vui-checkbox-1'
             },
             text: 'page.component.checkbox.default'
+        },
+        {
+            markup: `
+                <vui-checkbox
+                    :checked="states['mycheckbox']
+                >
+                   Binded checkbox state
+                </vui-checkbox>
+            `,
+            props: {
+                id: 'vui-checkbox-2'
+            },
+            text: 'page.component.checkbox.binded'
         }
     ],
     props: [

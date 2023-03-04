@@ -15,16 +15,14 @@ export default {
         return {}
     },
     mounted() {
-        this.models = this.examples.reduce((obj, example) => ({
+        this.states = this.examples.reduce((obj, example) => ({
             ...obj,
             [example.props.id]: false
         }), {})
     },
     data() {
         return {
-            models: {
-
-            }
+            states: {}
         }
     },
     computed: {

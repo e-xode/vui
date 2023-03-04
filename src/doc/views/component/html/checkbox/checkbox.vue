@@ -6,32 +6,41 @@
         >
             <vui-grid-unit class="examples">
                 <template
-                    v-for="(example) in examples"
+                    v-for="example in examples"
                     :key="`checkbox-${example.props.id}`"
                 >
-                    <component
-                        :is="example.component"
-                        v-bind="example.props"
-                        v-model="models[example.props.id]"
-                    >
-                        <template v-if="example.text">
-                            {{ $t(example.text) }}
-                        </template>
-                    </component>
-                    &nbsp;
-                    <vui-tag>
-                        {{ $t('page.component.checkbox.label') }}:
-                        {{ models[example.props.id] }}
-                    </vui-tag>
+                    <span v-if="example.props.id === 'vui-checkbox-1'">
+                        <component
+                            :is="example.component"
+                            v-bind="example.props"
+                            v-model="states[example.props.id]"
+                        >
+                            <template v-if="example.text">
+                                {{ $t(example.text) }}
+                            </template>
+                        </component>
+                        &nbsp;
+                        <vui-tag>
+                            {{ $t('page.component.checkbox.label') }}:
+                            {{ states[example.props.id] }}
+                        </vui-tag>
+                    </span>
+                    <span v-if="example.props.id === 'vui-checkbox-2'">
+                        <component
+                            :is="example.component"
+                            v-bind="example.props"
+                            :checked="states['vui-checkbox-1']"
+                        >
+                            <template v-if="example.text">
+                                {{ $t(example.text) }}
+                            </template>
+                        </component>
+                    </span>
                     <div
                         class="highlighted-code"
                         v-html="example.highlighted"
                     />
                 </template>
-                <vui-checkbox
-                    :disabled="true"
-                    :checked="models['vui-checkbox-1']"
-                />
             </vui-grid-unit>
             <vui-grid-unit class="api-options">
                 <h2 class="title">
