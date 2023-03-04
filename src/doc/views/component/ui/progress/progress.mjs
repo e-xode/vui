@@ -3,26 +3,21 @@ import {
     translatable
 } from '@/composables/index.mjs'
 
-import VuiToggle from '@/components/ui/toggle/toggle.vue'
-import langs from '@/doc/views/component/ui/toggle/translate/index.mjs'
-import doc from '@/doc/views/component/ui/toggle/toggle.doc.mjs'
+import VuiProgress from '@/components/ui/progress/progress.vue'
+import langs from '@/doc/views/component/ui/progress/translate/index.mjs'
+import doc from '@/doc/views/component/ui/progress/progress.doc.mjs'
 
 export default {
-    name: 'ViewToggle',
+    name: 'ViewProgress',
     mixins: [demonstrable],
     setup () {
         translatable(langs)
         return {}
     },
     mounted() {
-        this.states = this.examples.reduce((obj, example) => ({
-            ...obj,
-            [example.props.id]: false
-        }), {})
     },
     data() {
         return {
-            states: {}
         }
     },
     computed: {
@@ -30,7 +25,7 @@ export default {
             return doc
         },
         examples () {
-            return this.docExamples(VuiToggle, {
+            return this.docExamples(VuiProgress, {
                 attrs: doc.attrs,
                 examples: doc.examples.map((example) => ({
                     ...example,

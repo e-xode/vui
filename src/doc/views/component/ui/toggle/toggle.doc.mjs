@@ -2,17 +2,25 @@ export default {
     examples: [
         {
             markup: `
-                <vui-toggle
-                    :checked-value="true"
-                    :unchecked-value="false"
-                >
-                    Default checkbox label
+                <vui-toggle>
+                    Default checkbox
                 </vui-toggle>
             `,
             props: {
                 id: 'vui-toggle-1'
             },
             text: 'page.component.toggle.default'
+        },
+        {
+            markup: `
+                <vui-toggle>
+                    Binded checkbox
+                </vui-toggle>
+            `,
+            props: {
+                id: 'vui-toggle-2'
+            },
+            text: 'page.component.toggle.binded'
         }
     ],
     props: [

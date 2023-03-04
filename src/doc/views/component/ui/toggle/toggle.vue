@@ -6,25 +6,36 @@
         >
             <vui-grid-unit class="examples">
                 <template
-                    v-for="(example) in examples"
+                    v-for="example in examples"
                     :key="`toggle-${example.props.id}`"
                 >
-                    <component
-                        :is="example.component"
-                        v-bind="example.props"
-                        v-model="models[example.props.id]"
-                        :checked-value="true"
-                        :unchecked-value="false"
-                    >
-                        <template v-if="example.text">
-                            {{ $t(example.text) }}
-                        </template>
-                    </component>
-                    &nbsp;
-                    <vui-tag>
-                        {{ $t('page.component.toggle.label') }}:
-                        {{ models[example.props.id] }}
-                    </vui-tag>
+                    <template v-if="example.props.id === 'vui-toggle-1'">
+                        <component
+                            :is="example.component"
+                            v-bind="example.props"
+                            v-model="states[example.props.id]"
+                        >
+                            <template v-if="example.text">
+                                {{ $t(example.text) }}
+                            </template>
+                        </component>
+                        &nbsp;
+                        <vui-tag>
+                            {{ $t('page.component.toggle.label') }}:
+                            {{ states[example.props.id] }}
+                        </vui-tag>
+                    </template>
+                    <template v-if="example.props.id === 'vui-toggle-2'">
+                        <component
+                            :is="example.component"
+                            v-bind="example.props"
+                            :checked="states['vui-toggle-1']"
+                        >
+                            <template v-if="example.text">
+                                {{ $t(example.text) }}
+                            </template>
+                        </component>
+                    </template>
                     <div
                         class="highlighted-code"
                         v-html="example.highlighted"

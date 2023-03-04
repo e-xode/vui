@@ -166,6 +166,17 @@
     },
     {
         "icon": "fa-brands fa-vuejs",
+        "label": "Progress",
+        "name": "vui-progress",
+        "path": "/components/ui/progress/progress.vue",
+        "type": "ui",
+        "doc": {
+            "name": "view-progress",
+            "path": "/views/component/ui/progress/progress.vue"
+        }
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
         "label": "Table",
         "name": "vui-table",
         "path": "/components/html/table/table.vue",

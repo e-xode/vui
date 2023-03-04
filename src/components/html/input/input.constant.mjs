@@ -16,8 +16,7 @@ const props = {
             String,
             Number,
             null
-        ],
-        required: false
+        ]
     },
     value: {
         types: [
@@ -25,8 +24,7 @@ const props = {
             String,
             Number,
             null
-        ],
-        required: false
+        ]
     }
 }
 

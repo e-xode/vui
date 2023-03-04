@@ -9,7 +9,7 @@
                     v-for="example in examples"
                     :key="`checkbox-${example.props.id}`"
                 >
-                    <span v-if="example.props.id === 'vui-checkbox-1'">
+                    <template v-if="example.props.id === 'vui-checkbox-1'">
                         <component
                             :is="example.component"
                             v-bind="example.props"
@@ -24,8 +24,8 @@
                             {{ $t('page.component.checkbox.label') }}:
                             {{ states[example.props.id] }}
                         </vui-tag>
-                    </span>
-                    <span v-if="example.props.id === 'vui-checkbox-2'">
+                    </template>
+                    <template v-if="example.props.id === 'vui-checkbox-2'">
                         <component
                             :is="example.component"
                             v-bind="example.props"
@@ -35,7 +35,7 @@
                                 {{ $t(example.text) }}
                             </template>
                         </component>
-                    </span>
+                    </template>
                     <div
                         class="highlighted-code"
                         v-html="example.highlighted"

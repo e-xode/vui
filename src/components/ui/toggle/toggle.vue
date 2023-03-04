@@ -4,13 +4,20 @@
         :name="componentId"
         :class="[
             'vui-toggle',
-            { 'vui-toggle--checked': toggled }
+            { 'vui-toggle--checked': isChecked }
         ]"
         @click="onToggle"
     >
         <div class="vui-toggle-slider">
             <div class="vui-toggle-slider-button" />
         </div>
+        <label
+            v-if="$slots.default"
+            class="vui-toggle-label"
+            :for="componentId"
+        >
+            <slot />
+        </label>
     </div>
 </template>
 
