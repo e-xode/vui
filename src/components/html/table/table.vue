@@ -5,26 +5,49 @@
     >
         <thead>
             <tr>
-                <th
-                    v-for="(th, a) in headers"
+                <slot
+                    v-for="(header, a) in headers"
                     :key="`table-${componentId}-header--${a}`"
+                    :name="`header.${header[itemValue]}`"
+                    :item="header"
+                    :item-label="itemLabel"
+                    :item-value="itemValue"
+                    :index="a"
                 >
-                    {{ th[itemLabel] }}
-                </th>
+                    <th>
+                        {{ header[itemLabel] }}
+                    </th>
+                </slot>
             </tr>
         </thead>
         <tbody>
-            <tr
-                v-for="(td, b) in items"
+            <slot
+                v-for="(tr, b) in items"
                 :key="`table-${componentId}-item--${b}`"
+                name="item"
+                :index="b"
+                :item="tr"
+                :item-label="itemLabel"
+                :item-value="itemValue"
             >
-                <td
-                    v-for="(item, c) in headers"
-                    :key="`table-${componentId}-item-td--${c}`"
-                >
-                    {{ td[headers[c][itemValue]] }}
-                </td>
-            </tr>
+                <tr>
+                    <slot
+                        v-for="(td, c) in headers"
+                        :key="`table-${componentId}-item-td--${c}`"
+                        :name="`item.${td[itemValue]}`"
+                        :index="c"
+                        :item="tr"
+                        :item-label="itemLabel"
+                        :item-value="itemValue"
+                    >
+                        <td
+                            :class="td.class"
+                        >
+                            {{ tr[td[itemValue]] }}
+                        </td>
+                    </slot>
+                </tr>
+            </slot>
         </tbody>
     </table>
 </template>

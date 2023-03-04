@@ -2,6 +2,8 @@
     "page.component.table.doc.prop.headers": "Array containing text / value foreach item header",
     "page.component.table.doc.prop.item-label": "Label key for each item in table",
     "page.component.table.doc.prop.item-value": "Value key for each item in table",
-    "page.component.table.doc.prop.items": "Array of items to display in table"
+    "page.component.table.doc.prop.items": "Array of items to display in table",
+    "page.component.table.doc.slot.header": "Slot to replace header row default rendering",
+    "page.component.table.doc.slot.item": "Slot to replace item row default rendering"
 }
 

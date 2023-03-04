@@ -12,7 +12,11 @@
                     <component
                         :is="example.component"
                         v-bind="example.props"
-                    />
+                    >
+                        <template #[`item.endQuantity`]="{ item }">
+                            <td>{{ item.endQuantity }} units</td>
+                        </template>
+                    </component>
                     <div
                         class="highlighted-code"
                         v-html="example.highlighted"
@@ -28,6 +32,15 @@
                     item-value="value"
                     :headers="docPropsHeaders"
                     :items="docProps"
+                />
+                <h2 class="title">
+                    {{ $t('page.component.h2.slots') }}
+                </h2>
+                <vui-table
+                    item-label="label"
+                    item-value="value"
+                    :headers="docSlotsHeaders"
+                    :items="docSlots"
                 />
             </vui-grid-unit>
         </vui-grid>
