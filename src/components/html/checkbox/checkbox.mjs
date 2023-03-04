@@ -14,8 +14,19 @@ export default {
     props,
     created () {
         translatable(langs)
+        if (this.hasModelValue) {
+            this.setToggled(this.modelValue)
+        } else if (this.hasValue) {
+            this.setToggled(this.value)
+        }
     },
-    mounted () {
+    watch: {
+        modelValue (value) {
+            this.setToggled(value)
+        },
+        value (value) {
+            this.setToggled(value)
+        }
     },
     data () {
         return {
@@ -38,6 +49,11 @@ export default {
                 : this.uncheckedValue
             this.$emit('input', value)
             this.$emit('update:modelValue', value)
+        },
+        setToggled (value) {
+            this.toggled = typeof this.checkedValue !== 'undefined'
+                ? value === this.checkedValue
+                : value
         }
     }
 }

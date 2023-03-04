@@ -5,13 +5,11 @@ import Checkbox from './checkbox.vue'
 describe('components/Tag.vue', () => {
 
     const propsData = {}
-    const attrs = {}
 
     const mountComponent = () => {
         return shallowMount(Checkbox, {
             ...setup,
-            propsData,
-            attrs
+            propsData
         })
     }
 

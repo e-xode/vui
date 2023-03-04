@@ -1,0 +1,5 @@
+{
+    "page.component.progress.doc.prop.min": "minimum value of progressbar",
+    "page.component.progress.doc.prop.max": "maximum value of progressbar",
+    "page.component.progress.doc.prop.value": "current value of progressbar"
+}
