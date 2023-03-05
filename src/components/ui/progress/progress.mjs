@@ -23,8 +23,10 @@ export default {
     },
     computed: {
         width () {
-            const full = Math.round(Math.abs(this.max) - Math.abs(this.min))
-            const percent =  Math.round(full * Math.abs(this.value) / 100)
+            const value = Math.abs(this.value)
+            const min = Math.abs(this.min)
+            const max = Math.abs(this.max)
+            const percent = Math.round((value / (min + max)) * 100)
             return `${percent}%`
         }
     },
