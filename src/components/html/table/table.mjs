@@ -19,28 +19,33 @@ export default {
             type: Array
         },
         itemLabel: {
-            type: String
+            type: String,
+            default: 'label'
         },
         itemValue: {
-            type: String
+            type: String,
+            default: 'value'
         },
         items: {
-            type: Array
+            type: Array,
+            required: true
         }
     },
     created () {
         translatable(langs)
-    },
-    mounted () {
     },
     data () {
         return {
         }
     },
     computed: {
+        rows () {
+            return this.items.map((item) => ({
+                ...item,
+                $$id: this.newId()
+            }))
+        }
     },
     methods: {
-    },
-    components: {
     }
 }

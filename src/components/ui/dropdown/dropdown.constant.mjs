@@ -22,7 +22,7 @@ const props = {
         ]
     },
     placeholder: {
-        type: [
+        types: [
             Boolean,
             Number,
             String

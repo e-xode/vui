@@ -4,7 +4,11 @@ import Table from './table.vue'
 
 describe('components/Table.vue', () => {
 
-    const propsData = {}
+    const propsData = {
+        items: [
+            { label: 'label', value: 'value' }
+        ]
+    }
 
     const mountComponent = () => {
         return shallowMount(Table, {
@@ -27,5 +31,6 @@ describe('components/Table.vue', () => {
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
+        expect(component.vm.rows[0].$$id).toBeTruthy()
     })
 })

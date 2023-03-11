@@ -19,7 +19,7 @@ const composable = {
         this.$bus.off('outclick')
     },
     created () {
-        this.uuid = Math.random().toString(36).slice(-6)
+        this.uuid = this.newId()
     },
     data () {
         return {
@@ -48,6 +48,9 @@ const composable = {
         }
     },
     methods: {
+        newId () {
+            return Math.random().toString(36).slice(-6)
+        },
         hasAttribute (tag) {
             return Object.keys(this.$attrs).find((attr) => attr === tag)
         }

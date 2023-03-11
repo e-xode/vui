@@ -3,8 +3,13 @@ const props = {
         type: Boolean
     },
     placeholder: {
-        type: String,
-        default: null
+        default: null,
+        types: [
+            Boolean,
+            String,
+            Number,
+            null
+        ]
     },
     type: {
         type: String,

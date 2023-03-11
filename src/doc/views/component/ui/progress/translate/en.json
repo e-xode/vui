@@ -1,5 +1,6 @@
 {
-    "page.component.progress.doc.prop.min": "minimum value of progressbar",
-    "page.component.progress.doc.prop.max": "maximum value of progressbar",
+    "page.component.progress.doc.prop.layout": "The progress-bar layout: [error, success, warning]",
+    "page.component.progress.doc.prop.min": "Minimum value of progressbar",
+    "page.component.progress.doc.prop.max": "Maximum value of progressbar",
     "page.component.progress.doc.prop.value": "current value of progressbar"
 }

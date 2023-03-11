@@ -3,6 +3,7 @@
 .vui-tag {
     @include compose('vui-tag');
     position: relative;
+    padding: .5rem;
 
     &.vui-tag--with-icon {
         padding-left: 2.5rem;
