@@ -1,6 +1,5 @@
 @mixin compose($class) {
     display: inline-flex;
-    padding: .5rem;
     color: $vui-color-grey-extra-dark;
     background-color: $vui-color-grey-light;
     border: 1px solid $vui-color-grey;

@@ -18,20 +18,27 @@ export default {
         {
             markup: `
                 <vui-progress
+                    layout="warning"
                     min="0"
                     max="100"
-                    :value="50"
+                    :value="50",
                 />
             `,
             props: {
                 id: 'vui-progress-2',
                 min: 0,
                 max: 100,
-                value: 50
+                value: 50,
+                layout: 'warning'
             }
         }
     ],
     props: [
+        {
+            tag: 'layout',
+            type: 'String',
+            text: 'page.component.progress.doc.prop.layout'
+        },
         {
             tag: 'min',
             type: 'Number',

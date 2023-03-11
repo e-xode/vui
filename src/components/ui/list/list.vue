@@ -19,8 +19,8 @@
         </div>
         <div class="vui-list-items">
             <div
-                v-for="(item, index) in filteredItems"
-                :key="`list-item-${index}`"
+                v-for="(item, index) in list"
+                :key="item.$$id"
                 :class="[
                     { 'vui-list-items-item': !isGroup(item) },
                     { 'vui-list-items-group-item': isGroup(item) }
@@ -49,11 +49,7 @@
                             :item-label="itemLabel"
                             :item-value="itemValue"
                         >
-                            {{
-                                itemValue
-                                    ? item[itemLabel]
-                                    : item
-                            }}
+                            {{ item[itemLabel] }}
                         </slot>
                     </div>
                 </template>
@@ -74,17 +70,13 @@
                             :item-label="itemLabel"
                             :item-value="itemValue"
                         >
-                            {{
-                                itemValue
-                                    ? item[itemLabel]
-                                    : item
-                            }}
+                            {{ item[itemLabel] }}
                         </slot>
                     </div>
                     <template v-if="open[index]">
                         <div
                             v-for="(childitem, j) in item[itemValue]"
-                            :key="`list-group-item-${j}`"
+                            :key="childitem.$$id"
                             :class="[
                                 'vui-list-items-item-label',
                                 { 'vui-list-items-item-label--selectable': selectable },
@@ -106,11 +98,7 @@
                                 :item-label="itemLabel"
                                 :item-value="itemValue"
                             >
-                                {{
-                                    itemValue
-                                        ? childitem[itemLabel]
-                                        : childitem
-                                }}
+                                {{ childitem[itemLabel] }}
                             </slot>
                         </div>
                     </template>

@@ -6,29 +6,29 @@
         <thead>
             <tr>
                 <slot
-                    v-for="(header, a) in headers"
+                    v-for="(th, a) in headers"
                     :key="`table-${componentId}-header--${a}`"
-                    :name="`header.${header[itemValue]}`"
-                    :item="header"
+                    :name="`header.${th[itemValue]}`"
+                    :item="th"
                     :item-label="itemLabel"
                     :item-value="itemValue"
                     :index="a"
                 >
                     <th>
-                        {{ header[itemLabel] }}
+                        {{ th[itemLabel] }}
                     </th>
                 </slot>
             </tr>
         </thead>
         <tbody>
             <slot
-                v-for="(tr, b) in items"
-                :key="`table-${componentId}-item--${b}`"
-                name="item"
+                v-for="(tr, b) in rows"
+                :key="tr.$$id"
                 :index="b"
                 :item="tr"
                 :item-label="itemLabel"
                 :item-value="itemValue"
+                name="item"
             >
                 <tr>
                     <slot

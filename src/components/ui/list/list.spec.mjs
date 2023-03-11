@@ -33,7 +33,7 @@ describe('components/List.vue', () => {
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
-        expect(component.vm.selected).toBe(4)
+        expect(component.vm.selected.value).toBe(4)
     })
 
     describe('disabled', () => {
@@ -69,12 +69,12 @@ describe('components/List.vue', () => {
 
         it('Should emit onClick', () => {
             const component = mountComponent()
-            const selected = 1
+            const selected = { value: 1 }
 
             component.vm.onClick(selected)
 
             const emitted = component.emitted()
-            expect(emitted['input'][0]).toEqual([selected])
+            expect(emitted['input'][0]).toEqual([1])
             expect(component.vm.selected).toEqual(selected)
             expect(component.vm.isSelected(selected)).toBeTruthy()
         })
@@ -90,8 +90,8 @@ describe('components/List.vue', () => {
         it('Should return only one item', () => {
             const component = mountComponent()
 
-            expect(component.vm.filteredItems.length).toBe(1)
-            expect(component.vm.filteredItems[0]).toBe(1)
+            expect(component.vm.list.length).toBe(1)
+            expect(component.vm.list[0].value).toBe(1)
         })
     })
 
@@ -136,15 +136,27 @@ describe('components/List.vue', () => {
 
             beforeEach(() => {
                 propsData.selectable = true
-                propsData.keyword = 'value1'
+                propsData.keyword = 'label1'
             })
 
             it('Should return only one item', () => {
                 const component = mountComponent()
 
-                expect(component.vm.filteredItems.length).toBe(1)
-                expect(component.vm.filteredItems[0].value).toBe('value1')
+                expect(component.vm.list.length).toBe(1)
+                expect(component.vm.list[0].value).toBe('value1')
             })
+        })
+
+        it('Should emit onClick', () => {
+            const component = mountComponent()
+            const selected = { label: 'label1', value: 'value1' }
+
+            component.vm.onClick({ ...selected, $$id: 'foo' })
+
+            const emitted = component.emitted()
+            expect(emitted['input'][0]).toEqual([selected])
+            expect(component.vm.selected).toEqual(selected)
+            expect(component.vm.isSelected(selected)).toBeTruthy()
         })
     })
 
@@ -225,14 +237,14 @@ describe('components/List.vue', () => {
 
             beforeEach(() => {
                 propsData.selectable = true
-                propsData.keyword = 'value1'
+                propsData.keyword = 'label1'
             })
 
             it('Should return only one item', () => {
                 const component = mountComponent()
 
-                expect(component.vm.filteredItems[0].value.length).toBe(1)
-                expect(component.vm.filteredItems[0].value[0].value).toBe('value1')
+                expect(component.vm.list[0].value.length).toBe(1)
+                expect(component.vm.list[0].value[0].value).toBe('value1')
             })
         })
 

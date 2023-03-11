@@ -1,14 +1,17 @@
 <template>
     <div
         :id="componentId"
-        :class="[
-            'vui-progress'
-        ]"
+        class="vui-progress"
     >
-        <div class="vui-progress-bar">
+        <div
+            :class="[
+                'vui-progress-bar',
+                `vui-progress-bar--${layout}`
+            ]"
+        >
             <div
                 class="vui-progress-bar-cursor"
-                :style="{ width: width }"
+                :style="{ width }"
             />
         </div>
     </div>
