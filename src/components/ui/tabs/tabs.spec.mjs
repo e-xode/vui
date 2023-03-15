@@ -1,18 +1,20 @@
 import { shallowMount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Modal from './modal.vue'
+import Tabs from './tabs.vue'
 
-describe('components/Modal.vue', () => {
+describe('components/Tabs.vue', () => {
 
     const propsData = {
-        showFooter: true,
-        showFooterClose: true,
-        showHeader: true,
-        showHeaderClose: true
+        itemLabel: 'label',
+        itemValue: 'value',
+        items: [
+            { label: 'Tab 1', value: 'tab1' },
+            { label: 'Tab 2', value: 'tab2' }
+        ]
     }
 
     const mountComponent = () => {
-        return shallowMount(Modal, {
+        return shallowMount(Tabs, {
             ...setup,
             propsData
         })
@@ -32,19 +34,17 @@ describe('components/Modal.vue', () => {
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
-        expect(component.vm.isHeaderVisible).toBeTruthy()
-        expect(component.vm.isFooterVisible).toBeTruthy()
+        expect(component.vm.active).toBe('tab1')
     })
 
-    it('Should onToggle', () => {
+    it('Should toggle tab', () => {
         const component = mountComponent()
-        expect(component.vm.isVisible).toBeFalsy()
 
-        component.vm.onToggle()
+        component.vm.toggle('tab2')
 
         const emitted = component.emitted()
-        expect(component.vm.isVisible).toBeTruthy()
-        expect(emitted['input'][0]).toEqual([true])
-        expect(emitted['update:modelValue'][0]).toEqual([true])
+        expect(emitted['input'][0]).toEqual(['tab2'])
+        expect(emitted['update:modelValue'][0]).toEqual(['tab2'])
+        expect(component.vm.active).toBe('tab2')
     })
 })

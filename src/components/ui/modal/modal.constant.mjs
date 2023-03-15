@@ -19,6 +19,9 @@ const props = {
     },
     title: {
         type: String
+    },
+    value: {
+        type: Boolean
     }
 }
 

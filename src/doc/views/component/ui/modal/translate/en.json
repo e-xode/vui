@@ -8,6 +8,7 @@
     "page.component.modal.doc.prop.showFooterClose": "Displays close button in the modal footer",
     "page.component.modal.doc.prop.showHeader": "Enables the modal header",
     "page.component.modal.doc.prop.showHeaderClose": "Display the close button in the modal header",
+    "page.component.modal.doc.prop.value": "Defines the visible state of the modal",
     "page.component.modal.doc.prop.vmodel": "Binds the visible state of the modal",
     "page.component.modal.doc.slot.header": "Slot for the header content of modal",
     "page.component.modal.doc.slot.body": "Slot for the body content of modal",

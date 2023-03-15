@@ -188,6 +188,17 @@
     },
     {
         "icon": "fa-brands fa-vuejs",
+        "label": "Tabs",
+        "name": "vui-tabs",
+        "path": "/components/ui/tabs/tabs.vue",
+        "type": "ui",
+        "doc": {
+            "name": "view-tabs",
+            "path": "/views/component/ui/tabs/tabs.vue"
+        }
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
         "label": "Tag",
         "name": "vui-tag",
         "path": "/components/ui/tag/tag.vue",
