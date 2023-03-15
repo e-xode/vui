@@ -65,8 +65,8 @@ export default {
         },
         onToggle (selected) {
             this.selected = selected
-            this.$emit('update:modelValue', selected)
             this.$emit('input', selected)
+            this.$emit('update:modelValue', selected)
             this.blur()
         }
     }

@@ -45,6 +45,7 @@ export default {
             $e.preventDefault()
             const { value } = $e.target
             this.typed = value
+            this.$emit('input', value)
             this.$emit('update:modelValue', value)
         }
     },

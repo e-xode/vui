@@ -4,32 +4,23 @@ import {
     translatable
 } from '@/composables/index.mjs'
 
+import { props } from './tooltip.constant.mjs'
+
 export default {
     name: 'VuiTooltip',
     mixins: [
         composable
     ],
-    props: {
-        holder: {
-            type: HTMLElement
-        },
-        icon: {
-            type: String
-        },
-        position: {
-            type: String,
-            default: 'right'
-        },
-        text: {
-            type: String
-        },
-        modelValue: {
-            type: Boolean
-        }
-    },
+    props,
     created () {
         translatable(langs)
+        if (this.hasModelValue) {
+            this.show = this.modelValue
+        } else if (this.hasValue) {
+            this.show = this.value
+        }
         this.$bus.on('outclick', () => {
+            this.$emit('input', false)
             this.$emit('update:modelValue', false)
             this.show = false
         })
@@ -41,11 +32,17 @@ export default {
             },
             deep: true
         },
-        modelValue (value) {
-            if (value) {
+        modelValue (show) {
+            if (show) {
                 this.setContentPosition()
             }
-            this.show = value
+            this.show = show
+        },
+        value (show) {
+            if (show) {
+                this.setContentPosition()
+            }
+            this.show = show
         }
     },
     mounted () {

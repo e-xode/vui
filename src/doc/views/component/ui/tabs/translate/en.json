@@ -1,0 +1,7 @@
+{
+    "page.component.modal.doc.prop.items": "List of tabs and label / value",
+    "page.component.modal.doc.prop.item-label": "Label key name foreach tab",
+    "page.component.modal.doc.prop.item-value": "Value key name foreach tab",
+    "page.component.modal.doc.prop.vmodel": "Binds the active tab",
+    "page.component.modal.doc.prop.value": "Define the active tab"
+}

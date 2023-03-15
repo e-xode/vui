@@ -14,13 +14,18 @@ export default {
     props,
     created () {
         translatable(langs)
-        this.isVisible = this.modelValue
-    },
-    mounted () {
+        if (this.hasModelValue) {
+            this.isVisible = this.modelValue
+        } else if (this.hasValue) {
+            this.isVisible = this.value
+        }
     },
     watch: {
-        modelValue(value) {
-            this.isVisible = value
+        modelValue(isVisible) {
+            this.isVisible = isVisible
+        },
+        value (isVisible) {
+            this.isVisible = isVisible
         }
     },
     data () {
@@ -43,6 +48,7 @@ export default {
     methods: {
         onToggle () {
             this.isVisible = !this.isVisible
+            this.$emit('input', this.isVisible)
             this.$emit('update:modelValue', this.isVisible)
         }
     }

@@ -1,0 +1,31 @@
+@import "@/scss/import.scss";
+
+.vui-tabs {
+    .vui-tabs-tabs {
+        display: flex;
+        padding: .5rem 0;
+
+        .vui-tabs-tabs-tab {
+            padding: .5rem;
+            border: 1px solid $vui-color-grey-light;
+            cursor: pointer;
+
+            &:not(:first-of-type) {
+                margin-left: 1rem;
+            }
+
+            &.vui-tabs-tabs-tab--active {
+                border-color: $vui-color-green;
+
+                .label {
+                    color: $vui-color-green;
+                }
+            }
+        }
+    }
+
+    .vui-tabs-slots {
+        padding: 1rem;
+        border: 1px solid $vui-color-grey-light;
+    }
+}

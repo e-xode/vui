@@ -55,9 +55,14 @@ export default {
             text: 'page.component.modal.doc.prop.showHeaderClose'
         },
         {
-            tag: 'vmodel',
+            tag: 'v-model',
             type: 'Boolean',
             text: 'page.component.modal.doc.prop.vmodel'
+        },
+        {
+            tag: 'value',
+            type: 'Boolean',
+            text: 'page.component.modal.doc.prop.value'
         }
     ],
     slots: [
