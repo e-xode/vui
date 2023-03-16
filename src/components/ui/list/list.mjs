@@ -57,7 +57,7 @@ export default {
                     items.push({
                         ...item,
                         $$id: this.newId(),
-                        value: item.value.reduce((values, value) =>
+                        value: item[this.itemValue].reduce((values, value) =>
                             !this.keyword || this.match(value)
                                 ? [...values, this.mapItem(value, this.newId())]
                                 : values

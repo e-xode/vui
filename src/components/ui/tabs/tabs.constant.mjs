@@ -1,4 +1,7 @@
 const props = {
+    icon: {
+        type: String
+    },
     items: {
         type: Array,
         required: true

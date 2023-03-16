@@ -13,6 +13,7 @@ export default {
                 </vui-tabs>
             `,
             props: {
+                icon: 'fa-solid fa-tags',
                 id: 'vui-tabs-1',
                 items: [
                     { label: 'Tab 1', value: 'tab1' },

@@ -9,10 +9,15 @@
                 :key="tab.$$id"
                 :class="[
                     'vui-tabs-tabs-tab',
+                    { 'vui-tabs-tabs-tab--with-icon': icon },
                     { 'vui-tabs-tabs-tab--active': tab[itemValue] === active }
                 ]"
                 @click="() => toggle(tab[itemValue])"
             >
+                <i
+                    v-if="icon"
+                    :class="['vui-tabs-tabs-tab-icon', icon]"
+                />
                 <span class="label">
                     {{ tab[itemLabel] }}
                 </span>

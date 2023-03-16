@@ -32,15 +32,15 @@
             color: $vui-color-grey-dark;
         }
 
-        .vui-dropdown-placeholder-label {
+        .vui-input.vui-dropdown-placeholder-label {
             width: 100%;
             padding: .25rem .5rem .25rem 1rem;
             margin: 0;
             background-color: transparent;
-            border: none;
 
-            input[type="text"] {
+            input[type=text] {
                 cursor: pointer;
+                border: none;
             }
         }
     }
