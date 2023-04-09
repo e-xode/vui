@@ -71,7 +71,7 @@ describe('components/Dropdown.vue', () => {
 
             const emitted = component.emitted()
             expect(emitted['update:modelValue'][0]).toEqual([items[1]])
-            expect(emitted['input'][0]).toEqual([items[1]])
+            expect(emitted['update:value'][0]).toEqual([items[1]])
 
             expect(component.vm.selected).toBe(items[1])
             expect(component.vm.placeholderValue).toBe(items[1])
@@ -109,7 +109,7 @@ describe('components/Dropdown.vue', () => {
 
             const emitted = component.emitted()
             expect(emitted['update:modelValue'][0]).toEqual([items[1]])
-            expect(emitted['input'][0]).toEqual([items[1]])
+            expect(emitted['update:value'][0]).toEqual([items[1]])
 
             expect(component.vm.selected).toEqual(items[1])
             expect(component.vm.placeholderValue).toEqual(items[1])
@@ -153,7 +153,7 @@ describe('components/Dropdown.vue', () => {
 
             const emitted = component.emitted()
             expect(emitted['update:modelValue'][0]).toEqual([items[1]])
-            expect(emitted['input'][0]).toEqual([items[1]])
+            expect(emitted['update:value'][0]).toEqual([items[1]])
 
             expect(component.vm.selected).toEqual(items[1])
             expect(component.vm.placeholderValue).toEqual(items[1])

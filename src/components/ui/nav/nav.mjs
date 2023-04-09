@@ -42,7 +42,7 @@ export default {
     methods: {
         onClick (item) {
             if (!this.disabled) {
-                this.$emit('input', item)
+                this.$emit('update:value', item)
                 this.$emit('update:modelValue', item)
             }
         }

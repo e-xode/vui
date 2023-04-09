@@ -36,7 +36,7 @@
             :keyword="keyword"
             :selectable="true"
             :title="listTitle"
-            @input="onToggle"
+            @update:value="onToggle"
         >
             <template
                 v-if="$slots.placeholder"
