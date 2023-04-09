@@ -122,7 +122,7 @@ export default {
                 const emit = this.isObject
                     ? item
                     : item[this.itemValue]
-                this.$emit('input', emit)
+                this.$emit('update:value', emit)
                 this.$emit('update:modelValue', emit)
             }
         },

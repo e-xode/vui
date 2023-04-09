@@ -43,7 +43,7 @@ describe('components/Tabs.vue', () => {
         component.vm.toggle('tab2')
 
         const emitted = component.emitted()
-        expect(emitted['input'][0]).toEqual(['tab2'])
+        expect(emitted['update:value'][0]).toEqual(['tab2'])
         expect(emitted['update:modelValue'][0]).toEqual(['tab2'])
         expect(component.vm.active).toBe('tab2')
     })

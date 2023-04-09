@@ -44,7 +44,7 @@ describe('components/Modal.vue', () => {
 
         const emitted = component.emitted()
         expect(component.vm.isVisible).toBeTruthy()
-        expect(emitted['input'][0]).toEqual([true])
+        expect(emitted['update:value'][0]).toEqual([true])
         expect(emitted['update:modelValue'][0]).toEqual([true])
     })
 })

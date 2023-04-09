@@ -48,7 +48,7 @@ describe('components/List.vue', () => {
             component.vm.onClick(1)
 
             const emitted = component.emitted()
-            expect(emitted['input']).toBeFalsy()
+            expect(emitted['update:value']).toBeFalsy()
         })
     })
 
@@ -74,7 +74,7 @@ describe('components/List.vue', () => {
             component.vm.onClick(selected)
 
             const emitted = component.emitted()
-            expect(emitted['input'][0]).toEqual([1])
+            expect(emitted['update:value'][0]).toEqual([1])
             expect(component.vm.selected).toEqual(selected)
             expect(component.vm.isSelected(selected)).toBeTruthy()
         })
@@ -107,7 +107,7 @@ describe('components/List.vue', () => {
             component.vm.onClick(selected)
 
             const emitted = component.emitted()
-            expect(emitted['input']).toBeFalsy()
+            expect(emitted['update:value']).toBeFalsy()
         })
     })
 
@@ -154,7 +154,7 @@ describe('components/List.vue', () => {
             component.vm.onClick({ ...selected, $$id: 'foo' })
 
             const emitted = component.emitted()
-            expect(emitted['input'][0]).toEqual([selected])
+            expect(emitted['update:value'][0]).toEqual([selected])
             expect(component.vm.selected).toEqual(selected)
             expect(component.vm.isSelected(selected)).toBeTruthy()
         })

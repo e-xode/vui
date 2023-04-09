@@ -48,7 +48,7 @@ export default {
     methods: {
         onToggle () {
             this.isVisible = !this.isVisible
-            this.$emit('input', this.isVisible)
+            this.$emit('update:value', this.isVisible)
             this.$emit('update:modelValue', this.isVisible)
         }
     }

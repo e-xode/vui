@@ -15,7 +15,7 @@
             :item-value="itemValue"
             :items="items"
             :selectable="true"
-            @input="onClick"
+            @update:value="onClick"
         >
             <template
                 #item="{

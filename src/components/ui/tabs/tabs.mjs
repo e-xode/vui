@@ -47,7 +47,7 @@ export default {
     methods: {
         toggle (tab) {
             this.active = tab
-            this.$emit('input', this.active)
+            this.$emit('update:value', this.active)
             this.$emit('update:modelValue', this.active)
         }
     }

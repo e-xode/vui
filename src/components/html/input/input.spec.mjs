@@ -41,7 +41,7 @@ describe('components/Input.vue', () => {
 
         expect(component.vm.typed).toBe($e.target.value)
         expect($e.preventDefault).toHaveBeenCalled()
-        expect(emitted['input'][0]).toEqual([$e.target.value])
+        expect(emitted['update:value'][0]).toEqual([$e.target.value])
         expect(emitted['update:modelValue'][0]).toEqual([$e.target.value])
     })
 })

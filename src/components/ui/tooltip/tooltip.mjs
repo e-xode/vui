@@ -20,7 +20,7 @@ export default {
             this.show = this.value
         }
         this.$bus.on('outclick', () => {
-            this.$emit('input', false)
+            this.$emit('update:value', false)
             this.$emit('update:modelValue', false)
             this.show = false
         })

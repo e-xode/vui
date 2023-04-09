@@ -39,7 +39,7 @@ describe('components/Nav.vue', () => {
         component.vm.onClick(2)
 
         const emitted = component.emitted()
-        expect(emitted['input'][0]).toEqual([2])
+        expect(emitted['update:value'][0]).toEqual([2])
         expect(emitted['update:modelValue'][0]).toEqual([2])
     })
 })
