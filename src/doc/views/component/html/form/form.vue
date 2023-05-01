@@ -59,7 +59,6 @@
                         <section class="section--submit">
                             <vui-button
                                 type="button"
-                                @click.prevent="submit"
                             >
                                 {{ $t('page.component.form.submit') }}
                             </vui-button>
