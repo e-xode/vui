@@ -44,7 +44,6 @@ export default {
                     <section class="section--submit">
                         <vui-button
                             type="button"
-                            @click.prevent="submit"
                         >
                             Submit
                         </vui-button>

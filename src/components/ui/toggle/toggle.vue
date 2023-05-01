@@ -6,7 +6,7 @@
             'vui-toggle',
             { 'vui-toggle--checked': isChecked }
         ]"
-        @click="onToggle"
+        @click.stop="onToggle"
     >
         <div class="vui-toggle-slider">
             <div class="vui-toggle-slider-button" />
