@@ -31,8 +31,6 @@
             :group-id="componentGroupId"
             :disabled="disabled"
             :items="items"
-            :item-label="itemLabel"
-            :item-value="itemValue"
             :keyword="keyword"
             :selectable="true"
             :title="listTitle"
