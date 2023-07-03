@@ -45,10 +45,20 @@ export default {
         }
     },
     computed: {
+        defaultLabel () {
+            return this.itemLabel
+                ? this.itemLabel
+                : 'label'
+        },
+        defaultValue () {
+            return this.itemValue
+                ? this.itemValue
+                : 'value'
+        },
         isObject () {
             const item = this.items?.[0]
             return this.isGroup(item)
-                ? typeof item[this.itemValue][0] === 'object'
+                ? typeof item[this.defaultValue][0] === 'object'
                 : typeof item === 'object'
         },
         list () {
@@ -57,7 +67,7 @@ export default {
                     items.push({
                         ...item,
                         $$id: this.newId(),
-                        value: item[this.itemValue].reduce((values, value) =>
+                        value: item[this.defaultValue].reduce((values, value) =>
                             !this.keyword || this.match(value)
                                 ? [...values, this.mapItem(value, this.newId())]
                                 : values
@@ -74,7 +84,7 @@ export default {
         autoexpand () {
             this.open = this.items.reduce((open, item, i) => {
                 if (this.isGroup(item)) {
-                    const items = item[this.itemValue]
+                    const items = item[this.defaultValue]
                     const index = items.findIndex((v) => this.isSelected(v))
                     if (this.expanded || index > -1) {
                         return { ...open, [i]: true }
@@ -88,13 +98,12 @@ export default {
             return last === index && animating
         },
         isGroup (item) {
-            return Array.isArray(item?.[this.itemValue])
+            return Array.isArray(item?.[this.defaultValue])
         },
         isSelected (item) {
-            const { itemValue, selected } = this
             return typeof item === 'object'
-                ? selected && selected[itemValue] === item[itemValue]
-                : selected && selected === item
+                ? this.selected && this.selected[this.defaultValue] === item[this.defaultValue]
+                : this.selected && this.selected === item
         },
         isToggled (index) {
             const { last, open, toggled } = this
@@ -102,13 +111,13 @@ export default {
         },
         match (item) {
             return typeof item === 'object'
-                ? `${item[this.itemLabel]}`.includes(this.keyword)
+                ? `${item[this.defaultLabel]}`.includes(this.keyword)
                 : `${item}`.includes(this.keyword)
         },
         mapItem (value, $$id) {
             const item = typeof value === 'object'
                 ? value
-                : { [this.itemLabel]: value, [this.itemValue]: value }
+                : { [this.defaultLabel]: value, [this.defaultValue]: value }
             return $$id
                 ? { ...item, $$id }
                 : item
@@ -119,11 +128,16 @@ export default {
                 this.selected = this.isSelected(item)
                     ? null
                     : item
-                const emit = this.isObject
-                    ? item
-                    : item[this.itemValue]
-                this.$emit('update:value', emit)
-                this.$emit('update:modelValue', emit)
+                if (this.itemValue) {
+                    this.$emit('update:value', item[this.itemValue])
+                    this.$emit('update:modelValue', item[this.itemValue])
+                } else {
+                    const emit = this.isObject
+                        ? item
+                        : item[this.defaultValue]
+                    this.$emit('update:value', emit)
+                    this.$emit('update:modelValue', emit)
+                }
             }
         },
         onToggle (index) {

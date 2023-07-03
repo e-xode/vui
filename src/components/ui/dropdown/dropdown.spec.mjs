@@ -130,7 +130,9 @@ describe('components/Dropdown.vue', () => {
         ]
         const propsData = {
             items,
-            modelValue: items[0]
+            modelValue: items[0].value[0],
+            itemLabel: 'label',
+            itemValue: 'value'
         }
 
         const mountComponent = () => {
@@ -142,21 +144,22 @@ describe('components/Dropdown.vue', () => {
 
         it('Should render', async() => {
             const component = mountComponent()
-            expect(component.vm.selected).toEqual(items[0])
+            expect(component.vm.selected.value).toEqual(1)
+            expect(component.vm.placeholderValue).toEqual('1')
         })
 
         it('Should toggle value', () => {
             const component = mountComponent()
 
             component.vm.onClick()
-            component.vm.onToggle(items[1])
+            component.vm.onToggle(items[1].value[1])
 
             const emitted = component.emitted()
-            expect(emitted['update:modelValue'][0]).toEqual([items[1]])
-            expect(emitted['update:value'][0]).toEqual([items[1]])
+            expect(emitted['update:modelValue'][0]).toEqual([4])
+            expect(emitted['update:value'][0]).toEqual([4])
 
-            expect(component.vm.selected).toEqual(items[1])
-            expect(component.vm.placeholderValue).toEqual(items[1])
+            expect(component.vm.selected.value).toEqual(4)
+            expect(component.vm.placeholderValue).toEqual('4')
             expect(component.vm.toggled).toBeFalsy()
         })
     })

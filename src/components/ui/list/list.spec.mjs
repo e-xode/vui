@@ -33,7 +33,7 @@ describe('components/List.vue', () => {
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
-        expect(component.vm.selected.value).toBe(4)
+        expect(component.vm.selected.label).toBe(4)
     })
 
     describe('disabled', () => {
@@ -111,7 +111,7 @@ describe('components/List.vue', () => {
         })
     })
 
-    describe('with array of objects', () => {
+    describe('with array of objects (default label/value)', () => {
         const items = [
             { label: 'label1', value: 'value1' },
             { label: 'label2', value: 'value2' }
@@ -121,8 +121,8 @@ describe('components/List.vue', () => {
             propsData.items = items
             propsData.value = items[1]
             propsData.selectable = true
-            propsData.itemLabel = 'label'
-            propsData.itemValue = 'value'
+            propsData.itemLabel = null
+            propsData.itemValue = null
         })
 
         it('Should render', () => {
@@ -155,6 +155,55 @@ describe('components/List.vue', () => {
 
             const emitted = component.emitted()
             expect(emitted['update:value'][0]).toEqual([selected])
+            expect(component.vm.selected).toEqual(selected)
+            expect(component.vm.isSelected(selected)).toBeTruthy()
+        })
+    })
+
+    describe('with array of objects (custom label / value)', () => {
+        const items = [
+            { mylabel: 'label1', myvalue: 'value1' },
+            { mylabel: 'label2', myvalue: 'value2' }
+        ]
+
+        beforeEach(() => {
+            propsData.items = items
+            propsData.value = items[1]
+            propsData.selectable = true
+            propsData.itemLabel = 'mylabel'
+            propsData.itemValue = 'myvalue'
+        })
+
+        it('Should render', () => {
+            const component = mountComponent()
+            expect(component.exists()).toBeTruthy()
+            expect(component.vm.selected).toEqual(items[1])
+            expect(component.vm.isSelected(items[1])).toBeTruthy()
+        })
+
+        describe('with filtered items', () => {
+
+            beforeEach(() => {
+                propsData.selectable = true
+                propsData.keyword = 'label1'
+            })
+
+            it('Should return only one item', () => {
+                const component = mountComponent()
+
+                expect(component.vm.list.length).toBe(1)
+                expect(component.vm.list[0].myvalue).toBe('value1')
+            })
+        })
+
+        it('Should emit onClick', () => {
+            const component = mountComponent()
+            const selected = { mylabel: 'label1', myvalue: 'value1' }
+
+            component.vm.onClick({ ...selected, $$id: 'foo' })
+
+            const emitted = component.emitted()
+            expect(emitted['update:value'][0]).toEqual([selected.myvalue])
             expect(component.vm.selected).toEqual(selected)
             expect(component.vm.isSelected(selected)).toBeTruthy()
         })

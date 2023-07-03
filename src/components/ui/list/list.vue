@@ -49,7 +49,7 @@
                             :item-label="itemLabel"
                             :item-value="itemValue"
                         >
-                            {{ item[itemLabel] }}
+                            {{ item[defaultLabel] }}
                         </slot>
                     </div>
                 </template>
@@ -70,12 +70,12 @@
                             :item-label="itemLabel"
                             :item-value="itemValue"
                         >
-                            {{ item[itemLabel] }}
+                            {{ item[defaultLabel] }}
                         </slot>
                     </div>
                     <template v-if="open[index]">
                         <div
-                            v-for="(childitem, j) in item[itemValue]"
+                            v-for="(childitem, j) in item[defaultValue]"
                             :key="childitem.$$id"
                             :class="[
                                 'vui-list-items-item-label',
@@ -98,7 +98,7 @@
                                 :item-label="itemLabel"
                                 :item-value="itemValue"
                             >
-                                {{ childitem[itemLabel] }}
+                                {{ childitem[defaultLabel] }}
                             </slot>
                         </div>
                     </template>

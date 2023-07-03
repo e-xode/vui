@@ -11,20 +11,17 @@ const props = {
         default: false
     },
     keyword: {
-        type: String,
-        default: null
+        type: String
     },
     items: {
         type: Array,
         required: true
     },
     itemLabel: {
-        type: String,
-        default: 'label'
+        type: String
     },
     itemValue: {
-        type: String,
-        default: 'value'
+        type: String
     },
     modelValue: {
         types: [

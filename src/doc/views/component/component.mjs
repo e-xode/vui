@@ -26,10 +26,10 @@ export default {
         }
     },
     methods: {
-        onRoute(component) {
-            const route = component.name === 'ViewStart'
-                ? { doc: { name: component.name }}
-                : components.find(({ name }) => name === component.name)
+        onRoute(name) {
+            const route = name === 'ViewStart'
+                ? { doc: { name }}
+                : components.find(({ name }) => name === name)
             this.$router.push(route.doc)
         }
     }
