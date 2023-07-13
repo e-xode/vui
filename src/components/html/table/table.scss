@@ -22,3 +22,26 @@
         }
     }
 }
+@media (max-width: 550px) {
+    .vui-table {
+
+        thead {
+            display: none;
+        }
+
+        tr {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        td {
+            display: block;
+            text-align: right;
+        }
+
+        td::before {
+            content: attr(data-label);
+            float: left;
+        }
+    }
+}

@@ -41,6 +41,7 @@
                         :item-value="itemValue"
                     >
                         <td
+                            :data-label="headers[c].label"
                             :class="td.class"
                         >
                             {{ tr[td[itemValue]] }}
