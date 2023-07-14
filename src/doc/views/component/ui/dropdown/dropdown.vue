@@ -13,7 +13,7 @@
                         :is="example.component"
                         v-bind="example.props"
                         :placeholder="$t(example.title)"
-                        @change="onInput"
+                        @update:value="onInput"
                     />
                     <div
                         class="highlighted-code"
