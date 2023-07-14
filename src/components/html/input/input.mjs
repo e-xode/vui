@@ -35,8 +35,9 @@ export default {
     },
     computed: {
         placeholderValue () {
-            return this.placeholder
-                ? this.placeholder
+            const { placeholder = null } = this
+            return placeholder !== null
+                ? placeholder
                 : this.$t('component.input.placeholder')
         }
     },

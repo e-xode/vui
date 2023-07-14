@@ -154,7 +154,7 @@ describe('components/List.vue', () => {
             component.vm.onClick({ ...selected, $$id: 'foo' })
 
             const emitted = component.emitted()
-            expect(emitted['update:value'][0]).toEqual([selected])
+            expect(emitted['update:value'][0]).toEqual([selected.value])
             expect(component.vm.selected).toEqual(selected)
             expect(component.vm.isSelected(selected)).toBeTruthy()
         })

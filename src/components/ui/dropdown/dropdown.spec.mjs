@@ -34,7 +34,7 @@ describe('components/Dropdown.vue', () => {
             const component = mountComponent()
             expect(component.exists()).toBeTruthy()
             expect(component.vm.placeholderLabel).toBeTruthy()
-            expect(component.vm.placeholderValue).toBeTruthy()
+            expect(component.vm.placeholderValue).toBeDefined()
             expect(component.vm.selected).toBe(items[0])
         })
 
@@ -112,7 +112,7 @@ describe('components/Dropdown.vue', () => {
             expect(emitted['update:value'][0]).toEqual([items[1]])
 
             expect(component.vm.selected).toEqual(items[1])
-            expect(component.vm.placeholderValue).toEqual(items[1])
+            expect(component.vm.placeholderValue).toEqual(items[1].label)
             expect(component.vm.toggled).toBeFalsy()
         })
     })

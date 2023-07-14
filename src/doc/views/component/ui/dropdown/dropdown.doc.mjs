@@ -6,13 +6,12 @@ export default {
             markup: `
                 <vui-dropdown
                     id="example-dropdown-1",
-                    :items="[1, 2, 3, 4]"
+                    :items="[-1, 0, 1, 2, 3, 4]"
                 />
             `,
             props: {
-                disabled: false,
                 id: 'example-dropdown-1',
-                items: [1, 2, 3, 4]
+                items: [-1, 0, 1, 2, 3, 4]
             },
             title: 'page.component.dropdown.text-1'
         },
@@ -58,7 +57,7 @@ export default {
                 />
             `,
             props: {
-                id: 'example-dropdown-2',
+                id: 'example-dropdown-3',
                 items: [
                     { label: 'Group label 1', value: [
                         { label: 'Label 1', value: 'value 1' },
