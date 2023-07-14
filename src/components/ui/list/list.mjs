@@ -55,12 +55,6 @@ export default {
                 ? this.itemValue
                 : 'value'
         },
-        isObject () {
-            const item = this.items?.[0]
-            return this.isGroup(item)
-                ? typeof item[this.defaultValue][0] === 'object'
-                : typeof item === 'object'
-        },
         list () {
             return this.items.reduce((items, item) => {
                 if (this.isGroup(item)) {
@@ -100,6 +94,12 @@ export default {
         isGroup (item) {
             return Array.isArray(item?.[this.defaultValue])
         },
+        isObject (item) {
+            const key = this.itemValue || this.defaultValue
+            return this.isGroup(item)
+                ? typeof item[key][0] === 'object'
+                : typeof item === 'object'
+        },
         isSelected (item) {
             return typeof item === 'object'
                 ? this.selected && this.selected[this.defaultValue] === item[this.defaultValue]
@@ -132,9 +132,9 @@ export default {
                     this.$emit('update:value', item[this.itemValue])
                     this.$emit('update:modelValue', item[this.itemValue])
                 } else {
-                    const emit = this.isObject
-                        ? item
-                        : item[this.defaultValue]
+                    const emit = this.isObject(item)
+                        ? item[this.defaultValue]
+                        : item
                     this.$emit('update:value', emit)
                     this.$emit('update:modelValue', emit)
                 }

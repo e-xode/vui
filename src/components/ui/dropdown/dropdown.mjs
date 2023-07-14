@@ -38,18 +38,29 @@ export default {
     },
     computed: {
         listTitle () {
-            return this.selected
+            return typeof this.selected !== 'undefined'
                 ? this.placeholderLabel
                 : null
         },
         placeholderValue () {
-            const { itemLabel, selected } = this
-            if (selected) {
-                return itemLabel
-                    ? selected[itemLabel]
-                    : selected
-            }
-            return this.placeholderLabel
+            const { selected } = this
+            const key = this.itemValue || 'value'
+            const label = this.itemLabel || 'label'
+            const value = typeof selected?.[key] !== 'undefined'
+                ? selected[key]
+                : selected
+            return this.items.reduce((current, item) => {
+                if (typeof item[key] === 'object') {
+                    return item[key].reduce((subcurrent, subitem) => {
+                        return subitem[key] === value
+                            ? subitem[label]
+                            : subcurrent
+                    }, current)
+                }
+                return item[key] === value
+                    ? item[label]
+                    : current
+            }, value)
         },
         placeholderLabel () {
             return this.placeholder
