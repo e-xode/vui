@@ -152,13 +152,13 @@ describe('components/Dropdown.vue', () => {
             const component = mountComponent()
 
             component.vm.onClick()
-            component.vm.onToggle(items[1].value[1])
+            component.vm.onToggle(items[1].value[1].value)
 
             const emitted = component.emitted()
             expect(emitted['update:modelValue'][0]).toEqual([4])
             expect(emitted['update:value'][0]).toEqual([4])
 
-            expect(component.vm.selected.value).toEqual(4)
+            expect(component.vm.selected).toEqual(4)
             expect(component.vm.placeholderValue).toEqual('4')
             expect(component.vm.toggled).toBeFalsy()
         })

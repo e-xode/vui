@@ -75,13 +75,9 @@ export default {
             }
         },
         onToggle (selected) {
-            const { itemValue } = this
-            const emit = itemValue
-                ? selected[itemValue]
-                : selected
             this.selected = selected
-            this.$emit('update:value', emit)
-            this.$emit('update:modelValue', emit)
+            this.$emit('update:value', selected)
+            this.$emit('update:modelValue', selected)
             this.blur()
         }
     }
