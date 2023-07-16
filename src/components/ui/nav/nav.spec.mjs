@@ -7,7 +7,15 @@ describe('components/Nav.vue', () => {
     const propsData = {
         itemLabel: 'label',
         itemValue: 'value',
-        items: []
+        items: [
+            {
+                label: 'label 1',
+                value: 'value1',
+                route: {
+                    name: 'myroute'
+                }
+            }
+        ]
     }
 
     const mountComponent = () => {
@@ -33,13 +41,16 @@ describe('components/Nav.vue', () => {
         expect(component.exists()).toBeTruthy()
     })
 
-    it('Should onClick', () => {
+    it('Should onClick and click route', () => {
         const component = mountComponent()
 
-        component.vm.onClick(2)
+        component.vm.onClick('value1')
 
         const emitted = component.emitted()
-        expect(emitted['update:value'][0]).toEqual([2])
-        expect(emitted['update:modelValue'][0]).toEqual([2])
+        expect(emitted['update:value'][0]).toEqual(['value1'])
+        expect(emitted['update:modelValue'][0]).toEqual(['value1'])
+        expect(setup.global.mocks.$router.push).toHaveBeenCalledWith({
+            name: 'myroute'
+        })
     })
 })

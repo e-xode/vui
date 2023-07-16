@@ -101,9 +101,12 @@ export default {
                 : typeof item === 'object'
         },
         isSelected (item) {
-            return typeof item === 'object'
-                ? this.selected && this.selected[this.defaultValue] === item[this.defaultValue]
-                : this.selected && this.selected === item
+            if (!item.disabled && typeof this.selected !== 'undefined') {
+                return typeof item === 'object'
+                    ? this.selected && this.selected[this.defaultValue] === item[this.defaultValue]
+                    : this.selected && this.selected === item
+            }
+            return false
         },
         isToggled (index) {
             const { last, open, toggled } = this

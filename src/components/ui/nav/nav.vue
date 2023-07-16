@@ -14,7 +14,7 @@
             :item-label="itemLabel"
             :item-value="itemValue"
             :items="items"
-            :selectable="true"
+            :selectable="!disabled"
             @update:value="onClick"
         >
             <template
