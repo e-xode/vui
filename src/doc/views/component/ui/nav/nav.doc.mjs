@@ -15,13 +15,55 @@ export default {
                 disabled: false,
                 id: 'vui-nav-1',
                 items: [
-                    { label: 'Label 1', value: 'value 1' },
-                    { label: 'Label 2', value: 'value 2' }
+                    {
+                        label: 'Label 1',
+                        value: 'value 1'
+                    },
+                    {
+                        label: 'Label 2',
+                        value: 'value 2'
+                    }
                 ],
                 itemLabel: 'label',
                 itemValue: 'value'
             },
             title: 'page.component.nav.text-1'
+        },
+        {
+            markup: `
+                <vui-nav
+                    :items=[
+                        { label: "label 1", value: "value 1", route: { name : "routeName" } },
+                        { label: "label 2", value: "value 2", route: { name : "routeName" } },
+                        { label: "label 3", disabled: true  }
+                    ]
+                    item-label="label"
+                    item-value="value"
+                />
+            `,
+            props: {
+                disabled: false,
+                id: 'vui-nav-2',
+                items: [
+                    {
+                        label: 'Label 3',
+                        value: 'value 3',
+                        route: { name: 'ViewIndex' }
+                    },
+                    {
+                        label: 'Label 4',
+                        value: 'value 4',
+                        route: { name: 'ViewIndex' }
+                    },
+                    {
+                        label: 'Label 5',
+                        disabled: true
+                    }
+                ],
+                itemLabel: 'label',
+                itemValue: 'value'
+            },
+            title: 'page.component.nav.text-2'
         }
     ],
     props: [

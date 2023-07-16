@@ -1,11 +1,11 @@
 @import "@/scss/import.scss";
 
 .view-component {
-    .vui-nav {
+    > .vui-nav {
         padding-left: 1rem;
     }
 
-    .h1 {
+    > .h1 {
         padding: 1rem;
 
         h1 {
