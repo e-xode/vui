@@ -25,7 +25,13 @@
                     itemLabel
                 }"
             >
-                <slot name="item">
+                <slot
+                    name="item"
+                    :index="index"
+                    :item="item"
+                    :item-label="itemLabel"
+                    :item-value="itemValue"
+                >
                     <i
                         :class="[
                             'fa-solid',
