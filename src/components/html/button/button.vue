@@ -8,7 +8,8 @@
             { 'vui-button--toggled' : toggled },
             { 'vui-button--animating' : !disabled && animating },
             { 'vui-button--loading' : !disabled && loading },
-            { 'vui-button--disabled' : disabled }
+            { 'vui-button--disabled' : disabled },
+            $attrs.class
         ]"
         @click.stop="onClick"
     >

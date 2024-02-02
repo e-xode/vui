@@ -9,21 +9,7 @@ export default {
     mixins: [
         composable
     ],
-    props: {
-    },
     created () {
         translatable(langs)
-    },
-    mounted() {
-    },
-    data() {
-        return {
-        }
-    },
-    computed: {
-    },
-    methods: {
-    },
-    components: {
     }
 }

@@ -24,8 +24,6 @@ export default {
         }
         this.autoexpand()
     },
-    mounted () {
-    },
     watch: {
         items () {
             this.autoexpand()
@@ -131,16 +129,11 @@ export default {
                 this.selected = this.isSelected(item)
                     ? null
                     : item
-                if (this.itemValue) {
-                    this.$emit('update:value', item[this.itemValue])
-                    this.$emit('update:modelValue', item[this.itemValue])
-                } else {
-                    const emit = this.isObject(item)
-                        ? item[this.defaultValue]
-                        : item
-                    this.$emit('update:value', emit)
-                    this.$emit('update:modelValue', emit)
-                }
+                const emit = this.isObject(item) && !this.hasAttribute('return-object')
+                    ? item[this.defaultValue]
+                    : item
+                this.$emit('update:value', emit)
+                this.$emit('update:modelValue', emit)
             }
         },
         onToggle (index) {

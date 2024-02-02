@@ -14,12 +14,6 @@ export default {
         translatable(langs)
         return {}
     },
-    mounted() {
-    },
-    data() {
-        return {
-        }
-    },
     computed: {
         doc () {
             return doc
@@ -38,11 +32,5 @@ export default {
                 }))
             })
         }
-    },
-    methods: {
-        submit () {
-        }
-    },
-    components: {
     }
 }

@@ -15,12 +15,6 @@ export default {
     created () {
         translatable(langs)
     },
-    mounted () {
-    },
-    data () {
-        return {
-        }
-    },
     computed: {
         width () {
             const value = Math.abs(this.value)
@@ -29,7 +23,5 @@ export default {
             const percent = Math.round((value / (min + max)) * 100)
             return `${percent}%`
         }
-    },
-    methods: {
     }
 }

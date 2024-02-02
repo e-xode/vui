@@ -11,8 +11,9 @@
                 <vui-dropdown
                     :items="components"
                     item-label="label"
-                    item-value="path"
+                    item-value="value"
                     :placeholder="$t('component.header.dropdown.components')"
+                    return-object
                     @update:value="toggleComponent"
                 />
             </vui-header>

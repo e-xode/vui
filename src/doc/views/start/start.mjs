@@ -10,12 +10,6 @@ export default {
     created () {
         translatable(langs)
     },
-    mounted() {
-    },
-    data() {
-        return {
-        }
-    },
     computed: {
         components () {
             return components.reduce((array, component) => {
@@ -31,7 +25,5 @@ export default {
                 return array
             }, [])
         }
-    },
-    methods: {
     }
 }

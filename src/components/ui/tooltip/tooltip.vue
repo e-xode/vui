@@ -4,7 +4,8 @@
         ref="tooltip"
         :class="[
             'vui-tooltip',
-            { 'vui-tooltip--with-icon': icon }
+            { 'vui-tooltip--with-icon': icon },
+            $attrs.class
         ]"
         :style="{
             position: 'fixed',

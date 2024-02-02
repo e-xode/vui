@@ -1,7 +1,7 @@
 <template>
     <div
         :id="componentId"
-        class="vui-tabs"
+        :class="['vui-tabs', $attrs.class]"
     >
         <div class="vui-tabs-tabs">
             <div

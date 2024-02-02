@@ -24,7 +24,8 @@
                                 :is="example.component"
                                 v-bind="example.props"
                                 v-model="form[example.props.id]"
-                                maxlength="15"
+                                required
+                                class="test"
                             />
                         </template>
                     </vui-card>

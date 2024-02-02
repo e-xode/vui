@@ -17,14 +17,6 @@ export default {
     created () {
         translatable(langs)
     },
-    mounted () {
-    },
-    data () {
-        return {
-        }
-    },
-    computed: {
-    },
     methods: {
         onClick () {
             if (!this.disabled) {

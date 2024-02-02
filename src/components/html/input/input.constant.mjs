@@ -2,6 +2,20 @@ const props = {
     disabled: {
         type: Boolean
     },
+    modelValue: {
+        types: [
+            Boolean,
+            String,
+            Number,
+            null
+        ]
+    },
+    name: {
+        type: String
+    },
+    maxlength: {
+        type: Number
+    },
     placeholder: {
         default: null,
         types: [
@@ -14,14 +28,6 @@ const props = {
     type: {
         type: String,
         required: true
-    },
-    modelValue: {
-        types: [
-            Boolean,
-            String,
-            Number,
-            null
-        ]
     },
     value: {
         types: [

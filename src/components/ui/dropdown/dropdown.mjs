@@ -43,24 +43,24 @@ export default {
                 : null
         },
         placeholderValue () {
-            const { selected } = this
-            const key = this.itemValue || 'value'
-            const label = this.itemLabel || 'label'
-            const value = typeof selected?.[key] !== 'undefined'
-                ? selected[key]
+            const { itemValue = 'value', itemLabel = 'label', selected } = this
+            const value = typeof selected?.[itemValue] !== 'undefined'
+                ? selected[itemValue]
                 : selected
-            return this.items.reduce((current, item) => {
-                if (typeof item[key] === 'object') {
-                    return item[key].reduce((subcurrent, subitem) => {
-                        return subitem[key] === value
-                            ? subitem[label]
-                            : subcurrent
-                    }, current)
-                }
-                return item[key] === value
-                    ? item[label]
-                    : current
-            }, value)
+            return value === null
+                ? this.placeholderLabel
+                : this.items.reduce((current, item) => {
+                    if (typeof item[itemValue] === 'object') {
+                        return item[itemValue].reduce((subcurrent, subitem) => {
+                            return subitem[itemValue] === value
+                                ? subitem[itemLabel]
+                                : subcurrent
+                        }, current)
+                    }
+                    return item[itemValue] === value
+                        ? item[itemLabel]
+                        : current
+                }, value)
         },
         placeholderLabel () {
             return this.placeholder

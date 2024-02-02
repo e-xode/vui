@@ -4,7 +4,8 @@
         :class="[
             'vui-tag',
             `vui-tag--${layout}`,
-            { 'vui-tag--with-icon' : icon }
+            { 'vui-tag--with-icon' : icon },
+            $attrs.class
         ]"
     >
         <i

@@ -14,12 +14,6 @@ export default {
         translatable(langs)
         return {}
     },
-    mounted () {
-    },
-    data () {
-        return {
-        }
-    },
     computed: {
         doc () {
             return doc
@@ -27,11 +21,5 @@ export default {
         examples () {
             return this.docExamples(VuiDropdown, doc)
         }
-    },
-    methods: {
-        onInput () {
-        }
-    },
-    components: {
     }
 }

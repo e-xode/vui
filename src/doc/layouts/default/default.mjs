@@ -2,12 +2,6 @@ import components from '@/components.json'
 
 export default {
     name: 'LayoutDefault',
-    mounted() {
-    },
-    data () {
-        return {
-        }
-    },
     computed: {
         components () {
             const list = components.reduce((list, component) => {
@@ -16,15 +10,17 @@ export default {
             }, { html: [], layout:[], ui: [] })
             return Object.keys(list).map((key) => ({
                 label: this.$t(`component.header.dropdown.components.${key}`),
-                path: list[key]
+                value: list[key].map((item) => ({
+                    ...item,
+                    label: item.name,
+                    value: item.name
+                }))
             }))
         }
     },
     methods: {
         toggleComponent ({ doc }) {
-            this.$router.push({
-                name: doc?.name
-            })
+            this.$router.push({ name: doc.name  })
         }
     }
 }

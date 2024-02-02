@@ -1,14 +1,15 @@
 <template>
     <div
         :id="componentId"
-        :name="componentId"
         :class="[
             'vui-checkbox',
-            { 'vui-checkbox--checked': isChecked }
+            { 'vui-checkbox--checked': isChecked },
+            $attrs.class
         ]"
         @click="onToggle"
     >
         <input
+            :name="$attrs.name"
             type="checkbox"
         >
         <label

@@ -14,8 +14,6 @@ export default {
         translatable(langs)
         return {}
     },
-    mounted() {
-    },
     data() {
         return {
             selected: null
@@ -39,11 +37,5 @@ export default {
                 }))
             })
         }
-    },
-    methods: {
-        submit () {
-        }
-    },
-    components: {
     }
 }

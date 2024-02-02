@@ -33,7 +33,5 @@ export default {
         examples() {
             return this.docExamples(VuiInput, doc)
         }
-    },
-    methods: {
     }
 }

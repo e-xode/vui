@@ -10,7 +10,7 @@
     "main": "./dist/vui.cjs.js",
     "module": "./dist/vui.esm.js",
     "type": "module",
-    "version": "0.4.4",
+    "version": "0.4.5",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/e-xode/vui.git"
@@ -50,6 +50,7 @@
             "no-console": ["error"],
             "quotes": ["error", "single"],
             "semi": ["error", "never"],
+            "vue/attributes-order": ["error"],
             "vue/html-closing-bracket-newline": ["error"],
             "vue/html-indent": ["error", 4],
             "vue/multi-word-component-names": "off",

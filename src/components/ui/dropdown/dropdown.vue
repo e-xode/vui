@@ -1,7 +1,7 @@
 <template>
     <div
         :id="componentId"
-        class="vui-dropdown"
+        :class="['vui-dropdown', $attrs.class]"
     >
         <div
             :class="[
@@ -27,10 +27,13 @@
         <vui-list
             v-if="toggled"
             v-model="selected"
+            v-bind="$attrs"
             class="vui-dropdown-list"
             :group-id="componentGroupId"
             :disabled="disabled"
             :items="items"
+            :item-label="itemLabel"
+            :item-value="itemValue"
             :keyword="keyword"
             :selectable="true"
             :title="listTitle"
