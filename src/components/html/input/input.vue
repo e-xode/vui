@@ -1,13 +1,14 @@
 <template>
-    <div class="vui-input">
+    <div :class="['vui-input', $attrs.class]">
         <input
             :id="componentId"
+            v-model="typed"
             :disabled="disabled"
+            :maxlength="maxlength"
+            :name="$attrs.name"
             :placeholder="placeholderValue"
+            :required="$attrs.required"
             :type="type"
-            :value="typed"
-            @change.stop
-            @input.stop="onInput"
         >
     </div>
 </template>

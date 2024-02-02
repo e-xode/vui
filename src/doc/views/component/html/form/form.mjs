@@ -16,8 +16,6 @@ export default {
         translatable(langs)
         return {}
     },
-    mounted () {
-    },
     data () {
         return {
             form: {
@@ -33,11 +31,5 @@ export default {
         examples () {
             return this.docExamples(VuiForm, doc)
         }
-    },
-    methods: {
-        submit () {
-        }
-    },
-    components: {
     }
 }

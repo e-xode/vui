@@ -1,4 +1,5 @@
 const composable = {
+    inheritAttrs: false,
     inject: ['$bus'],
     props: {
         id: {

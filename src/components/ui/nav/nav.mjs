@@ -22,8 +22,6 @@ export default {
             this.selected = this.value
         }
     },
-    mounted () {
-    },
     watch: {
         modelValue (value) {
             this.selected = value
@@ -36,8 +34,6 @@ export default {
         return {
             selected: null
         }
-    },
-    computed: {
     },
     methods: {
         onClick (value) {

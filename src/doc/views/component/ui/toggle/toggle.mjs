@@ -43,9 +43,5 @@ export default {
                 }))
             })
         }
-    },
-    methods: {
-    },
-    components: {
     }
 }

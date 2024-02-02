@@ -1,7 +1,7 @@
 <template>
     <footer
         :id="componentId"
-        class="vui-footer"
+        :class="['vui-footer', $attrs.class]"
     >
         <slot />
     </footer>

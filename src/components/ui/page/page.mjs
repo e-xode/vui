@@ -14,19 +14,9 @@ export default {
     created () {
         translatable(langs)
     },
-    mounted() {
-    },
-    data() {
-        return {
-        }
-    },
-    computed: {
-    },
     methods: {
         outclick ()  {
             this.$bus.emit('outclick', this.componentGroupId)
         }
-    },
-    components: {
     }
 }

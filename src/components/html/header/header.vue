@@ -1,7 +1,7 @@
 <template>
     <header
         :id="componentId"
-        class="vui-header"
+        :class="['vui-header', $attrs.class]"
     >
         <slot />
     </header>

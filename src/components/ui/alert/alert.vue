@@ -4,7 +4,8 @@
         :class="[
             'vui-alert',
             `vui-alert--${layout}`,
-            { 'vui-alert--with-icon' : icon }
+            { 'vui-alert--with-icon' : icon },
+            $attrs.class
         ]"
     >
         <i

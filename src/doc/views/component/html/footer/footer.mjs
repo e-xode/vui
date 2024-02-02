@@ -16,12 +16,6 @@ export default {
         translatable(langs)
         return {}
     },
-    mounted() {
-    },
-    data() {
-        return {
-        }
-    },
     computed: {
         doc () {
             return doc
@@ -29,11 +23,5 @@ export default {
         examples () {
             return this.docExamples(VuiFooter, doc)
         }
-    },
-    methods: {
-        isLoading () {
-        }
-    },
-    components: {
     }
 }

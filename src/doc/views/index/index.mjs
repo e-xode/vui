@@ -10,17 +10,9 @@ export default {
     created () {
         translatable(langs)
     },
-    mounted() {
-    },
-    data() {
-        return {
-        }
-    },
     computed: {
         version () {
             return jsonPackage.version
         }
-    },
-    methods: {
     }
 }

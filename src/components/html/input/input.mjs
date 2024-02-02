@@ -14,16 +14,17 @@ export default {
     props,
     created () {
         translatable(langs)
-        if (this.hasModelValue) {
-            this.typed = this.modelValue
-        } else if (this.hasValue) {
+        if (this.hasValue) {
             this.typed = this.value
         }
+        if (this.hasModelValue) {
+            this.typed = this.modelValue
+        }
+        this.$watch('typed', (value) => {
+            this.$emit('update:modelValue', value)
+        })
     },
     watch: {
-        value (value) {
-            this.typed = value
-        },
         modelValue (value) {
             this.typed = value
         }
@@ -40,16 +41,5 @@ export default {
                 ? placeholder
                 : this.$t('component.input.placeholder')
         }
-    },
-    methods: {
-        onInput ($e) {
-            $e.preventDefault()
-            const { value } = $e.target
-            this.typed = value
-            this.$emit('update:value', value)
-            this.$emit('update:modelValue', value)
-        }
-    },
-    components: {
     }
 }

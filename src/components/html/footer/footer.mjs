@@ -11,15 +11,5 @@ export default {
     ],
     created () {
         translatable(langs)
-    },
-    mounted() {
-    },
-    data() {
-        return {
-        }
-    },
-    computed: {
-    },
-    components: {
     }
 }

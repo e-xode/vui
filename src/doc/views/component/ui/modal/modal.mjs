@@ -14,8 +14,6 @@ export default {
         translatable(langs)
         return {}
     },
-    mounted() {
-    },
     data() {
         return {
             isVisible: false
@@ -33,7 +31,5 @@ export default {
         onClick () {
             this.isVisible = true
         }
-    },
-    components: {
     }
 }

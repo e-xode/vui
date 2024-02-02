@@ -3,7 +3,8 @@
         :id="componentId"
         :class="[
             'vui-card',
-            { 'vui-card--flat': hasAttribute('flat') }
+            { 'vui-card--flat': hasAttribute('flat') },
+            $attrs.class
         ]"
     >
         <div

@@ -1,28 +1,29 @@
-FROM node:19-alpine3.15 AS builder
+FROM node:21-alpine3.18 AS builder
 
-ARG NODE_ENV=production
+ENV NODE_ENV=production
+ENV PATH=/home/node/.npm-global/bin:$PATH
+ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 
 RUN mkdir -p /app
 ADD . /app
 
-RUN mkdir /home/node/.npm-global
-ENV PATH=/home/node/.npm-global/bin:$PATH
-ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
-
 WORKDIR /app
 
+RUN mkdir /home/node/.npm-global
 RUN npm install -g npm@latest
-RUN npm install
+RUN npm install --production=false
 RUN npm run build
 
 # ----------------------------------------
 
-FROM node:19-alpine3.15 AS runner
+FROM node:21-alpine3.18 AS runner
+
+ENV NODE_PORT=3001
 
 RUN apk update
 RUN apk --no-cache add nginx supervisor
 
-EXPOSE 3001
+EXPOSE $NODE_PORT
 
 WORKDIR /app
 

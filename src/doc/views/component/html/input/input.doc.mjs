@@ -13,6 +13,7 @@ export default {
             `,
             props: {
                 id: 'example-input-1',
+                name: 'example-input-1',
                 placeholder: 'Type a value',
                 type: 'text'
             },
@@ -29,6 +30,7 @@ export default {
             `,
             props: {
                 id: 'example-input-2',
+                name: 'example-input-2',
                 placeholder: 'Type a value',
                 type: 'email'
             },

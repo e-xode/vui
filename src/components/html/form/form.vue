@@ -1,7 +1,7 @@
 <template>
     <form
         :id="componentId"
-        class="vui-form"
+        :class="['vui-form', $attrs.class]"
     >
         <slot />
     </form>
