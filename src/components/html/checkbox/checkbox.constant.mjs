@@ -27,6 +27,9 @@ const props = {
             null
         ]
     },
+    name: {
+        type: String
+    },
     uncheckedValue: {
         default: false,
         types: [

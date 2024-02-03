@@ -9,7 +9,9 @@
         @click="onToggle"
     >
         <input
-            :name="$attrs.name"
+            :name="name"
+            :disabled="disabled"
+            :required="hasAttribute('required')"
             type="checkbox"
         >
         <label
