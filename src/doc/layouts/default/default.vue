@@ -14,7 +14,7 @@
                     item-value="value"
                     :placeholder="$t('component.header.dropdown.components')"
                     return-object
-                    @update:value="toggleComponent"
+                    @update:modelValue="toggleComponent"
                 />
             </vui-header>
         </template>

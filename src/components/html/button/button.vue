@@ -9,7 +9,7 @@
             { 'vui-button--animating' : !disabled && animating },
             { 'vui-button--loading' : !disabled && loading },
             { 'vui-button--disabled' : disabled },
-            $attrs.class
+            $props.class
         ]"
         @click.stop="onClick"
     >

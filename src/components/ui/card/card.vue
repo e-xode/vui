@@ -4,7 +4,7 @@
         :class="[
             'vui-card',
             { 'vui-card--flat': hasAttribute('flat') },
-            $attrs.class
+            $props.class
         ]"
     >
         <div

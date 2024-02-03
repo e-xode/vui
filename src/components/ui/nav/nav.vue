@@ -4,7 +4,7 @@
         :class="[
             'vui-nav',
             { 'vui-nav--flat' : hasAttribute('flat') },
-            $attrs.class
+            $props.class
         ]"
     >
         <vui-list
@@ -16,7 +16,7 @@
             :item-value="itemValue"
             :items="items"
             :selectable="!disabled"
-            @update:value="onClick"
+            @update:modelValue="onClick"
         >
             <template
                 #item="{

@@ -5,7 +5,7 @@
         :class="[
             'vui-toggle',
             { 'vui-toggle--checked': isChecked },
-            $attrs.class
+            $props.class
         ]"
         @click.stop="onToggle"
     >

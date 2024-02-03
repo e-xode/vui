@@ -2,7 +2,8 @@
     <div
         :class="[
             'vui-grid-unit',
-            { [`vui-grid-unit-col--${col}`]: col }
+            { [`vui-grid-unit-col--${col}`]: col },
+            $props.class
         ]"
     >
         <slot />

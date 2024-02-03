@@ -5,13 +5,13 @@
         :class="[
             'vui-tooltip',
             { 'vui-tooltip--with-icon': icon },
-            $attrs.class
+            $props.class
         ]"
         :style="{
             position: 'fixed',
             display,
-            top,
-            left
+            top: `${top}px`,
+            left: `${left}px`
         }"
     >
         <i

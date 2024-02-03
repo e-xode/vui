@@ -1,7 +1,7 @@
 <template>
     <div
         :id="componentId"
-        :class="['vui-progress',$attrs.class]"
+        :class="['vui-progress',$props.class]"
     >
         <div
             :class="[

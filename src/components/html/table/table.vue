@@ -1,7 +1,7 @@
 <template>
     <table
         :id="componentId"
-        :class="['vui-table', $attrs.class]"
+        :class="['vui-table', $props.class]"
     >
         <thead>
             <tr>

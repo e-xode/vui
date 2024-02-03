@@ -76,7 +76,6 @@ export default {
         },
         onToggle (selected) {
             this.selected = selected
-            this.$emit('update:value', selected)
             this.$emit('update:modelValue', selected)
             this.blur()
         }

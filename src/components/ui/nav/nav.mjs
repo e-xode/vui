@@ -38,7 +38,6 @@ export default {
     methods: {
         onClick (value) {
             if (!this.disabled) {
-                this.$emit('update:value', value)
                 this.$emit('update:modelValue', value)
                 const item = this.items.find((item) => item.value === value)
                 if (item?.route) {

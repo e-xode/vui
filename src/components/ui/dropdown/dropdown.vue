@@ -1,7 +1,7 @@
 <template>
     <div
         :id="componentId"
-        :class="['vui-dropdown', $attrs.class]"
+        :class="['vui-dropdown', $props.class]"
     >
         <div
             :class="[
@@ -37,7 +37,7 @@
             :keyword="keyword"
             :selectable="true"
             :title="listTitle"
-            @update:value="onToggle"
+            @update:modelValue="onToggle"
         >
             <template
                 v-if="$slots.placeholder"

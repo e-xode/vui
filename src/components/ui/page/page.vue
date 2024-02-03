@@ -1,7 +1,7 @@
 <template>
     <div
         :id="componentId"
-        :class="['vui-page', $attrs.class]"
+        :class="['vui-page', $props.class]"
         @click="outclick"
     >
         <div

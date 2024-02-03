@@ -5,7 +5,7 @@
             'vui-alert',
             `vui-alert--${layout}`,
             { 'vui-alert--with-icon' : icon },
-            $attrs.class
+            $props.class
         ]"
     >
         <i

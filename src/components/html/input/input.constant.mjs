@@ -10,11 +10,11 @@ const props = {
             null
         ]
     },
-    name: {
-        type: String
-    },
     maxlength: {
         type: Number
+    },
+    name: {
+        type: String
     },
     placeholder: {
         default: null,

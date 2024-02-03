@@ -20,7 +20,6 @@ export default {
             this.show = this.value
         }
         this.$bus.on('outclick', () => {
-            this.$emit('update:value', false)
             this.$emit('update:modelValue', false)
             this.show = false
         })
@@ -32,17 +31,19 @@ export default {
             },
             deep: true
         },
-        modelValue (show) {
+        async modelValue (show) {
+            this.show = show
             if (show) {
+                await this.$nextTick()
                 this.setContentPosition()
             }
-            this.show = show
         },
-        value (show) {
+        async value (show) {
+            this.show = show
             if (show) {
+                await this.$nextTick()
                 this.setContentPosition()
             }
-            this.show = show
         }
     },
     mounted () {
@@ -97,10 +98,8 @@ export default {
     },
     methods: {
         setContentPosition () {
-            this.$nextTick(() => {
-                const { tooltip } = this.$refs
-                this.dimension.content = tooltip.getBoundingClientRect()
-            })
+            const { tooltip } = this.$refs
+            this.dimension.content = tooltip.getBoundingClientRect()
         },
         setPosition (element) {
             if (element) {
