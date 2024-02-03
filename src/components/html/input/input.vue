@@ -5,9 +5,9 @@
             v-model="typed"
             :disabled="disabled"
             :maxlength="maxlength"
-            :name="$attrs.name"
+            :name="name"
             :placeholder="placeholderValue"
-            :required="$attrs.required"
+            :required="hasAttribute('required')"
             :type="type"
         >
     </div>
