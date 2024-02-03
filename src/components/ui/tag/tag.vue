@@ -5,7 +5,7 @@
             'vui-tag',
             `vui-tag--${layout}`,
             { 'vui-tag--with-icon' : icon },
-            $attrs.class
+            $props.class
         ]"
     >
         <i

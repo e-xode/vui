@@ -2,7 +2,7 @@
     <div
         v-if="isVisible"
         :id="componentId"
-        :class="['vui-modal', $attrs.class]"
+        :class="['vui-modal', $props.class]"
     >
         <div class="vui-modal-content">
             <div

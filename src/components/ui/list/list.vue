@@ -4,7 +4,7 @@
         :class="[
             'vui-list',
             { 'vui-list--flat': hasAttribute('flat') },
-            $attrs.class
+            $props.class
         ]"
     >
         <div

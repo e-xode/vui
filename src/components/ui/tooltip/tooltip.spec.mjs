@@ -44,15 +44,15 @@ describe('components/Tooltip.vue', () => {
         expect(content.y).toBeGreaterThanOrEqual(0)
     })
 
-    it('Should not be visile on outclick', () => {
+    it('Should not be visible on outclick', () => {
         const component = mountComponent()
         component.vm.show = true
 
         component.vm.$bus.emit('outclick')
 
         const emitted = component.emitted()
-        expect(emitted['update:value'][0]).toEqual([false])
         expect(emitted['update:modelValue'][0]).toEqual([false])
+
         expect(component.vm.show).toBe(false)
     })
 })

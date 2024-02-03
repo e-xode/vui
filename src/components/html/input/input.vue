@@ -1,7 +1,9 @@
 <template>
-    <div :class="['vui-input', $attrs.class]">
+    <div
+        :id="componentId"
+        :class="['vui-input', $props.class]"
+    >
         <input
-            :id="componentId"
             v-model="typed"
             :disabled="disabled"
             :maxlength="maxlength"

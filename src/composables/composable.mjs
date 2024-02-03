@@ -1,7 +1,9 @@
 const composable = {
-    inheritAttrs: false,
     inject: ['$bus'],
     props: {
+        class: {
+            type: String
+        },
         id: {
             type: String
         },
@@ -14,6 +16,9 @@ const composable = {
         },
         loading: {
             type: Boolean
+        },
+        name: {
+            type: String
         }
     },
     deactivated () {
@@ -49,11 +54,14 @@ const composable = {
         }
     },
     methods: {
-        newId () {
-            return Math.random().toString(36).slice(-6)
-        },
         hasAttribute (tag) {
             return Object.keys(this.$attrs).find((attr) => attr === tag)
+        },
+        hasProp (tag) {
+            return Object.keys(this.$props).find((attr) => attr === tag)
+        },
+        newId () {
+            return Math.random().toString(36).slice(-6)
         }
     }
 }

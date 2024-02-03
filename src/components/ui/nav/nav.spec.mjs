@@ -47,7 +47,6 @@ describe('components/Nav.vue', () => {
         component.vm.onClick('value1')
 
         const emitted = component.emitted()
-        expect(emitted['update:value'][0]).toEqual(['value1'])
         expect(emitted['update:modelValue'][0]).toEqual(['value1'])
         expect(setup.global.mocks.$router.push).toHaveBeenCalledWith({
             name: 'myroute'

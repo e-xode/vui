@@ -132,7 +132,6 @@ export default {
                 const emit = this.isObject(item) && !this.hasAttribute('return-object')
                     ? item[this.defaultValue]
                     : item
-                this.$emit('update:value', emit)
                 this.$emit('update:modelValue', emit)
             }
         },

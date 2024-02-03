@@ -47,7 +47,6 @@ export default {
             const value = this.isChecked
                 ? this.checkedValue
                 : this.uncheckedValue
-            this.$emit('update:value', value)
             this.$emit('update:modelValue', value)
         },
         setToggled (value) {
