@@ -26,4 +26,15 @@ describe('components/Input.vue (modelValue)', () => {
         expect(component.vm.typed).toBe('foo')
         expect(component.vm.placeholderValue).toBeTruthy()
     })
+
+
+    it('Should change value', async() => {
+        const component = mountComponent()
+
+        component.setProps({ value: 'bar' })
+
+        await component.vm.$nextTick()
+
+        expect(component.vm.typed).toBe('bar')
+    })
 })

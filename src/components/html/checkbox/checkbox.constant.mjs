@@ -1,14 +1,10 @@
 const props = {
     checked: {
-        types: [
-            Boolean,
-            String,
-            Number,
-            null
-        ]
+        default: undefined,
+        type: Boolean
     },
     checkedValue: {
-        default: true,
+        default: undefined,
         types: [
             Boolean,
             String,
@@ -20,6 +16,7 @@ const props = {
         type: Boolean
     },
     modelValue: {
+        default: undefined,
         types: [
             Boolean,
             String,
@@ -28,10 +25,11 @@ const props = {
         ]
     },
     name: {
+        default: undefined,
         type: String
     },
     uncheckedValue: {
-        default: false,
+        default: undefined,
         types: [
             Boolean,
             String,
@@ -40,6 +38,7 @@ const props = {
         ]
     },
     value: {
+        default: undefined,
         types: [
             Boolean,
             String,

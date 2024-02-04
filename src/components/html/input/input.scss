@@ -12,7 +12,12 @@
         padding: .5rem .25rem .25rem .5rem;
         color: $vui-color-black;
         outline: none;
-        background-color: transparent;
         border: none;
+
+        &:disabled {
+            color: darken($vui-color-grey, 25%);
+            background-color: $vui-color-grey-extra-light;
+            cursor: not-allowed;
+        }
     }
 }

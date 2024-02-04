@@ -15,7 +15,7 @@
                 }
             ]"
             :value="component"
-            @update:modelValue="onRoute"
+            @update:model-value="onRoute"
         />
         <div class="h1">
             <h1>

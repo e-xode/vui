@@ -24,6 +24,7 @@
         "build:doc": "vite --config vite.doc.mjs build src/doc",
         "dev": "vite --host --config vite.doc.mjs src/doc",
         "lint": "eslint --ext .js,.mjs,.vue src",
+        "lint:fix": "eslint --fix --ext .js,.mjs,.vue src",
         "preview": "vite --config vite.doc.mjs preview src/doc",
         "test:unit": "jest --clearCache && jest",
         "test:unit:coverage": "jest --clearCache && jest --coverage",
@@ -54,10 +55,12 @@
             "vue/html-closing-bracket-newline": ["error"],
             "vue/html-indent": ["error", 4],
             "vue/multi-word-component-names": "off",
-            "vue/no-v-html": "off"
+            "vue/no-v-html": "off",
+            "vue/v-on-event-hyphenation": ["error"]
         }
     },
     "jest": {
+        "coverageReporters": ["text", "lcov", "clover", "html"],
         "moduleFileExtensions": [
             "js",
             "mjs",
@@ -75,6 +78,9 @@
                 "node-addons"
             ]
         },
+        "collectCoverageFrom": [
+            "src/components/**/*.vue"
+        ],
         "testMatch": [
             "**/?(*.)+(spec).mjs"
         ],

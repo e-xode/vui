@@ -25,6 +25,9 @@ export default {
         })
     },
     watch: {
+        value (value) {
+            this.typed = value
+        },
         modelValue (value) {
             this.typed = value
         }
