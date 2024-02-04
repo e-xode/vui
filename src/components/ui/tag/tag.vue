@@ -1,3 +1,24 @@
+<script>
+import langs from '@/components/ui/tag/translate/index.mjs'
+import {
+    composable,
+    translatable
+} from '@/composables/index.mjs'
+
+import { props } from './tag.constant.mjs'
+
+export default {
+    name: 'VuiTag',
+    mixins: [
+        composable
+    ],
+    props,
+    created () {
+        translatable(langs)
+    }
+}
+</script>
+
 <template>
     <div
         :id="componentId"
@@ -8,6 +29,7 @@
             $props.class
         ]"
     >
+        <slot name="prepend" />
         <i
             v-if="icon"
             :class="['vui-tag-icon', icon]"
@@ -15,12 +37,9 @@
         <slot>
             {{ text }}
         </slot>
+        <slot name="append" />
     </div>
 </template>
-
-<script
-    src="./tag.mjs"
-/>
 
 <style
     lang="scss"

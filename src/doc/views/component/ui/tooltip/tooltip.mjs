@@ -42,11 +42,6 @@ export default {
         }
     },
     methods: {
-        holder (id) {
-            return this.tooltips?.length
-                ? this.$el.querySelector(`#button-tooltip-${id}`)
-                : null
-        },
         onClick (id) {
             const tooltip = this.tooltips[id]
             this.tooltips[id] = !tooltip

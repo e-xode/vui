@@ -30,6 +30,7 @@
                             :is="example.component"
                             v-bind="example.props"
                             :checked="states['vui-toggle-1']"
+                            disabled
                         >
                             <template v-if="example.text">
                                 {{ $t(example.text) }}

@@ -4,7 +4,7 @@ import { options } from '@/composables/animable.mjs'
 
 import Dropdown from './dropdown.vue'
 
-describe('components/Dropdown.vue', () => {
+describe('components/ui/Dropdown.vue', () => {
     afterEach(() => {
         jest.restoreAllMocks()
         jest.resetAllMocks()

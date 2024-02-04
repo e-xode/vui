@@ -1,23 +1,25 @@
 @import "@/scss/import.scss";
 
 .vui-table {
-    border-collapse: collapse;
+    table {
+        border-collapse: collapse;
 
-    thead {
-        tr {
-            background-color: $vui-color-grey-light;
+        thead {
+            tr {
+                background-color: $vui-color-grey-light;
 
-            th {
-                padding: .5rem;
-                border: 1px solid $vui-color-grey;
+                th {
+                    padding: .5rem;
+                    border: 1px solid $vui-color-grey;
+                }
             }
         }
-    }
-    tbody {
-        tr {
-            td  {
-                padding: .5rem;
-                border: 1px solid $vui-color-grey;
+        tbody {
+            tr {
+                td  {
+                    padding: .5rem;
+                    border: 1px solid $vui-color-grey;
+                }
             }
         }
     }
@@ -25,23 +27,25 @@
 @media (max-width: 550px) {
     .vui-table {
 
-        thead {
-            display: none;
-        }
+        table {
+            thead {
+                display: none;
+            }
 
-        tr {
-            display: block;
-            margin-bottom: 1rem;
-        }
+            tr {
+                display: block;
+                margin-bottom: 1rem;
+            }
 
-        td {
-            display: block;
-            text-align: right;
-        }
+            td {
+                display: block;
+                text-align: right;
+            }
 
-        td::before {
-            content: attr(data-label);
-            float: left;
+            td::before {
+                content: attr(data-label);
+                float: left;
+            }
         }
     }
 }

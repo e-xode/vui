@@ -2,7 +2,7 @@ import { shallowMount, flushPromises } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import Input from '../input.vue'
 
-describe('components/Input.vue (modelValue)', () => {
+describe('components/html/Input.vue (modelValue)', () => {
     const propsData = {
         modelValue: 'foo',
         type: 'text'
@@ -22,6 +22,7 @@ describe('components/Input.vue (modelValue)', () => {
 
     it('Should render', () => {
         const component = mountComponent()
+
         expect(component.exists()).toBeTruthy()
         expect(component.vm.typed).toBe('foo')
         expect(component.vm.placeholderValue).toBeTruthy()

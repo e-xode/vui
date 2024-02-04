@@ -1,9 +1,67 @@
+<script>
+import langs from '@/components/ui/modal/translate/index.mjs'
+import { props } from '@/components/ui/modal/modal.constant.mjs'
+
+import {
+    composable,
+    translatable
+} from '@/composables/index.mjs'
+
+export default {
+    name: 'VuiModal',
+    mixins: [
+        composable
+    ],
+    props,
+    emits: ['update:modelValue'],
+    data () {
+        return {
+            isVisible: false
+        }
+    },
+    computed: {
+        isHeaderVisible () {
+            return this.$slots.header ||
+                this.showHeader ||
+                this.showHeaderClose
+        },
+        isFooterVisible () {
+            return this.$slots.footer ||
+                this.showFooter ||
+                this.showFooterClose
+        }
+    },
+    watch: {
+        modelValue(isVisible) {
+            this.isVisible = isVisible
+        },
+        value (isVisible) {
+            this.isVisible = isVisible
+        }
+    },
+    created () {
+        translatable(langs)
+        if (this.hasModelValue) {
+            this.isVisible = this.modelValue
+        } else if (this.hasValue) {
+            this.isVisible = this.value
+        }
+    },
+    methods: {
+        onToggle () {
+            this.isVisible = !this.isVisible
+            this.$emit('update:modelValue', this.isVisible)
+        }
+    }
+}
+</script>
 <template>
     <div
         v-if="isVisible"
         :id="componentId"
         :class="['vui-modal', $props.class]"
     >
+        <slot name="prepend" />
         <div class="vui-modal-content">
             <div
                 v-if="isHeaderVisible"
@@ -42,12 +100,9 @@
                 <slot name="footer" />
             </div>
         </div>
+        <slot name="append" />
     </div>
 </template>
-
-<script
-    src="./modal.mjs"
-/>
 
 <style
     lang="scss"

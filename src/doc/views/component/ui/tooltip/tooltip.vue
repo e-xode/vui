@@ -13,13 +13,15 @@
                         :id="`button-tooltip-${tooltip.props.id}`"
                         :text="$t(tooltip.button)"
                         @click="() => onClick(tooltip.props.id)"
-                    />
-                    <component
-                        :is="tooltip.component"
-                        v-model="tooltips[tooltip.props.id]"
-                        v-bind="tooltip.props"
-                        :holder="holder(tooltip.props.id)"
-                    />
+                    >
+                        <template #prepend>
+                            <component
+                                :is="tooltip.component"
+                                v-model="tooltips[tooltip.props.id]"
+                                v-bind="tooltip.props"
+                            />
+                        </template>
+                    </vui-button>
                     <div
                         class="highlighted-code"
                         v-html="tooltip.highlighted"

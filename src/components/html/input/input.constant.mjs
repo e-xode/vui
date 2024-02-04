@@ -3,7 +3,8 @@ const props = {
         type: Boolean
     },
     modelValue: {
-        types: [
+        default: undefined,
+        type: [
             Boolean,
             String,
             Number,
@@ -18,7 +19,7 @@ const props = {
     },
     placeholder: {
         default: null,
-        types: [
+        type: [
             Boolean,
             String,
             Number,
@@ -30,7 +31,8 @@ const props = {
         default: 'text'
     },
     value: {
-        types: [
+        default: undefined,
+        type: [
             Boolean,
             String,
             Number,

@@ -1,3 +1,23 @@
+<script>
+import langs from '@/components/layout/grid/translate/index.mjs'
+import { props } from './grid.constant.mjs'
+import {
+    composable,
+    translatable
+} from '@/composables/index.mjs'
+
+export default {
+    name: 'VuiGrid',
+    mixins: [
+        composable
+    ],
+    props,
+    created () {
+        translatable(langs)
+    }
+}
+</script>
+
 <template>
     <div
         :id="componentId"
@@ -10,13 +30,11 @@
             $props.class
         ]"
     >
+        <slot name="prepend" />
         <slot />
+        <slot name="append" />
     </div>
 </template>
-
-<script
-    src="./grid.mjs"
-/>
 
 <style
     lang="scss"

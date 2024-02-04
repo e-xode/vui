@@ -24,7 +24,8 @@ const props = {
         type: String
     },
     modelValue: {
-        types: [
+        default: undefined,
+        type: [
             Boolean,
             Number,
             Object,
@@ -38,7 +39,8 @@ const props = {
         type: String
     },
     value: {
-        types: [
+        default: undefined,
+        type: [
             Boolean,
             Number,
             Object,

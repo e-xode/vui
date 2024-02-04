@@ -1,3 +1,33 @@
+<script>
+import langs from '@/components/html/button/translate/index.mjs'
+import {
+    animable,
+    composable,
+    translatable
+} from '@/composables/index.mjs'
+
+import { props } from './button.constant.mjs'
+
+export default {
+    name: 'VuiButton',
+    mixins: [
+        animable,
+        composable
+    ],
+    props,
+    created () {
+        translatable(langs)
+    },
+    methods: {
+        onClick () {
+            if (!this.disabled) {
+                this.onAnimate()
+            }
+        }
+    }
+}
+</script>
+
 <template>
     <div
         :id="componentId"
@@ -13,6 +43,7 @@
         ]"
         @click.stop="onClick"
     >
+        <slot name="prepend" />
         <button
             class="vui-button-holder"
             :disabled="disabled"
@@ -27,12 +58,9 @@
             </slot>
         </button>
         <div class="vui-button-loader" />
+        <slot name="append" />
     </div>
 </template>
-
-<script
-    src="./button.mjs"
-/>
 
 <style
     lang="scss"

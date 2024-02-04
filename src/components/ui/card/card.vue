@@ -1,3 +1,21 @@
+<script>
+import langs from '@/components/ui/card/translate/index.mjs'
+import {
+    composable,
+    translatable
+} from '@/composables/index.mjs'
+
+export default {
+    name: 'VuiCard',
+    mixins: [
+        composable
+    ],
+    created () {
+        translatable(langs)
+    }
+}
+</script>
+
 <template>
     <div
         :id="componentId"
@@ -7,6 +25,7 @@
             $props.class
         ]"
     >
+        <slot name="prepend" />
         <div
             v-if="$slots.header"
             class="vui-card-header"
@@ -26,12 +45,9 @@
         >
             <slot name="footer" />
         </div>
+        <slot name="append" />
     </div>
 </template>
-
-<script
-    src="./card.mjs"
-/>
 
 <style
     lang="scss"

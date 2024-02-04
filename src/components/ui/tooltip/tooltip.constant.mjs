@@ -1,6 +1,6 @@
 const props = {
-    holder: {
-        type: HTMLElement
+    disabled: {
+        type: Boolean
     },
     icon: {
         type: String
@@ -13,9 +13,11 @@ const props = {
         type: String
     },
     modelValue: {
+        default: undefined,
         type: Boolean
     },
     value: {
+        default: undefined,
         type: Boolean
     }
 }
