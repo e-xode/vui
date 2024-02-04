@@ -27,7 +27,7 @@ const props = {
     },
     type: {
         type: String,
-        required: true
+        default: 'text'
     },
     value: {
         types: [

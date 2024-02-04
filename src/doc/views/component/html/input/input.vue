@@ -16,10 +16,11 @@
                             </span>
                         </template>
                         <template #body>
-                            <vui-tag>
-                                {{ $t('page.component.input.vmodel') }}:
-                                {{ form[example.props.id] }}
-                            </vui-tag>
+                            <vui-input
+                                disabled
+                                :placeholder="$t('page.component.input.vmodel')"
+                                :value="form[example.props.id]"
+                            />
                             <component
                                 :is="example.component"
                                 v-bind="example.props"

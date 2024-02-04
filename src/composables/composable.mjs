@@ -58,7 +58,7 @@ const composable = {
             return Object.keys(this.$attrs).find((attr) => attr === tag)
         },
         hasProp (tag) {
-            return Object.keys(this.$props).find((attr) => attr === tag)
+            return typeof this[tag] !== 'undefined'
         },
         newId () {
             return Math.random().toString(36).slice(-6)

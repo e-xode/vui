@@ -1,15 +1,15 @@
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, flushPromises } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Checkbox from './checkbox.vue'
+import Checkbox from '../checkbox.vue'
 
-describe('components/Tag.vue', () => {
-
-    const propsData = {}
+describe('components/Checkbox.vue (value)', () => {
 
     const mountComponent = () => {
         return shallowMount(Checkbox, {
             ...setup,
-            propsData
+            propsData: {
+                value: true
+            }
         })
     }
 
@@ -24,28 +24,24 @@ describe('components/Tag.vue', () => {
         jest.useRealTimers()
     })
 
-    it('Should render', () => {
+    it('Should render', async() => {
         const component = mountComponent()
-        expect(component.exists()).toBeTruthy()
-    })
 
-    it('Should onToggle', () => {
-        const component = mountComponent()
-        expect(component.vm.isChecked).toBeFalsy()
+        await flushPromises()
 
-        component.vm.onToggle()
-
+        expect(component.vm.toggled).toBeTruthy()
         expect(component.vm.isChecked).toBeTruthy()
     })
 
-    it('Should bind checked state', () => {
-        propsData.checked = true
+    it('Should not toggle', async() => {
         const component = mountComponent()
-
-        expect(component.vm.isChecked).toBeTruthy()
 
         component.vm.onToggle()
 
+        const emitted = component.emitted()
+        expect(emitted['update:modelValue']).toBeFalsy()
+
+        expect(component.vm.toggled).toBeTruthy()
         expect(component.vm.isChecked).toBeTruthy()
     })
 })

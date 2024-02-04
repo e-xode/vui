@@ -15,17 +15,17 @@ export default {
     created () {
         translatable(langs)
         if (this.hasModelValue) {
-            this.setToggled(this.modelValue)
+            this.toggled = this.modelValue
         } else if (this.hasValue) {
-            this.setToggled(this.value)
+            this.toggled = this.value
         }
     },
     watch: {
         modelValue (value) {
-            this.setToggled(value)
+            this.toggled = value
         },
         value (value) {
-            this.setToggled(value)
+            this.toggled = value
         }
     },
     data () {
@@ -35,24 +35,27 @@ export default {
     },
     computed: {
         isChecked () {
-            if (typeof this.checked !== 'undefined') {
+            if (this.hasProp('checked')) {
                 return this.checked
+            }
+            if (this.hasProp('checkedValue')) {
+                return this.toggled === this.checkedValue
             }
             return this.toggled
         }
     },
     methods: {
         onToggle () {
-            this.toggled = !this.toggled
-            const value = this.isChecked
-                ? this.checkedValue
-                : this.uncheckedValue
-            this.$emit('update:modelValue', value)
-        },
-        setToggled (value) {
-            this.toggled = typeof this.checkedValue !== 'undefined'
-                ? value === this.checkedValue
-                : value
+            if (this.hasProp('modelValue')) {
+                if (this.hasProp('checkedValue')) {
+                    this.toggled = this.isChecked
+                    ? this.uncheckedValue
+                    : this.checkedValue
+                } else {
+                    this.toggled = !this.isChecked
+                }
+                this.$emit('update:modelValue', this.toggled)
+            }
         }
     }
 }

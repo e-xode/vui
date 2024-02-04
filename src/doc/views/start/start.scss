@@ -16,7 +16,14 @@
                 }
 
                 .vui-list-items-item-label {
+                    padding: 0 .75rem;
+
+                    * {
+                        line-height: 2.5em;
+                    }
+
                     a {
+                        flex: 1 1 auto;
                         color: darken($vui-color-green, 10%);
                     }
                 }
