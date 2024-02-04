@@ -1,8 +1,6 @@
 # VUI, Yet another Vue Library
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/e-xode/vui/tree/master.svg?style=svg&circle-token=d8353b320a36159da949b935eba5cbdb41502a60)](https://dl.circleci.com/status-badge/redirect/gh/e-xode/vui/tree/master)
-
-[![Coverage Status](https://coveralls.io/repos/github/e-xode/vui/badge.svg?branch=master)](https://coveralls.io/github/e-xode/vui?branch=master)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/e-xode/vui/tree/master.svg?style=svg&circle-token=d8353b320a36159da949b935eba5cbdb41502a60)](https://dl.circleci.com/status-badge/redirect/gh/e-xode/vui/tree/master) [![Coverage Status](https://coveralls.io/repos/github/e-xode/vui/badge.svg?branch=master)](https://coveralls.io/github/e-xode/vui?branch=master)
 
 VUI is an open source UI library focusing on providing customizable web components for Vue.js.
 

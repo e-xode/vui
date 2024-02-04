@@ -1,3 +1,104 @@
+<script>
+import langs from '@/components/ui/card/translate/index.mjs'
+import {
+    composable,
+    translatable
+} from '@/composables/index.mjs'
+
+import { props } from './tooltip.constant.mjs'
+
+export default {
+    name: 'VuiTooltip',
+    mixins: [
+        composable
+    ],
+    props,
+    emits: ['update:modelValue'],
+    data () {
+        return {
+            dimension: {
+                content: {},
+                holder: {}
+            },
+            show: false
+        }
+    },
+    computed: {
+        display () {
+            return this.show
+                ? 'block'
+                : 'none'
+        },
+        left () {
+            const { content, holder } = this.dimension
+            switch (this.position) {
+                case 'left':
+                    return holder.left - (content.width + 15)
+                case 'bottom':
+                case 'top': {
+                    const diff = content.width - holder.width
+                    return holder.left - (diff / 2)
+                }
+                case 'right':
+                default:
+                    return holder.right + 15
+            }
+
+        },
+        top () {
+            const { content, holder } = this.dimension
+            switch (this.position) {
+                case 'bottom':
+                    return holder.top + holder.height + 15
+                case 'top':
+                    return holder.top - content.height - 15
+                case 'left':
+                case 'right':
+                default:
+                    return holder.top - (holder.height / 2)
+            }
+        }
+    },
+    watch: {
+        async modelValue (show) {
+            this.show = show
+            if (show) {
+                await this.$nextTick()
+                this.setPosition()
+            }
+        },
+        async value (show) {
+            this.show = show
+            if (show) {
+                await this.$nextTick()
+                this.setPosition()
+            }
+        }
+    },
+    created () {
+        translatable(langs)
+        if (this.hasModelValue) {
+            this.show = this.modelValue
+        }
+        if (this.hasValue) {
+            this.show = this.value
+        }
+        this.$bus.on('outclick', () => {
+            if (!this.disabled) {
+                this.$emit('update:modelValue', false)
+                this.show = false
+            }
+        })
+    },
+    methods: {
+        setPosition () {
+            this.dimension.content = this.$refs.tooltip.getBoundingClientRect()
+            this.dimension.holder = this.$parent.$el.getBoundingClientRect()
+        }
+    }
+}
+</script>
+
 <template>
     <div
         :id="componentId"
@@ -30,10 +131,6 @@
         </template>
     </div>
 </template>
-
-<script
-    src="./tooltip.mjs"
-/>
 
 <style
     lang="scss"

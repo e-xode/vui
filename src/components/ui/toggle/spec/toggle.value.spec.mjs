@@ -1,14 +1,14 @@
 import { shallowMount, flushPromises } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Checkbox from '../checkbox.vue'
+import Toggle from '../toggle.vue'
 
-describe('components/html/Checkbox.vue (modelValue)', () => {
+describe('components/ui/Toggle.vue (value)', () => {
 
     const mountComponent = () => {
-        return shallowMount(Checkbox, {
+        return shallowMount(Toggle, {
             ...setup,
             propsData: {
-                modelValue: true
+                value: true
             }
         })
     }
@@ -33,15 +33,15 @@ describe('components/html/Checkbox.vue (modelValue)', () => {
         expect(component.vm.isChecked).toBeTruthy()
     })
 
-    it('Should onToggle', () => {
+    it('Should not toggle', async() => {
         const component = mountComponent()
 
         component.vm.onToggle()
 
         const emitted = component.emitted()
-        expect(emitted['update:modelValue'][0]).toEqual([false])
+        expect(emitted['update:modelValue']).toBeFalsy()
 
-        expect(component.vm.toggled).toBeFalsy()
-        expect(component.vm.isChecked).toBeFalsy()
+        expect(component.vm.toggled).toBeTruthy()
+        expect(component.vm.isChecked).toBeTruthy()
     })
 })

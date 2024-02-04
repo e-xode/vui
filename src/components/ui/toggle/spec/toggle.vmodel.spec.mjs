@@ -1,11 +1,11 @@
 import { shallowMount, flushPromises } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Checkbox from '../checkbox.vue'
+import Toggle from '../toggle.vue'
 
-describe('components/html/Checkbox.vue (modelValue)', () => {
+describe('components/ui/Toggle.vue (modelValue)', () => {
 
     const mountComponent = () => {
-        return shallowMount(Checkbox, {
+        return shallowMount(Toggle, {
             ...setup,
             propsData: {
                 modelValue: true

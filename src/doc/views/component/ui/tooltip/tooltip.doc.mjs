@@ -4,12 +4,17 @@ export default {
     examples: [
         {
             markup: `
-                <vui-tooltip
-                    icon="fa-solid fa-message"
-                    position="right"
+                <vui-button
+                    @click="isVisible=!isVisible"
                 >
-                    <span>My content tooltip</span>
-                </vui-tooltip>
+                    <vui-tooltip
+                        v-model="isVisible"
+                        icon="fa-solid fa-message"
+                        position="right"
+                    >
+                        <span>Tooltip right position</span>
+                    </vui-tooltip>
+                </vui-button>
             `,
             props: {
                 id: 'vui-tooltip-1',
@@ -21,11 +26,16 @@ export default {
         },
         {
             markup: `
-                <vui-tooltip
-                    icon="fa-solid fa-message"
-                    position="top"
-                    text="My content tooltip"
-                />
+                <vui-button
+                    @click="isVisible=!isVisible"
+                >
+                    <vui-tooltip
+                        v-model="isVisible"
+                        icon="fa-solid fa-message"
+                        position="top"
+                        text="Tooltip top position"
+                    />
+            </vui-button>
             `,
             props: {
                 id: 'vui-tooltip-2',
@@ -37,11 +47,17 @@ export default {
         },
         {
             markup: `
-                <vui-tooltip
-                    icon="fa-solid fa-message"
-                    position="bottom"
-                    text="My content tooltip"
-                />
+                <vui-button
+                    @click="isVisible=!isVisible"
+                >
+                    <vui-tooltip
+                        v-model="isVisible"
+                        icon="fa-solid fa-message"
+                        position="bottom"
+                    >
+                        <span>Tooltip bottom position</span>
+                    </vui-tooltip>
+                </vui-button>
             `,
             props: {
                 id: 'vui-tooltip-3',
@@ -53,11 +69,17 @@ export default {
         },
         {
             markup: `
-                <vui-tooltip
-                    icon="fa-solid fa-message"
-                    position="left"
-                    text="My content tooltip"
-                />
+                <vui-button
+                    @click="isVisible=!isVisible"
+                >
+                    <vui-tooltip
+                        v-model="isVisible"
+                        icon="fa-solid fa-message"
+                        position="left"
+                    >
+                        <span>Tooltip left position</span>
+                    </vui-tooltip>
+                </vui-button>
             `,
             props: {
                 id: 'vui-tooltip-4',

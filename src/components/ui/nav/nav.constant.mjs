@@ -13,7 +13,7 @@ const props = {
         type: String
     },
     modelValue: {
-        types: [
+        type: [
             Boolean,
             Number,
             Object,
@@ -21,7 +21,7 @@ const props = {
         ]
     },
     value: {
-        types: [
+        type: [
             Boolean,
             Number,
             Object,

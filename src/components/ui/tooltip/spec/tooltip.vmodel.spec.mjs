@@ -1,15 +1,15 @@
 import { shallowMount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Tooltip from './tooltip.vue'
+import Tooltip from '../tooltip.vue'
 
-describe('components/Tooltip.vue', () => {
-
-    const propsData = {}
+describe('components/ui/Tooltip.vue (modelValue)', () => {
 
     const mountComponent = () => {
         return shallowMount(Tooltip, {
             ...setup,
-            propsData
+            propsData: {
+                modelValue: true
+            }
         })
     }
 
@@ -24,16 +24,19 @@ describe('components/Tooltip.vue', () => {
         jest.useRealTimers()
     })
 
-    it('Should render', () => {
+    it('Should render', async() => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
+
+        await component.vm.$nextTick()
+
+        expect(component.vm.show).toBeTruthy()
     })
 
-    it('Should setContentPosition', async() => {
+    it('Should setPosition', async() => {
         const component = mountComponent()
 
-        component.vm.setContentPosition()
-        await component.vm.$nextTick()
+        component.vm.setPosition()
 
         const { content } = component.vm.dimension
         expect(content.top).toBeGreaterThanOrEqual(0)
@@ -46,7 +49,6 @@ describe('components/Tooltip.vue', () => {
 
     it('Should not be visible on outclick', () => {
         const component = mountComponent()
-        component.vm.show = true
 
         component.vm.$bus.emit('outclick')
 

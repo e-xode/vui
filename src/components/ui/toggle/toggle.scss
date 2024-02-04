@@ -7,7 +7,7 @@
 
     .vui-toggle-slider {
         position: absolute;
-        bottom: -.75rem;
+        bottom: 0;
         width: 4.5rem;
         padding: .25rem .5rem;
         background-color: $vui-color-grey;
@@ -24,6 +24,10 @@
         }
     }
 
+    .vui-toggle-label {
+        padding-left: 5rem;
+    }
+
     &.vui-toggle--checked {
         .vui-toggle-slider {
             background-color: $vui-color-green;
@@ -36,8 +40,20 @@
         }
     }
 
-    .vui-toggle-label {
-        padding-left: 5rem;
-        line-height: 2.5rem;
+    &.vui-toggle--disabled {
+        .vui-toggle-slider {
+            background-color: $vui-color-grey-light;
+            cursor: not-allowed;
+
+            .vui-toggle-slider-button {
+                background-color: $vui-color-grey-extra-light;
+            }
+        }
+
+        &.vui-toggle--checked {
+            .vui-toggle-slider {
+                background-color: lighten($vui-color-green, 30%);
+            }
+        }
     }
 }
