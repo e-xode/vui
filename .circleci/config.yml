@@ -19,7 +19,6 @@ jobs:
           name: run front-end unit tests
           command: npm run test:unit:coverage
       - coveralls/upload:
-          base_path: coverage/lcov-report
           flag_name: unitesting
           verbose: true
 

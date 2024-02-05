@@ -65,7 +65,7 @@ export default {
                         :item-value="itemValue"
                         :index="a"
                     >
-                        <th>
+                        <th :class="th.class">
                             {{ th[itemLabel] }}
                         </th>
                     </slot>

@@ -8,19 +8,21 @@ export default {
                     itemLabel="label",
                     itemValue="value"
                     headers="[
-                        { class: 'rowClass', label: 'Start date', value: 'startDate' },
-                        { class: 'rowClass', label: 'Start Quantity', value: 'startQuantity' },
-                        { class: 'rowClass', label: 'End date', value: 'endDate' },
-                        { class: 'rowClass', label: 'End Quantity', value: 'endQuantity' },
+                        { class: 'text-center', label: 'Start date', value: 'startDate' },
+                        { class: 'text-center', label: 'Start Quantity', value: 'startQuantity' },
+                        { class: 'text-center', label: 'End date', value: 'endDate' },
+                        { class: 'text-center', label: 'End Quantity', value: 'endQuantity' },
                     ]",
                     items="[
                         {
+                            class: 'text-center,
                             startDate: '2022-01-01',
                             startQuantity: '2 187',
                             endDate: '2022-12-01',
                             endQuantity: '1 239'
                         },
                         {
+                            class: 'text-center,
                             startDate: '2021-01-01',
                             startQuantity: '2 037',
                             endDate: '2021-12-01',
@@ -37,22 +39,22 @@ export default {
                 id: 'vui-table-1',
                 headers: [
                     {
-                        class: 'rowClass',
+                        class: 'text-center',
                         label: 'Start date',
                         value: 'startDate'
                     },
                     {
-                        class: 'rowClass',
+                        class: 'text-center',
                         label: 'Start Quantity',
                         value: 'startQuantity'
                     },
                     {
-                        class: 'rowClass',
+                        class: 'text-center',
                         label: 'End date',
                         value: 'endDate'
                     },
                     {
-                        class: 'rowClass',
+                        class: 'text-center',
                         label: 'End Quantity',
                         value: 'endQuantity'
                     }

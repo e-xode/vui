@@ -29,13 +29,13 @@
     }
 
     .vui-grid {
-        .vui-grid-unit.examples {
-        }
 
         .vui-grid-unit.api-options {
 
             .vui-table {
-                width: 100%;
+                table {
+                    width: 100%;
+                }
             }
 
             h2 {

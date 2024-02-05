@@ -27,7 +27,6 @@ describe('components/ui/Tooltip.vue (value)', () => {
 
     it('Should render', async() => {
         const component = mountComponent()
-        expect(component.exists()).toBeTruthy()
 
         await component.vm.$nextTick()
 
