@@ -55,6 +55,26 @@
                                     </div>
                                 </div>
                             </fieldset>
+                            <fieldset>
+                                <div class="fieldset-item">
+                                    <label for="password">
+                                        {{ $t('page.component.form.password') }}
+                                    </label>
+                                    <div class="input">
+                                        <vui-input
+                                            id="password"
+                                            v-model="form.newpassword"
+                                            type="password"
+                                            name="password"
+                                            required
+                                        />
+                                        <p>
+                                            {{ $t('page.component.form.password.v-model') }}:
+                                            {{ form.newpassword }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </fieldset>
                         </section>
                         <section class="section--submit">
                             <vui-button

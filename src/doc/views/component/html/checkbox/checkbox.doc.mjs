@@ -16,6 +16,7 @@ export default {
         {
             markup: `
                 <vui-checkbox
+                    disabled
                     :checked="states['mycheckbox']
                 >
                    Binded checkbox state

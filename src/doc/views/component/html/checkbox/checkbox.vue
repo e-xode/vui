@@ -28,6 +28,7 @@
                     <template v-if="example.props.id === 'vui-checkbox-2'">
                         <component
                             :is="example.component"
+                            disabled
                             v-bind="example.props"
                             :checked="states['vui-checkbox-1']"
                         >

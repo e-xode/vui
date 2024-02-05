@@ -28,4 +28,13 @@
             content: '\f14a';
         }
     }
+
+    &.vui-checkbox--disabled {
+        cursor: not-allowed;
+
+        &:before {
+            color: darken($vui-color-grey-light, 25%);
+            background-color: $vui-color-grey-extra-light;
+        }
+    }
 }

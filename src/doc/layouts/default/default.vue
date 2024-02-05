@@ -9,6 +9,7 @@
                     {{ $t('component.header.home') }}
                 </router-link>
                 <vui-dropdown
+                    v-model="component"
                     :items="components"
                     item-label="label"
                     item-value="value"

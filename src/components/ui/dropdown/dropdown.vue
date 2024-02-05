@@ -73,7 +73,7 @@ export default {
     methods: {
         onClick () {
             if (!this.disabled) {
-                this.onAnimate(true)
+                this.onAnimate()
             }
         },
         onToggle (selected) {
