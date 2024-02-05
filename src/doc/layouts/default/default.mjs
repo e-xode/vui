@@ -2,6 +2,11 @@ import components from '@/components.json'
 
 export default {
     name: 'LayoutDefault',
+    data () {
+        return {
+            component: null
+        }
+    },
     computed: {
         components () {
             const list = components.reduce((list, component) => {
@@ -16,6 +21,18 @@ export default {
                     value: item.name
                 }))
             }))
+        }
+    },
+    watch: {
+        '$route' ({ name }) {
+            this.component = null
+            const component = components.find(({ doc }) => doc.name === name)
+            if (component) {
+                this.component = {
+                    label: component.name,
+                    value: component.name
+                }
+            }
         }
     },
     methods: {

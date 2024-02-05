@@ -31,9 +31,9 @@ const animable = {
             this.toggled = true
             this.$bus.emit('outclick', this.componentGroupId)
         },
-        onAnimate (open = false) {
+        onAnimate (open = null) {
             this.animate()
-            if (open || !this.toggled) {
+            if (open || (open === null  && !this.toggled)) {
                 this.focus()
             } else {
                 this.blur()
