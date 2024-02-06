@@ -1,6 +1,6 @@
 # VUI, Yet another Vue Library
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/e-xode/vui/tree/master.svg?style=svg&circle-token=d8353b320a36159da949b935eba5cbdb41502a60)](https://dl.circleci.com/status-badge/redirect/gh/e-xode/vui/tree/master) [![Coverage Status](https://coveralls.io/repos/github/e-xode/vui/badge.svg?branch=master)](https://coveralls.io/github/e-xode/vui?branch=master)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/e-xode/vui/tree/master.svg?style=svg&circle-token=d8353b320a36159da949b935eba5cbdb41502a60)](https://dl.circleci.com/status-badge/redirect/gh/e-xode/vui/tree/master) [![Coverage Status](https://coveralls.io/repos/github/e-xode/vui/badge.svg?branch=master)](https://coveralls.io/github/e-xode/vui?branch=master) ![NPM Version](https://img.shields.io/npm/v/%40e-xode%2Fvui?color=green)
 
 VUI is an open source UI library focusing on providing customizable web components for Vue.js.
 
@@ -12,6 +12,8 @@ VUI is an open source UI library focusing on providing customizable web componen
 - Provides documentation and tests.
 
 Online documentation and demo are available [here](https://vui.e-xode.net/)
+
+Package releases are available on [NPM](https://www.npmjs.com/package/@e-xode/vui)
 
 ## Get started
 
@@ -89,4 +91,4 @@ docker-compose up
 npm install
 npm run dev
 ```
-( Version of node currently supported: 19.3 )
+( Version of node currently supported: 21 )
