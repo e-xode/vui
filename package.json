@@ -10,7 +10,7 @@
     "main": "./dist/vui.cjs.js",
     "module": "./dist/vui.esm.js",
     "type": "module",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/e-xode/vui.git"
@@ -57,6 +57,7 @@
             "vue/html-indent": ["error", 4],
             "vue/multi-word-component-names": "off",
             "vue/no-v-html": "off",
+            "vue/order-in-components": ["error"],
             "vue/require-default-prop": ["error"],
             "vue/require-prop-types": ["error"],
             "vue/v-on-event-hyphenation": ["error"]

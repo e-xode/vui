@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import Progress from './progress.vue'
 
@@ -10,7 +10,7 @@ describe('components/Progress.vue', () => {
         value: 50
     }
     const mountComponent = () => {
-        return shallowMount(Progress, {
+        return mount(Progress, {
             ...setup,
             propsData
         })

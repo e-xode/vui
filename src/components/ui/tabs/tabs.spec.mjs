@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import Tabs from './tabs.vue'
 
@@ -14,7 +14,7 @@ describe('components/Tabs.vue', () => {
     }
 
     const mountComponent = () => {
-        return shallowMount(Tabs, {
+        return mount(Tabs, {
             ...setup,
             propsData
         })

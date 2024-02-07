@@ -1,22 +1,28 @@
 import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Card from './card.vue'
+import Pager from './pager.vue'
 
-describe('components/Card.vue', () => {
+describe('components/Pager.vue', () => {
+
+    const propsData = {
+    }
 
     const mountComponent = () => {
-        return mount(Card, {
-            ...setup
+        return mount(Pager, {
+            ...setup,
+            propsData
         })
     }
+
+    beforeEach(() => {
+        jest.useFakeTimers()
+    })
 
     afterEach(() => {
         jest.restoreAllMocks()
         jest.resetAllMocks()
         jest.clearAllTimers()
-    })
-
-    beforeEach(() => {
+        jest.useRealTimers()
     })
 
     it('Should render', () => {

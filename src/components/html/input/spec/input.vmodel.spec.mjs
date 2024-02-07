@@ -1,4 +1,4 @@
-import { shallowMount, flushPromises } from '@vue/test-utils'
+import { mount, flushPromises } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import Input from '../input.vue'
 
@@ -8,7 +8,7 @@ describe('components/html/Input.vue (modelValue)', () => {
         type: 'text'
     }
     const mountComponent = () => {
-        return shallowMount(Input, {
+        return mount(Input, {
             ...setup,
             propsData
         })

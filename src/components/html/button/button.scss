@@ -11,7 +11,7 @@
     cursor: pointer;
 
     &.vui-button--with-icon {
-        padding-left: 2.5rem;
+        // padding-left: 2.5rem;
     }
 
     .vui-button-holder {
@@ -27,10 +27,6 @@
         cursor: pointer;
 
         .vui-button-icon {
-            position: absolute;
-            top: .45rem;
-            left: -1.5rem;
-            font-size: 1rem;
             margin-right: .75rem;
             color: $vui-color-grey-dark;
         }

@@ -1,11 +1,11 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import Grid from './grid.vue'
 
 describe('components/Grid.vue', () => {
 
     const mountComponent = () => {
-        return shallowMount(Grid, {
+        return mount(Grid, {
             ...setup
         })
     }

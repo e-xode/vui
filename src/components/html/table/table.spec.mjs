@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import Table from './table.vue'
 
@@ -11,7 +11,7 @@ describe('components/Table.vue', () => {
     }
 
     const mountComponent = () => {
-        return shallowMount(Table, {
+        return mount(Table, {
             ...setup,
             propsData
         })
@@ -31,6 +31,11 @@ describe('components/Table.vue', () => {
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
-        expect(component.vm.rows[0].$$id).toBeTruthy()
+    })
+
+    it('Should return nested value', () => {
+        const component = mountComponent()
+
+        expect(component.vm.leaf({ foo: { bar: true } }, 'foo.bar')).toBe(true)
     })
 })

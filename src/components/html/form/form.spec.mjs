@@ -1,11 +1,11 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import Form from './form.vue'
 
 describe('components/Form.vue', () => {
 
     const mountComponent = () => {
-        return shallowMount(Form, {
+        return mount(Form, {
             ...setup
         })
     }

@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import { options } from '@/composables/animable.mjs'
 import List from './list.vue'
@@ -8,7 +8,7 @@ describe('components/List.vue', () => {
     const propsData = {}
 
     const mountComponent = () => {
-        return shallowMount(List, {
+        return mount(List, {
             ...setup,
             propsData
         })
@@ -121,8 +121,8 @@ describe('components/List.vue', () => {
             propsData.items = items
             propsData.value = items[1]
             propsData.selectable = true
-            propsData.itemLabel = null
-            propsData.itemValue = null
+            propsData.itemLabel = undefined
+            propsData.itemValue = undefined
         })
 
         it('Should render', () => {

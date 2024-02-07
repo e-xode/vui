@@ -18,10 +18,12 @@ const props = {
         required: true
     },
     itemLabel: {
-        type: String
+        type: String,
+        default: 'label'
     },
     itemValue: {
-        type: String
+        type: String,
+        default: 'value'
     },
     modelValue: {
         default: undefined,

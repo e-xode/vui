@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import Modal from './modal.vue'
 
@@ -12,7 +12,7 @@ describe('components/Modal.vue', () => {
     }
 
     const mountComponent = () => {
-        return shallowMount(Modal, {
+        return mount(Modal, {
             ...setup,
             propsData
         })

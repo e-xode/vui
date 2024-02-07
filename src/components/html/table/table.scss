@@ -9,16 +9,19 @@
                 background-color: $vui-color-grey-light;
 
                 th {
-                    padding: .5rem;
-                    text-align: left;
+                    padding: 1rem;
                     border: 1px solid $vui-color-grey;
+
+                    &:not(.text-center, .text-right) {
+                        text-align: left;
+                    }
                 }
             }
         }
         tbody {
             tr {
                 td  {
-                    padding: .5rem;
+                    padding: 1rem;
                     border: 1px solid $vui-color-grey;
                 }
             }

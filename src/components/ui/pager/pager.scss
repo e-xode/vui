@@ -1,0 +1,18 @@
+@import "@/scss/import.scss";
+
+.vui-pager {
+    .vui-pager-content {
+        display: flex;
+
+        .ellipse {
+            padding: 0 .75rem;
+            line-height: 2rem;
+            text-align: center;
+            opacity: 0;
+
+            &.visible {
+                opacity: 1;
+            }
+        }
+    }
+}

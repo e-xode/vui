@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import { options } from '@/composables/animable.mjs'
 
@@ -24,7 +24,7 @@ describe('components/ui/Dropdown.vue', () => {
         }
 
         const mountComponent = () => {
-            return shallowMount(Dropdown, {
+            return mount(Dropdown, {
                 ...setup,
                 propsData
             })
@@ -66,12 +66,13 @@ describe('components/ui/Dropdown.vue', () => {
         it('Should toggle value', () => {
             const component = mountComponent()
 
+            component.vm.keyword = 'foo'
             component.vm.onClick()
             component.vm.onToggle(items[1])
 
             const emitted = component.emitted()
+            expect(component.vm.keyword).toBe(null)
             expect(emitted['update:modelValue'][0]).toEqual([items[1]])
-
             expect(component.vm.selected).toBe(items[1])
             expect(component.vm.placeholderValue).toBe(items[1])
             expect(component.vm.toggled).toBeFalsy()
@@ -89,7 +90,7 @@ describe('components/ui/Dropdown.vue', () => {
         }
 
         const mountComponent = () => {
-            return shallowMount(Dropdown, {
+            return mount(Dropdown, {
                 ...setup,
                 propsData
             })
@@ -134,7 +135,7 @@ describe('components/ui/Dropdown.vue', () => {
         }
 
         const mountComponent = () => {
-            return shallowMount(Dropdown, {
+            return mount(Dropdown, {
                 ...setup,
                 propsData
             })
