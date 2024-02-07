@@ -1,11 +1,11 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import Tooltip from '../tooltip.vue'
 
 describe('components/ui/Tooltip.vue (modelValue)', () => {
 
     const mountComponent = () => {
-        return shallowMount(Tooltip, {
+        return mount(Tooltip, {
             ...setup,
             propsData: {
                 modelValue: true
@@ -32,7 +32,7 @@ describe('components/ui/Tooltip.vue (modelValue)', () => {
         expect(component.vm.show).toBeTruthy()
     })
 
-    it.skip('Should setPosition', async() => {
+    it('Should setPosition', async() => {
         const component = mountComponent()
         component.setData('dimension', { content: {}, holder: {} })
 
@@ -47,7 +47,7 @@ describe('components/ui/Tooltip.vue (modelValue)', () => {
         expect(content.y).toBeGreaterThanOrEqual(0)
     })
 
-    it.skip('Should not be visible on outclick', () => {
+    it('Should not be visible on outclick', () => {
         const component = mountComponent()
 
         component.vm.$bus.emit('outclick')

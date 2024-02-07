@@ -13,6 +13,7 @@ const props = {
         type: String
     },
     modelValue: {
+        default: undefined,
         type: [
             Boolean,
             Number,
@@ -20,7 +21,12 @@ const props = {
             String
         ]
     },
+    showIcons: {
+        type: Boolean,
+        default: true
+    },
     value: {
+        default: undefined,
         type: [
             Boolean,
             Number,

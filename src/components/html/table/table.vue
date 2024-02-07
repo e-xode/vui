@@ -30,19 +30,17 @@ export default {
         },
         items: {
             type: Array,
+            default: () => [],
             required: true
-        }
-    },
-    computed: {
-        rows () {
-            return this.items.map((item) => ({
-                ...item,
-                $$id: this.newId()
-            }))
         }
     },
     created () {
         translatable(langs)
+    },
+    methods: {
+        leaf (value, path) {
+            return path.split('.').reduce((v, e) => v[e], value)
+        }
     }
 }
 </script>
@@ -57,45 +55,44 @@ export default {
             <thead>
                 <tr>
                     <slot
-                        v-for="(th, a) in headers"
-                        :key="`table-${componentId}-header--${a}`"
-                        :name="`header.${th[itemValue]}`"
-                        :item="th"
+                        v-for="(header, index) in headers"
+                        :key="`table-${componentId}-header--${index}`"
+                        :name="`header.${header[itemValue]}`"
+                        :item="header"
                         :item-label="itemLabel"
                         :item-value="itemValue"
-                        :index="a"
+                        :index="index"
                     >
-                        <th :class="th.class">
-                            {{ th[itemLabel] }}
+                        <th :class="header.class">
+                            {{ header[itemLabel] }}
                         </th>
                     </slot>
                 </tr>
             </thead>
             <tbody>
                 <slot
-                    v-for="(tr, b) in rows"
-                    :key="tr.$$id"
-                    :index="b"
-                    :item="tr"
+                    v-for="(item, index) in items"
+                    :key="`table-${componentId}-item--${index}`"
+                    :index="index"
+                    :item="item"
                     :item-label="itemLabel"
                     :item-value="itemValue"
-                    name="item"
                 >
                     <tr>
                         <slot
-                            v-for="(td, c) in headers"
-                            :key="`table-${componentId}-item-td--${c}`"
-                            :name="`item.${td[itemValue]}`"
-                            :index="c"
-                            :item="tr"
+                            v-for="(header, i) in headers"
+                            :key="`table-${componentId}-item-td--${i}`"
+                            :name="`item.${header[itemValue]}`"
+                            :index="i"
+                            :item="item"
                             :item-label="itemLabel"
                             :item-value="itemValue"
                         >
                             <td
-                                :data-label="headers[c].label"
-                                :class="td.class"
+                                :data-label="header.label"
+                                :class="header.class"
                             >
-                                {{ tr[td[itemValue]] }}
+                                {{ leaf(item, header.value) }}
                             </td>
                         </slot>
                     </tr>

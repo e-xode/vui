@@ -8,25 +8,29 @@ export default {
                     itemLabel="label",
                     itemValue="value"
                     headers="[
-                        { class: 'text-center', label: 'Start date', value: 'startDate' },
-                        { class: 'text-center', label: 'Start Quantity', value: 'startQuantity' },
-                        { class: 'text-center', label: 'End date', value: 'endDate' },
-                        { class: 'text-center', label: 'End Quantity', value: 'endQuantity' },
+                        {
+                            label: 'Start date',
+                            value: 'startDate'
+                        },
+                        {
+                            label: 'Start Quantity',
+                            value: 'startQuantity'
+                        },
+                        {
+                            label: 'End date',
+                            value: 'endDate'
+                        },
+                        {
+                            label: 'End Quantity',
+                            value: 'endQuantity'
+                        }
                     ]",
                     items="[
                         {
-                            class: 'text-center,
                             startDate: '2022-01-01',
                             startQuantity: '2 187',
                             endDate: '2022-12-01',
                             endQuantity: '1 239'
-                        },
-                        {
-                            class: 'text-center,
-                            startDate: '2021-01-01',
-                            startQuantity: '2 037',
-                            endDate: '2021-12-01',
-                            endQuantity: '1 448'
                         }
                     ]"
                 >
@@ -39,22 +43,18 @@ export default {
                 id: 'vui-table-1',
                 headers: [
                     {
-                        class: 'text-center',
                         label: 'Start date',
                         value: 'startDate'
                     },
                     {
-                        class: 'text-center',
                         label: 'Start Quantity',
                         value: 'startQuantity'
                     },
                     {
-                        class: 'text-center',
                         label: 'End date',
                         value: 'endDate'
                     },
                     {
-                        class: 'text-center',
                         label: 'End Quantity',
                         value: 'endQuantity'
                     }
@@ -65,12 +65,84 @@ export default {
                         startQuantity: '723',
                         endDate: '2022-12-01',
                         endQuantity: '1 239'
+                    }
+                ],
+                itemLabel: 'label',
+                itemValue: 'value'
+            }
+        },
+        {
+            markup: `
+                <vui-table
+                    itemLabel="label",
+                    itemValue="value"
+                    headers="[
+                        {
+                            label: 'Id',
+                            value: 'id'
+                        },
+                        {
+                            label: 'City Name',
+                            value: 'city.name'
+                        },
+                        {
+                            label: 'Population',
+                            value: 'city.population'
+                        }
+                    ]"
+                    items="[
+                        {
+                            id: 1,
+                            city: {
+                                name: 'Paris',
+                                population: 2161000
+                            }
+                        },
+                        {
+                            id: 1,
+                            city: {
+                                name: 'Mexico',
+                                population: 126700000
+                            }
+                        }
+                    ]"
+                >
+                    <template #item.endQuantity="{ item }">
+                        <td>{{ item.endQuantity }} units</td>
+                    </template>
+                </vui-table>
+            `,
+            props: {
+                id: 'vui-table-2',
+                headers: [
+                    {
+                        label: 'Id',
+                        value: 'id',
+                        class: 'text-center'
                     },
                     {
-                        startDate: '2021-01-01',
-                        startQuantity: '819',
-                        endDate: '2021-12-01',
-                        endQuantity: '1 448'
+                        label: 'City Name',
+                        value: 'city.name'
+                    },
+                    {
+                        label: 'Population',
+                        value: 'city.population'
+                    }
+                ],
+                items: [
+                    {
+                        id: 1,
+                        city: {
+                            name: 'Paris',
+                            population: 2161000
+                        }
+                    },
+                    {
+                        id: 2,
+                        city: {
+                            name: 'Mexico',
+                            population: 126700000
+                        }
                     }
                 ],
                 itemLabel: 'label',

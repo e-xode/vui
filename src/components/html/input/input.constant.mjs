@@ -34,8 +34,8 @@ const props = {
         default: undefined,
         type: [
             Boolean,
-            String,
             Number,
+            String,
             null
         ]
     }

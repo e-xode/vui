@@ -25,23 +25,13 @@ export default {
         }
     },
     computed: {
-        defaultLabel () {
-            return this.itemLabel
-                ? this.itemLabel
-                : 'label'
-        },
-        defaultValue () {
-            return this.itemValue
-                ? this.itemValue
-                : 'value'
-        },
         list () {
             return this.items.reduce((items, item) => {
                 if (this.isGroup(item)) {
                     items.push({
                         ...item,
                         $$id: this.newId(),
-                        value: item[this.defaultValue].reduce((values, value) =>
+                        value: item[this.itemValue].reduce((values, value) =>
                             !this.keyword || this.match(value)
                                 ? [...values, this.mapItem(value, this.newId())]
                                 : values
@@ -78,7 +68,7 @@ export default {
         autoexpand () {
             this.open = this.items.reduce((open, item, i) => {
                 if (this.isGroup(item)) {
-                    const items = item[this.defaultValue]
+                    const items = item[this.itemValue]
                     const index = items.findIndex((v) => this.isSelected(v))
                     if (this.expanded || index > -1) {
                         return { ...open, [i]: true }
@@ -92,10 +82,10 @@ export default {
             return last === index && animating
         },
         isGroup (item) {
-            return Array.isArray(item?.[this.defaultValue])
+            return Array.isArray(item?.[this.itemValue])
         },
         isObject (item) {
-            const key = this.itemValue || this.defaultValue
+            const key = this.itemValue
             return this.isGroup(item)
                 ? typeof item[key][0] === 'object'
                 : typeof item === 'object'
@@ -103,7 +93,7 @@ export default {
         isSelected (item) {
             if (!item.disabled && typeof this.selected !== 'undefined') {
                 return typeof item === 'object'
-                    ? this.selected && this.selected[this.defaultValue] === item[this.defaultValue]
+                    ? this.selected && this.selected[this.itemValue] === item[this.itemValue]
                     : this.selected && this.selected === item
             }
             return false
@@ -114,13 +104,13 @@ export default {
         },
         match (item) {
             return typeof item === 'object'
-                ? `${item[this.defaultLabel]}`.includes(this.keyword)
+                ? `${item[this.itemLabel]}`.includes(this.keyword)
                 : `${item}`.includes(this.keyword)
         },
         mapItem (value, $$id) {
             const item = typeof value === 'object'
                 ? value
-                : { [this.defaultLabel]: value, [this.defaultValue]: value }
+                : { [this.itemLabel]: value, [this.itemValue]: value }
             return $$id
                 ? { ...item, $$id }
                 : item
@@ -132,7 +122,7 @@ export default {
                     ? null
                     : item
                 const emit = this.isObject(item) && !this.hasAttribute('return-object')
-                    ? item[this.defaultValue]
+                    ? item[this.itemValue]
                     : item
                 this.$emit('update:modelValue', emit)
             }
@@ -205,7 +195,7 @@ export default {
                             :item-label="itemLabel"
                             :item-value="itemValue"
                         >
-                            {{ item[defaultLabel] }}
+                            {{ item[itemLabel] }}
                         </slot>
                     </div>
                 </template>
@@ -215,7 +205,7 @@ export default {
                             'vui-list-items-item-group-label',
                             { 'vui-list-items-item-group-label--toggled': isToggled(index) },
                             { 'vui-list-items-item-group-label--animating': isAnimating(index) },
-                            { 'vui-list-items-item-group-label--open': open[index] }
+                            { 'vui-list-items-item-group-label--open': open[index] || keyword?.length }
                         ]"
                         @click.stop="() => onToggle(index)"
                     >
@@ -226,12 +216,12 @@ export default {
                             :item-label="itemLabel"
                             :item-value="itemValue"
                         >
-                            {{ item[defaultLabel] }}
+                            {{ item[itemLabel] }}
                         </slot>
                     </div>
-                    <template v-if="open[index]">
+                    <template v-if="open[index] || keyword?.length">
                         <div
-                            v-for="(childitem, j) in item[defaultValue]"
+                            v-for="(childitem, j) in item[itemValue]"
                             :key="childitem.$$id"
                             :class="[
                                 'vui-list-items-item-label',
@@ -254,7 +244,7 @@ export default {
                                 :item-label="itemLabel"
                                 :item-value="itemValue"
                             >
-                                {{ childitem[defaultLabel] }}
+                                {{ childitem[itemLabel] }}
                             </slot>
                         </div>
                     </template>

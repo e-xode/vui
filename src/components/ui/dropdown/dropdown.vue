@@ -1,6 +1,8 @@
 <script>
 import langs from '@/components/ui/dropdown/translate/index.mjs'
 import { props } from '@/components/ui/dropdown/dropdown.constant.mjs'
+import VuiInput from '@/components/html/input/input.vue'
+import VuiList from '@/components/ui/list/list.vue'
 
 import {
     animable,
@@ -10,6 +12,10 @@ import {
 
 export default {
     name: 'VuiDropdown',
+    components: {
+        VuiInput,
+        VuiList
+    },
     mixins: [
         animable,
         composable
@@ -24,29 +30,18 @@ export default {
     },
     computed: {
         listTitle () {
-            return typeof this.selected !== 'undefined'
+            return this.selected
                 ? this.placeholderLabel
                 : null
         },
         placeholderValue () {
-            const { itemValue = 'value', itemLabel = 'label', selected } = this
+            const { itemValue, selected } = this
             const value = typeof selected?.[itemValue] !== 'undefined'
                 ? selected[itemValue]
                 : selected
             return value === null
                 ? this.placeholderLabel
-                : this.items.reduce((current, item) => {
-                    if (typeof item[itemValue] === 'object') {
-                        return item[itemValue].reduce((subcurrent, subitem) => {
-                            return subitem[itemValue] === value
-                                ? subitem[itemLabel]
-                                : subcurrent
-                        }, current)
-                    }
-                    return item[itemValue] === value
-                        ? item[itemLabel]
-                        : current
-                }, value)
+                : this.labelFromItem(value)
         },
         placeholderLabel () {
             return this.placeholder
@@ -71,13 +66,35 @@ export default {
         }
     },
     methods: {
+        labelFromItem (value) {
+            const { itemValue, itemLabel } = this
+            return this.items.reduce((current, item) => {
+                if (typeof item[itemValue] === 'object') {
+                    return item[itemValue].reduce((subcurrent, subitem) => {
+                        return subitem[itemValue] === value
+                            ? subitem[itemLabel]
+                            : subcurrent
+                    }, current)
+                }
+                return item[itemValue] === value
+                    ? item[itemLabel]
+                    : current
+            }, value)
+        },
         onClick () {
             if (!this.disabled) {
                 this.onAnimate()
             }
         },
+        onKeyword (keyword ) {
+            this.onAnimate(true)
+            this.keyword = keyword?.length
+                ? keyword
+                : null
+        },
         onToggle (selected) {
             this.selected = selected
+            this.keyword = null
             this.$emit('update:modelValue', selected)
             this.blur()
         }
@@ -105,16 +122,17 @@ export default {
                 :keyword="keyword"
             >
                 <vui-input
-                    v-model="keyword"
+                    :value="keyword"
                     type="text"
                     class="vui-dropdown-placeholder-label"
                     :placeholder="placeholderValue"
+                    @update:model-value="onKeyword"
                 />
             </slot>
         </div>
         <vui-list
             v-if="toggled"
-            v-model="selected"
+            :value="selected"
             v-bind="$attrs"
             class="vui-dropdown-list"
             :group-id="componentGroupId"

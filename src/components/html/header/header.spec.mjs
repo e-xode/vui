@@ -1,11 +1,11 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import Header from './header.vue'
 
 describe('components/Header.vue', () => {
 
     const mountComponent = () => {
-        return shallowMount(Header, {
+        return mount(Header, {
             ...setup
         })
     }

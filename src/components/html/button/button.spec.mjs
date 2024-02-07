@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import { options } from '@/composables/animable.mjs'
 
@@ -12,7 +12,7 @@ describe('components/form/Button.vue', () => {
     }
 
     const mountComponent = () => {
-        return shallowMount(Button, {
+        return mount(Button, {
             ...setup,
             propsData
         })

@@ -1,11 +1,11 @@
-import { shallowMount, flushPromises } from '@vue/test-utils'
+import { mount, flushPromises } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import Toggle from '../toggle.vue'
 
 describe('components/ui/Toggle.vue (values)', () => {
 
     const mountComponent = () => {
-        return shallowMount(Toggle, {
+        return mount(Toggle, {
             ...setup,
             propsData: {
                 modelValue: 'foo',

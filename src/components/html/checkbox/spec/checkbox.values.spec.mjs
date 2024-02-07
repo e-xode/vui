@@ -1,11 +1,11 @@
-import { shallowMount, flushPromises } from '@vue/test-utils'
+import { mount, flushPromises } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import Checkbox from '../checkbox.vue'
 
 describe('components/html/Checkbox.vue (value)', () => {
 
     const mountComponent = () => {
-        return shallowMount(Checkbox, {
+        return mount(Checkbox, {
             ...setup,
             propsData: {
                 modelValue: 'foo',

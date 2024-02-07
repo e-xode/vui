@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import Tag from './tag.vue'
 
@@ -9,7 +9,7 @@ describe('components/Tag.vue', () => {
     }
 
     const mountComponent = () => {
-        return shallowMount(Tag, {
+        return mount(Tag, {
             ...setup,
             propsData
         })

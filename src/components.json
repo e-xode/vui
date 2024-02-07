@@ -166,6 +166,17 @@
     },
     {
         "icon": "fa-brands fa-vuejs",
+        "label": "Pager",
+        "name": "vui-pager",
+        "path": "/components/ui/pager/pager.vue",
+        "type": "ui",
+        "doc": {
+            "name": "view-pager",
+            "path": "/views/component/ui/pager/pager.vue"
+        }
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
         "label": "Progress",
         "name": "vui-progress",
         "path": "/components/ui/progress/progress.vue",

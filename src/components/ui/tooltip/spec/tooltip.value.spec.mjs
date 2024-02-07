@@ -1,11 +1,11 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import Tooltip from '../tooltip.vue'
 
 describe('components/ui/Tooltip.vue (value)', () => {
 
     const mountComponent = () => {
-        return shallowMount(Tooltip, {
+        return mount(Tooltip, {
             ...setup,
             propsData: {
                 disabled: true,

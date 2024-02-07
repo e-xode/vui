@@ -1,8 +1,7 @@
 <script>
 import langs from '@/components/ui/nav/translate/index.mjs'
-import {
-    props
-} from '@/components/ui/nav/nav.constant.mjs'
+import { props } from '@/components/ui/nav/nav.constant.mjs'
+import VuiList from '@/components/ui/list/list.vue'
 
 import {
     composable,
@@ -11,6 +10,9 @@ import {
 
 export default {
     name: 'VuiNav',
+    components: {
+        VuiList
+    },
     mixins: [
         composable
     ],
@@ -87,6 +89,7 @@ export default {
                     :item-value="itemValue"
                 >
                     <i
+                        v-if="showIcons"
                         :class="[
                             'fa-solid',
                             { 'fa-location-dot': !index },

@@ -1,0 +1,159 @@
+<script>
+import langs from '@/components/ui/pager/translate/index.mjs'
+import { props } from './pager.constant.mjs'
+import VuiNav from '@/components/ui/nav/nav.vue'
+import VuiButton from '@/components/html/button/button.vue'
+
+import {
+    animable,
+    composable,
+    translatable
+} from '@/composables/index.mjs'
+
+
+export default {
+    name: 'VuiPager',
+    components: {
+        VuiButton,
+        VuiNav
+    },
+    mixins: [
+        animable,
+        composable
+    ],
+    props,
+    emits: ['update:modelValue'],
+    data() {
+        return {
+            page: 1
+        }
+    },
+    computed: {
+        isLast () {
+            return this.modelValue === this.last
+        },
+        last () {
+            return Math.ceil(this.count / this.size)
+        },
+        pages () {
+            if (this.last) {
+                const items = [...Array.from({ length: this.last }, (_, i) => i + 1)]
+                const l = items.slice(0, this.page)
+                const r = items.slice(this.page, items.length)
+                return [
+                    ...l.slice(-(r.length > 2 ? 2 : 2 + (2 - r.length))),
+                    ...r.slice(0, l.length > 2 ? 2 : 2 + (2 - l.length))
+                ]
+            }
+            return []
+        }
+    },
+    watch: {
+        modelValue (value) {
+            this.page = value
+        },
+        value (value) {
+            this.page = value
+        }
+    },
+    created () {
+        translatable(langs)
+        if (this.hasModelValue) {
+            this.page = this.modelValue
+        } else if (this.hasValue) {
+            this.page = this.value
+        }
+    },
+    methods: {
+        onFirst() {
+            this.page = 1
+            this.$emit('update:modelValue', this.page)
+        },
+        onLast() {
+            this.page = this.last
+            this.$emit('update:modelValue', this.page)
+        },
+        onNext () {
+            this.page++
+            this.$emit('update:modelValue', this.page)
+        },
+        onPrevious() {
+            this.page--
+            this.$emit('update:modelValue', this.page)
+        },
+        onPage () {
+            this.$emit('update:modelValue', this.page)
+        }
+    }
+}
+</script>
+
+<template>
+    <div
+        :id="componentId"
+        :class="['vui-pager', $props.class]"
+    >
+        <slot name="prepend" />
+        <div class="vui-pager-content">
+            <slot name="first">
+                <vui-button
+                    :disabled="modelValue === 1"
+                    icon="fa-solid fa-angles-left"
+                    @click="onFirst"
+                />
+            </slot>
+            <slot name="previous">
+                <vui-button
+                    :disabled="modelValue === 1"
+                    icon="fa-solid fa-chevron-left"
+                    @click="onPrevious"
+                />
+            </slot>
+            <slot name="pages">
+                <div
+                    :class="[
+                        'ellipse',
+                        { visible: last > 4 && (page + 2) > 4 }
+                    ]"
+                >
+                    ...
+                </div>
+                <vui-nav
+                    v-model="page"
+                    flat
+                    :items="pages"
+                    :show-icons="false"
+                    @update:model-value="onPage"
+                />
+                <div
+                    :class="[
+                        'ellipse',
+                        { visible: last > 4 && (page + 2) < last }
+                    ]"
+                >
+                    ...
+                </div>
+            </slot>
+            <slot name="next">
+                <vui-button
+                    :disabled="isLast"
+                    icon="fa-solid fa-chevron-right"
+                    @click="onNext"
+                />
+            </slot>
+            <slot name="previous">
+                <vui-button
+                    :disabled="isLast"
+                    icon="fa-solid fa-angles-right"
+                    @click="onLast"
+                />
+            </slot>
+        </div>
+        <slot name="append" />
+    </div>
+</template>
+
+<style
+    lang="scss"
+    src="./pager.scss"
+/>

@@ -1,6 +1,7 @@
 <script>
 import langs from '@/components/ui/modal/translate/index.mjs'
 import { props } from '@/components/ui/modal/modal.constant.mjs'
+import VuiButton from '@/components/html/button/button.vue'
 
 import {
     composable,
@@ -9,6 +10,9 @@ import {
 
 export default {
     name: 'VuiModal',
+    components: {
+        VuiButton
+    },
     mixins: [
         composable
     ],

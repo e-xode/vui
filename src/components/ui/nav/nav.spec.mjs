@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import Nav from './nav.vue'
 
@@ -19,7 +19,7 @@ describe('components/Nav.vue', () => {
     }
 
     const mountComponent = () => {
-        return shallowMount(Nav, {
+        return mount(Nav, {
             ...setup,
             propsData
         })
