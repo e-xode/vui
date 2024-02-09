@@ -48,7 +48,7 @@ export default {
     },
     methods: {
         onToggle () {
-            if (!this.disabled && this.hasProp('modelValue')) {
+            if (!this.disabled) {
                 if (this.hasProp('checkedValue')) {
                     this.toggled = this.isChecked
                     ? this.uncheckedValue
@@ -56,7 +56,9 @@ export default {
                 } else {
                     this.toggled = !this.isChecked
                 }
-                this.$emit('update:modelValue', this.toggled)
+                if (this.hasProp('modelValue')) {
+                    this.$emit('update:modelValue', this.toggled)
+                }
             }
         }
     }

@@ -4,14 +4,16 @@ import Toggle from '../toggle.vue'
 
 describe('components/ui/Toggle.vue (values)', () => {
 
+    const propsData = {
+        modelValue: 'foo',
+        checkedValue: 'foo',
+        uncheckedValue: 'bar'
+    }
+
     const mountComponent = () => {
         return mount(Toggle, {
             ...setup,
-            propsData: {
-                modelValue: 'foo',
-                checkedValue: 'foo',
-                uncheckedValue: 'bar'
-            }
+            propsData
         })
     }
 
@@ -45,5 +47,24 @@ describe('components/ui/Toggle.vue (values)', () => {
 
         expect(component.vm.toggled).toBe('bar')
         expect(component.vm.isChecked).toBeFalsy()
+    })
+
+    describe('disabled', () => {
+
+        beforeEach(() => {
+            propsData.disabled = true
+        })
+
+        it('Should not onToggle', () => {
+            const component = mountComponent()
+
+            component.vm.onToggle()
+
+            const emitted = component.emitted()
+            expect(emitted['update:modelValue']).toBeFalsy()
+
+            expect(component.vm.toggled).toBeTruthy()
+            expect(component.vm.isChecked).toBeTruthy()
+        })
     })
 })

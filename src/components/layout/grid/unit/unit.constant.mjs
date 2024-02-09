@@ -1,7 +1,7 @@
 const props = {
     col: {
         default: undefined,
-        type: [
+        types: [
             String,
             Number
         ]

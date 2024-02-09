@@ -4,13 +4,15 @@ import Tooltip from '../tooltip.vue'
 
 describe('components/ui/Tooltip.vue (value)', () => {
 
+    const propsData = {
+        disabled: false,
+        value: true
+    }
+
     const mountComponent = () => {
         return mount(Tooltip, {
             ...setup,
-            propsData: {
-                disabled: true,
-                value: true
-            }
+            propsData
         })
     }
 
@@ -33,11 +35,31 @@ describe('components/ui/Tooltip.vue (value)', () => {
         expect(component.vm.show).toBeTruthy()
     })
 
-    it('Should still visible', () => {
+    it('Should close on outclick', async() => {
         const component = mountComponent()
+        await component.vm.$nextTick()
+        expect(component.vm.show).toBeTruthy()
 
         component.vm.$bus.emit('outclick')
+        const emitted = component.emitted()
 
-        expect(component.vm.show).toBe(true)
+        expect(component.vm.show).toBeFalsy()
+        expect(emitted['update:modelValue']).toBeFalsy()
+    })
+
+    describe('disabled', () => {
+
+        beforeEach(() => {
+            propsData.disabled = true
+        })
+
+        it('Should still visible', () => {
+            const component = mountComponent()
+
+            component.vm.$bus.emit('outclick')
+
+            expect(component.vm.show).toBe(true)
+        })
+
     })
 })

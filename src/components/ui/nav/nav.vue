@@ -43,10 +43,6 @@ export default {
         onClick (value) {
             if (!this.disabled) {
                 this.$emit('update:modelValue', value)
-                const item = this.items.find((item) => item.value === value)
-                if (item?.route) {
-                    this.$router.push(item.route)
-                }
             }
         }
     }
@@ -96,12 +92,25 @@ export default {
                             { 'fa-chevron-right': index }
                         ]"
                     />
-                    <span class="vui-list-items-item-label-text">
+                    <span
+                        v-if="!item.route"
+                        class="vui-list-items-item-label-text"
+                    >
                         {{ itemValue
                             ? item[itemLabel]
                             : item
                         }}
                     </span>
+                    <router-link
+                        v-if="item.route"
+                        :to="item.route"
+                        class="vui-list-items-item-label-text"
+                    >
+                        {{ itemValue
+                            ? item[itemLabel]
+                            : item
+                        }}
+                    </router-link>
                 </slot>
             </template>
         </vui-list>

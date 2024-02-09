@@ -1,11 +1,11 @@
 import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Header from './header.vue'
+import Footer from '../footer.vue'
 
-describe('components/Header.vue', () => {
+describe('components/Footer.vue', () => {
 
     const mountComponent = () => {
-        return mount(Header, {
+        return mount(Footer, {
             ...setup
         })
     }

@@ -1,25 +1,19 @@
 import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Nav from './nav.vue'
+import Modal from '../modal.vue'
 
-describe('components/Nav.vue', () => {
+describe('components/Modal.vue (with vmodel)', () => {
 
     const propsData = {
-        itemLabel: 'label',
-        itemValue: 'value',
-        items: [
-            {
-                label: 'label 1',
-                value: 'value1',
-                route: {
-                    name: 'myroute'
-                }
-            }
-        ]
+        modelValue: false,
+        showFooter: true,
+        showFooterClose: true,
+        showHeader: true,
+        showHeaderClose: true
     }
 
     const mountComponent = () => {
-        return mount(Nav, {
+        return mount(Modal, {
             ...setup,
             propsData
         })
@@ -39,17 +33,18 @@ describe('components/Nav.vue', () => {
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
+        expect(component.vm.isHeaderVisible).toBeTruthy()
+        expect(component.vm.isFooterVisible).toBeTruthy()
     })
 
-    it('Should onClick and click route', () => {
+    it('Should onToggle', () => {
         const component = mountComponent()
+        expect(component.vm.isVisible).toBeFalsy()
 
-        component.vm.onClick('value1')
+        component.vm.onToggle()
 
         const emitted = component.emitted()
-        expect(emitted['update:modelValue'][0]).toEqual(['value1'])
-        expect(setup.global.mocks.$router.push).toHaveBeenCalledWith({
-            name: 'myroute'
-        })
+        expect(component.vm.isVisible).toBeTruthy()
+        expect(emitted['update:modelValue'][0]).toEqual([true])
     })
 })

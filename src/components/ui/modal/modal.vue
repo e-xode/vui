@@ -53,8 +53,12 @@ export default {
     },
     methods: {
         onToggle () {
-            this.isVisible = !this.isVisible
-            this.$emit('update:modelValue', this.isVisible)
+            if (!this.disabled) {
+                this.isVisible = !this.isVisible
+                if (this.hasProp('modelValue')) {
+                    this.$emit('update:modelValue', this.isVisible)
+                }
+            }
         }
     }
 }

@@ -30,7 +30,7 @@ export default {
     },
     computed: {
         isLast () {
-            return this.modelValue === this.last
+            return this.page === this.last
         },
         last () {
             return Math.ceil(this.count / this.size)
@@ -66,23 +66,33 @@ export default {
     },
     methods: {
         onFirst() {
-            this.page = 1
-            this.$emit('update:modelValue', this.page)
+            if (!this.disabled) {
+                this.page = 1
+                this.onPage()
+            }
         },
         onLast() {
-            this.page = this.last
-            this.$emit('update:modelValue', this.page)
+            if (!this.disabled) {
+                this.page = this.last
+                this.onPage()
+            }
         },
         onNext () {
-            this.page++
-            this.$emit('update:modelValue', this.page)
+            if (!this.disabled) {
+                this.page++
+                this.onPage()
+            }
         },
         onPrevious() {
-            this.page--
-            this.$emit('update:modelValue', this.page)
+            if (!this.disabled) {
+                this.page--
+                this.onPage()
+            }
         },
         onPage () {
-            this.$emit('update:modelValue', this.page)
+            if (this.hasProp('modelValue')) {
+                this.$emit('update:modelValue', this.page)
+            }
         }
     }
 }

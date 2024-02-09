@@ -1,34 +1,26 @@
 import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Alert from './alert.vue'
+import Grid from '../grid.vue'
 
-describe('components/Alert.vue', () => {
-
-    const propsData = {
-        layout: 'error'
-    }
+describe('components/Grid.vue', () => {
 
     const mountComponent = () => {
-        return mount(Alert, {
-            ...setup,
-            propsData
+        return mount(Grid, {
+            ...setup
         })
     }
-
-    beforeEach(() => {
-        jest.useFakeTimers()
-    })
 
     afterEach(() => {
         jest.restoreAllMocks()
         jest.resetAllMocks()
         jest.clearAllTimers()
-        jest.useRealTimers()
+    })
+
+    beforeEach(() => {
     })
 
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
-        expect(component.classes('vui-alert--error')).toBeTruthy()
     })
 })

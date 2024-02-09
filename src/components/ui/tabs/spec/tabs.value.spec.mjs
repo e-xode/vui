@@ -1,15 +1,21 @@
-import { mount, flushPromises } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Toggle from '../toggle.vue'
+import Tabs from '../tabs.vue'
 
-describe('components/ui/Toggle.vue (value)', () => {
+describe('components/Tabs.vue (value)', () => {
 
     const propsData = {
-        value: true
+        value: 'tab2',
+        itemLabel: 'label',
+        itemValue: 'value',
+        items: [
+            { label: 'Tab 1', value: 'tab1' },
+            { label: 'Tab 2', value: 'tab2' }
+        ]
     }
 
     const mountComponent = () => {
-        return mount(Toggle, {
+        return mount(Tabs, {
             ...setup,
             propsData
         })
@@ -26,25 +32,20 @@ describe('components/ui/Toggle.vue (value)', () => {
         jest.useRealTimers()
     })
 
-    it('Should render', async() => {
+    it('Should render', () => {
         const component = mountComponent()
-
-        await flushPromises()
-
-        expect(component.vm.toggled).toBeTruthy()
-        expect(component.vm.isChecked).toBeTruthy()
+        expect(component.exists()).toBeTruthy()
+        expect(component.vm.active).toBe('tab2')
     })
 
-    it('Should toggle', async() => {
+    it('Should toggle tab', () => {
         const component = mountComponent()
 
-        component.vm.onToggle()
+        component.vm.toggle('tab1')
 
         const emitted = component.emitted()
         expect(emitted['update:modelValue']).toBeFalsy()
-
-        expect(component.vm.toggled).toBeFalsy()
-        expect(component.vm.isChecked).toBeFalsy()
+        expect(component.vm.active).toBe('tab1')
     })
 
     describe('disabled', () => {
@@ -53,16 +54,14 @@ describe('components/ui/Toggle.vue (value)', () => {
             propsData.disabled = true
         })
 
-        it('Should not onToggle', () => {
+        it('Should not toggle tab', () => {
             const component = mountComponent()
 
-            component.vm.onToggle()
+            component.vm.toggle('tab1')
 
             const emitted = component.emitted()
             expect(emitted['update:modelValue']).toBeFalsy()
-
-            expect(component.vm.toggled).toBeTruthy()
-            expect(component.vm.isChecked).toBeTruthy()
+            expect(component.vm.active).toBe('tab2')
         })
     })
 })

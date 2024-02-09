@@ -1,18 +1,12 @@
 import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Progress from './progress.vue'
+import Card from '../card.vue'
 
-describe('components/Progress.vue', () => {
+describe('components/Card.vue', () => {
 
-    const propsData = {
-        min: 0,
-        max: 100,
-        value: 50
-    }
     const mountComponent = () => {
-        return mount(Progress, {
-            ...setup,
-            propsData
+        return mount(Card, {
+            ...setup
         })
     }
 
