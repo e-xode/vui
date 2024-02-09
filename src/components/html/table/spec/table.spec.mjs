@@ -1,14 +1,17 @@
 import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Pager from './pager.vue'
+import Table from '../table.vue'
 
-describe('components/Pager.vue', () => {
+describe('components/Table.vue', () => {
 
     const propsData = {
+        items: [
+            { label: 'label', value: 'value' }
+        ]
     }
 
     const mountComponent = () => {
-        return mount(Pager, {
+        return mount(Table, {
             ...setup,
             propsData
         })
@@ -28,5 +31,11 @@ describe('components/Pager.vue', () => {
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
+    })
+
+    it('Should return nested value', () => {
+        const component = mountComponent()
+
+        expect(component.vm.leaf({ foo: { bar: true } }, 'foo.bar')).toBe(true)
     })
 })

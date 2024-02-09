@@ -1,28 +1,28 @@
 const props = {
     colXs: {
         default: undefined,
-        type: [
+        types: [
             Number,
             String
         ]
     },
     colSm: {
         default: undefined,
-        type: [
+        types: [
             Number,
             String
         ]
     },
     colMd: {
         default: undefined,
-        type: [
+        types: [
             Number,
             String
         ]
     },
     colXl: {
         default: undefined,
-        type: [
+        types: [
             Number,
             String
         ]

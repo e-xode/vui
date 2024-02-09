@@ -118,13 +118,15 @@ export default {
         onClick (value) {
             if (!this.disabled && this.selectable) {
                 const item = R.omit(['$$id'], value)
+                const emit = this.isObject(item) && this.hasAttribute('return-object')
+                    ? item
+                    : item[this.itemValue]
                 this.selected = this.isSelected(item)
                     ? null
                     : item
-                const emit = this.isObject(item) && !this.hasAttribute('return-object')
-                    ? item[this.itemValue]
-                    : item
-                this.$emit('update:modelValue', emit)
+                if (this.hasProp('modelValue')) {
+                    this.$emit('update:modelValue', emit)
+                }
             }
         },
         onToggle (index) {

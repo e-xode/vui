@@ -1,12 +1,18 @@
 import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Form from './form.vue'
+import Progress from '../progress.vue'
 
-describe('components/Form.vue', () => {
+describe('components/Progress.vue', () => {
 
+    const propsData = {
+        min: 0,
+        max: 100,
+        value: 50
+    }
     const mountComponent = () => {
-        return mount(Form, {
-            ...setup
+        return mount(Progress, {
+            ...setup,
+            propsData
         })
     }
 
@@ -22,5 +28,6 @@ describe('components/Form.vue', () => {
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
+        expect(component.vm.width).toBe('50%')
     })
 })

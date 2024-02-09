@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Tag from './tag.vue'
+import Tag from '../tag.vue'
 
 describe('components/Tag.vue', () => {
 

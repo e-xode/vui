@@ -48,8 +48,12 @@ export default {
     },
     methods: {
         toggle (tab) {
-            this.active = tab
-            this.$emit('update:modelValue', this.active)
+            if (!this.disabled) {
+                this.active = tab
+                if (this.hasProp('modelValue')) {
+                    this.$emit('update:modelValue', this.active)
+                }
+            }
         }
     }
 }

@@ -1,11 +1,11 @@
 import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Footer from './footer.vue'
+import Form from '../form.vue'
 
-describe('components/Footer.vue', () => {
+describe('components/Form.vue', () => {
 
     const mountComponent = () => {
-        return mount(Footer, {
+        return mount(Form, {
             ...setup
         })
     }

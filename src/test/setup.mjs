@@ -18,9 +18,6 @@ export default {
             $bus: mitt()
         },
         mocks: {
-            $router: {
-                push: jest.fn()
-            }
         },
         stubs: {
             RouterLink: RouterLinkStub,

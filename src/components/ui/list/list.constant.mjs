@@ -27,7 +27,7 @@ const props = {
     },
     modelValue: {
         default: undefined,
-        type: [
+        types: [
             Boolean,
             Number,
             Object,
@@ -42,7 +42,7 @@ const props = {
     },
     value: {
         default: undefined,
-        type: [
+        types: [
             Boolean,
             Number,
             Object,

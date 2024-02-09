@@ -4,12 +4,14 @@ import Toggle from '../toggle.vue'
 
 describe('components/ui/Toggle.vue (modelValue)', () => {
 
+    const propsData = {
+        modelValue: true
+    }
+
     const mountComponent = () => {
         return mount(Toggle, {
             ...setup,
-            propsData: {
-                modelValue: true
-            }
+            propsData
         })
     }
 
@@ -43,5 +45,24 @@ describe('components/ui/Toggle.vue (modelValue)', () => {
 
         expect(component.vm.toggled).toBeFalsy()
         expect(component.vm.isChecked).toBeFalsy()
+    })
+
+    describe('disabled', () => {
+
+        beforeEach(() => {
+            propsData.disabled = true
+        })
+
+        it('Should not onToggle', () => {
+            const component = mountComponent()
+
+            component.vm.onToggle()
+
+            const emitted = component.emitted()
+            expect(emitted['update:modelValue']).toBeFalsy()
+
+            expect(component.vm.toggled).toBeTruthy()
+            expect(component.vm.isChecked).toBeTruthy()
+        })
     })
 })

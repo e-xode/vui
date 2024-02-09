@@ -1,8 +1,12 @@
 const props = {
+    disabled: {
+        type: Boolean
+    },
     loading: {
         type: Boolean
     },
     modelValue: {
+        default: undefined,
         type: Boolean
     },
     showFooter: {
@@ -21,6 +25,7 @@ const props = {
         type: String
     },
     value: {
+        default: undefined,
         type: Boolean
     }
 }

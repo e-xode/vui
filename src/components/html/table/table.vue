@@ -1,4 +1,5 @@
 <script>
+import { props } from './table.constant.mjs'
 import langs from '@/components/html/table/translate/index.mjs'
 import {
     animable,
@@ -12,28 +13,7 @@ export default {
         animable,
         composable
     ],
-    props: {
-        disabled: {
-            type: Boolean
-        },
-        headers: {
-            type: Array,
-            default: () => []
-        },
-        itemLabel: {
-            type: String,
-            default: 'label'
-        },
-        itemValue: {
-            type: String,
-            default: 'value'
-        },
-        items: {
-            type: Array,
-            default: () => [],
-            required: true
-        }
-    },
+    props,
     created () {
         translatable(langs)
     },

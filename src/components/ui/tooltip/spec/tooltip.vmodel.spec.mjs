@@ -4,12 +4,14 @@ import Tooltip from '../tooltip.vue'
 
 describe('components/ui/Tooltip.vue (modelValue)', () => {
 
+    const propsData = {
+        modelValue: true
+    }
+
     const mountComponent = () => {
         return mount(Tooltip, {
             ...setup,
-            propsData: {
-                modelValue: true
-            }
+            propsData
         })
     }
 
@@ -56,5 +58,21 @@ describe('components/ui/Tooltip.vue (modelValue)', () => {
         expect(emitted['update:modelValue'][0]).toEqual([false])
 
         expect(component.vm.show).toBe(false)
+    })
+
+    describe('disabled', () => {
+
+        beforeEach(() => {
+            propsData.disabled = true
+        })
+
+        it('Should still visible', () => {
+            const component = mountComponent()
+
+            component.vm.$bus.emit('outclick')
+
+            expect(component.vm.show).toBe(true)
+        })
+
     })
 })

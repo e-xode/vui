@@ -1,20 +1,25 @@
 import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Tabs from './tabs.vue'
+import Nav from '../nav.vue'
 
-describe('components/Tabs.vue', () => {
+describe('components/Nav.vue', () => {
 
     const propsData = {
         itemLabel: 'label',
         itemValue: 'value',
         items: [
-            { label: 'Tab 1', value: 'tab1' },
-            { label: 'Tab 2', value: 'tab2' }
+            {
+                label: 'label 1',
+                value: 'value1',
+                route: {
+                    name: 'myroute'
+                }
+            }
         ]
     }
 
     const mountComponent = () => {
-        return mount(Tabs, {
+        return mount(Nav, {
             ...setup,
             propsData
         })
@@ -34,16 +39,14 @@ describe('components/Tabs.vue', () => {
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
-        expect(component.vm.active).toBe('tab1')
     })
 
-    it('Should toggle tab', () => {
+    it('Should onClick and emit modalValue', () => {
         const component = mountComponent()
 
-        component.vm.toggle('tab2')
+        component.vm.onClick('value1')
 
         const emitted = component.emitted()
-        expect(emitted['update:modelValue'][0]).toEqual(['tab2'])
-        expect(component.vm.active).toBe('tab2')
+        expect(emitted['update:modelValue'][0]).toEqual(['value1'])
     })
 })

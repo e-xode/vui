@@ -14,16 +14,15 @@ export default {
     ],
     props,
     emits: ['update:modelValue'],
-    data() {
+    data () {
         return {
             typed: null
         }
     },
     computed: {
         placeholderValue () {
-            const { placeholder = null } = this
-            return placeholder !== null
-                ? placeholder
+            return this.placeholder
+                ? this.placeholder
                 : this.$t('component.input.placeholder')
         }
     },
@@ -37,15 +36,19 @@ export default {
     },
     created () {
         translatable(langs)
-        if (this.hasValue) {
-            this.typed = this.value
-        }
         if (this.hasModelValue) {
             this.typed = this.modelValue
+        } else if (this.hasValue) {
+            this.typed = this.value
         }
-        this.$watch('typed', (value) => {
-            this.$emit('update:modelValue', value)
-        })
+    },
+    methods: {
+        onChange ({ target }) {
+            this.typed = target.value
+            if (this.hasProp('modelValue')) {
+                this.$emit('update:modelValue', target.value)
+            }
+        }
     }
 }
 </script>
@@ -57,13 +60,14 @@ export default {
     >
         <slot name="prepend" />
         <input
-            v-model="typed"
+            :value="typed"
             :disabled="disabled"
             :maxlength="maxlength"
             :name="name"
             :placeholder="placeholderValue"
             :required="hasAttribute('required')"
             :type="type"
+            @input="onChange"
         >
         <slot name="append" />
     </div>

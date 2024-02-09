@@ -1,17 +1,13 @@
 import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Table from './table.vue'
+import List from '../list.vue'
 
-describe('components/Table.vue', () => {
+describe('components/List.vue (value)', () => {
 
-    const propsData = {
-        items: [
-            { label: 'label', value: 'value' }
-        ]
-    }
+    const propsData = {}
 
     const mountComponent = () => {
-        return mount(Table, {
+        return mount(List, {
             ...setup,
             propsData
         })
@@ -19,6 +15,11 @@ describe('components/Table.vue', () => {
 
     beforeEach(() => {
         jest.useFakeTimers()
+        propsData.disabled = false
+        propsData.selectable = false
+        propsData.items = [1, 2, 3, 4]
+        propsData.value = 4
+        propsData.keyword = null
     })
 
     afterEach(() => {
@@ -31,11 +32,16 @@ describe('components/Table.vue', () => {
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
+        expect(component.vm.selected.label).toBe(4)
     })
 
-    it('Should return nested value', () => {
+    it('Should not emit onClick', () => {
         const component = mountComponent()
+        const selected = 1
 
-        expect(component.vm.leaf({ foo: { bar: true } }, 'foo.bar')).toBe(true)
+        component.vm.onClick(selected)
+
+        const emitted = component.emitted()
+        expect(emitted['update:modelValue']).toBeFalsy()
     })
 })

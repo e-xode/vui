@@ -1,10 +1,11 @@
 import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Modal from './modal.vue'
+import Modal from '../modal.vue'
 
-describe('components/Modal.vue', () => {
+describe('components/Modal.vue (with value)', () => {
 
     const propsData = {
+        value: true,
         showFooter: true,
         showFooterClose: true,
         showHeader: true,
@@ -36,14 +37,32 @@ describe('components/Modal.vue', () => {
         expect(component.vm.isFooterVisible).toBeTruthy()
     })
 
-    it('Should onToggle', () => {
+    it('Should onToggle and not emit modelValue', () => {
         const component = mountComponent()
-        expect(component.vm.isVisible).toBeFalsy()
+        expect(component.vm.isVisible).toBeTruthy()
 
         component.vm.onToggle()
 
         const emitted = component.emitted()
-        expect(component.vm.isVisible).toBeTruthy()
-        expect(emitted['update:modelValue'][0]).toEqual([true])
+        expect(component.vm.isVisible).toBeFalsy()
+        expect(emitted['update:modelValue']).toBeFalsy()
+    })
+
+
+    describe('disabled', () => {
+
+        beforeEach(() => {
+            propsData.disabled = true
+        })
+
+        it('Should not toggle', async() => {
+            const component = mountComponent()
+
+            component.vm.onToggle()
+
+            const emitted = component.emitted()
+            expect(component.vm.isVisible).toBeTruthy()
+            expect(emitted['update:modelValue']).toBeFalsy()
+        })
     })
 })

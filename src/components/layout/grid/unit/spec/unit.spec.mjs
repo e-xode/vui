@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
-import Unit from './unit.vue'
+import Unit from '../unit.vue'
 
 describe('components/Unit.vue', () => {
 

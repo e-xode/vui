@@ -2,12 +2,9 @@ const props = {
     disabled: {
         type: Boolean
     },
-    icon: {
-        type: String
-    },
-    items: {
+    headers: {
         type: Array,
-        required: true
+        default: () => []
     },
     itemLabel: {
         type: String,
@@ -17,11 +14,10 @@ const props = {
         type: String,
         default: 'value'
     },
-    modelValue: {
-        type: String
-    },
-    value: {
-        type: String
+    items: {
+        type: Array,
+        default: () => [],
+        required: true
     }
 }
 

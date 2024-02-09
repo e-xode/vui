@@ -4,6 +4,7 @@ import Input from '../input.vue'
 
 describe('components/html/Input.vue (modelValue)', () => {
     const propsData = {
+        placeholder: 'placeholder',
         value: 'foo',
         type: 'text'
     }
@@ -24,17 +25,27 @@ describe('components/html/Input.vue (modelValue)', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
         expect(component.vm.typed).toBe('foo')
-        expect(component.vm.placeholderValue).toBeTruthy()
+        expect(component.vm.type).toBe(propsData.type)
+        expect(component.vm.placeholderValue).toBe(propsData.placeholder)
     })
 
 
-    it('Should change value', async() => {
+    it('Should update from prop', async() => {
         const component = mountComponent()
 
         component.setProps({ value: 'bar' })
-
         await component.vm.$nextTick()
 
         expect(component.vm.typed).toBe('bar')
+    })
+
+    it('Should onChange', async() => {
+        const component = mountComponent()
+
+        component.vm.onChange({ target: { value: 'bar' } })
+
+        const emitted = component.emitted()
+        expect(component.vm.typed).toBe('bar')
+        expect(emitted['update:modelValue']).toBeFalsy()
     })
 })

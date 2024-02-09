@@ -85,8 +85,10 @@ export default {
         }
         this.$bus.on('outclick', () => {
             if (!this.disabled) {
-                this.$emit('update:modelValue', false)
                 this.show = false
+                if (this.hasProp('modelValue')) {
+                    this.$emit('update:modelValue', this.show)
+                }
             }
         })
     },
