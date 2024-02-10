@@ -16,7 +16,6 @@ export default {
     },
     mounted () {
         this.form = doc.examples.reduce((obj, { props }) => {
-            obj[props.id] = 'test'
             return obj
         }, {})
     },

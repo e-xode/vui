@@ -13,7 +13,7 @@ export default {
         composable
     ],
     props,
-    emits: ['input', 'update:modelValue'],
+    emits: ['change', 'update:modelValue'],
     data () {
         return {
             typed: null
@@ -43,15 +43,13 @@ export default {
         }
     },
     methods: {
-        onChange (value) {
-            this.typed = value
-            if (this.hasProp('modelValue')) {
-                this.$emit('update:modelValue', value)
-            }
-        },
         onInput (event) {
-            this.$emit('input', event)
-            this.onChange(event.target.value)
+            this.typed = event.target.value
+            if (this.hasProp('modelValue')) {
+                this.$emit('update:modelValue', event.target.value)
+            } else {
+                this.$emit('change', event.target.value)
+            }
         }
     }
 }

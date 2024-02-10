@@ -42,21 +42,10 @@ describe('components/html/Input.vue (modelValue)', () => {
     it('Should emit on modelValue change', async() => {
         const component = mountComponent()
 
-        component.vm.onChange('bar')
+        component.vm.onInput({ target: { value: 'bar' } })
         await component.vm.$nextTick()
 
         const emitted = component.emitted()
         expect(emitted['update:modelValue'][0]).toEqual(['bar'])
-    })
-
-    it('Should emit on input change', async() => {
-        const component = mountComponent()
-
-        component.vm.onInput({ target: { value: 'bar' } })
-
-        const emitted = component.emitted()
-        expect(emitted['input'][0]).toEqual([{ target: { value: 'bar' }}])
-        expect(emitted['update:modelValue'][0]).toEqual(['bar'])
-        expect(component.vm.typed).toBe('bar')
     })
 })

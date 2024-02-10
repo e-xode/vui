@@ -24,7 +24,7 @@
                             <component
                                 :is="example.component"
                                 v-bind="example.props"
-                                v-model="form[example.props.id]"
+                                @change="form[example.props.id] = $event.target.value"
                                 required
                                 class="test"
                             />

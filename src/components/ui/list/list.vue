@@ -16,7 +16,7 @@ export default {
         composable
     ],
     props,
-    emits: ['update:modelValue'],
+    emits: ['change', 'update:modelValue'],
     data () {
         return {
             last: null,
@@ -129,6 +129,8 @@ export default {
                 }
                 if (this.hasProp('modelValue')) {
                     this.$emit('update:modelValue', emit)
+                } else {
+                    this.$emit('change', emit)
                 }
             }
         },

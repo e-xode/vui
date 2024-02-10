@@ -13,7 +13,8 @@
                         <component
                             :is="example.component"
                             v-bind="example.props"
-                            v-model="states[example.props.id]"
+                            :value="states[example.props.id]"
+                            @update:change="(value) => states[example.props.id] = value"
                         >
                             <template v-if="example.text">
                                 {{ $t(example.text) }}
