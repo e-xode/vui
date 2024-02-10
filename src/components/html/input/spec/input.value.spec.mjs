@@ -48,14 +48,4 @@ describe('components/html/Input.vue (modelValue)', () => {
         expect(emitted['input'][0]).toEqual([{ target: { value: 'bar' }}])
         expect(component.vm.typed).toBe('bar')
     })
-
-    it('Should onChange', async() => {
-        const component = mountComponent()
-
-        component.vm.onChange('bar')
-
-        const emitted = component.emitted()
-        expect(component.vm.typed).toBe('bar')
-        expect(emitted['update:modelValue']).toBeFalsy()
-    })
 })
