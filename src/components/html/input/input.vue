@@ -71,7 +71,7 @@ export default {
             :placeholder="placeholderValue"
             :required="hasAttribute('required')"
             :type="type"
-            @input="onChange"
+            @input="onInput"
         >
         <slot name="append" />
     </div>
