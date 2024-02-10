@@ -1,50 +1,66 @@
-# VUI, Yet another Vue Library
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/e-xode/vui/tree/master.svg?style=svg&circle-token=d8353b320a36159da949b935eba5cbdb41502a60)](https://dl.circleci.com/status-badge/redirect/gh/e-xode/vui/tree/master) [![Coverage Status](https://coveralls.io/repos/github/e-xode/vui/badge.svg?branch=master)](https://coveralls.io/github/e-xode/vui?branch=master) ![NPM Version](https://img.shields.io/npm/v/%40e-xode%2Fvui?color=green)
+# Vui, Yet another Vuejs U.I Library
 
-VUI is an open source UI library focusing on providing customizable web components for Vue.js.
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![CircleCI](https://dl.circleci.com/status-badge/img/gh/e-xode/vui/tree/master.svg?style=svg&circle-token=d8353b320a36159da949b935eba5cbdb41502a60)](https://dl.circleci.com/status-badge/redirect/gh/e-xode/vui/tree/master) [![Coverage Status](https://coveralls.io/repos/github/e-xode/vui/badge.svg?branch=master)](https://coveralls.io/github/e-xode/vui?branch=master) ![NPM Version](https://img.shields.io/npm/v/%40e-xode%2Fvui?color=green)
+
+  VUI is an open source UI library providing customizable web components for Vue.js.
 
 ## Features
-- 3 families of web components: Html (button, input, ...), UI ( card, dropdown, ...) and layout ( grid, responsive ) focusing on functionalities and quick customization.
-- Styles and layouts allow easy CSS overriding (no inline definitions, no !importants, ...).
-- Compatible with server rendering ( SSR ).
+
+- 3 types of web components: Html, UI, and layout, written in a way to provide simple implementation and easy customization. **22 components are available** in the current release.
+
+- Styles and layouts allow easy CSS overriding (no inline definitions, no messy !importants, ...).
+- Compatible with server rendering ( [SSR](https://vuejs.org/guide/scaling-up/ssr.html) ).
 - Integrates fontawesome-free Icons library.
 - Provides documentation and tests.
 
-Online documentation and demo are available [here](https://vui.e-xode.net/)
+Online documentation and live demo are available [here](https://vui.e-xode.net/)
 
-Package releases are available on [NPM](https://www.npmjs.com/package/@e-xode/vui)
+Package and releases are available on [NPM](https://www.npmjs.com/package/@e-xode/vui)
 
-## Get started
+  ## Get started
 
-Install first dependency:
+Install first the library:
+
 ```sh
-npm install -s @e-xode/vui
+npm  install -s  @e-xode/vui
 ```
 
-### use vui in your vue app
-In your Vue application:
-```javascript
-import { createApp } from 'vue'
-import { createI18n } from 'vue-i18n'
-import App from './App.vue'
-import vui from '@e-xode/vui'
+  ### use vui in your vue app
 
-const main = createApp(App)
+In your Vue application:
+
+```javascript
+import { createApp } from  'vue'
+import { createI18n } from  'vue-i18n'
+import App from  './App.vue'
+import vui from  '@e-xode/vui'
+
+const main =  createApp(App)
 main.use(vui)
-main.use(new createI18n({
+main.use(new  createI18n({
     legacy: false,
     locale: 'en',
     messages: { en: [] }
 }))
 ```
 
+Notes:
+- The current version of VUI works only with vue-i18n and option **legacy = false** (translations are components isolated)
+- Version of node currently supported: 21
+- Depending of your bundler, you may need to provide specific path of the module format:
+    - cjs: ```import vui from '@e-xode/vui/vui.cjs.js'```
+    - esm: ```import vui from '@e-xode/vui/vui.esm.js'```
+    - umd: ```import vui from '@e-xode/vui/vui.umd.js'```
+
 ### load vui style
+
 ```scss
-@import "@e-xode/vui/dist/style.css";
+@import  "@e-xode/vui/dist/style.css";
 ```
 
 ### load @fontawesome icons
+
 ```scss
 @import "@fortawesome/fontawesome-free/css/all.css";
 @font-face {
@@ -73,22 +89,19 @@ main.use(new createI18n({
 }
 ```
 
-Note: The current version of VUI works only with vue-i18n and option legacy = false (translations are components isolated)
-
 ## Run & develop vui sources
 ```sh
-copy .env_sample .env
+copy  .env_sample  .env
 ```
-Optional: Edit .env file and update values according to your config
+Optional: edit .env file content and update values according to your config
 
 ### with docker
 ```sh
-docker-compose up
+docker-compose  up
 ```
 
 ### or local with Node / NPM
 ```sh
-npm install
-npm run dev
+npm  install
+npm  run  dev
 ```
-( Version of node currently supported: 21 )
