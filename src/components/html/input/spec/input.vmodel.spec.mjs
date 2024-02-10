@@ -27,7 +27,7 @@ describe('components/html/Input.vue (modelValue)', () => {
         expect(component.exists()).toBeTruthy()
         expect(component.vm.typed).toBe('foo')
         expect(component.vm.type).toBe(propsData.type)
-        expect(component.vm.placeholderValue).toBe(propsData.placeholder)
+        expect(component.vm.placeholderValue).toEqual(propsData.placeholder)
     })
 
     it('Should update from prop', async() => {
@@ -42,7 +42,7 @@ describe('components/html/Input.vue (modelValue)', () => {
     it('Should emit on modelValue change', async() => {
         const component = mountComponent()
 
-        component.vm.onChange({ target: { value: 'bar' } })
+        component.vm.onChange('bar')
         await component.vm.$nextTick()
 
         const emitted = component.emitted()

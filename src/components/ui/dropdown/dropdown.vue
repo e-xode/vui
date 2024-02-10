@@ -134,7 +134,7 @@ export default {
         </div>
         <vui-list
             v-if="toggled"
-            :value="selected"
+            v-model="selected"
             v-bind="$attrs"
             class="vui-dropdown-list"
             :group-id="componentGroupId"
