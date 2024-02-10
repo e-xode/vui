@@ -18,7 +18,8 @@ export default {
                 value: list[key].map((item) => ({
                     ...item,
                     label: item.name,
-                    value: item.name
+                    value: item.name,
+                    route: item.name
                 }))
             }))
         }
@@ -33,11 +34,6 @@ export default {
                     value: component.name
                 }
             }
-        }
-    },
-    methods: {
-        toggleComponent ({ doc }) {
-            this.$router.push({ name: doc.name  })
         }
     }
 }

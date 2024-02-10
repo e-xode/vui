@@ -124,6 +124,9 @@ export default {
                 this.selected = this.isSelected(item)
                     ? null
                     : item
+                if (item.route) {
+                    this.$router.push(item.route)
+                }
                 if (this.hasProp('modelValue')) {
                     this.$emit('update:modelValue', emit)
                 }
