@@ -17,7 +17,7 @@ export default {
         composable
     ],
     props,
-    emits: ['update:modelValue'],
+    emits: ['update:model-value'],
     data () {
         return {
             isVisible: false
@@ -55,9 +55,7 @@ export default {
         onToggle () {
             if (!this.disabled) {
                 this.isVisible = !this.isVisible
-                if (this.hasProp('modelValue')) {
-                    this.$emit('update:modelValue', this.isVisible)
-                }
+                this.$emit('update:model-value', this.isVisible)
             }
         }
     }

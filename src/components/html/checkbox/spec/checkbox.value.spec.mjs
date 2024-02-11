@@ -34,13 +34,13 @@ describe('components/html/Checkbox.vue (value)', () => {
         expect(component.vm.isChecked).toBeTruthy()
     })
 
-    it('Should not emit modelValue', async() => {
+    it('Should emit modelValue', async() => {
         const component = mountComponent()
 
         component.vm.onToggle()
 
         const emitted = component.emitted()
-        expect(emitted['update:modelValue']).toBeFalsy()
+        expect(emitted['update:model-value'][0]).toEqual([false])
 
         expect(component.vm.toggled).toBeFalsy()
         expect(component.vm.isChecked).toBeFalsy()
@@ -58,7 +58,7 @@ describe('components/html/Checkbox.vue (value)', () => {
             component.vm.onToggle()
 
             const emitted = component.emitted()
-            expect(emitted['update:modelValue']).toBeFalsy()
+            expect(emitted['update:model-value']).toBeFalsy()
 
             expect(component.vm.toggled).toBeTruthy()
             expect(component.vm.isChecked).toBeTruthy()

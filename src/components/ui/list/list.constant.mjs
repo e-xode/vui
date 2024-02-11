@@ -3,9 +3,6 @@ const props = {
         type: Boolean,
         default: true
     },
-    disabled: {
-        type: Boolean
-    },
     expanded: {
         type: Boolean,
         default: false

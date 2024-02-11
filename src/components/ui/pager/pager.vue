@@ -22,7 +22,7 @@ export default {
         composable
     ],
     props,
-    emits: ['update:modelValue'],
+    emits: ['update:model-value'],
     data() {
         return {
             page: 1
@@ -90,9 +90,7 @@ export default {
             }
         },
         onPage () {
-            if (this.hasProp('modelValue')) {
-                this.$emit('update:modelValue', this.page)
-            }
+            this.$emit('update:model-value', this.page)
         }
     }
 }

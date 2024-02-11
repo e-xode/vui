@@ -46,6 +46,6 @@ describe('components/html/Input.vue (modelValue)', () => {
         await component.vm.$nextTick()
 
         const emitted = component.emitted()
-        expect(emitted['update:modelValue'][0]).toEqual(['bar'])
+        expect(emitted['update:model-value'][0]).toEqual(['bar'])
     })
 })

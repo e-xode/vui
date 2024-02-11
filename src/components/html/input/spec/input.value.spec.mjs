@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import Input from '../input.vue'
 
-describe('components/html/Input.vue (modelValue)', () => {
+describe('components/html/Input.vue (value)', () => {
     const propsData = {
         placeholder: 'placeholder',
         value: 'foo',
@@ -39,13 +39,13 @@ describe('components/html/Input.vue (modelValue)', () => {
         expect(component.vm.typed).toBe('bar')
     })
 
-    it('Should onInput', async() => {
+    it('Should emit on input', async() => {
         const component = mountComponent()
 
         component.vm.onInput({ target: { value: 'bar' } })
 
         const emitted = component.emitted()
-        expect(emitted['input'][0]).toEqual([{ target: { value: 'bar' }}])
+        expect(emitted['input'][0]).toEqual([{ target: { value: 'bar' } }])
         expect(component.vm.typed).toBe('bar')
     })
 })

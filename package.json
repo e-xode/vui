@@ -10,7 +10,7 @@
     "main": "./dist/vui.cjs.js",
     "module": "./dist/vui.esm.js",
     "type": "module",
-    "version": "0.5.4",
+    "version": "0.5.5",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/e-xode/vui.git"

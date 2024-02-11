@@ -21,7 +21,7 @@ export default {
         composable
     ],
     props,
-    emits: ['change', 'update:modelValue'],
+    emits: ['change', 'update:model-value'],
     data () {
         return {
             keyword: null,
@@ -96,11 +96,7 @@ export default {
             this.selected = selected
             this.keyword = null
             this.blur()
-            if (this.hasProp('modelValue')) {
-                this.$emit('update:modelValue', selected)
-            } else {
-                this.$emit('change', selected)
-            }
+            this.$emit('update:model-value', selected)
         }
     }
 }

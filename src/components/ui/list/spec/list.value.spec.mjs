@@ -42,6 +42,6 @@ describe('components/List.vue (value)', () => {
         component.vm.onClick(selected)
 
         const emitted = component.emitted()
-        expect(emitted['update:modelValue']).toBeFalsy()
+        expect(emitted['update:model-value']).toBeFalsy()
     })
 })

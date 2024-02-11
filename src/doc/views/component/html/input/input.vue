@@ -24,9 +24,10 @@
                             <component
                                 :is="example.component"
                                 v-bind="example.props"
-                                @change="form[example.props.id] = $event.target.value"
+                                :id="example.props.id"
                                 required
                                 class="test"
+                                @update:model-value="(v) => form[example.props.id] = v"
                             />
                         </template>
                     </vui-card>

@@ -43,7 +43,7 @@ describe('components/ui/Toggle.vue (values)', () => {
         component.vm.onToggle()
 
         const emitted = component.emitted()
-        expect(emitted['update:modelValue'][0]).toEqual(['bar'])
+        expect(emitted['update:model-value'][0]).toEqual(['bar'])
 
         expect(component.vm.toggled).toBe('bar')
         expect(component.vm.isChecked).toBeFalsy()
@@ -61,7 +61,7 @@ describe('components/ui/Toggle.vue (values)', () => {
             component.vm.onToggle()
 
             const emitted = component.emitted()
-            expect(emitted['update:modelValue']).toBeFalsy()
+            expect(emitted['update:model-value']).toBeFalsy()
 
             expect(component.vm.toggled).toBeTruthy()
             expect(component.vm.isChecked).toBeTruthy()

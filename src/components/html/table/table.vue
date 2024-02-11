@@ -19,7 +19,11 @@ export default {
     },
     methods: {
         leaf (value, path) {
-            return path.split('.').reduce((v, e) => v[e], value)
+            return path.split('.').reduce((v, e) => {
+                return v && v[e]
+                    ? v[e]
+                    : v
+            }, value)
         }
     }
 }

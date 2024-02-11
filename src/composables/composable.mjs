@@ -4,18 +4,25 @@ const composable = {
         class: {
             type: String
         },
+        disabled: {
+            type: Boolean,
+            default: false
+        },
         id: {
-            type: String
+            type: String,
+            default: null
         },
         groupId: {
-            type: String
+            type: String,
+            default: null
         },
         layout: {
             type: String,
             default: 'default'
         },
         loading: {
-            type: Boolean
+            type: Boolean,
+            default: false
         },
         name: {
             type: String

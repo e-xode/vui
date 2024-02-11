@@ -13,7 +13,7 @@ export default {
         composable
     ],
     props,
-    emits: ['update:modelValue'],
+    emits: ['update:model-value'],
     data () {
         return {
             dimension: {
@@ -86,9 +86,7 @@ export default {
         this.$bus.on('outclick', () => {
             if (!this.disabled) {
                 this.show = false
-                if (this.hasProp('modelValue')) {
-                    this.$emit('update:modelValue', this.show)
-                }
+                this.$emit('update:model-value', this.show)
             }
         })
     },

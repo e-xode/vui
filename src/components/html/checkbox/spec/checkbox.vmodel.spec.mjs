@@ -39,7 +39,7 @@ describe('components/html/Checkbox.vue (modelValue)', () => {
         component.vm.onToggle()
 
         const emitted = component.emitted()
-        expect(emitted['update:modelValue'][0]).toEqual([false])
+        expect(emitted['update:model-value'][0]).toEqual([false])
 
         expect(component.vm.toggled).toBeFalsy()
         expect(component.vm.isChecked).toBeFalsy()
