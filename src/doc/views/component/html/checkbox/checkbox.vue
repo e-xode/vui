@@ -14,7 +14,7 @@
                             :is="example.component"
                             v-bind="example.props"
                             :value="states[example.props.id]"
-                            @update:change="(value) => states[example.props.id] = value"
+                            @update:model-value="(value) => states[example.props.id] = value"
                         >
                             <template v-if="example.text">
                                 {{ $t(example.text) }}

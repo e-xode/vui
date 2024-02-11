@@ -14,11 +14,6 @@ export default {
         translatable(langs)
         return {}
     },
-    mounted () {
-        this.form = doc.examples.reduce((obj, { props }) => {
-            return obj
-        }, {})
-    },
     data () {
         return {
             form: {

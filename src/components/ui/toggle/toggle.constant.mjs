@@ -12,9 +12,6 @@ const props = {
             null
         ]
     },
-    disabled: {
-        type: Boolean
-    },
     modelValue: {
         default: undefined,
         types: [

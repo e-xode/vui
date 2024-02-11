@@ -17,7 +17,7 @@ export default {
         composable
     ],
     props,
-    emits: ['update:modelValue'],
+    emits: ['update:model-value'],
     data () {
         return {
             selected: null
@@ -42,7 +42,7 @@ export default {
     methods: {
         onClick (value) {
             if (!this.disabled) {
-                this.$emit('update:modelValue', value)
+                this.$emit('update:model-value', value)
             }
         }
     }

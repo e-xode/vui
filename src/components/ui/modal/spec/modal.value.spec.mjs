@@ -37,7 +37,7 @@ describe('components/Modal.vue (with value)', () => {
         expect(component.vm.isFooterVisible).toBeTruthy()
     })
 
-    it('Should onToggle and not emit modelValue', () => {
+    it('Should onToggle and emit modelValue', () => {
         const component = mountComponent()
         expect(component.vm.isVisible).toBeTruthy()
 
@@ -45,7 +45,7 @@ describe('components/Modal.vue (with value)', () => {
 
         const emitted = component.emitted()
         expect(component.vm.isVisible).toBeFalsy()
-        expect(emitted['update:modelValue']).toBeFalsy()
+        expect(emitted['update:model-value'][0]).toEqual([false])
     })
 
 
@@ -62,7 +62,7 @@ describe('components/Modal.vue (with value)', () => {
 
             const emitted = component.emitted()
             expect(component.vm.isVisible).toBeTruthy()
-            expect(emitted['update:modelValue']).toBeFalsy()
+            expect(emitted['update:model-value']).toBeFalsy()
         })
     })
 })

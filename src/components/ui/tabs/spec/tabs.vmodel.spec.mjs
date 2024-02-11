@@ -44,7 +44,7 @@ describe('components/Tabs.vue (vmode)', () => {
         component.vm.toggle('tab1')
 
         const emitted = component.emitted()
-        expect(emitted['update:modelValue'][0]).toEqual(['tab1'])
+        expect(emitted['update:model-value'][0]).toEqual(['tab1'])
         expect(component.vm.active).toBe('tab1')
     })
 
@@ -60,7 +60,7 @@ describe('components/Tabs.vue (vmode)', () => {
             component.vm.toggle('tab1')
 
             const emitted = component.emitted()
-            expect(emitted['update:modelValue']).toBeFalsy()
+            expect(emitted['update:model-value']).toBeFalsy()
             expect(component.vm.active).toBe('tab2')
         })
     })

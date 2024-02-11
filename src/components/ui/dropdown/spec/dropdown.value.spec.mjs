@@ -44,7 +44,7 @@ describe('components/ui/Dropdown.vue (with array of numbers)', () => {
 
         const emitted = component.emitted()
         expect(component.vm.keyword).toBe(null)
-        expect(emitted['update:modelValue']).toBeFalsy()
+        expect(emitted['update:model-value'][0]).toEqual([items[1]])
         expect(component.vm.selected).toBe(items[1])
         expect(component.vm.placeholderValue).toBe(items[1])
         expect(component.vm.toggled).toBeFalsy()

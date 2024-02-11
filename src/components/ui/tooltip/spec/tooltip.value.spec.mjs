@@ -44,7 +44,7 @@ describe('components/ui/Tooltip.vue (value)', () => {
         const emitted = component.emitted()
 
         expect(component.vm.show).toBeFalsy()
-        expect(emitted['update:modelValue']).toBeFalsy()
+        expect(emitted['update:model-value'][0]).toEqual([false])
     })
 
     describe('disabled', () => {

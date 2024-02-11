@@ -1,7 +1,4 @@
 const props = {
-    disabled: {
-        type: Boolean
-    },
     items: {
         type: Array,
         required: true

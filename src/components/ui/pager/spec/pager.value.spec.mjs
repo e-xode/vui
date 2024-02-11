@@ -43,7 +43,7 @@ describe('components/Pager.vue (value)', () => {
         const emitted = component.emitted()
         expect(component.vm.page).toBe(3)
         expect(component.vm.isLast).toBeFalsy()
-        expect(emitted['update:modelValue']).toBeFalsy()
+        expect(emitted['update:model-value'][0]).toEqual([3])
     })
 
     it('Should set previous page', () => {
@@ -54,7 +54,7 @@ describe('components/Pager.vue (value)', () => {
         const emitted = component.emitted()
         expect(component.vm.page).toBe(1)
         expect(component.vm.isLast).toBeFalsy()
-        expect(emitted['update:modelValue']).toBeFalsy()
+        expect(emitted['update:model-value'][0]).toEqual([1])
     })
 
     it('Should set first page', () => {
@@ -65,7 +65,7 @@ describe('components/Pager.vue (value)', () => {
         const emitted = component.emitted()
         expect(component.vm.page).toBe(1)
         expect(component.vm.isLast).toBeFalsy()
-        expect(emitted['update:modelValue']).toBeFalsy()
+        expect(emitted['update:model-value'][0]).toEqual([1])
     })
 
     it('Should set last page', () => {
@@ -76,6 +76,6 @@ describe('components/Pager.vue (value)', () => {
         const emitted = component.emitted()
         expect(component.vm.page).toBe(5)
         expect(component.vm.isLast).toBeTruthy()
-        expect(emitted['update:modelValue']).toBeFalsy()
+        expect(emitted['update:model-value'][0]).toEqual([5])
     })
 })

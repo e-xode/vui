@@ -72,7 +72,7 @@ describe('components/List.vue (with objects arrays)', () => {
             component.vm.onClick({ ...selected, $$id: 'foo' })
 
             const emitted = component.emitted()
-            expect(emitted['update:modelValue'][0]).toEqual([selected.value])
+            expect(emitted['update:model-value'][0]).toEqual([selected.value])
             expect(component.vm.selected).toEqual(selected)
             expect(component.vm.isSelected(selected)).toBeTruthy()
         })
@@ -121,7 +121,7 @@ describe('components/List.vue (with objects arrays)', () => {
             component.vm.onClick({ ...selected, $$id: 'foo' })
 
             const emitted = component.emitted()
-            expect(emitted['update:modelValue'][0]).toEqual([selected.myvalue])
+            expect(emitted['update:model-value'][0]).toEqual([selected.myvalue])
             expect(component.vm.selected).toEqual(selected)
             expect(component.vm.isSelected(selected)).toBeTruthy()
         })

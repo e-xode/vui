@@ -55,7 +55,7 @@ describe('components/ui/Tooltip.vue (modelValue)', () => {
         component.vm.$bus.emit('outclick')
 
         const emitted = component.emitted()
-        expect(emitted['update:modelValue'][0]).toEqual([false])
+        expect(emitted['update:model-value'][0]).toEqual([false])
 
         expect(component.vm.show).toBe(false)
     })

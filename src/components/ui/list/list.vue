@@ -16,7 +16,7 @@ export default {
         composable
     ],
     props,
-    emits: ['change', 'update:modelValue'],
+    emits: ['change', 'update:model-value'],
     data () {
         return {
             last: null,
@@ -127,11 +127,7 @@ export default {
                 if (item.route) {
                     this.$router.push(item.route)
                 }
-                if (this.hasProp('modelValue')) {
-                    this.$emit('update:modelValue', emit)
-                } else {
-                    this.$emit('change', emit)
-                }
+                this.$emit('update:model-value', emit)
             }
         },
         onToggle (index) {

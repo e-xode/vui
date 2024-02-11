@@ -47,7 +47,7 @@ describe('components/List.vue (with array of numbers)', () => {
             component.vm.onClick(1)
 
             const emitted = component.emitted()
-            expect(emitted['update:modelValue']).toBeFalsy()
+            expect(emitted['update:model-value']).toBeFalsy()
         })
     })
 
@@ -73,7 +73,7 @@ describe('components/List.vue (with array of numbers)', () => {
             component.vm.onClick(selected)
 
             const emitted = component.emitted()
-            expect(emitted['update:modelValue'][0]).toEqual([1])
+            expect(emitted['update:model-value'][0]).toEqual([1])
             expect(component.vm.selected).toEqual(selected)
             expect(component.vm.isSelected(selected)).toBeTruthy()
         })
@@ -106,7 +106,7 @@ describe('components/List.vue (with array of numbers)', () => {
             component.vm.onClick(selected)
 
             const emitted = component.emitted()
-            expect(emitted['update:modelValue']).toBeFalsy()
+            expect(emitted['update:model-value']).toBeFalsy()
         })
     })
 })

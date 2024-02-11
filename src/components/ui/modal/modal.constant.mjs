@@ -1,7 +1,4 @@
 const props = {
-    disabled: {
-        type: Boolean
-    },
     loading: {
         type: Boolean
     },

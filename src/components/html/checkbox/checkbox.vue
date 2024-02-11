@@ -13,7 +13,7 @@ export default {
         composable
     ],
     props,
-    emits: ['change','update:modelValue'],
+    emits: ['update:model-value'],
     data () {
         return {
             toggled: false
@@ -56,11 +56,7 @@ export default {
                 } else {
                     this.toggled = !this.isChecked
                 }
-                if (this.hasProp('modelValue')) {
-                    this.$emit('update:modelValue', this.toggled)
-                } else {
-                    this.$emit('change', this.toggled)
-                }
+                this.$emit('update:model-value', this.toggled)
             }
         }
     }

@@ -13,7 +13,7 @@ export default {
         composable
     ],
     props,
-    emits: ['update:modelValue'],
+    emits: ['update:model-value'],
     data () {
         return {
             active: null
@@ -50,9 +50,7 @@ export default {
         toggle (tab) {
             if (!this.disabled) {
                 this.active = tab
-                if (this.hasProp('modelValue')) {
-                    this.$emit('update:modelValue', this.active)
-                }
+                this.$emit('update:model-value', this.active)
             }
         }
     }

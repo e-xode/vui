@@ -43,7 +43,7 @@ describe('components/Pager.vue (vmodel)', () => {
         const emitted = component.emitted()
         expect(component.vm.page).toBe(3)
         expect(component.vm.isLast).toBeFalsy()
-        expect(emitted['update:modelValue'][0]).toEqual([3])
+        expect(emitted['update:model-value'][0]).toEqual([3])
     })
 
     it('Should set previous page', () => {
@@ -54,7 +54,7 @@ describe('components/Pager.vue (vmodel)', () => {
         const emitted = component.emitted()
         expect(component.vm.page).toBe(1)
         expect(component.vm.isLast).toBeFalsy()
-        expect(emitted['update:modelValue'][0]).toEqual([1])
+        expect(emitted['update:model-value'][0]).toEqual([1])
     })
 
     it('Should set first page', () => {
@@ -65,7 +65,7 @@ describe('components/Pager.vue (vmodel)', () => {
         const emitted = component.emitted()
         expect(component.vm.page).toBe(1)
         expect(component.vm.isLast).toBeFalsy()
-        expect(emitted['update:modelValue'][0]).toEqual([1])
+        expect(emitted['update:model-value'][0]).toEqual([1])
     })
 
     it('Should set last page', () => {
@@ -76,7 +76,7 @@ describe('components/Pager.vue (vmodel)', () => {
         const emitted = component.emitted()
         expect(component.vm.page).toBe(5)
         expect(component.vm.isLast).toBeTruthy()
-        expect(emitted['update:modelValue'][0]).toEqual([5])
+        expect(emitted['update:model-value'][0]).toEqual([5])
     })
 
     describe('disabled', () => {
@@ -93,7 +93,7 @@ describe('components/Pager.vue (vmodel)', () => {
             const emitted = component.emitted()
             expect(component.vm.page).toBe(propsData.modelValue)
             expect(component.vm.isLast).toBeFalsy()
-            expect(emitted['update:modelValue']).toBeFalsy()
+            expect(emitted['update:model-value']).toBeFalsy()
         })
 
         it('Should not set previous page', () => {
@@ -104,7 +104,7 @@ describe('components/Pager.vue (vmodel)', () => {
             const emitted = component.emitted()
             expect(component.vm.page).toBe(propsData.modelValue)
             expect(component.vm.isLast).toBeFalsy()
-            expect(emitted['update:modelValue']).toBeFalsy()
+            expect(emitted['update:model-value']).toBeFalsy()
         })
 
         it('Should not set first page', () => {
@@ -115,7 +115,7 @@ describe('components/Pager.vue (vmodel)', () => {
             const emitted = component.emitted()
             expect(component.vm.page).toBe(propsData.modelValue)
             expect(component.vm.isLast).toBeFalsy()
-            expect(emitted['update:modelValue']).toBeFalsy()
+            expect(emitted['update:model-value']).toBeFalsy()
         })
 
         it('Should not set last page', () => {
@@ -126,7 +126,7 @@ describe('components/Pager.vue (vmodel)', () => {
             const emitted = component.emitted()
             expect(component.vm.page).toBe(propsData.modelValue)
             expect(component.vm.isLast).toBeFalsy()
-            expect(emitted['update:modelValue']).toBeFalsy()
+            expect(emitted['update:model-value']).toBeFalsy()
         })
     })
 })
