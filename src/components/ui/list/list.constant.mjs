@@ -3,6 +3,10 @@ const props = {
         type: Boolean,
         default: true
     },
+    disableFiltering: {
+        type: Boolean,
+        default: false
+    },
     expanded: {
         type: Boolean,
         default: false

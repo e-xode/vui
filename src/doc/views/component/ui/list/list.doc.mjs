@@ -90,6 +90,11 @@ export default {
             text: 'page.component.list.doc.prop.disabled'
         },
         {
+            tag: 'disable-filtering',
+            type: 'Boolean',
+            text: 'page.component.list.doc.prop.disable-filtering'
+        },
+        {
             tag: 'expanded',
             type: 'Boolean',
             text: 'page.component.list.doc.prop.expanded'

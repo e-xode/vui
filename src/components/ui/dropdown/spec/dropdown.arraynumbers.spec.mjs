@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils'
+import { flushPromises, mount } from '@vue/test-utils'
 import setup from '@/test/setup.mjs'
 import { options } from '@/composables/animable.mjs'
 
@@ -32,6 +32,19 @@ describe('components/ui/Dropdown.vue (with array of numbers)', () => {
         expect(component.vm.placeholderLabel).toBeTruthy()
         expect(component.vm.placeholderValue).toBeDefined()
         expect(component.vm.selected).toBe(items[0])
+    })
+
+    it('Should trigger input and emit', async() => {
+        const component = mountComponent()
+        const input = component.find('input[type="text"]')
+
+        input.element.value = 'foo'
+        input.trigger('input')
+        await flushPromises()
+
+        const emitted = component.emitted()
+        expect(emitted['input'][0]).toBeTruthy()
+
     })
 
     it('Should toggle and animate on click', async() => {
