@@ -81,6 +81,11 @@ export default {
             text: 'page.component.dropdown.doc.prop.disabled'
         },
         {
+            tag: 'disable-filtering',
+            type: 'Boolean',
+            text: 'page.component.dropdown.doc.prop.disable-filtering'
+        },
+        {
             tag: 'icon',
             type: 'String',
             text: 'page.component.dropdown.doc.prop.icon'

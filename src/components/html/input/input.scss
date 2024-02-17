@@ -4,6 +4,8 @@
     border: 1px solid $vui-color-grey;
     border-radius: .25rem;
 
+    input[type="date-time-local"],
+    input[type="date"],
     input[type="text"],
     input[type="email"],
     input[type="number"],

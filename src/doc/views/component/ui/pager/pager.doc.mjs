@@ -11,7 +11,7 @@ export default {
             `,
             props: {
                 id: 'example-pager-1',
-                count: 100,
+                count: 9,
                 size: 25
             },
             modelValue: 1
@@ -35,7 +35,7 @@ export default {
         {
             tag: 'count',
             type: 'Number',
-            text: 'page.component.pager.doc.prop.loading'
+            text: 'page.component.pager.doc.prop.count'
         },
         {
             tag: 'disabled',

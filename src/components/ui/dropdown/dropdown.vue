@@ -21,7 +21,7 @@ export default {
         composable
     ],
     props,
-    emits: ['change', 'update:model-value'],
+    emits: ['input', 'update:model-value'],
     data () {
         return {
             keyword: null,
@@ -66,15 +66,19 @@ export default {
         }
     },
     methods: {
+        labelFromChild (child, defvalue, value) {
+            const { itemValue, itemLabel } = this
+            return child[itemValue].reduce((current, item) => (
+                item[itemValue] === value
+                    ? item[itemLabel]
+                    : current
+            ), defvalue)
+        },
         labelFromItem (value) {
             const { itemValue, itemLabel } = this
             return this.items.reduce((current, item) => {
                 if (typeof item[itemValue] === 'object') {
-                    return item[itemValue].reduce((subcurrent, subitem) => {
-                        return subitem[itemValue] === value
-                            ? subitem[itemLabel]
-                            : subcurrent
-                    }, current)
+                    return this.labelFromChild(item, current, value)
                 }
                 return item[itemValue] === value
                     ? item[itemLabel]
@@ -86,10 +90,11 @@ export default {
                 this.onAnimate()
             }
         },
-        onKeyword (keyword ) {
+        onInput (event ) {
+            this.$emit('input', event)
             this.onAnimate(true)
-            this.keyword = keyword?.length
-                ? keyword
+            this.keyword = event.target.value
+                ? event.target.value
                 : null
         },
         onToggle (selected) {
@@ -126,7 +131,7 @@ export default {
                     type="text"
                     class="vui-dropdown-placeholder-label"
                     :placeholder="placeholderValue"
-                    @update:model-value="onKeyword"
+                    @input="onInput"
                 />
             </slot>
         </div>
@@ -136,6 +141,7 @@ export default {
             v-bind="$attrs"
             class="vui-dropdown-list"
             :group-id="componentGroupId"
+            :disable-filtering="disableFiltering"
             :disabled="disabled"
             :items="items"
             :item-label="itemLabel"

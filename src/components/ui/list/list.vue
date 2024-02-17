@@ -16,7 +16,7 @@ export default {
         composable
     ],
     props,
-    emits: ['change', 'update:model-value'],
+    emits: ['update:model-value'],
     data () {
         return {
             last: null,
@@ -25,19 +25,22 @@ export default {
         }
     },
     computed: {
+        hasKeyword () {
+            return !this.disableFiltering && this.keyword?.length
+        },
         list () {
             return this.items.reduce((items, item) => {
                 if (this.isGroup(item)) {
                     items.push({
                         ...item,
                         $$id: this.newId(),
-                        value: item[this.itemValue].reduce((values, value) =>
-                            !this.keyword || this.match(value)
+                        value: item[this.itemValue].reduce((values, value) => (
+                            !this.hasKeyword || this.match(value)
                                 ? [...values, this.mapItem(value, this.newId())]
                                 : values
-                        , [])
+                        ), [])
                     })
-                } else if (!this.keyword || this.match(item)) {
+                } else if (!this.hasKeyword || this.match(item)) {
                     items.push(this.mapItem(item, this.newId()))
                 }
                 return items
@@ -208,7 +211,7 @@ export default {
                             'vui-list-items-item-group-label',
                             { 'vui-list-items-item-group-label--toggled': isToggled(index) },
                             { 'vui-list-items-item-group-label--animating': isAnimating(index) },
-                            { 'vui-list-items-item-group-label--open': open[index] || keyword?.length }
+                            { 'vui-list-items-item-group-label--open': open[index] || hasKeyword }
                         ]"
                         @click.stop="() => onToggle(index)"
                     >
@@ -222,7 +225,7 @@ export default {
                             {{ item[itemLabel] }}
                         </slot>
                     </div>
-                    <template v-if="open[index] || keyword?.length">
+                    <template v-if="open[index] || hasKeyword">
                         <div
                             v-for="(childitem, j) in item[itemValue]"
                             :key="childitem.$$id"

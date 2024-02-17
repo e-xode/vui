@@ -1,4 +1,8 @@
 const props = {
+    disableFiltering: {
+        type: Boolean,
+        default: false
+    },
     items: {
         type: Array,
         required: true

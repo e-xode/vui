@@ -105,6 +105,7 @@ export default {
         <div class="vui-pager-content">
             <slot name="first">
                 <vui-button
+                    flat
                     :disabled="modelValue === 1"
                     icon="fa-solid fa-angles-left"
                     @click="onFirst"
@@ -112,6 +113,7 @@ export default {
             </slot>
             <slot name="previous">
                 <vui-button
+                    flat
                     :disabled="modelValue === 1"
                     icon="fa-solid fa-chevron-left"
                     @click="onPrevious"

@@ -1,2 +1,12 @@
 {
+    "page.component.pager.doc.prop.count": "Total number of paginated items",
+    "page.component.pager.doc.prop.disabled": "Binds the disabled state condition",
+    "page.component.pager.doc.prop.loading": "Binds the loading state",
+    "page.component.pager.doc.prop.size": "Number of paginated items per page",
+    "page.component.pager.doc.prop.value": "Selected item in the pager",
+    "page.component.pager.doc.prop.v-model": "Binds the model changes of pager",
+    "page.component.pager.doc.slot.first": "Slot for first page button",
+    "page.component.pager.doc.slot.last": "Slot for last page button",
+    "page.component.pager.doc.slot.previous": "Slot for previous page button",
+    "page.component.pager.doc.slot.next": "Slot for next page button"
 }
