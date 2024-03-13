@@ -5,7 +5,6 @@ export default {
         {
             markup: `
                 <vui-button
-                    :disabled="disabled"
                     type="button"
                 >
                     Default button
@@ -20,10 +19,23 @@ export default {
         {
             markup: `
                 <vui-button
-                    icon="fa-sharp fa-solid fa-bug"
-                    layout="error",
+                    flat
+                    text="Default button"
+                />
+            `,
+            props: {
+                id: 'vui-button-1',
+                icon: 'fa-sharp fa-solid fa-file-arrow-up',
+                flat: true
+            },
+            text: 'page.component.button.default'
+        },
+        {
+            markup: `
+                <vui-button
+                    layout="error"
                     text="Error submit button"
-                    type="submit"
+                    icon="fa-sharp fa-solid fa-bug"
                 />
             `,
             props: {
@@ -36,9 +48,9 @@ export default {
         {
             markup: `
                 <vui-button
-                    icon="fa-sharp fa-solid fa-check"
+                    layout="success"
                     text="submit button"
-                    type="submit"
+                    icon="fa-sharp fa-solid fa-check"
                 />
             `,
             props: {
@@ -51,9 +63,9 @@ export default {
         {
             markup: `
                 <vui-button
-                    icon="fa-sharp fa-solid fa-warning"
+                    layout="warning"
                     text="submit button"
-                    type="submit"
+                    icon="fa-sharp fa-solid fa-warning"
                 />
             `,
             props: {
@@ -66,10 +78,9 @@ export default {
         {
             markup: `
                 <vui-button
-                    icon="fa-sharp fa-solid fa-file-arrow-up"
                     :disabled="true"
                     text="disabled button"
-                    type="submit"
+                    icon="fa-sharp fa-solid fa-file-arrow-up"
                 />
             `,
             props: {

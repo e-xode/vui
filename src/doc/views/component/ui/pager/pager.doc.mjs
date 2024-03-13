@@ -6,8 +6,9 @@ export default {
             markup: `
                 <vui-pager
                     id="vui-page-1"
-                >
-                </vui-pager>
+                    :count="9"
+                    :size="25"
+                />
             `,
             props: {
                 id: 'example-pager-1',
@@ -20,8 +21,10 @@ export default {
             markup: `
                 <vui-pager
                     id="vui-page-2"
-                >
-                </vui-pager>
+                    :count="100"
+                    :size="10"
+                    :value="5"
+                />
             `,
             props: {
                 id: 'example-pager-2',
@@ -29,6 +32,24 @@ export default {
                 size: 10
             },
             modelValue: 5
+        },
+        {
+            markup: `
+                <vui-pager
+                    flat
+                    id="vui-page-3"
+                    :count="100"
+                    :size="10"
+                    :value="1"
+                />
+            `,
+            props: {
+                flat: true,
+                id: 'example-pager-3',
+                count: 100,
+                size: 10
+            },
+            modelValue: 1
         }
     ],
     props: [

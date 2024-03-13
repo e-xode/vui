@@ -10,10 +10,6 @@
     justify-content: center;
     cursor: pointer;
 
-    &.vui-button--with-icon {
-        // padding-left: 2.5rem;
-    }
-
     .vui-button-holder {
         position: relative;
         margin-top: .15rem;
@@ -27,15 +23,30 @@
         cursor: pointer;
 
         .vui-button-icon {
-            margin-right: .75rem;
             color: $vui-color-grey-dark;
         }
+    }
+
+    &.vui-button--flat {
+        box-shadow: none;
+    }
+
+    &.vui-button--with-label {
+        .vui-button-holder {
+            .vui-button-icon {
+                margin-right: .75rem;
+            }
+        }
+    }
+
+    &.vui-button--with-icon {
     }
 
     &.vui-button--disabled {
         color: $vui-color-grey-dark;
         background-color: $vui-color-grey;
         border: 1px solid $vui-color-grey-dark;
+        opacity: .4;
         cursor: default;
 
         button {

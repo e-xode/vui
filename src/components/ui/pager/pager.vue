@@ -66,25 +66,25 @@ export default {
     },
     methods: {
         onFirst() {
-            if (!this.disabled) {
+            if (!this.disabled && this.page > 1) {
                 this.page = 1
                 this.onPage()
             }
         },
         onLast() {
-            if (!this.disabled) {
+            if (!this.disabled && !this.isLast) {
                 this.page = this.last
                 this.onPage()
             }
         },
         onNext () {
-            if (!this.disabled) {
+            if (!this.disabled && !this.isLast) {
                 this.page++
                 this.onPage()
             }
         },
         onPrevious() {
-            if (!this.disabled) {
+            if (!this.disabled && this.page > 1) {
                 this.page--
                 this.onPage()
             }
@@ -105,17 +105,19 @@ export default {
         <div class="vui-pager-content">
             <slot name="first">
                 <vui-button
-                    flat
-                    :disabled="modelValue === 1"
+                    v-bind="$attrs"
+                    :disabled="page === 1"
                     icon="fa-solid fa-angles-left"
+                    class="vui-button--first"
                     @click="onFirst"
                 />
             </slot>
             <slot name="previous">
                 <vui-button
-                    flat
-                    :disabled="modelValue === 1"
+                    v-bind="$attrs"
+                    :disabled="page === 1"
                     icon="fa-solid fa-chevron-left"
+                    class="vui-button--previous"
                     @click="onPrevious"
                 />
             </slot>
@@ -130,7 +132,8 @@ export default {
                 </div>
                 <vui-nav
                     v-model="page"
-                    flat
+                    v-bind="$attrs"
+                    :flat="hasAttribute('flat')"
                     :items="pages"
                     :show-icons="false"
                     @update:model-value="onPage"
@@ -146,15 +149,19 @@ export default {
             </slot>
             <slot name="next">
                 <vui-button
+                    v-bind="$attrs"
                     :disabled="isLast"
                     icon="fa-solid fa-chevron-right"
+                    class="vui-button--next"
                     @click="onNext"
                 />
             </slot>
             <slot name="previous">
                 <vui-button
+                    v-bind="$attrs"
                     :disabled="isLast"
                     icon="fa-solid fa-angles-right"
+                    class="vui-button--last"
                     @click="onLast"
                 />
             </slot>

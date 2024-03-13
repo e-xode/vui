@@ -15,6 +15,11 @@ export default {
         composable
     ],
     props,
+    computed: {
+        hasLabel() {
+            return this.text?.length > 0 || this.$slots.default
+        }
+    },
     created () {
         translatable(langs)
     },
@@ -34,6 +39,8 @@ export default {
         :class="[
             'vui-button',
             `vui-button--${layout}`,
+            { 'vui-button--flat': hasAttribute('flat') },
+            { 'vui-button--with-label' : hasLabel },
             { 'vui-button--with-icon' : icon },
             { 'vui-button--toggled' : toggled },
             { 'vui-button--animating' : !disabled && animating },
