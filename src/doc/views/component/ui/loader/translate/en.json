@@ -1,0 +1,9 @@
+{
+    "page.component.loader.doc.attr.flat": "Enables the flat style layout",
+    "page.component.loader.example.header": "My card header content",
+    "page.component.loader.example.body": "My card body content",
+    "page.component.loader.example.footer": "My card footer content",
+    "page.component.loader.doc.slot.header": "Slot embedding the card header content",
+    "page.component.loader.doc.slot.body": "Slot for body content",
+    "page.component.loader.doc.slot.footer": "Slot for footer content"
+}

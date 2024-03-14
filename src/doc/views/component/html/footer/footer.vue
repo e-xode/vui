@@ -1,3 +1,33 @@
+<script>
+import {
+    demonstrable,
+    translatable
+} from '@/composables/index.mjs'
+
+import VuiFooter from '@/components/html/footer/footer.vue'
+import doc from '@/doc/views/component/html/footer/footer.doc.mjs'
+import langs from '@/doc/views/component/html/footer/translate/index.mjs'
+
+export default {
+    name: 'ViewFooter',
+    mixins: [
+        demonstrable
+    ],
+    setup () {
+        translatable(langs)
+        return {}
+    },
+    computed: {
+        doc () {
+            return doc
+        },
+        examples () {
+            return this.docExamples(VuiFooter, doc)
+        }
+    }
+}
+</script>
+
 <template>
     <div class="view-card">
         <vui-grid
@@ -44,11 +74,9 @@
     </div>
 </template>
 
-<script
-    src="./footer.mjs"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
 
-<style
-    lang="scss"
-    src="./footer.scss"
-/>
+.view-footer {
+}
+</style>

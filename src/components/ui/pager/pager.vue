@@ -170,7 +170,29 @@ export default {
     </div>
 </template>
 
-<style
-    lang="scss"
-    src="./pager.scss"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
+
+.vui-pager {
+    .vui-pager-content {
+        display: flex;
+        justify-content: space-between;
+
+        .vui-button.vui-button--first,
+        .vui-button.vui-button--next {
+            margin-right: .25rem;
+        }
+
+        .ellipse {
+            padding: 0 .75rem;
+            line-height: 2rem;
+            text-align: center;
+            opacity: 0;
+
+            &.visible {
+                opacity: 1;
+            }
+        }
+    }
+}
+</style>

@@ -1,25 +1,23 @@
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 import Progress from '../progress.vue'
 
 describe('components/Progress.vue', () => {
 
-    const propsData = {
+    const props = {
         min: 0,
         max: 100,
         value: 50
     }
     const mountComponent = () => {
         return mount(Progress, {
-            ...setup,
-            propsData
+            ...main,
+            props
         })
     }
 
     afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
     })
 
     beforeEach(() => {

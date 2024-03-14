@@ -1,18 +1,15 @@
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 
 import Dropdown from '../dropdown.vue'
 
 describe('components/ui/Dropdown.vue (with array of objects)', () => {
+
     afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
-        jest.useRealTimers()
     })
 
     beforeEach(() => {
-        jest.useFakeTimers()
     })
 
     const items = [
@@ -21,8 +18,8 @@ describe('components/ui/Dropdown.vue (with array of objects)', () => {
     ]
 
     const mountComponent = () => mount(Dropdown, {
-        ...setup,
-        propsData: {
+        ...main,
+        props: {
             items,
             modelValue: items[0]
         }

@@ -1,32 +1,33 @@
-import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { flushPromises, mount } from '@vue/test-utils'
+import main from '@/test/main.mjs'
 import Input from '../input.vue'
 
 describe('components/html/Input.vue (value)', () => {
-    const propsData = {
+    const props = {
         placeholder: 'placeholder',
         value: 'foo',
         type: 'text'
     }
     const mountComponent = () => {
         return mount(Input, {
-            ...setup,
-            propsData
+            ...main,
+            props
         })
     }
 
     afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
+    })
+
+    beforeEach(() => {
     })
 
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
         expect(component.vm.typed).toBe('foo')
-        expect(component.vm.type).toBe(propsData.type)
-        expect(component.vm.placeholderValue).toBe(propsData.placeholder)
+        expect(component.vm.type).toBe(props.type)
+        expect(component.vm.placeholderValue).toBe(props.placeholder)
     })
 
 
@@ -34,7 +35,7 @@ describe('components/html/Input.vue (value)', () => {
         const component = mountComponent()
 
         component.setProps({ value: 'bar' })
-        await component.vm.$nextTick()
+        await flushPromises()
 
         expect(component.vm.typed).toBe('bar')
     })

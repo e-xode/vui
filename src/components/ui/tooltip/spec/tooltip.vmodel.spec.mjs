@@ -1,37 +1,44 @@
-import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { flushPromises, mount } from '@vue/test-utils'
+import main from '@/test/main.mjs'
 import Tooltip from '../tooltip.vue'
 
 describe('components/ui/Tooltip.vue (modelValue)', () => {
 
-    const propsData = {
-        modelValue: true
-    }
+    const props = {}
 
     const mountComponent = () => {
         return mount(Tooltip, {
-            ...setup,
-            propsData
+            ...main,
+            props
         })
     }
 
-    beforeEach(() => {
-        jest.useFakeTimers()
+    afterEach(() => {
     })
 
-    afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
-        jest.useRealTimers()
+    beforeEach(() => {
+        props.modelValue = true
     })
 
     it('Should render', async() => {
         const component = mountComponent()
 
-        await component.vm.$nextTick()
+        await flushPromises()
 
         expect(component.vm.show).toBeTruthy()
+    })
+
+    it('Should watch modelValue', async() => {
+        const component = mountComponent()
+        vi.spyOn(component.vm, 'setPosition')
+        await flushPromises()
+        expect(component.vm.show).toBeTruthy()
+
+        await component.setProps({ modelValue: false })
+
+        expect(component.vm.setPosition).not.toBeCalled()
+        expect(component.vm.show).toBeFalsy()
     })
 
     it('Should setPosition', async() => {
@@ -63,7 +70,8 @@ describe('components/ui/Tooltip.vue (modelValue)', () => {
     describe('disabled', () => {
 
         beforeEach(() => {
-            propsData.disabled = true
+            props.disabled = true
+            props.modelValue = true
         })
 
         it('Should still visible', () => {
@@ -73,6 +81,25 @@ describe('components/ui/Tooltip.vue (modelValue)', () => {
 
             expect(component.vm.show).toBe(true)
         })
+    })
 
+    describe('modelValue=false', () => {
+
+        beforeEach(() => {
+            props.disabled = false
+            props.modelValue = false
+        })
+
+        it('Should watch value', async() => {
+            const component = mountComponent()
+            vi.spyOn(component.vm, 'setPosition')
+            await flushPromises()
+            expect(component.vm.show).toBeFalsy()
+
+            await component.setProps({ modelValue: true })
+
+            expect(component.vm.setPosition).not.toBeCalled()
+            expect(component.vm.show).toBeTruthy()
+        })
     })
 })

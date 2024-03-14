@@ -1,28 +1,25 @@
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { mount, flushPromises } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 import Checkbox from '../checkbox.vue'
 
 describe('components/html/Checkbox.vue (value)', () => {
 
-    const propsData = {
+    const props = {
         value: true
     }
+
     const mountComponent = () => {
         return mount(Checkbox, {
-            ...setup,
-            propsData
+            ...main,
+            props
         })
     }
 
-    beforeEach(() => {
-        jest.useFakeTimers()
+    afterEach(() => {
     })
 
-    afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
-        jest.useRealTimers()
+    beforeEach(() => {
     })
 
     it('Should render', async() => {
@@ -32,24 +29,26 @@ describe('components/html/Checkbox.vue (value)', () => {
 
         expect(component.vm.toggled).toBeTruthy()
         expect(component.vm.isChecked).toBeTruthy()
+        expect(component.classes('vui-checkbox--checked')).toBeTruthy()
     })
 
     it('Should emit modelValue', async() => {
         const component = mountComponent()
 
         component.vm.onToggle()
+        await flushPromises()
 
         const emitted = component.emitted()
         expect(emitted['update:model-value'][0]).toEqual([false])
-
         expect(component.vm.toggled).toBeFalsy()
         expect(component.vm.isChecked).toBeFalsy()
+        expect(component.classes('vui-checkbox--checked')).toBeFalsy()
     })
 
     describe('disabled', () => {
 
         beforeEach(() => {
-            propsData.disabled = true
+            props.disabled = true
         })
 
         it('Should not toggle', async() => {
@@ -59,9 +58,9 @@ describe('components/html/Checkbox.vue (value)', () => {
 
             const emitted = component.emitted()
             expect(emitted['update:model-value']).toBeFalsy()
-
             expect(component.vm.toggled).toBeTruthy()
             expect(component.vm.isChecked).toBeTruthy()
+            expect(component.classes('vui-checkbox--checked')).toBeTruthy()
         })
     })
 })

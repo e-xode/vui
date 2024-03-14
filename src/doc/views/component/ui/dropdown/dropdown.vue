@@ -1,3 +1,31 @@
+<script>
+import {
+    demonstrable,
+    translatable
+} from '@/composables/index.mjs'
+
+import VuiDropdown from '@/components/ui/dropdown/dropdown.vue'
+import langs from '@/doc/views/component/ui/dropdown/translate/index.mjs'
+import doc from '@/doc/views/component/ui/dropdown/dropdown.doc.mjs'
+
+export default {
+    name: 'ViewDropdown',
+    mixins: [demonstrable],
+    setup () {
+        translatable(langs)
+        return {}
+    },
+    computed: {
+        doc () {
+            return doc
+        },
+        examples () {
+            return this.docExamples(VuiDropdown, doc)
+        }
+    }
+}
+</script>
+
 <template>
     <div class="view-dropdown">
         <vui-grid
@@ -44,11 +72,20 @@
     </div>
 </template>
 
-<script
-    src="./dropdown.mjs"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
 
-<style
-    lang="scss"
-    src="./dropdown.scss"
-/>
+.view-dropdown {
+    .vui-grid {
+        .vui-grid-unit.examples {
+            .vui-dropdown {
+                min-width: 400px;
+            }
+
+            .highlighted-code {
+                margin-bottom: 2.5rem;
+            }
+        }
+    }
+}
+</style>

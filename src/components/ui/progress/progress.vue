@@ -49,7 +49,22 @@ export default {
     </div>
 </template>
 
-<style
-    lang="scss"
-    src="./progress.scss"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
+
+.vui-progress {
+    .vui-progress-bar {
+        @include compose('vui-progress-bar');
+        width: 100%;
+        height: 1rem;
+        background-color: $vui-color-grey;
+        border: 1px solid $vui-color-grey-dark;
+        border-radius: .25rem;
+
+        .vui-progress-bar-cursor {
+            height: .9rem;
+            background-color: $vui-color-green;
+        }
+    }
+}
+</style>

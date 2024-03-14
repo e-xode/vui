@@ -1,34 +1,30 @@
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 import Alert from '../alert.vue'
 
 describe('components/Alert.vue', () => {
 
-    const propsData = {
-        layout: 'error'
+    const props = {
+        text: 'foo'
     }
 
     const mountComponent = () => {
         return mount(Alert, {
-            ...setup,
-            propsData
+            ...main,
+            props
         })
     }
 
-    beforeEach(() => {
-        jest.useFakeTimers()
+    afterEach(() => {
     })
 
-    afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
-        jest.useRealTimers()
+    beforeEach(() => {
     })
 
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
-        expect(component.classes('vui-alert--error')).toBeTruthy()
+        expect(component.vm.text).toBe(props.text)
     })
 })

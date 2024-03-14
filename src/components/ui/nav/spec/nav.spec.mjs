@@ -1,10 +1,11 @@
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 import Nav from '../nav.vue'
 
 describe('components/Nav.vue', () => {
 
-    const propsData = {
+    const props = {
         itemLabel: 'label',
         itemValue: 'value',
         items: [
@@ -20,20 +21,15 @@ describe('components/Nav.vue', () => {
 
     const mountComponent = () => {
         return mount(Nav, {
-            ...setup,
-            propsData
+            ...main,
+            props
         })
     }
 
-    beforeEach(() => {
-        jest.useFakeTimers()
+    afterEach(() => {
     })
 
-    afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
-        jest.useRealTimers()
+    beforeEach(() => {
     })
 
     it('Should render', () => {

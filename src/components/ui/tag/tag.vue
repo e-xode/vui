@@ -41,7 +41,29 @@ export default {
     </div>
 </template>
 
-<style
-    lang="scss"
-    src="./tag.scss"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
+
+.vui-tag {
+    @include compose('vui-tag');
+    position: relative;
+    padding: .5rem;
+
+    &.vui-tag--with-icon {
+        padding-left: 2.5rem;
+    }
+
+    .vui-tag-icon {
+        position: absolute;
+        top: .5rem;
+        left: .75rem;
+        font-size: 1.1rem;
+        margin-right: .75rem;
+        color: $vui-color-grey-dark;
+
+        &:before {
+            color: $vui-color-grey-dark;
+        }
+    }
+}
+</style>

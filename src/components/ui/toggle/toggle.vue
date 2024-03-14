@@ -51,8 +51,8 @@ export default {
             if (!this.disabled) {
                 if (this.hasProp('checkedValue')) {
                     this.toggled = this.isChecked
-                    ? this.uncheckedValue
-                    : this.checkedValue
+                        ? this.uncheckedValue
+                        : this.checkedValue
                 } else {
                     this.toggled = !this.isChecked
                 }
@@ -90,7 +90,64 @@ export default {
     </div>
 </template>
 
-<style
-    lang="scss"
-    src="./toggle.scss"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
+
+.vui-toggle {
+    position: relative;
+    display: inline-flex;
+    height: 1.45rem;
+
+    .vui-toggle-slider {
+        position: absolute;
+        bottom: 0;
+        width: 4.5rem;
+        padding: .25rem .5rem;
+        background-color: $vui-color-grey;
+        border-radius: 2.1rem;
+        transition: .4s;
+        cursor: pointer;
+
+        .vui-toggle-slider-button {
+            width: 1.65rem;
+            height: 1.65rem;
+            background-color: $vui-color-white;
+            border-radius: 50%;
+            transition: .4s;
+        }
+    }
+
+    .vui-toggle-label {
+        padding-left: 5rem;
+    }
+
+    &.vui-toggle--checked {
+        .vui-toggle-slider {
+            background-color: $vui-color-green;
+
+            .vui-toggle-slider-button {
+                -webkit-transform: translateX(1.65rem);
+                -ms-transform: translateX(1.65rem);
+                transform: translateX(1.65rem);
+            }
+        }
+    }
+
+    &.vui-toggle--disabled {
+        .vui-toggle-slider {
+            background-color: $vui-color-grey-light;
+            cursor: not-allowed;
+
+            .vui-toggle-slider-button {
+                background-color: $vui-color-grey-extra-light;
+            }
+        }
+
+        &.vui-toggle--checked {
+            .vui-toggle-slider {
+                background-color: lighten($vui-color-green, 30%);
+            }
+        }
+    }
+}
+</style>

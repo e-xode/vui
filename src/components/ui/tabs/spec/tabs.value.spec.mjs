@@ -1,10 +1,11 @@
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 import Tabs from '../tabs.vue'
 
 describe('components/Tabs.vue (value)', () => {
 
-    const propsData = {
+    const props = {
         value: 'tab2',
         itemLabel: 'label',
         itemValue: 'value',
@@ -16,20 +17,15 @@ describe('components/Tabs.vue (value)', () => {
 
     const mountComponent = () => {
         return mount(Tabs, {
-            ...setup,
-            propsData
+            ...main,
+            props
         })
     }
 
-    beforeEach(() => {
-        jest.useFakeTimers()
+    afterEach(() => {
     })
 
-    afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
-        jest.useRealTimers()
+    beforeEach(() => {
     })
 
     it('Should render', () => {
@@ -51,7 +47,7 @@ describe('components/Tabs.vue (value)', () => {
     describe('disabled', () => {
 
         beforeEach(() => {
-            propsData.disabled = true
+            props.disabled = true
         })
 
         it('Should not toggle tab', () => {

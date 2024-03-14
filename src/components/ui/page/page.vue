@@ -53,7 +53,36 @@ export default {
     </div>
 </template>
 
-<style
-    lang="scss"
-    src="./page.scss"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
+
+.vui-page {
+    display: flex;
+    flex-flow: column;
+    // min-height: calc(100vh - 2rem);
+    background-color: $vui-color-white;
+    border-radius: .25rem;
+    @include vui-box-shadow;
+
+    .vui-page-header {
+        padding: 1rem;
+        font-size: 1.15rem;
+        line-height: 1.2rem;
+        font-weight: 500;
+        text-transform: none;
+        background-color: $vui-color-grey-light;
+        border-bottom: 1px solid $vui-color-grey;
+    }
+
+    .vui-page-body {
+        flex: 1 1 auto;
+        padding: 2rem 1rem;;
+    }
+
+    .vui-page-footer {
+        padding: .5rem;
+        background-color: $vui-color-grey-light;
+        border-top: 1px solid $vui-color-grey;
+    }
+}
+</style>

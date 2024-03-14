@@ -51,8 +51,8 @@ export default {
             if (!this.disabled) {
                 if (this.hasProp('checkedValue')) {
                     this.toggled = this.isChecked
-                    ? this.uncheckedValue
-                    : this.checkedValue
+                        ? this.uncheckedValue
+                        : this.checkedValue
                 } else {
                     this.toggled = !this.isChecked
                 }
@@ -91,7 +91,45 @@ export default {
     </div>
 </template>
 
-<style
-    lang="scss"
-    src="./checkbox.scss"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
+
+.vui-checkbox {
+    position: relative;
+    display: inline-flex;
+    padding-left: 1rem;
+    cursor: pointer;
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    label {
+        padding-left: 1rem;
+    }
+
+    &:before {
+        @include vui-glyph-regular;
+        content: '\f0c8';
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 1.5rem;
+    }
+
+    &.vui-checkbox--checked {
+        &:before {
+            content: '\f14a';
+        }
+    }
+
+    &.vui-checkbox--disabled {
+        cursor: not-allowed;
+
+        &:before {
+            color: darken($vui-color-grey-light, 25%);
+            background-color: $vui-color-grey-extra-light;
+        }
+    }
+}
+</style>

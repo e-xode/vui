@@ -1,3 +1,41 @@
+<script>
+import {
+    demonstrable,
+    translatable
+} from '@/composables/index.mjs'
+
+import VuiForm from '@/components/html/form/form.vue'
+import langs from '@/doc/views/component/html/form/translate/index.mjs'
+import doc from '@/doc/views/component/html/form/form.doc.mjs'
+
+export default {
+    name: 'ViewForm',
+    mixins: [
+        demonstrable
+    ],
+    setup () {
+        translatable(langs)
+        return {}
+    },
+    data () {
+        return {
+            form: {
+                email: null,
+                password: null
+            }
+        }
+    },
+    computed: {
+        doc () {
+            return doc
+        },
+        examples () {
+            return this.docExamples(VuiForm, doc)
+        }
+    }
+}
+</script>
+
 <template>
     <div class="view-form">
         <vui-grid
@@ -105,11 +143,10 @@
     </div>
 </template>
 
-<script
-    src="./form.mjs"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
 
-<style
-    lang="scss"
-    src="./form.scss"
-/>
+.view-form {
+
+}
+</style>

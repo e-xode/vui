@@ -27,7 +27,15 @@ export default {
     </header>
 </template>
 
-<style
-    lang="scss"
-    src="./header.scss"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
+
+.vui-header {
+    padding: 1rem;
+    background-color: $vui-color-grey-extra-light;
+    border: 1px solid $vui-color-grey;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+</style>

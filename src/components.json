@@ -102,11 +102,11 @@
         "icon": "fa-brands fa-vuejs",
         "label": "Grid unit",
         "name": "vui-grid-unit",
-        "path": "/components/layout/grid/unit/unit.vue",
+        "path": "/components/layout/unit/unit.vue",
         "type": "layout",
         "doc": {
             "name": "view-grid-unit",
-            "path": "/views/component/layout/grid/unit/unit.vue"
+            "path": "/views/component/layout/unit/unit.vue"
         }
     },
     {
@@ -129,6 +129,17 @@
         "doc": {
             "name": "view-list",
             "path": "/views/component/ui/list/list.vue"
+        }
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
+        "label": "Loader",
+        "name": "vui-loader",
+        "path": "/components/ui/loader/loader.vue",
+        "type": "ui",
+        "doc": {
+            "name": "view-loader",
+            "path": "/views/component/ui/loader/loader.vue"
         }
     },
     {

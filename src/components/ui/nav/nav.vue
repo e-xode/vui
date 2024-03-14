@@ -118,7 +118,78 @@ export default {
     </div>
 </template>
 
-<style
-    lang="scss"
-    src="./nav.scss"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
+
+.vui-nav {
+    display: inline-flex;
+
+    &.vui-nav--flat {
+        .vui-list.vui-nav-list {
+            box-shadow: none;
+
+            .vui-list-items {
+
+                .vui-list-items-item {
+
+                    &:first-of-type {
+                        padding-left: 0;
+                    }
+
+
+                    .vui-list-items-item-label {
+
+                        &:hover {
+                            background-color: transparent;
+                        }
+
+                        .vui-list-items-item-label-text {
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .vui-list.vui-nav-list {
+
+        .vui-list-items {
+            display: flex;
+
+            .vui-list-items-item {
+                cursor: pointer;
+
+                &:first-of-type {
+                    padding-left: 1rem;
+                }
+
+                .vui-list-items-item-label {
+                    border: none;
+                    padding-left: 0;
+
+                    i.fa-solid {
+                        color: $vui-color-grey;
+                    }
+
+                    .vui-list-items-item-label-text {
+                        padding-left: .75rem;
+                    }
+
+                    &.vui-list-items-item-label--selected {
+                        color: $vui-color-green;
+                        background-color: inherit;
+
+                        i.fa-solid {
+                            color: inherit;
+                        }
+
+                        .vui-list-items-item-label-text {
+                            color: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+</style>

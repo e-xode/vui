@@ -27,7 +27,15 @@ export default {
     </footer>
 </template>
 
-<style
-    lang="scss"
-    src="./footer.scss"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
+
+.vui-footer {
+    padding: 1rem;
+    text-align: right;
+    background-color: $vui-color-grey-extra-light;
+    border: 1px solid $vui-color-grey;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+</style>
