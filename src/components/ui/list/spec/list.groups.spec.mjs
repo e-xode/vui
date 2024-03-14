@@ -1,33 +1,29 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 import { options } from '@/composables/animable.mjs'
 import List from '../list.vue'
 
 describe('components/List.vue (with groups of objects arrays)', () => {
 
-    const propsData = {}
+    const props = {}
 
     const mountComponent = () => {
         return mount(List, {
-            ...setup,
-            propsData
+            ...main,
+            props
         })
     }
 
     beforeEach(() => {
-        jest.useFakeTimers()
-        propsData.disabled = false
-        propsData.selectable = false
-        propsData.items = []
-        propsData.modelValue = 4
-        propsData.keyword = null
+        props.disabled = false
+        props.selectable = false
+        props.items = []
+        props.modelValue = 4
+        props.keyword = null
     })
 
     afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
-        jest.useRealTimers()
     })
 
     const items = [
@@ -43,11 +39,11 @@ describe('components/List.vue (with groups of objects arrays)', () => {
     const item = items[1].value[1]
 
     beforeEach(() => {
-        propsData.items = items
-        propsData.modelValue = item
-        propsData.selectable = true
-        propsData.itemLabel = 'label'
-        propsData.itemValue = 'value'
+        props.items = items
+        props.modelValue = item
+        props.selectable = true
+        props.itemLabel = 'label'
+        props.itemValue = 'value'
     })
 
     it('Should render', () => {
@@ -75,7 +71,7 @@ describe('components/List.vue (with groups of objects arrays)', () => {
         expect(component.vm.isAnimating(1)).toBeFalsy()
         expect(Object.keys(component.vm.open).length).toBe(1)
 
-        jest.advanceTimersByTime(options.duration)
+        vi.advanceTimersByTime(options.duration)
 
         expect(component.vm.isToggled(0)).toBeTruthy()
         expect(component.vm.isToggled(1)).toBeFalsy()
@@ -88,8 +84,8 @@ describe('components/List.vue (with groups of objects arrays)', () => {
 
     describe('disabled', () => {
         beforeEach(() => {
-            propsData.disabled = true
-            propsData.modelValue = null
+            props.disabled = true
+            props.modelValue = null
         })
 
         it('Should not onToggle', () => {
@@ -105,8 +101,8 @@ describe('components/List.vue (with groups of objects arrays)', () => {
     describe('with filtered items', () => {
 
         beforeEach(() => {
-            propsData.selectable = true
-            propsData.keyword = 'label1'
+            props.selectable = true
+            props.keyword = 'label1'
         })
 
         it('Should return only one item', () => {
@@ -120,7 +116,7 @@ describe('components/List.vue (with groups of objects arrays)', () => {
     describe('with autoclose as false', () => {
 
         beforeEach(() => {
-            propsData.autoclose = false
+            props.autoclose = false
         })
 
         it('Should return only one item', () => {
@@ -136,7 +132,7 @@ describe('components/List.vue (with groups of objects arrays)', () => {
     describe('with expanded as true', () => {
 
         beforeEach(() => {
-            propsData.expanded = true
+            props.expanded = true
         })
 
         it('Should return only one item', () => {

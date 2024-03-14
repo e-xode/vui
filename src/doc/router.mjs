@@ -4,7 +4,7 @@ import jsonComponents from '@/components.json'
 const modules = import.meta.glob('@/doc/views/component/**/*.vue', {
     import: 'default'
 })
-const history = createWebHistory()
+const history = createWebHistory(import.meta.env.BASE_URL)
 const childrens = []
 
 for (const path in modules) {

@@ -1,3 +1,31 @@
+<script>
+import {
+    demonstrable,
+    translatable
+} from '@/composables/index.mjs'
+
+import VuiGrid from '@/components/layout/grid/grid.vue'
+import langs from '@/doc/views/component/layout/grid/translate/index.mjs'
+import doc from '@/doc/views/component/layout/grid/grid.doc.mjs'
+
+export default {
+    name: 'ViewGrid',
+    mixins: [demonstrable],
+    setup () {
+        translatable(langs)
+        return {}
+    },
+    computed: {
+        doc () {
+            return doc
+        },
+        examples () {
+            return this.docExamples(VuiGrid, doc)
+        }
+    }
+}
+</script>
+
 <template>
     <div class="view-grid">
         <vui-grid
@@ -46,11 +74,17 @@
     </div>
 </template>
 
-<script
-    src="./grid.mjs"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
 
-<style
-    lang="scss"
-    src="./grid.scss"
-/>
+.view-grid {
+    #vui-grid-1 {
+        padding: 1rem;
+        border: 1px solid $vui-color-grey;
+
+        .vui-grid-unit {
+            border: 1px solid $vui-color-grey;
+        }
+    }
+}
+</style>

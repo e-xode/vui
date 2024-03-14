@@ -27,6 +27,9 @@ export default {
         onClick () {
             if (!this.disabled) {
                 this.onAnimate()
+                if (this.route) {
+                    this.$router.push(this.route)
+                }
             }
         }
     }
@@ -69,7 +72,66 @@ export default {
     </div>
 </template>
 
-<style
-    lang="scss"
-    src="./button.scss"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
+
+.vui-button {
+    @include vui-box-shadow;
+    @include compose('vui-button');
+    @include animate('vui-button');
+    position: relative;
+    display: inline-flex;
+    padding: 0 1rem;
+    justify-content: center;
+    cursor: pointer;
+
+    .vui-button-holder {
+        position: relative;
+        margin-top: .15rem;
+        font-size: .85rem;
+        font-weight: 600;
+        line-height: 2rem;
+        color: inherit;
+        background-color: transparent;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+
+        .vui-button-icon {
+            color: $vui-color-grey-dark;
+        }
+    }
+
+    &.vui-button--flat {
+        box-shadow: none;
+    }
+
+    &.vui-button--with-label {
+        .vui-button-holder {
+            .vui-button-icon {
+                margin-right: .75rem;
+            }
+        }
+    }
+
+    &.vui-button--with-icon {
+    }
+
+    &.vui-button--disabled {
+        color: $vui-color-grey-dark;
+        background-color: $vui-color-grey;
+        border: 1px solid $vui-color-grey-dark;
+        opacity: .4;
+        cursor: default;
+
+        button {
+            color: inherit;
+            cursor: default;
+
+            .vui-button-icon {
+                color: inherit;
+            }
+        }
+    }
+}
+</style>

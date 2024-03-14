@@ -1,19 +1,12 @@
+import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'path'
-import { defineConfig } from 'vite'
+import { defineConfig, configDefaults } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 import pkg from './package.json'
 
 const __dirname = dirname('./')
 
 export default defineConfig({
-    root: resolve(__dirname, 'src'),
-    publicDir: resolve(__dirname, 'public'),
-    resolve: {
-        alias: {
-            '@': resolve(__dirname, 'src'),
-            'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js'
-        }
-    },
     build: {
         outDir: resolve(__dirname, 'dist'),
         emptyOutDir: true,
@@ -29,5 +22,55 @@ export default defineConfig({
     },
     plugins: [
         vue()
-    ]
+    ],
+    publicDir: resolve(__dirname, 'public'),
+    resolve: {
+        alias: {
+            '@': fileURLToPath(new URL('./src', import.meta.url)),
+            'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js'
+        }
+    },
+    root: resolve(__dirname, 'src'),
+    test: {
+        coverage: {
+            all: true,
+            exclude: [
+                'src/doc/**',
+                'src/components.mjs',
+                'src/composables/demonstrable.mjs',
+                'vite.*.mjs',
+                '**/*.json',
+                '**/translate/**',
+                '**/main.mjs'
+            ],
+            provider: 'istanbul',
+            reporter: ['cobertura','html']
+        },
+        deps: {
+            optimizer: {
+                web: {
+                    include: []
+                }
+            }
+        },
+        environment: 'jsdom',
+        environmentOptions: {
+            jsdom: {
+                resources: 'usable'
+            }
+        },
+        exclude: [...configDefaults.exclude, 'e2e/*'],
+        hookTimeout: 10000,
+        root: fileURLToPath(new URL('./', import.meta.url)),
+        setupFiles: [
+            './src/test/setup.mjs'
+        ],
+        server: {
+            deps: {
+                inline: []
+            }
+        },
+        silent : false,
+        testTimeout: 10000
+    }
 })

@@ -1,24 +1,25 @@
-import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { flushPromises, mount } from '@vue/test-utils'
+import main from '@/test/main.mjs'
 import Input from '../input.vue'
 
 describe('components/html/Input.vue (modelValue)', () => {
-    const propsData = {
+    const props = {
         placeholder: 'placeholder',
         modelValue: 'foo',
         type: 'text'
     }
     const mountComponent = () => {
         return mount(Input, {
-            ...setup,
-            propsData
+            ...main,
+            props
         })
     }
 
     afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
+    })
+
+    beforeEach(() => {
     })
 
     it('Should render', () => {
@@ -26,15 +27,15 @@ describe('components/html/Input.vue (modelValue)', () => {
 
         expect(component.exists()).toBeTruthy()
         expect(component.vm.typed).toBe('foo')
-        expect(component.vm.type).toBe(propsData.type)
-        expect(component.vm.placeholderValue).toEqual(propsData.placeholder)
+        expect(component.vm.type).toBe(props.type)
+        expect(component.vm.placeholderValue).toEqual(props.placeholder)
     })
 
     it('Should update from prop', async() => {
         const component = mountComponent()
 
         component.setProps({ value: 'bar' })
-        await component.vm.$nextTick()
+        await flushPromises()
 
         expect(component.vm.typed).toBe('bar')
     })
@@ -43,7 +44,7 @@ describe('components/html/Input.vue (modelValue)', () => {
         const component = mountComponent()
 
         component.vm.onInput({ target: { value: 'bar' } })
-        await component.vm.$nextTick()
+        await flushPromises()
 
         const emitted = component.emitted()
         expect(emitted['update:model-value'][0]).toEqual(['bar'])

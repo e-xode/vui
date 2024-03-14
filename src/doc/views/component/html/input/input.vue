@@ -1,3 +1,37 @@
+<script>
+import {
+    demonstrable,
+    translatable
+} from '@/composables/index.mjs'
+
+import VuiInput from '@/components/html/input/input.vue'
+import langs from '@/doc/views/component/html/input/translate/index.mjs'
+import doc from '@/doc/views/component/html/input/input.doc.mjs'
+
+export default {
+    name: 'ViewInput',
+    mixins: [demonstrable],
+    setup () {
+        translatable(langs)
+        return {}
+    },
+    data () {
+        return {
+            form: {
+            }
+        }
+    },
+    computed: {
+        doc () {
+            return doc
+        },
+        examples() {
+            return this.docExamples(VuiInput, doc)
+        }
+    }
+}
+</script>
+
 <template>
     <div class="view-input">
         <vui-grid
@@ -52,11 +86,21 @@
     </div>
 </template>
 
-<script
-    src="./input.mjs"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
 
-<style
-    lang="scss"
-    src="./input.scss"
-/>
+.view-input {
+    .vui-card {
+        .vui-card-body {
+            display: flex;
+            flex-flow: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .vui-input {
+                flex: 0 0 49%;
+            }
+        }
+    }
+}
+</style>

@@ -25,15 +25,16 @@ export default {
         :class="[
             'vui-alert',
             `vui-alert--${layout}`,
-            { 'vui-alert--with-icon' : icon },
             $props.class
         ]"
     >
         <slot name="prepend" />
-        <i
-            v-if="icon"
-            :class="['vui-alert-icon', icon]"
-        />
+        <slot name="icon">
+            <i
+                v-if="icon"
+                :class="['vui-alert-icon', icon]"
+            />
+        </slot>
         <slot>
             {{ text }}
         </slot>
@@ -41,7 +42,22 @@ export default {
     </div>
 </template>
 
-<style
-    lang="scss"
-    src="./alert.scss"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
+
+.vui-alert {
+    @include compose('vui-alert');
+    position: relative;
+    width: 100%;
+    padding: .75rem;
+
+    .vui-alert-icon {
+        font-size: 1rem;
+        margin-right: .75rem;
+
+        &:before {
+            color: $vui-color-grey-dark;
+        }
+    }
+}
+</style>

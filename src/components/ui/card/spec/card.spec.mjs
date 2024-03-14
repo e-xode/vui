@@ -1,26 +1,45 @@
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 import Card from '../card.vue'
 
 describe('components/Card.vue', () => {
 
-    const mountComponent = () => {
-        return mount(Card, {
-            ...setup
-        })
+    const props = {
     }
 
     afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
     })
 
     beforeEach(() => {
     })
 
-    it('Should render', () => {
-        const component = mountComponent()
-        expect(component.exists()).toBeTruthy()
+    describe('default', () => {
+        const mountComponent = () => mount(Card, {
+            ...main,
+            props
+        })
+
+        it('Should render', () => {
+            const component = mountComponent()
+            expect(component.exists()).toBeTruthy()
+            expect(component.classes('vui-card--flat')).toBeFalsy()
+        })
+    })
+
+    describe('classes', () => {
+        const mountComponent = () => mount(Card, {
+            ...main,
+            props: {
+                ...props,
+                flat: true
+            }
+        })
+
+        it('Should render', () => {
+            const component = mountComponent()
+            expect(component.exists()).toBeTruthy()
+            expect(component.classes('vui-card--flat')).toBeTruthy()
+        })
     })
 })

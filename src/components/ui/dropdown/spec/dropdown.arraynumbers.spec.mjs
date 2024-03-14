@@ -1,26 +1,23 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { flushPromises, mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 import { options } from '@/composables/animable.mjs'
 
 import Dropdown from '../dropdown.vue'
 
 describe('components/ui/Dropdown.vue (with array of numbers)', () => {
+
     afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
-        jest.useRealTimers()
     })
 
     beforeEach(() => {
-        jest.useFakeTimers()
     })
 
     const items = [0, 1, 2, 3, 4]
 
     const mountComponent = () => mount(Dropdown, {
-        ...setup,
-        propsData: {
+        ...main,
+        props: {
             items,
             modelValue: items[0]
         }
@@ -61,7 +58,7 @@ describe('components/ui/Dropdown.vue (with array of numbers)', () => {
         await component.vm.$nextTick()
         expect(placeholder.classes(`${rootclass}--toggled`)).toBeTruthy()
 
-        jest.advanceTimersByTime(options.duration)
+        vi.advanceTimersByTime(options.duration)
         expect(component.vm.animating).toBeFalsy()
         await component.vm.$nextTick()
         expect(placeholder.classes(`${rootclass}--animating`)).toBeFalsy()

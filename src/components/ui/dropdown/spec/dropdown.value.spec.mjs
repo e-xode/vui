@@ -1,36 +1,33 @@
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 
 import Dropdown from '../dropdown.vue'
 
 describe('components/ui/Dropdown.vue (with array of numbers)', () => {
+
     afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
-        jest.useRealTimers()
     })
 
     beforeEach(() => {
-        jest.useFakeTimers()
     })
 
     const items = [0, 1, 2, 3, 4]
-    const propsData = {
+    const props = {
         placeholder: 'placeholder',
         items,
         value: items[0]
     }
 
     const mountComponent = () => mount(Dropdown, {
-        ...setup,
-        propsData
+        ...main,
+        props
     })
 
     it('Should render', async() => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
-        expect(component.vm.placeholderLabel).toBe(propsData.placeholder)
+        expect(component.vm.placeholderLabel).toBe(props.placeholder)
         expect(component.vm.placeholderValue).toBe(items[0])
         expect(component.vm.selected).toBe(items[0])
     })

@@ -1,32 +1,28 @@
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 import List from '../list.vue'
 
 describe('components/List.vue (with array of numbers)', () => {
 
-    const propsData = {}
+    const props = {}
 
     const mountComponent = () => {
         return mount(List, {
-            ...setup,
-            propsData
+            ...main,
+            props
         })
     }
 
     beforeEach(() => {
-        jest.useFakeTimers()
-        propsData.disabled = false
-        propsData.selectable = false
-        propsData.items = [1, 2, 3, 4]
-        propsData.modelValue = 4
-        propsData.keyword = null
+        props.disabled = false
+        props.selectable = false
+        props.items = [1, 2, 3, 4]
+        props.modelValue = 4
+        props.keyword = null
     })
 
     afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
-        jest.useRealTimers()
     })
 
     it('Should render', () => {
@@ -37,8 +33,8 @@ describe('components/List.vue (with array of numbers)', () => {
 
     describe('disabled', () => {
         beforeEach(() => {
-            propsData.disabled = true
-            propsData.selectable = true
+            props.disabled = true
+            props.selectable = true
         })
 
         it('Should not emit onClick', () => {
@@ -54,7 +50,7 @@ describe('components/List.vue (with array of numbers)', () => {
     describe('enabled & selectable', () => {
 
         beforeEach(() => {
-            propsData.selectable = true
+            props.selectable = true
         })
 
         it('Should return if selected', () => {
@@ -82,8 +78,8 @@ describe('components/List.vue (with array of numbers)', () => {
     describe('with filtered items', () => {
 
         beforeEach(() => {
-            propsData.selectable = true
-            propsData.keyword = '1'
+            props.selectable = true
+            props.keyword = '1'
         })
 
         it('Should return only one item', () => {
@@ -96,7 +92,7 @@ describe('components/List.vue (with array of numbers)', () => {
 
     describe('enabled & unselectable', () => {
         beforeEach(() => {
-            propsData.selectable = false
+            props.selectable = false
         })
 
         it('Should not emit onClick', () => {

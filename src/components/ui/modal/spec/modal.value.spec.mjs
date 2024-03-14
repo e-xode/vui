@@ -1,10 +1,11 @@
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 import Modal from '../modal.vue'
 
 describe('components/Modal.vue (with value)', () => {
 
-    const propsData = {
+    const props = {
         value: true,
         showFooter: true,
         showFooterClose: true,
@@ -14,20 +15,15 @@ describe('components/Modal.vue (with value)', () => {
 
     const mountComponent = () => {
         return mount(Modal, {
-            ...setup,
-            propsData
+            ...main,
+            props
         })
     }
 
-    beforeEach(() => {
-        jest.useFakeTimers()
+    afterEach(() => {
     })
 
-    afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
-        jest.useRealTimers()
+    beforeEach(() => {
     })
 
     it('Should render', () => {
@@ -52,7 +48,7 @@ describe('components/Modal.vue (with value)', () => {
     describe('disabled', () => {
 
         beforeEach(() => {
-            propsData.disabled = true
+            props.disabled = true
         })
 
         it('Should not toggle', async() => {

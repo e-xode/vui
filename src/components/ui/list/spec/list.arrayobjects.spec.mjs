@@ -1,32 +1,28 @@
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 import List from '../list.vue'
 
 describe('components/List.vue (with objects arrays)', () => {
 
-    const propsData = {}
+    const props = {}
 
     const mountComponent = () => {
         return mount(List, {
-            ...setup,
-            propsData
+            ...main,
+            props
         })
     }
 
     beforeEach(() => {
-        jest.useFakeTimers()
-        propsData.disabled = false
-        propsData.selectable = false
-        propsData.items = []
-        propsData.modelValue = 4
-        propsData.keyword = null
+        props.disabled = false
+        props.selectable = false
+        props.items = []
+        props.modelValue = 4
+        props.keyword = null
     })
 
     afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
-        jest.useRealTimers()
     })
 
     describe('with array of objects (default label/value)', () => {
@@ -36,11 +32,11 @@ describe('components/List.vue (with objects arrays)', () => {
         ]
 
         beforeEach(() => {
-            propsData.items = items
-            propsData.modelValue = items[1]
-            propsData.selectable = true
-            propsData.itemLabel = undefined
-            propsData.itemValue = undefined
+            props.items = items
+            props.modelValue = items[1]
+            props.selectable = true
+            props.itemLabel = undefined
+            props.itemValue = undefined
         })
 
         it('Should render', () => {
@@ -53,8 +49,8 @@ describe('components/List.vue (with objects arrays)', () => {
         describe('with filtered items', () => {
 
             beforeEach(() => {
-                propsData.selectable = true
-                propsData.keyword = 'label1'
+                props.selectable = true
+                props.keyword = 'label1'
             })
 
             it('Should return only one item', () => {
@@ -85,11 +81,11 @@ describe('components/List.vue (with objects arrays)', () => {
         ]
 
         beforeEach(() => {
-            propsData.items = items
-            propsData.modelValue = items[1]
-            propsData.selectable = true
-            propsData.itemLabel = 'mylabel'
-            propsData.itemValue = 'myvalue'
+            props.items = items
+            props.modelValue = items[1]
+            props.selectable = true
+            props.itemLabel = 'mylabel'
+            props.itemValue = 'myvalue'
         })
 
         it('Should render', () => {
@@ -102,8 +98,8 @@ describe('components/List.vue (with objects arrays)', () => {
         describe('with filtered items', () => {
 
             beforeEach(() => {
-                propsData.selectable = true
-                propsData.keyword = 'label1'
+                props.selectable = true
+                props.keyword = 'label1'
             })
 
             it('Should return only one item', () => {

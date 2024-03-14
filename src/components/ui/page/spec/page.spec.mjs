@@ -1,19 +1,17 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 import Page from '../page.vue'
 
 describe('components/Page.vue', () => {
 
     const mountComponent = () => {
         return mount(Page, {
-            ...setup
+            ...main
         })
     }
 
     afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
     })
 
     beforeEach(() => {
@@ -27,7 +25,7 @@ describe('components/Page.vue', () => {
     it('Should emit outclick', () => {
         const component = mountComponent()
         const { componentGroupId } = component.vm
-        const emit = jest.spyOn(component.vm.$bus, 'emit')
+        const emit = vi.spyOn(component.vm.$bus, 'emit')
 
         component.vm.outclick()
 

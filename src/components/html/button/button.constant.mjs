@@ -2,6 +2,9 @@ const props = {
     icon: {
         type: String
     },
+    route: {
+        type: Object
+    },
     text: {
         type: String
     },

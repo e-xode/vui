@@ -1,3 +1,46 @@
+<script>
+import {
+    demonstrable,
+    translatable
+} from '@/composables/index.mjs'
+
+import VuiPager from '@/components/ui/pager/pager.vue'
+import doc from '@/doc/views/component/ui/pager/pager.doc.mjs'
+import langs from '@/doc/views/component/ui/pager/translate/index.mjs'
+
+export default {
+    name: 'ViewPager',
+    mixins: [
+        demonstrable
+    ],
+    setup () {
+        translatable(langs)
+        return {}
+    },
+    data() {
+        return {
+            pages: {}
+        }
+    },
+    computed: {
+        doc () {
+            return doc
+        },
+        examples () {
+            return this.docExamples(VuiPager, doc)
+        }
+    },
+    mounted() {
+        this.pages = this.examples.reduce((obj, example) => ({
+            ...obj,
+            [example.props.id]: example.modelValue
+        }), {})
+    },
+    methods: {
+    }
+}
+</script>>
+
 <template>
     <div class="view-pager">
         <vui-grid
@@ -44,11 +87,10 @@
     </div>
 </template>
 
-<script
-    src="./pager.mjs"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
 
-<style
-    lang="scss"
-    src="./pager.scss"
-/>
+.view-pager {
+
+}
+</style>

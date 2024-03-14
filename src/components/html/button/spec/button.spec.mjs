@@ -1,42 +1,37 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 import { options } from '@/composables/animable.mjs'
 
 import Button from '@/components/html/button/button.vue'
 
 describe('components/form/Button.vue', () => {
 
-    const propsData = {
-        type: 'submit',
-        layout: 'success'
+    const props = {
+        route: { name: 'foo' },
+        text: 'foo',
+        type: 'submit'
     }
 
-    const mountComponent = () => {
-        return mount(Button, {
-            ...setup,
-            propsData
-        })
-    }
+    const mountComponent = () => mount(Button, {
+        ...main,
+        props
+    })
 
     afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
-        jest.useRealTimers()
     })
 
     beforeEach(() => {
-        jest.useFakeTimers()
     })
 
     it('Should render', () => {
         const component = mountComponent()
         expect(component.exists()).toBeTruthy()
         expect(component.vm.type).toBe('submit')
-        expect(component.classes('vui-button--success')).toBeTruthy()
+        expect(component.vm.hasLabel).toBeTruthy()
     })
 
-    it('Should toggle and animate on click', async() => {
+    it('Should click and animate', async() => {
         const component = mountComponent()
 
         component.vm.onClick()
@@ -48,7 +43,7 @@ describe('components/form/Button.vue', () => {
         await component.vm.$nextTick()
         expect(component.classes('vui-button--toggled')).toBeTruthy()
 
-        jest.advanceTimersByTime(options.duration)
+        vi.advanceTimersByTime(options.duration)
         expect(component.vm.animating).toBeFalsy()
         await component.vm.$nextTick()
         expect(component.classes('vui-button--animating')).toBeFalsy()
@@ -57,5 +52,14 @@ describe('components/form/Button.vue', () => {
         expect(component.vm.toggled).toBeFalsy()
         await component.vm.$nextTick()
         expect(component.classes('vui-button--toggled')).toBeFalsy()
+    })
+
+    it('Should click and route', async() => {
+        const component = mountComponent()
+        vi.spyOn(component.vm.$router, 'push')
+
+        component.vm.onClick()
+
+        expect(component.vm.$router.push).toHaveBeenCalledWith(props.route)
     })
 })

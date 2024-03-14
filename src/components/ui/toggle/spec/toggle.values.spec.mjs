@@ -1,10 +1,11 @@
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { mount, flushPromises } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 import Toggle from '../toggle.vue'
 
 describe('components/ui/Toggle.vue (values)', () => {
 
-    const propsData = {
+    const props = {
         modelValue: 'foo',
         checkedValue: 'foo',
         uncheckedValue: 'bar'
@@ -12,20 +13,15 @@ describe('components/ui/Toggle.vue (values)', () => {
 
     const mountComponent = () => {
         return mount(Toggle, {
-            ...setup,
-            propsData
+            ...main,
+            props
         })
     }
 
-    beforeEach(() => {
-        jest.useFakeTimers()
+    afterEach(() => {
     })
 
-    afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
-        jest.useRealTimers()
+    beforeEach(() => {
     })
 
     it('Should render', async() => {
@@ -52,7 +48,7 @@ describe('components/ui/Toggle.vue (values)', () => {
     describe('disabled', () => {
 
         beforeEach(() => {
-            propsData.disabled = true
+            props.disabled = true
         })
 
         it('Should not onToggle', () => {

@@ -1,3 +1,23 @@
+<script>
+import {
+    translatable
+} from '@/composables/index.mjs'
+
+import langs from '@/doc/views/index/translate/index.mjs'
+import jsonPackage from '@/../package.json'
+
+export default {
+    name: 'ViewIndex',
+    computed: {
+        version () {
+            return jsonPackage.version
+        }
+    },
+    created () {
+        translatable(langs)
+    }
+}
+</script>
 <template>
     <div class="view-index">
         <h1>
@@ -12,15 +32,15 @@
                 v{{ version }}
             </p>
         </div>
-        <router-link
-            :to="{ name: 'ViewStart' }"
-            class="vui-button vui-button--with-icon vui-button--get-started"
+        <vui-button
+            :route="{ name: 'ViewStart' }"
+            class="vui-button--get-started"
         >
             <span class="vui-button-holder">
                 <i class="vui-button-icon fa-solid fa-book-open-reader" />
                 {{ $t('page.index.get-started') }}
             </span>
-        </router-link>
+        </vui-button>
         <a
             class="vui-button vui-button--with-icon vui-button--github"
             href="https://github.com/e-xode/v-ui"
@@ -33,11 +53,56 @@
     </div>
 </template>
 
-<script
-    src="./index.mjs"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
 
-<style
-    lang="scss"
-    src="./index.scss"
-/>
+.view-index {
+    text-align: center;
+
+    h1 {
+        font-size: 2rem;
+        text-transform: none;
+    }
+
+    .fa-brands.fa-vuejs {
+        display: block;
+        font-size: 15rem;
+        color: $vui-color-green;
+    }
+
+    .description {
+        p {
+            max-width: 400px;
+            margin: 0 auto;
+            font-size: 1rem;
+            line-height: 1.2rem;
+        }
+    }
+
+    .vui-button {
+        margin: 1rem;
+
+        .vui-button-holder {
+        }
+
+        &.vui-button--get-started {
+            @include animate('vui-button--get-started');
+        }
+
+        &.vui-button--github {
+            @include animate('vui-button--get-started');
+            background-color: lighten($vui-color-black, 5%);
+            border-color: $vui-color-black;
+
+            .vui-button-holder,
+            .vui-button-icon {
+                color: $vui-color-grey-light;
+            }
+
+            &:hover {
+                background-color: lighten($vui-color-black, 30%);
+            }
+        }
+    }
+}
+</style>

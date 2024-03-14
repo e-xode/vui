@@ -174,7 +174,68 @@ export default {
     </div>
 </template>
 
-<style
-    lang="scss"
-    src="./dropdown.scss"
-/>
+<style lang="scss">
+@import "@/scss/import.scss";
+
+.vui-dropdown {
+    position: relative;
+    display: inline-flex;
+    min-width: 200px;
+    border-radius: .25rem;
+
+    .vui-dropdown-placeholder {
+        @include animate('vui-dropdown-placeholder');
+        @include vui-box-shadow;
+        background-color: $vui-color-white;
+        width: 100%;
+        cursor: pointer;
+
+        &:before {
+            @include vui-glyph-solid;
+            position: absolute;
+            top: .5rem;
+            right: 1rem;
+            content: '\f0dd';
+            color: $vui-color-grey;
+        }
+
+        &:hover:before {
+            color: $vui-color-grey-dark;
+        }
+
+        &.vui-dropdown-placeholder--toggled:before {
+            content: '\f0d8';
+            top: .7rem;
+            color: $vui-color-grey-dark;
+        }
+
+        .vui-input.vui-dropdown-placeholder-label {
+            width: 100%;
+            padding: .25rem .5rem .25rem 1rem;
+            margin: 0;
+            background-color: transparent;
+
+            input[type=text] {
+                cursor: pointer;
+                border: none;
+                background-color: transparent;
+            }
+        }
+    }
+
+    .vui-list.vui-dropdown-list {
+        position: absolute;
+        top: 2.5rem;
+        left: 0;
+        right: 0;
+        background-color: $vui-color-white;
+        z-index: 2;
+
+        .vui-list-items {
+            .vui-list-items-item {
+                cursor: pointer;
+            }
+        }
+    }
+}
+</style>

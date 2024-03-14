@@ -1,32 +1,28 @@
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
-import setup from '@/test/setup.mjs'
+import main from '@/test/main.mjs'
 import List from '../list.vue'
 
 describe('components/List.vue (value)', () => {
 
-    const propsData = {}
+    const props = {}
 
     const mountComponent = () => {
         return mount(List, {
-            ...setup,
-            propsData
+            ...main,
+            props
         })
     }
 
     beforeEach(() => {
-        jest.useFakeTimers()
-        propsData.disabled = false
-        propsData.selectable = false
-        propsData.items = [1, 2, 3, 4]
-        propsData.value = 4
-        propsData.keyword = null
+        props.disabled = false
+        props.selectable = false
+        props.items = [1, 2, 3, 4]
+        props.value = 4
+        props.keyword = null
     })
 
     afterEach(() => {
-        jest.restoreAllMocks()
-        jest.resetAllMocks()
-        jest.clearAllTimers()
-        jest.useRealTimers()
     })
 
     it('Should render', () => {
