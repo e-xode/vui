@@ -12,7 +12,6 @@ export default defineConfig({
         emptyOutDir: true,
         lib: {
             entry: resolve(__dirname, 'src/components.mjs'),
-            fileName: (format) => `vui.${format}.js`,
             formats: ['cjs', 'esm', 'umd'],
             name: 'vui'
         },
@@ -26,8 +25,7 @@ export default defineConfig({
     publicDir: resolve(__dirname, 'public'),
     resolve: {
         alias: {
-            '@': fileURLToPath(new URL('./src', import.meta.url)),
-            'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js'
+            '@': fileURLToPath(new URL('./src', import.meta.url))
         }
     },
     root: resolve(__dirname, 'src'),
