@@ -1,5 +1,5 @@
 
-# Vui, Yet another Vuejs U.I Library
+# Vui, Another Vuejs U.I Library
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![CircleCI](https://dl.circleci.com/status-badge/img/gh/e-xode/vui/tree/master.svg?style=svg&circle-token=d8353b320a36159da949b935eba5cbdb41502a60)](https://dl.circleci.com/status-badge/redirect/gh/e-xode/vui/tree/master) [![Coverage Status](https://coveralls.io/repos/github/e-xode/vui/badge.svg?branch=master)](https://coveralls.io/github/e-xode/vui?branch=master) ![NPM Version](https://img.shields.io/npm/v/%40e-xode%2Fvui?color=green)
 
@@ -7,7 +7,7 @@
 
 ## Features
 
-- 3 types of web components: Html, UI, and layout, written in a way to provide simple implementation and easy customization. **22 components are available** in the current release.
+- 3 types of web components: Html, UI, and layout, written in a way to provide simple implementation and easy customization. **23 components are available** in the current release.
 
 - Styles and layouts allow easy CSS overriding (no inline definitions, no messy !importants, ...).
 - Compatible with server rendering ( [SSR](https://vuejs.org/guide/scaling-up/ssr.html) ).
