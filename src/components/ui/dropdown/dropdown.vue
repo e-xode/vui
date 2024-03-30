@@ -77,7 +77,7 @@ export default {
         labelFromItem (value) {
             const { itemValue, itemLabel } = this
             return this.items.reduce((current, item) => {
-                if (typeof item[itemValue] === 'object') {
+                if (Array.isArray(item[itemValue])) {
                     return this.labelFromChild(item, current, value)
                 }
                 return item[itemValue] === value
