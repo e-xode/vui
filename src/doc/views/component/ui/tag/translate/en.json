@@ -1,9 +1,10 @@
 {
-    "page.component.tag.default": "Default type tag",
-    "page.component.tag.error": "Error type tag",
-    "page.component.tag.success": "Success type tag",
-    "page.component.tag.warning": "Warning type tag",
+    "page.component.tag.doc.prop.disabled": "Binds the disabled state",
+    "page.component.tag.doc.prop.error": "Error type tag",
+    "page.component.tag.doc.prop.success": "Success type tag",
+    "page.component.tag.doc.prop.warning": "Warning type tag",
     "page.component.tag.doc.prop.icon": "Class name of the icon to prepend",
     "page.component.tag.doc.prop.text": "Text content of the tag",
-    "page.component.tag.doc.prop.layout": "Layout of the tag"
+    "page.component.tag.doc.prop.layout": "Layout of the tag",
+    "page.component.card.doc.slot.default": "Default type slot"
 }

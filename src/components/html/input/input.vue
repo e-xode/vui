@@ -44,7 +44,9 @@ export default {
     },
     methods: {
         onInput (event) {
-            this.typed = event.target.value
+            this.typed = this.type === 'number'
+                ? event.target.valueAsNumber
+                : event.target.value
             this.$emit('input', event)
             this.$emit('update:model-value', this.typed)
         }

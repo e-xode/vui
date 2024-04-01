@@ -1,5 +1,9 @@
 export default {
     attrs: [
+        {
+            name: 'flat',
+            text: 'page.component.footer.doc.attr.flat'
+        }
     ],
     examples: [
         {
@@ -16,6 +20,21 @@ export default {
         }
     ],
     props: [
+        {
+            tag: 'disabled',
+            type: 'Boolean',
+            text: 'page.component.footer.doc.prop.disabled'
+        },
+        {
+            tag: 'layout',
+            type: 'String',
+            text: 'page.component.footer.doc.prop.layout'
+        },
+        {
+            tag: 'loading',
+            type: 'Boolean',
+            text: 'page.component.footer.doc.prop.loading'
+        }
     ],
     slots: [
         {

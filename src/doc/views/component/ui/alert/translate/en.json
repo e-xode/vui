@@ -4,7 +4,9 @@
     "page.component.alert.success": "Success custom alert",
     "page.component.alert.warning": "Warning custom alert",
     "page.component.alert.text-2": "Advanced alert",
+    "page.component.alert.doc.prop.disabled": "Binds the disabled state",
     "page.component.alert.doc.prop.icon": "Class name of the icon to prepend",
+    "page.component.alert.doc.prop.loading": "Binds the loading state",
     "page.component.alert.doc.prop.text": "Text content of the alert",
     "page.component.alert.doc.prop.layout": "The alert layout: [error, success, warning]",
     "page.component.card.doc.slot.default": "Default slot content"

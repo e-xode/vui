@@ -27,6 +27,21 @@ export default {
         }
     ],
     props: [
+        {
+            tag: 'disabled',
+            type: 'Boolean',
+            text: 'page.component.card.doc.prop.disabled'
+        },
+        {
+            tag: 'layout',
+            type: 'String',
+            text: 'page.component.card.doc.prop.layout'
+        },
+        {
+            tag: 'loading',
+            type: 'Boolean',
+            text: 'page.component.card.doc.prop.loading'
+        }
     ],
     slots: [
         {

@@ -27,27 +27,32 @@ export default {
         {
             tag: 'items',
             type: 'Array',
-            text: 'page.component.modal.doc.prop.items'
+            text: 'page.component.tabs.doc.prop.disabled'
+        },
+        {
+            tag: 'items',
+            type: 'Array',
+            text: 'page.component.tabs.doc.prop.items'
         },
         {
             tag: 'item-label',
             type: 'String',
-            text: 'page.component.modal.doc.prop.item-label'
+            text: 'page.component.tabs.doc.prop.item-label'
         },
         {
             tag: 'item-value',
             type: 'String',
-            text: 'page.component.modal.doc.prop.item-value'
+            text: 'page.component.tabs.doc.prop.item-value'
         },
         {
             tag: 'v-model',
             type: 'Boolean',
-            text: 'page.component.modal.doc.prop.vmodel'
+            text: 'page.component.tabs.doc.prop.vmodel'
         },
         {
             tag: 'value',
             type: 'Boolean',
-            text: 'page.component.modal.doc.prop.value'
+            text: 'page.component.tabs.doc.prop.value'
         }
     ],
     slots: [

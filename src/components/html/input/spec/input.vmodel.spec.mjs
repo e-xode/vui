@@ -20,6 +20,8 @@ describe('components/html/Input.vue (modelValue)', () => {
     })
 
     beforeEach(() => {
+        props.modelValue = 'foo'
+        props.type = 'text'
     })
 
     it('Should render', () => {
@@ -48,5 +50,32 @@ describe('components/html/Input.vue (modelValue)', () => {
 
         const emitted = component.emitted()
         expect(emitted['update:model-value'][0]).toEqual(['bar'])
+    })
+
+    describe('with number', () => {
+
+        beforeEach(() => {
+            props.modelValue = 1
+            props.type = 'number'
+        })
+
+        it('Should render', () => {
+            const component = mountComponent()
+
+            expect(component.exists()).toBeTruthy()
+            expect(component.vm.typed).toBe(1)
+            expect(component.vm.type).toBe(props.type)
+            expect(component.vm.placeholderValue).toEqual(props.placeholder)
+        })
+
+        it('Should emit on modelValue change', async() => {
+            const component = mountComponent()
+
+            component.vm.onInput({ target: { valueAsNumber: 2 } })
+            await flushPromises()
+
+            const emitted = component.emitted()
+            expect(emitted['update:model-value'][0]).toEqual([2])
+        })
     })
 })

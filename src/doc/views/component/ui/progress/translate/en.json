@@ -1,4 +1,5 @@
 {
+    "page.component.progress.doc.prop.disabled": "Bind the disabled state",
     "page.component.progress.doc.prop.layout": "The progress-bar layout: [error, success, warning]",
     "page.component.progress.doc.prop.min": "Minimum value of progressbar",
     "page.component.progress.doc.prop.max": "Maximum value of progressbar",

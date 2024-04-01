@@ -7,7 +7,7 @@ services:
         volumes:
             - '.:/app'
         ports:
-            - 3001:3001
+            - ${NODE_PORT}:${NODE_PORT}
         env_file:
             - ./.env
         networks:
