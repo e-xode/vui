@@ -62,6 +62,11 @@ export default {
     ],
     props: [
         {
+            tag: 'disabled',
+            type: 'String',
+            text: 'page.component.tag.doc.prop.disabled'
+        },
+        {
             tag: 'icon',
             type: 'String',
             text: 'page.component.tag.doc.prop.icon'

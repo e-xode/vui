@@ -1,5 +1,9 @@
 export default {
     attrs: [
+        {
+            name: 'flat',
+            text: 'page.component.header.doc.attr.flat'
+        }
     ],
     examples: [
         {
@@ -14,6 +18,21 @@ export default {
         }
     ],
     props: [
+        {
+            tag: 'disabled',
+            type: 'Boolean',
+            text: 'page.component.header.doc.prop.disabled'
+        },
+        {
+            tag: 'layout',
+            type: 'String',
+            text: 'page.component.header.doc.prop.layout'
+        },
+        {
+            tag: 'loading',
+            type: 'Boolean',
+            text: 'page.component.header.doc.prop.loading'
+        }
     ],
     slots: [
         {

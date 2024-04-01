@@ -1,4 +1,8 @@
 {
     "page.component.footer.text": "My footer content",
-    "page.component.footer.doc.slot.default": "Default slot for footer content"
+    "page.component.footer.doc.slot.default": "Default slot for footer content",
+    "page.component.footer.doc.attr.flat": "Enables the flat style layout",
+    "page.component.footer.doc.prop.disabled": "Binds the disabled state",
+    "page.component.footer.doc.prop.layout": "The card layout: [error, success, warning]",
+    "page.component.footer.doc.prop.loading": "Binds the loading state"
 }

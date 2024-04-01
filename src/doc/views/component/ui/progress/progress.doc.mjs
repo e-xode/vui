@@ -35,6 +35,11 @@ export default {
     ],
     props: [
         {
+            tag: 'disabled',
+            type: 'Boolean',
+            text: 'page.component.progress.doc.prop.disabled'
+        },
+        {
             tag: 'layout',
             type: 'String',
             text: 'page.component.progress.doc.prop.layout'

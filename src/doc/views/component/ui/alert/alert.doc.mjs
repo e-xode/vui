@@ -62,9 +62,19 @@ export default {
     ],
     props: [
         {
+            tag: 'disabled',
+            type: 'Boolean',
+            text: 'page.component.alert.doc.prop.disabled'
+        },
+        {
             tag: 'icon',
             type: 'String',
             text: 'page.component.alert.doc.prop.icon'
+        },
+        {
+            tag: 'loading',
+            type: 'Boolean',
+            text: 'page.component.alert.doc.prop.loading'
         },
         {
             tag: 'text',
@@ -80,7 +90,7 @@ export default {
     slots: [
         {
             name: 'default',
-            text: 'page.component.card.doc.slot.default'
+            text: 'page.component.alert.doc.slot.default'
         }
     ]
 }

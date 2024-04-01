@@ -1,5 +1,8 @@
 {
     "page.component.card.doc.attr.flat": "Enables the flat style layout",
+    "page.component.card.doc.prop.disabled": "Binds the disabled state",
+    "page.component.card.doc.prop.layout": "The card layout: [error, success, warning]",
+    "page.component.card.doc.prop.loading": "Binds the loading state",
     "page.component.card.example.header": "My card header content",
     "page.component.card.example.body": "My card body content",
     "page.component.card.example.footer": "My card footer content",

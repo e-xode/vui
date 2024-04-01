@@ -1,7 +1,8 @@
 {
-    "page.component.modal.doc.prop.items": "List of tabs and label / value",
-    "page.component.modal.doc.prop.item-label": "Label key name foreach tab",
-    "page.component.modal.doc.prop.item-value": "Value key name foreach tab",
-    "page.component.modal.doc.prop.vmodel": "Binds the active tab",
-    "page.component.modal.doc.prop.value": "Define the active tab"
+    "page.component.tabs.doc.prop.disabled": "Binds the disabled state",
+    "page.component.tabs.doc.prop.items": "List of tabs and label / value",
+    "page.component.tabs.doc.prop.item-label": "Label key name foreach tab",
+    "page.component.tabs.doc.prop.item-value": "Value key name foreach tab",
+    "page.component.tabs.doc.prop.vmodel": "Binds the active tab",
+    "page.component.tabs.doc.prop.value": "Define the active tab"
 }
