@@ -75,7 +75,7 @@
     "dependencies": {
         "axios": "1.6.8",
         "dayjs": "1.11.10",
-        "@fortawesome/fontawesome-free": "6.5.1",
+        "@fortawesome/fontawesome-free": "6.5.2",
         "highlight.js": "11.9.0",
         "mitt": "3.0.1",
         "sass": "^1.72.0",
