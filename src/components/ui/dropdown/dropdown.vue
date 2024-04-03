@@ -132,14 +132,14 @@ export default {
                     :value="keyword"
                     type="text"
                     class="vui-dropdown-placeholder-label"
-                    :placeholder="placeholderValue"
+                    :placeholder="`${placeholderValue}`"
                     @input="onInput"
                 />
             </slot>
         </div>
         <vui-list
             v-if="toggled"
-            v-model="selected"
+            :value="selected"
             v-bind="$attrs"
             class="vui-dropdown-list"
             :group-id="componentGroupId"
