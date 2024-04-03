@@ -26,7 +26,12 @@ export default {
 <template>
     <div
         :id="componentId"
-        :class="['vui-page', $props.class]"
+        :class="[
+            'vui-page',
+            `vui-page--${layout}`,
+            { 'vui-page--flat': hasAttribute('flat') },
+            $props.class
+        ]"
         @click="outclick"
     >
         <slot name="prepend" />
@@ -57,12 +62,14 @@ export default {
 @import "@/scss/import.scss";
 
 .vui-page {
+    @include compose('vui-page');
     display: flex;
     flex-flow: column;
-    // min-height: calc(100vh - 2rem);
-    background-color: $vui-color-white;
     border-radius: .25rem;
-    @include vui-box-shadow;
+
+    &:not(.vui-page--flat) {
+        @include vui-box-shadow;
+    }
 
     .vui-page-header {
         padding: 1rem;
@@ -70,8 +77,9 @@ export default {
         line-height: 1.2rem;
         font-weight: 500;
         text-transform: none;
-        background-color: $vui-color-grey-light;
-        border-bottom: 1px solid $vui-color-grey;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: inherit;
     }
 
     .vui-page-body {
@@ -81,8 +89,9 @@ export default {
 
     .vui-page-footer {
         padding: .5rem;
-        background-color: $vui-color-grey-light;
-        border-top: 1px solid $vui-color-grey;
+        border-top-style: solid;
+        border-top-width: 1px;
+        border-top-color: inherit;
     }
 }
 </style>

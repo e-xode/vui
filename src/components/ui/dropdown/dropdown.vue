@@ -98,9 +98,11 @@ export default {
                 : null
         },
         onToggle (selected) {
-            this.selected = selected
             this.keyword = null
             this.blur()
+            if (!this.hasProp('value')) {
+                this.selected = selected
+            }
             this.$emit('update:model-value', selected)
         }
     }

@@ -9,13 +9,13 @@ export default {
         const modules = import.meta.glob('@/components/**/*.vue', {
             import: 'default'
         })
-        for (const rpath in modules) {
-            const path = rpath.replace('..', '')
+        for (const _path in modules) {
+            const path = _path.substring(2)
             const component = jsonComponents.find((c) => c.path === path)
             if (component) {
                 app.component(
                     component.name,
-                    defineAsyncComponent(modules[rpath])
+                    defineAsyncComponent(modules[_path])
                 )
             }
         }
