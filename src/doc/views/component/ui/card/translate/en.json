@@ -6,7 +6,9 @@
     "page.component.card.example.header": "My card header content",
     "page.component.card.example.body": "My card body content",
     "page.component.card.example.footer": "My card footer content",
+    "page.component.card.doc.slot.prepend": "Slot used to prepend content",
     "page.component.card.doc.slot.header": "Slot embedding the card header content",
     "page.component.card.doc.slot.body": "Slot for body content",
-    "page.component.card.doc.slot.footer": "Slot for footer content"
+    "page.component.card.doc.slot.footer": "Slot for footer content",
+    "page.component.card.doc.slot.append": "Slot used to append content"
 }

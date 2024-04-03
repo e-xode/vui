@@ -21,6 +21,7 @@ export default {
         :id="componentId"
         :class="[
             'vui-card',
+            `vui-card--${layout}`,
             { 'vui-card--flat': hasAttribute('flat') },
             $props.class
         ]"
@@ -53,6 +54,7 @@ export default {
 @import "@/scss/import.scss";
 
 .vui-card {
+    @include compose('vui-card');
     display: flex;
     flex-flow: column;
     background-color: $vui-color-white;
@@ -62,31 +64,28 @@ export default {
         @include vui-box-shadow;
     }
 
-    &.vui-card--flat {
-        border: 1px solid $vui-color-grey-light;
-    }
-
     .vui-card-header {
-        padding: 1rem;
+        padding: .75rem 1rem .75rem 1rem;
         font-size: 1.15rem;
         line-height: 1.2rem;
         font-weight: 500;
         text-transform: none;
-        background-color: $vui-color-grey-extra-light;
-        border-top: 1px solid $vui-color-grey-light;
-        border-bottom: 1px solid $vui-color-grey-light;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: inherit;
     }
 
     .vui-card-body {
         flex: 1 1 auto;
-        padding: 1rem;
+        padding: 2rem 1rem;
     }
 
     .vui-card-footer {
         padding: .5rem 1rem .5rem 1rem;
         text-align: right;
-        background-color: $vui-color-grey-extra-light;
-        border-top: 1px solid $vui-color-grey-light;
+        border-top-style: solid;
+        border-top-width: 1px;
+        border-top-color: inherit;
     }
 }
 </style>

@@ -8,7 +8,9 @@ export default {
     examples: [
         {
             markup: `
-                <vui-card>
+                <vui-card
+                    layout="warning"
+                >
                     <template #header>
                         My card header content
                     </template>
@@ -21,6 +23,33 @@ export default {
                 </vui-card>
             `,
             props: {
+                layout: 'warning'
+            },
+            body: 'page.component.card.example.body',
+            header: 'page.component.card.example.header',
+            footer: 'page.component.card.example.footer'
+        },
+        {
+            markup: `
+                <vui-card
+                    layout="success"
+                />
+            `,
+            props: {
+                layout: 'success'
+            },
+            body: 'page.component.card.example.body',
+            header: 'page.component.card.example.header',
+            footer: 'page.component.card.example.footer'
+        },
+        {
+            markup: `
+                <vui-card
+                    layout="error"
+                />
+            `,
+            props: {
+                layout: 'error'
             },
             body: 'page.component.card.example.body',
             header: 'page.component.card.example.header',
@@ -57,6 +86,10 @@ export default {
     ],
     slots: [
         {
+            name: '#prepend',
+            text: 'page.component.card.doc.slot.prepend'
+        },
+        {
             name: '#header',
             text: 'page.component.card.doc.slot.header'
         },
@@ -67,6 +100,10 @@ export default {
         {
             name: '#footer',
             text: 'page.component.card.doc.slot.footer'
+        },
+        {
+            name: '#append',
+            text: 'page.component.card.doc.slot.append'
         }
     ]
 }

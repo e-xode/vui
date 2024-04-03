@@ -5,6 +5,24 @@
     border: 1px solid $vui-color-grey;
     border-radius: .25rem;
 
+    &.#{$class}--default {
+        color: $vui-color-black;
+        background-color: $vui-color-white;
+        border: 1px solid $vui-color-grey;
+
+        .#{$class}-icon {
+            &:before {
+                color: $vui-color-black;
+            }
+        }
+
+        &.#{$class}--loading {
+            .#{$class}-loader {
+                background-color: $vui-color-black;
+            }
+        }
+    }
+
     &.#{$class}--error {
         color: darken( $vui-color-red, 20%);
         background-color: lighten($vui-color-red, 20%);
