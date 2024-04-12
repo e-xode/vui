@@ -1,13 +1,13 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { mount, flushPromises } from '@vue/test-utils'
 import main from '@/test/main.mjs'
-import Checkbox from '../checkbox.vue'
+import Radio from '../radio.vue'
 
-describe('components/html/Checkbox.vue', () => {
+describe('components/html/Radio.vue', () => {
 
     let props = {}
 
-    const mountComponent = () => mount(Checkbox, {
+    const mountComponent = () => mount(Radio, {
         ...main,
         props
     })
@@ -31,12 +31,12 @@ describe('components/html/Checkbox.vue', () => {
 
             await flushPromises()
 
-            expect(component.classes('vui-checkbox--default')).toBeTruthy()
-            expect(component.classes('vui-checkbox--with-icon')).toBeTruthy()
-            expect(component.classes('vui-checkbox--with-label')).toBeTruthy()
-            expect(component.classes('vui-checkbox--loading')).toBeTruthy()
-            expect(component.classes('vui-checkbox--checked')).toBeFalsy()
-            expect(component.classes('vui-checkbox--disabled')).toBeFalsy()
+            expect(component.classes('vui-radio--default')).toBeTruthy()
+            expect(component.classes('vui-radio--with-icon')).toBeTruthy()
+            expect(component.classes('vui-radio--with-label')).toBeTruthy()
+            expect(component.classes('vui-radio--loading')).toBeTruthy()
+            expect(component.classes('vui-radio--checked')).toBeFalsy()
+            expect(component.classes('vui-radio--disabled')).toBeFalsy()
             expect(component.vm.hasLabel).toBeTruthy()
         })
     })
@@ -48,12 +48,12 @@ describe('components/html/Checkbox.vue', () => {
 
             await flushPromises()
 
-            expect(component.classes('vui-checkbox--default')).toBeTruthy()
-            expect(component.classes('vui-checkbox--with-icon')).toBeTruthy()
-            expect(component.classes('vui-checkbox--with-label')).toBeFalsy()
-            expect(component.classes('vui-checkbox--loading')).toBeFalsy()
-            expect(component.classes('vui-checkbox--checked')).toBeFalsy()
-            expect(component.classes('vui-checkbox--disabled')).toBeFalsy()
+            expect(component.classes('vui-radio--default')).toBeTruthy()
+            expect(component.classes('vui-radio--with-icon')).toBeTruthy()
+            expect(component.classes('vui-radio--with-label')).toBeFalsy()
+            expect(component.classes('vui-radio--loading')).toBeFalsy()
+            expect(component.classes('vui-radio--checked')).toBeFalsy()
+            expect(component.classes('vui-radio--disabled')).toBeFalsy()
             expect(component.vm.hasLabel).toBeFalsy()
         })
     })
@@ -69,7 +69,7 @@ describe('components/html/Checkbox.vue', () => {
 
             await flushPromises()
 
-            expect(component.classes('vui-checkbox--error')).toBeTruthy()
+            expect(component.classes('vui-radio--error')).toBeTruthy()
         })
     })
 
@@ -84,7 +84,7 @@ describe('components/html/Checkbox.vue', () => {
 
             await flushPromises()
 
-            expect(component.classes('vui-checkbox--success')).toBeTruthy()
+            expect(component.classes('vui-radio--success')).toBeTruthy()
         })
     })
 
@@ -99,7 +99,7 @@ describe('components/html/Checkbox.vue', () => {
 
             await flushPromises()
 
-            expect(component.classes('vui-checkbox--warning')).toBeTruthy()
+            expect(component.classes('vui-radio--warning')).toBeTruthy()
         })
     })
 })

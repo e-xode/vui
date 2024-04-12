@@ -1,13 +1,13 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { mount, flushPromises } from '@vue/test-utils'
 import main from '@/test/main.mjs'
-import Checkbox from '../checkbox.vue'
+import Input from '../input.vue'
 
-describe('components/html/Checkbox.vue', () => {
+describe('components/html/Input.vue', () => {
 
     let props = {}
 
-    const mountComponent = () => mount(Checkbox, {
+    const mountComponent = () => mount(Input, {
         ...main,
         props
     })
@@ -21,7 +21,6 @@ describe('components/html/Checkbox.vue', () => {
         beforeEach(() => {
             props = {
                 layout: 'default',
-                text: 'foo',
                 loading: true
             }
         })
@@ -31,13 +30,10 @@ describe('components/html/Checkbox.vue', () => {
 
             await flushPromises()
 
-            expect(component.classes('vui-checkbox--default')).toBeTruthy()
-            expect(component.classes('vui-checkbox--with-icon')).toBeTruthy()
-            expect(component.classes('vui-checkbox--with-label')).toBeTruthy()
-            expect(component.classes('vui-checkbox--loading')).toBeTruthy()
-            expect(component.classes('vui-checkbox--checked')).toBeFalsy()
-            expect(component.classes('vui-checkbox--disabled')).toBeFalsy()
-            expect(component.vm.hasLabel).toBeTruthy()
+            expect(component.classes('vui-input--default')).toBeTruthy()
+            expect(component.classes('vui-input--with-icon')).toBeTruthy()
+            expect(component.classes('vui-input--loading')).toBeTruthy()
+            expect(component.classes('vui-input--disabled')).toBeFalsy()
         })
     })
 
@@ -48,13 +44,10 @@ describe('components/html/Checkbox.vue', () => {
 
             await flushPromises()
 
-            expect(component.classes('vui-checkbox--default')).toBeTruthy()
-            expect(component.classes('vui-checkbox--with-icon')).toBeTruthy()
-            expect(component.classes('vui-checkbox--with-label')).toBeFalsy()
-            expect(component.classes('vui-checkbox--loading')).toBeFalsy()
-            expect(component.classes('vui-checkbox--checked')).toBeFalsy()
-            expect(component.classes('vui-checkbox--disabled')).toBeFalsy()
-            expect(component.vm.hasLabel).toBeFalsy()
+            expect(component.classes('vui-input--default')).toBeTruthy()
+            expect(component.classes('vui-input--with-icon')).toBeTruthy()
+            expect(component.classes('vui-input--loading')).toBeFalsy()
+            expect(component.classes('vui-input--disabled')).toBeFalsy()
         })
     })
 
@@ -69,7 +62,7 @@ describe('components/html/Checkbox.vue', () => {
 
             await flushPromises()
 
-            expect(component.classes('vui-checkbox--error')).toBeTruthy()
+            expect(component.classes('vui-input--error')).toBeTruthy()
         })
     })
 
@@ -84,7 +77,7 @@ describe('components/html/Checkbox.vue', () => {
 
             await flushPromises()
 
-            expect(component.classes('vui-checkbox--success')).toBeTruthy()
+            expect(component.classes('vui-input--success')).toBeTruthy()
         })
     })
 
@@ -99,7 +92,7 @@ describe('components/html/Checkbox.vue', () => {
 
             await flushPromises()
 
-            expect(component.classes('vui-checkbox--warning')).toBeTruthy()
+            expect(component.classes('vui-input--warning')).toBeTruthy()
         })
     })
 })

@@ -110,8 +110,12 @@ export default {
     }
 
     > .vui-page-footer {
+        padding: 0;
+        border: none;
 
         .vui-footer {
+            border: none;
+            background-color: $vui-color-green-light;
 
             .copyright {
                 font-size: .9rem;

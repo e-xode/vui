@@ -14,11 +14,11 @@ const props = {
     },
     icon: {
         type: String,
-        default: 'fa-square'
+        default: 'fa-circle'
     },
     iconChecked: {
         type: String,
-        default: 'fa-square-check'
+        default: 'fa-circle-check'
     },
     modelValue: {
         default: undefined,

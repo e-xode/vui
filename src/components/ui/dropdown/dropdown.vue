@@ -129,6 +129,7 @@ export default {
                 :keyword="keyword"
             >
                 <vui-input
+                    :with-icon="false"
                     :value="keyword"
                     type="text"
                     class="vui-dropdown-placeholder-label"
@@ -221,6 +222,10 @@ export default {
                 cursor: pointer;
                 border: none;
                 background-color: transparent;
+
+                &::placeholder {
+                    color: $vui-color-black;
+                }
             }
         }
     }

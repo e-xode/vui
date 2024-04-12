@@ -1,12 +1,19 @@
 {
-    "page.component.input.title-1": "Input type as text",
-    "page.component.input.title-2": "Input type as email",
+    "page.component.input.title-default": "Input type as text",
+    "page.component.input.title-disabled": "Input type disabled",
+    "page.component.input.title-number": "Input type as number",
+    "page.component.input.title-email": "Input type as email",
+    "page.component.input.title-password": "Input type as password",
     "page.component.input.vmodel": "v-model",
     "page.component.input.vmodel.none": "none",
     "page.component.input.doc.prop.disabled": "Binds the disabled state",
-    "page.component.input.doc.prop.icon": "Class name of the icon to prepend",
+    "page.component.input.doc.prop.icon": "Class name of the icon to append",
     "page.component.input.doc.prop.loading": "Binds the loading state",
     "page.component.input.doc.prop.type": "Type of input: email, text, number",
     "page.component.input.doc.prop.value": "Value of the input",
-    "page.component.input.doc.prop.v-model": "Binds the value of input"
+    "page.component.input.doc.prop.v-model": "Binds the value of input",
+    "page.component.input.doc.prop.with-icon": "Allows default icon based on component type (default true)",
+    "page.component.input.doc.slot.default": "Default slot of component",
+    "page.component.input.doc.slot.prepend": "Slot used to insert custom content at the beginning of component",
+    "page.component.input.doc.slot.append": "Slot used to insert custom content et the end of component"
 }

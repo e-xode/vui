@@ -54,7 +54,7 @@ export default {
 
 .vui-progress {
     .vui-progress-bar {
-        @include compose('vui-progress-bar');
+        @include compose-ui('vui-progress-bar');
         width: 100%;
         height: 1rem;
         background-color: $vui-color-grey;

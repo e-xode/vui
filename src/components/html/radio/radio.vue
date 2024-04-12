@@ -1,14 +1,14 @@
 <script>
-import langs from '@/components/html/checkbox/translate/index.mjs'
+import langs from '@/components/html/radio/translate/index.mjs'
 import {
     composable,
     translatable
 } from '@/composables/index.mjs'
 
-import { props } from './checkbox.constant.mjs'
+import { props } from './radio.constant.mjs'
 
 export default {
-    name: 'VuiCheckbox',
+    name: 'VuiRadio',
     mixins: [
         composable
     ],
@@ -70,14 +70,14 @@ export default {
     <div
         :id="componentId"
         :class="[
-            'vui-checkbox',
-            `vui-checkbox--${layout}`,
-            { 'vui-checkbox--flat': hasAttribute('flat') },
-            { 'vui-checkbox--with-label': hasLabel },
-            { 'vui-checkbox--with-icon': icon },
-            { 'vui-checkbox--checked': isChecked },
-            { 'vui-checkbox--disabled': disabled },
-            { 'vui-checkbox--loading': !disabled && loading },
+            'vui-radio',
+            `vui-radio--${layout}`,
+            { 'vui-radio--flat': hasAttribute('flat') },
+            { 'vui-radio--with-label': hasLabel },
+            { 'vui-radio--with-icon': icon },
+            { 'vui-radio--checked': isChecked },
+            { 'vui-radio--disabled': disabled },
+            { 'vui-radio--loading': !disabled && loading },
             $props.class
         ]"
         @click="onToggle"
@@ -85,11 +85,11 @@ export default {
         <slot name="prepend" />
         <i
             v-if="icon && !isChecked"
-            :class="['vui-checkbox-icon', icon]"
+            :class="['vui-radio-icon', icon]"
         />
         <i
             v-if="iconChecked && isChecked"
-            :class="['vui-checkbox-icon', iconChecked]"
+            :class="['vui-radio-icon', iconChecked]"
         />
         <input
             :name="name"
@@ -99,7 +99,7 @@ export default {
         >
         <label
             v-if="hasLabel"
-            class="vui-checkbox-label"
+            class="vui-radio-label"
             :for="name"
         >
             <slot>
@@ -113,8 +113,8 @@ export default {
 <style lang="scss">
 @import "@/scss/import.scss";
 
-.vui-checkbox {
-    @include compose-input('vui-checkbox');
+.vui-radio {
+    @include compose-input('vui-radio');
     position: relative;
     display: inline-flex;
     cursor: pointer;
@@ -125,7 +125,7 @@ export default {
         opacity: 0;
     }
 
-    .vui-checkbox-icon {
+    .vui-radio-icon {
         &:before {
             @include vui-glyph-regular;
             margin-top: -.15rem;
@@ -137,7 +137,7 @@ export default {
         padding-left: .5rem;
     }
 
-    &.vui-checkbox--disabled {
+    &.vui-radio--disabled {
         label {
             color: darken($vui-color-grey-light, 25%);
         }

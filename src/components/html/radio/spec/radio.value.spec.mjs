@@ -1,14 +1,14 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { mount, flushPromises } from '@vue/test-utils'
 import main from '@/test/main.mjs'
-import Checkbox from '../checkbox.vue'
+import Radio from '../radio.vue'
 
 describe('components/html/Checkbox.vue', () => {
 
     let props = {}
 
     const mountComponent = () => {
-        return mount(Checkbox, {
+        return mount(Radio, {
             ...main,
             props
         })
@@ -30,7 +30,7 @@ describe('components/html/Checkbox.vue', () => {
 
             expect(component.vm.toggled).toBeTruthy()
             expect(component.vm.isChecked).toBeTruthy()
-            expect(component.classes('vui-checkbox--checked')).toBeTruthy()
+            expect(component.classes('vui-radio--checked')).toBeTruthy()
         })
 
         it('Should emit modelValue', async() => {
@@ -43,7 +43,7 @@ describe('components/html/Checkbox.vue', () => {
             expect(emitted['update:model-value'][0]).toEqual([false])
             expect(component.vm.toggled).toBeFalsy()
             expect(component.vm.isChecked).toBeFalsy()
-            expect(component.classes('vui-checkbox--checked')).toBeFalsy()
+            expect(component.classes('vui-radio--checked')).toBeFalsy()
         })
 
         it('Should watch value', async() => {
@@ -76,8 +76,8 @@ describe('components/html/Checkbox.vue', () => {
             expect(emitted['update:model-value']).toBeFalsy()
             expect(component.vm.toggled).toBeTruthy()
             expect(component.vm.isChecked).toBeTruthy()
-            expect(component.classes('vui-checkbox--disabled')).toBeTruthy()
-            expect(component.classes('vui-checkbox--checked')).toBeTruthy()
+            expect(component.classes('vui-radio--disabled')).toBeTruthy()
+            expect(component.classes('vui-radio--checked')).toBeTruthy()
         })
     })
 })

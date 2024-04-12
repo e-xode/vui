@@ -45,7 +45,7 @@ export default {
 @import "@/scss/import.scss";
 
 .vui-tag {
-    @include compose('vui-tag');
+    @include compose-ui('vui-tag');
     position: relative;
     padding: .5rem;
 

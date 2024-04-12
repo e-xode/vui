@@ -56,7 +56,7 @@ export default {
 
 .vui-loader {
     @include vui-box-shadow;
-    @include compose('vui-loader');
+    @include compose-ui('vui-loader');
     position: relative;
     display: inline-flex;
     padding: .75rem;

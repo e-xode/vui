@@ -4,12 +4,12 @@ import {
     translatable
 } from '@/composables/index.mjs'
 
-import VuiCheckbox from '@/components/html/checkbox/checkbox.vue'
-import langs from '@/doc/views/component/html/checkbox/translate/index.mjs'
-import doc from '@/doc/views/component/html/checkbox/checkbox.doc.mjs'
+import ViewRadio from '@/components/html/radio/radio.vue'
+import langs from '@/doc/views/component/html/radio/translate/index.mjs'
+import doc from '@/doc/views/component/html/radio/radio.doc.mjs'
 
 export default {
-    name: 'ViewCheckbox',
+    name: 'ViewRadio',
     mixins: [demonstrable],
     setup () {
         translatable(langs)
@@ -25,7 +25,7 @@ export default {
             return doc
         },
         examples () {
-            return this.docExamples(VuiCheckbox, {
+            return this.docExamples(ViewRadio, {
                 attrs: doc.attrs,
                 examples: doc.examples.map((example) => ({
                     ...example,
@@ -50,7 +50,7 @@ export default {
 }
 </script>
 <template>
-    <div class="view-checkbox">
+    <div class="view-radio">
         <vui-grid
             col-sm="1"
             col-md="2"
@@ -58,21 +58,21 @@ export default {
             <vui-grid-unit class="examples">
                 <template
                     v-for="example in examples"
-                    :key="`checkbox-${example.props.id}`"
+                    :key="`radio-${example.props.id}`"
                 >
-                    <template v-if="example.props.id === 'vui-checkbox-2'">
+                    <template v-if="example.props.id === 'vui-radio-2'">
                         <component
                             :is="example.component"
                             disabled
                             v-bind="example.props"
-                            :checked="states['vui-checkbox-1']"
+                            :checked="states['vui-radio-1']"
                         >
                             <template v-if="example.text">
                                 {{ $t(example.text) }}
                             </template>
                         </component>
                     </template>
-                    <template v-if="example.props.id !== 'vui-checkbox-2'">
+                    <template v-if="example.props.id !== 'vui-radio-2'">
                         <component
                             :is="example.component"
                             v-bind="example.props"
@@ -83,8 +83,8 @@ export default {
                             </template>
                         </component>
                         &nbsp;
-                        <vui-tag v-if="example.props.id === 'vui-checkbox-1'">
-                            {{ $t('page.component.checkbox.label') }}:
+                        <vui-tag v-if="example.props.id === 'vui-radio-1'">
+                            {{ $t('page.component.radio.label') }}:
                             {{ states[example.props.id] }}
                         </vui-tag>
                     </template>

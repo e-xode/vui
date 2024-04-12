@@ -77,7 +77,7 @@ export default {
 
 .vui-button {
     @include vui-box-shadow;
-    @include compose('vui-button');
+    @include compose-ui('vui-button');
     @include animate('vui-button');
     position: relative;
     display: inline-flex;
