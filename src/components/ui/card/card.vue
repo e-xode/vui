@@ -54,7 +54,7 @@ export default {
 @import "@/scss/import.scss";
 
 .vui-card {
-    @include compose('vui-card');
+    @include compose-ui('vui-card');
     display: flex;
     flex-flow: column;
     background-color: $vui-color-white;

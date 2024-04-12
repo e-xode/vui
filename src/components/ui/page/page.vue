@@ -62,7 +62,7 @@ export default {
 @import "@/scss/import.scss";
 
 .vui-page {
-    @include compose('vui-page');
+    @include compose-ui('vui-page');
     display: flex;
     flex-flow: column;
     border-radius: .25rem;

@@ -50,11 +50,6 @@ export default {
                             </span>
                         </template>
                         <template #body>
-                            <vui-input
-                                disabled
-                                :placeholder="$t('page.component.input.vmodel')"
-                                :value="form[example.props.id]"
-                            />
                             <component
                                 :is="example.component"
                                 v-bind="example.props"
@@ -80,6 +75,15 @@ export default {
                     item-value="value"
                     :headers="docPropsHeaders"
                     :items="docProps"
+                />
+                <h2 class="title">
+                    {{ $t('page.component.h2.slots') }}
+                </h2>
+                <vui-table
+                    item-label="label"
+                    item-value="value"
+                    :headers="docSlotsHeaders"
+                    :items="docSlots"
                 />
             </vui-grid-unit>
         </vui-grid>

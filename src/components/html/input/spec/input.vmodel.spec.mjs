@@ -4,11 +4,7 @@ import main from '@/test/main.mjs'
 import Input from '../input.vue'
 
 describe('components/html/Input.vue (modelValue)', () => {
-    const props = {
-        placeholder: 'placeholder',
-        modelValue: 'foo',
-        type: 'text'
-    }
+    let props = {}
     const mountComponent = () => {
         return mount(Input, {
             ...main,
@@ -17,46 +13,65 @@ describe('components/html/Input.vue (modelValue)', () => {
     }
 
     afterEach(() => {
+        props ={}
     })
 
-    beforeEach(() => {
-        props.modelValue = 'foo'
-        props.type = 'text'
-    })
+    describe('modelValue', () => {
 
-    it('Should render', () => {
-        const component = mountComponent()
+        beforeEach(() => {
+            props = {
+                placeholder: 'placeholder',
+                modelValue: 'foo',
+                type: 'text'
+            }
+        })
+        it('Should render', () => {
+            const component = mountComponent()
 
-        expect(component.exists()).toBeTruthy()
-        expect(component.vm.typed).toBe('foo')
-        expect(component.vm.type).toBe(props.type)
-        expect(component.vm.placeholderValue).toEqual(props.placeholder)
-    })
+            expect(component.exists()).toBeTruthy()
+            expect(component.vm.typed).toBe('foo')
+            expect(component.vm.type).toBe(props.type)
+            expect(component.vm.placeholderValue).toEqual(props.placeholder)
+        })
 
-    it('Should update from prop', async() => {
-        const component = mountComponent()
+        it('Should update from prop', async() => {
+            const component = mountComponent()
 
-        component.setProps({ value: 'bar' })
-        await flushPromises()
+            component.setProps({ value: 'bar' })
+            await flushPromises()
 
-        expect(component.vm.typed).toBe('bar')
-    })
+            expect(component.vm.typed).toBe('bar')
+        })
 
-    it('Should emit on modelValue change', async() => {
-        const component = mountComponent()
+        it('Should emit on modelValue change', async() => {
+            const component = mountComponent()
 
-        component.vm.onInput({ target: { value: 'bar' } })
-        await flushPromises()
+            component.vm.onInput({ target: { value: 'bar' } })
+            await flushPromises()
 
-        const emitted = component.emitted()
-        expect(emitted['update:model-value'][0]).toEqual(['bar'])
+            const emitted = component.emitted()
+            expect(emitted['update:model-value'][0]).toEqual(['bar'])
+        })
+
+        it('Should watch modelValue', async() => {
+            const component = mountComponent()
+            expect(component.vm.modelValue).toBeTruthy()
+
+            component.setProps({ modelValue: false })
+            await flushPromises()
+
+            expect(component.vm.modelValue).toBeFalsy()
+        })
     })
 
     describe('with number', () => {
 
         beforeEach(() => {
-            props.modelValue = 1
-            props.type = 'number'
+            props = {
+                placeholder: 'placeholder',
+                modelValue: 1,
+                type: 'number'
+            }
         })
 
         it('Should render', () => {

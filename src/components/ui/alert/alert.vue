@@ -46,7 +46,7 @@ export default {
 @import "@/scss/import.scss";
 
 .vui-alert {
-    @include compose('vui-alert');
+    @include compose-ui('vui-alert');
     position: relative;
     width: 100%;
     padding: .75rem;

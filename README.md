@@ -7,8 +7,7 @@
 
 ## Features
 
-- 3 types of web components: Html, UI, and layout, written in a way to provide simple implementation and easy customization. **23 components are available** in the current release.
-
+- 3 types of web components: Html, UI, and layout, written in a way to provide simple implementation and easy customization. **24 components are available** in the current release.
 - Styles and layouts allow easy CSS overriding (no inline definitions, no messy !importants, ...).
 - Compatible with server rendering ( [SSR](https://vuejs.org/guide/scaling-up/ssr.html) ).
 - Integrates fontawesome-free Icons library.
@@ -18,7 +17,7 @@ Online documentation and live demo are available [here](https://vui.e-xode.net/)
 
 Package and releases are available on [NPM](https://www.npmjs.com/package/@e-xode/vui)
 
-  ## Get started
+## Get started
 
 Install first the library:
 
@@ -26,7 +25,7 @@ Install first the library:
 npm  install -s  @e-xode/vui
 ```
 
-  ### use vui in your vue app
+### use vui in your vue app
 
 In your Vue application:
 
@@ -46,12 +45,13 @@ main.use(new  createI18n({
 ```
 
 Notes:
+
 - The current version of VUI works only with vue-i18n and option **legacy = false** (translations are components isolated)
 - Version of node currently supported: 21
 - Depending of your bundler, you may need to provide specific path of the module format:
-    - cjs: ```import vui from '@e-xode/vui/vui.cjs.js'```
-    - esm: ```import vui from '@e-xode/vui/vui.esm.js'```
-    - umd: ```import vui from '@e-xode/vui/vui.umd.js'```
+  - cjs: ```import vui from '@e-xode/vui/vui.cjs.js'```
+  - esm: ```import vui from '@e-xode/vui/vui.esm.js'```
+  - umd: ```import vui from '@e-xode/vui/vui.umd.js'```
 
 ### load vui style
 
@@ -90,17 +90,21 @@ Notes:
 ```
 
 ## Run & develop vui sources
+
 ```sh
 copy  .env_sample  .env
 ```
+
 Optional: edit .env file content and update values according to your config
 
 ### with docker
+
 ```sh
 docker-compose  up
 ```
 
 ### or local with Node / NPM
+
 ```sh
 npm  install
 npm  run  dev

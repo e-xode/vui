@@ -199,6 +199,17 @@
     },
     {
         "icon": "fa-brands fa-vuejs",
+        "label": "Radio",
+        "name": "vui-radio",
+        "path": "/components/html/radio/radio.vue",
+        "type": "html",
+        "doc": {
+            "name": "view-radio",
+            "path": "/views/component/html/radio/radio.vue"
+        }
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
         "label": "Table",
         "name": "vui-table",
         "path": "/components/html/table/table.vue",

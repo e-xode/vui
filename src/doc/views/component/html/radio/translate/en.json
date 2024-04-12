@@ -1,0 +1,20 @@
+{
+    "page.component.radio.default": "Default radio",
+    "page.component.radio.binded": "Binded radio",
+    "page.component.radio.success": "Success radio",
+    "page.component.radio.error": "Error radio",
+    "page.component.radio.warning": "Warning radio",
+    "page.component.radio.label": "Checked",
+    "page.component.radio.doc.prop.checked": "Binds the conditions of checked state",
+    "page.component.radio.doc.prop.checked-value": "Checked value of the radio",
+    "page.component.radio.doc.prop.disabled": "Binds the disabled state of the radio",
+    "page.component.radio.doc.prop.layout": "Defines the layout of component [default, error, success, warning]",
+    "page.component.radio.doc.prop.loading": "Boolean to enable the loading style for component",
+    "page.component.radio.doc.prop.text": "Text used as label for the component",
+    "page.component.radio.doc.prop.unchecked-value": "Unchecked value of the radio",
+    "page.component.radio.doc.prop.value": "Value of the radio",
+    "page.component.radio.doc.prop.v-model": "Binds the model value of radio",
+    "page.component.radio.doc.slot.default": "Default slot for label content",
+    "page.component.radio.doc.slot.prepend": "Slot used to insert custom content at the beginning of component",
+    "page.component.radio.doc.slot.append": "Slot used to insert custom content et the end of component"
+}

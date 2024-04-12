@@ -1,4 +1,8 @@
 const props = {
+    icon: {
+        default: undefined,
+        type: String
+    },
     modelValue: {
         default: undefined,
         types: [
@@ -24,8 +28,8 @@ const props = {
         ]
     },
     type: {
-        type: String,
-        default: 'text'
+        default: 'text',
+        type: String
     },
     value: {
         default: undefined,
@@ -35,6 +39,10 @@ const props = {
             String,
             null
         ]
+    },
+    withIcon: {
+        default: true,
+        type: Boolean
     }
 }
 
