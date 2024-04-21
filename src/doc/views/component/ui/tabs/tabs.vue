@@ -44,27 +44,30 @@ export default {
             col-md="2"
         >
             <vui-grid-unit class="examples">
-                <template
-                    v-for="(example) in examples"
-                    :key="`tag-${example.props.id}`"
+                <component
+                    :is="examples[0].component"
+                    v-bind="examples[0].props"
                 >
-                    <component
-                        :is="example.component"
-                        v-bind="example.props"
+                    <template
+                        v-for="(slot, index) in examples[0].props.items"
+                        #[slot.value]
+                        :key="`${examples[0].props.id}-slot-${index}`"
                     >
-                        <template
-                            v-for="(slot, index) in example.props.items"
-                            #[slot.value]
-                            :key="index"
-                        >
-                            {{ slot.label }}
-                        </template>
-                    </component>
-                    <div
-                        class="highlighted-code"
-                        v-html="example.highlighted"
-                    />
-                </template>
+                        {{ slot.label }}
+                    </template>
+                </component>
+                <div
+                    class="highlighted-code"
+                    v-html="examples[0].highlighted"
+                />
+                <component
+                    :is="examples[1].component"
+                    v-bind="examples[1].props"
+                />
+                <div
+                    class="highlighted-code"
+                    v-html="examples[1].highlighted"
+                />
             </vui-grid-unit>
             <vui-grid-unit class="api-options">
                 <h2 class="title">

@@ -42,7 +42,7 @@ export default {
                         v-bind="example.props"
                     >
                         <template #[`item.endQuantity`]="{ item }">
-                            <td>{{ item.endQuantity }} units</td>
+                            {{ item.endQuantity }} units
                         </template>
                     </component>
                     <div

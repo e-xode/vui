@@ -83,18 +83,20 @@ export default {
                 </span>
             </div>
         </div>
-        <div class="vui-tabs-slots">
-            <template
-                v-for="(tab, index) in items"
-                :key="`slot-${tab.$$id}`"
+        <template
+            v-for="(tab, index) in items"
+            :key="`slot-${tab.$$id}`"
+        >
+            <div
+                v-if="$slots[tab[itemValue]] && tab[itemValue] === active"
+                class="vui-tabs-slot"
             >
                 <slot
-                    v-if="tab[itemValue] === active"
                     :name="tab[itemValue]"
                     :index="index"
                 />
-            </template>
-        </div>
+            </div>
+        </template>
         <slot name="append" />
     </div>
 </template>
@@ -146,7 +148,7 @@ export default {
         }
     }
 
-    .vui-tabs-slots {
+    .vui-tabs-slot {
         padding: 1rem;
         border: 1px solid $vui-color-grey-light;
     }
