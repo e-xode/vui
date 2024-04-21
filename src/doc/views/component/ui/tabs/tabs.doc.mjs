@@ -19,14 +19,31 @@ export default {
                     { label: 'Tab 1', value: 'tab1' },
                     { label: 'Tab 2', value: 'tab2' }
                 ]
-            },
-            text: 'page.component.tabs.default'
+            }
+        },
+        {
+            markup: `
+                <vui-tabs
+                    items="[
+                        { 'label': 'Tab 1', 'value': 'tab1' },
+                        { 'label': 'Tab 2', 'value': 'tab2' },
+                    ]"
+                />
+            `,
+            props: {
+                icon: 'fa-solid fa-tags',
+                id: 'vui-tabs-2',
+                items: [
+                    { label: 'Tab 1', value: 'tab1' },
+                    { label: 'Tab 2', value: 'tab2' }
+                ]
+            }
         }
     ],
     props: [
         {
-            tag: 'items',
-            type: 'Array',
+            tag: 'disabled',
+            type: 'Boolean',
             text: 'page.component.tabs.doc.prop.disabled'
         },
         {
@@ -57,8 +74,8 @@ export default {
     ],
     slots: [
         {
-            name: 'default',
-            text: 'page.component.card.doc.slot.default'
+            name: '$value',
+            text: 'page.component.tabs.doc.slot.value'
         }
     ]
 }

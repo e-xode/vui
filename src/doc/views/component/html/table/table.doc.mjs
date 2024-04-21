@@ -35,7 +35,7 @@ export default {
                     ]"
                 >
                     <template #item.endQuantity="{ item }">
-                        <td>{{ item.endQuantity }} units</td>
+                        {{ item.endQuantity }} units
                     </template>
                 </vui-table>
             `,
@@ -108,7 +108,7 @@ export default {
                     ]"
                 >
                     <template #item.endQuantity="{ item }">
-                        <td>{{ item.endQuantity }} units</td>
+                        {{ item.endQuantity }} units
                     </template>
                 </vui-table>
             `,

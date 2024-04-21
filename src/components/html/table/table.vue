@@ -36,19 +36,21 @@ export default {
         <table>
             <thead>
                 <tr>
-                    <slot
+                    <th
                         v-for="(header, index) in headers"
                         :key="`table-${componentId}-header--${index}`"
-                        :name="`header.${header[itemValue]}`"
-                        :item="header"
-                        :item-label="itemLabel"
-                        :item-value="itemValue"
-                        :index="index"
+                        :class="header.class"
                     >
-                        <th :class="header.class">
+                        <slot
+                            :name="`header.${header[itemValue]}`"
+                            :item="header"
+                            :item-label="itemLabel"
+                            :item-value="itemValue"
+                            :index="index"
+                        >
                             {{ header[itemLabel] }}
-                        </th>
-                    </slot>
+                        </slot>
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -61,22 +63,22 @@ export default {
                     :item-value="itemValue"
                 >
                     <tr>
-                        <slot
+                        <td
                             v-for="(header, i) in headers"
                             :key="`table-${componentId}-item-td--${i}`"
-                            :name="`item.${header[itemValue]}`"
-                            :index="i"
-                            :item="item"
-                            :item-label="itemLabel"
-                            :item-value="itemValue"
+                            :data-label="header.label"
+                            :class="header.class"
                         >
-                            <td
-                                :data-label="header.label"
-                                :class="header.class"
+                            <slot
+                                :name="`item.${header[itemValue]}`"
+                                :index="i"
+                                :item="item"
+                                :item-label="itemLabel"
+                                :item-value="itemValue"
                             >
                                 {{ leaf(item, header.value) }}
-                            </td>
-                        </slot>
+                            </slot>
+                        </td>
                     </tr>
                 </slot>
             </tbody>

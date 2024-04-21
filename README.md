@@ -48,10 +48,6 @@ Notes:
 
 - The current version of VUI works only with vue-i18n and option **legacy = false** (translations are components isolated)
 - Version of node currently supported: 21
-- Depending of your bundler, you may need to provide specific path of the module format:
-  - cjs: ```import vui from '@e-xode/vui/vui.cjs.js'```
-  - esm: ```import vui from '@e-xode/vui/vui.esm.js'```
-  - umd: ```import vui from '@e-xode/vui/vui.umd.js'```
 
 ### load vui style
 

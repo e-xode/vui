@@ -4,5 +4,6 @@
     "page.component.tabs.doc.prop.item-label": "Label key name foreach tab",
     "page.component.tabs.doc.prop.item-value": "Value key name foreach tab",
     "page.component.tabs.doc.prop.vmodel": "Binds the active tab",
-    "page.component.tabs.doc.prop.value": "Define the active tab"
+    "page.component.tabs.doc.prop.value": "Define the active tab",
+    "page.component.tabs.doc.slot.value": "Slot defined by the tabs items value"
 }
