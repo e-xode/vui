@@ -35,6 +35,10 @@ const props = {
             String
         ]
     },
+    multiple: {
+        default: false,
+        type: Boolean
+    },
     selectable: {
         type: Boolean
     },

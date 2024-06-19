@@ -21,7 +21,9 @@ export default {
         return {
             last: null,
             open: {},
-            selected: null
+            selected: this.multiple
+                ? []
+                : null
         }
     },
     computed: {
@@ -95,6 +97,14 @@ export default {
         },
         isSelected (item) {
             if (!item.disabled && typeof this.selected !== 'undefined') {
+                if (this.multiple) {
+                    const match = this.selected.find((selected) => {
+                        return typeof item === 'object'
+                            ? selected && selected[this.itemValue] === item[this.itemValue]
+                            : selected && selected === item
+                    })
+                    return typeof match !== 'undefined'
+                }
                 return typeof item === 'object'
                     ? this.selected && this.selected[this.itemValue] === item[this.itemValue]
                     : this.selected && this.selected === item
@@ -124,13 +134,25 @@ export default {
                 const emit = this.isObject(item) && this.hasAttribute('return-object')
                     ? item
                     : item[this.itemValue]
-                this.selected = this.isSelected(item)
-                    ? null
-                    : item
+                if (this.multiple) {
+                    const selected = !this.isSelected(item)
+                        ? [ ...this.selected, item ]
+                        : this.selected.filter((s) => {
+                            return typeof item === 'object'
+                                ? s && s[this.itemValue] !== item[this.itemValue]
+                                : s && s !== item
+                        })
+                    this.selected = selected
+                    this.$emit('update:model-value', this.selected)
+                } else {
+                    this.selected = this.isSelected(item)
+                        ? null
+                        : item
+                    this.$emit('update:model-value', emit)
+                }
                 if (item.route) {
                     this.$router.push(item.route)
                 }
-                this.$emit('update:model-value', emit)
             }
         },
         onToggle (index) {
@@ -185,15 +207,8 @@ export default {
                             { 'vui-list-items-item-label--selectable': selectable },
                             { 'vui-list-items-item-label--selected': isSelected(item) }
                         ]"
-                        @click="() => onClick(item)"
+                        @click.stop="() => onClick(item)"
                     >
-                        <i
-                            v-if="item.icon"
-                            :class="[
-                                'vui-list-items-item-label-icon',
-                                item.icon
-                            ]"
-                        />
                         <slot
                             name="item"
                             :index="index"
@@ -201,7 +216,16 @@ export default {
                             :item-label="itemLabel"
                             :item-value="itemValue"
                         >
-                            {{ item[itemLabel] }}
+                            <i
+                                v-if="item.icon"
+                                :class="[
+                                    'vui-list-items-item-label-icon',
+                                    item.icon
+                                ]"
+                            />
+                            <span>
+                                {{ item[itemLabel] }}
+                            </span>
                         </slot>
                     </div>
                 </template>
@@ -234,15 +258,8 @@ export default {
                                 { 'vui-list-items-item-label--selectable': selectable },
                                 { 'vui-list-items-item-label--selected': isSelected(childitem) },
                             ]"
-                            @click="() => onClick(childitem)"
+                            @click.stop="() => onClick(childitem)"
                         >
-                            <i
-                                v-if="childitem.icon"
-                                :class="[
-                                    'vui-list-items-item-label-icon',
-                                    childitem.icon
-                                ]"
-                            />
                             <slot
                                 name="item"
                                 :index="j"
@@ -250,6 +267,13 @@ export default {
                                 :item-label="itemLabel"
                                 :item-value="itemValue"
                             >
+                                <i
+                                    v-if="childitem.icon"
+                                    :class="[
+                                        'vui-list-items-item-label-icon',
+                                        childitem.icon
+                                    ]"
+                                />
                                 {{ childitem[itemLabel] }}
                             </slot>
                         </div>
@@ -355,3 +379,4 @@ export default {
     }
 }
 </style>
+œx

@@ -18,6 +18,21 @@ export default {
         {
             markup: `
                 <vui-dropdown
+                    id="example-dropdown-1",
+                    multiple
+                    :items="[-1, 0, 1, 2, 3, 4]"
+                />
+            `,
+            props: {
+                id: 'example-dropdown-1',
+                items: [-1, 0, 1, 2, 3, 4],
+                multiple: true
+            },
+            title: 'page.component.dropdown.text-1'
+        },
+        {
+            markup: `
+                <vui-dropdown
                     id="example-dropdown-2",
                     :items: [
                         { label: "Label 1", value: "value 1" },
