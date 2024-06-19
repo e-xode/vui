@@ -25,7 +25,9 @@ export default {
     data () {
         return {
             keyword: null,
-            selected: null
+            selected: this.multiple
+                ? []
+                : null
         }
     },
     computed: {
@@ -35,13 +37,19 @@ export default {
                 : null
         },
         placeholderValue () {
-            const { itemValue, selected } = this
-            const value = typeof selected?.[itemValue] !== 'undefined'
-                ? selected[itemValue]
+            const { itemValue, multiple, selected } = this
+            const first = multiple
+                ? selected[0]
                 : selected
-            return value === null
+            const value = typeof first?.[itemValue] !== 'undefined'
+                ? first[itemValue]
+                : first
+            const placeholder = [null, undefined].includes(value)
                 ? this.placeholderLabel
                 : this.labelFromItem(value)
+            return multiple && selected.length > 1
+                ? `${placeholder} (+${selected.length - 1})`
+                : placeholder
         },
         placeholderLabel () {
             return this.placeholder
@@ -99,7 +107,9 @@ export default {
         },
         onToggle (selected) {
             this.keyword = null
-            this.blur()
+            if (!this.multiple) {
+                this.blur()
+            }
             if (!this.hasProp('value')) {
                 this.selected = selected
             }
@@ -152,6 +162,7 @@ export default {
             :keyword="keyword"
             :selectable="true"
             :title="listTitle"
+            :multiple="multiple"
             @update:model-value="onToggle"
         >
             <template

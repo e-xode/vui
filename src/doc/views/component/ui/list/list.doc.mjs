@@ -20,6 +20,23 @@ export default {
         {
             markup: `
                 <vui-list
+                    :items=[1, 2, 3, 4]
+                    :selectable="true"
+                    multiple
+                />
+            `,
+            props: {
+                disabled: false,
+                id: 'vui-list-1',
+                items: [1,2,3,4],
+                multiple: true,
+                selectable: true
+            },
+            title: 'page.component.list.text-1'
+        },
+        {
+            markup: `
+                <vui-list
                     :items=[
                         { label: "label 1", value: "value 1" },
                         { label: "label 2", value: "value 2" }

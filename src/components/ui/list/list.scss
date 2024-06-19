@@ -1,0 +1,96 @@
+@import "@/scss/import.scss";
+
+.vui-list {
+    display: flex;
+    flex-flow: column;
+    padding: 0;
+    border-radius: .25rem;
+
+    &:not(.vui-list--flat) {
+        @include vui-box-shadow;
+    }
+
+    &.vui-list--flat {
+        border-top: 1px solid $vui-color-grey-light;
+        border-left: 1px solid $vui-color-grey-light;
+        border-right: 1px solid $vui-color-grey-light;
+    }
+
+    .vui-list-title {
+        padding: 1rem;
+        font-weight: bold;
+    }
+
+    .vui-list-items {
+
+        .vui-list-items-group-item {
+
+            .vui-list-items-item-group-label {
+                @include animate('vui-list-items-item-group-label');
+                position: relative;
+                padding: .75rem;
+                background-color: $vui-color-white;
+                border-radius: 0;
+                border-top: 1px solid $vui-color-grey-light;
+                border-bottom: 1px solid $vui-color-grey-light;
+                cursor: pointer;
+
+                &:after {
+                    @include vui-glyph-solid;
+                    content: '\f078';
+                    position: absolute;
+                    top: .75rem;
+                    right: 1rem;
+                }
+
+                &:hover {
+                    border-top: 1px solid $vui-color-grey;
+                    border-bottom: 1px solid $vui-color-grey;
+                }
+
+                &.vui-list-items-item-group-label--toggled {
+                    border-top: 1px solid $vui-color-grey;
+                    border-bottom: 1px solid $vui-color-grey;
+                }
+
+                &.vui-list-items-item-group-label--open {
+                    &:after {
+                        content: '\f077';
+                    }
+                }
+            }
+
+            .vui-list-items-item-label {
+                padding-left: 1.5rem;
+            }
+        }
+
+        .vui-list-items-item-label {
+            display: flex;
+            padding: .75rem;
+            border-bottom: 1px solid $vui-color-grey-light;
+
+            &:hover {
+                background-color: $vui-color-grey-light;
+                border-bottom: 1px solid $vui-color-grey;
+            }
+
+            &.vui-list-items-item-label--selectable {
+                cursor: pointer;
+            }
+
+            &.vui-list-items-item-label--selected {
+                color: $vui-color-green-dark;
+                background-color: $vui-color-green-light;
+            }
+
+            .vui-list-items-item-label-icon {
+                padding-right: .5rem;
+            }
+
+            .vui-checkbox {
+                margin-right: 1rem;
+            }
+        }
+    }
+}

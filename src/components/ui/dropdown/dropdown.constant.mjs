@@ -25,6 +25,10 @@ const props = {
             null
         ]
     },
+    multiple: {
+        default: false,
+        type: Boolean
+    },
     placeholder: {
         types: [
             Boolean,
