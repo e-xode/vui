@@ -167,21 +167,39 @@ export default {
         >
             <template
                 v-if="$slots.placeholder"
-                #placeholder
+                #placeholder="slotProps"
             >
-                <slot name="placeholder" />
+                <slot
+                    name="placeholder"
+                    :index="slotProps.index"
+                    :item="slotProps.item"
+                    :item-label="slotProps.itemLabel"
+                    :item-value="slotProps.itemValue"
+                />
             </template>
             <template
                 v-if="$slots['group-item']"
-                #group-item
+                #group-item="slotProps"
             >
-                <slot name="group-item" />
+                <slot
+                    name="group-item"
+                    :index="slotProps.index"
+                    :item="slotProps.item"
+                    :item-label="slotProps.itemLabel"
+                    :item-value="slotProps.itemValue"
+                />
             </template>
             <template
                 v-if="$slots.item"
-                #item
+                #item="slotProps"
             >
-                <slot name="item" />
+                <slot
+                    name="item"
+                    :index="slotProps.index"
+                    :item="slotProps.item"
+                    :item-label="slotProps.itemLabel"
+                    :item-value="slotProps.itemValue"
+                />
             </template>
         </vui-list>
         <slot name="append" />
