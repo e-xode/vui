@@ -7,13 +7,17 @@ const props = {
         default: undefined,
         type: Number
     },
-    value: {
+    route: {
         default: undefined,
-        type: Number
+        type: Object
     },
     size: {
         type: Number,
         default: 25
+    },
+    value: {
+        default: undefined,
+        type: Number
     }
 }
 export {

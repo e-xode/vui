@@ -90,7 +90,17 @@ export default {
             }
         },
         onPage () {
-            this.$emit('update:model-value', this.page)
+            const { page, $route = {} } = this
+            this.$emit('update:model-value', page)
+            if (this.route && $route.query?.page !== page) {
+                this.$router.push({
+                    ...this.route,
+                    query: {
+                        ...this.route.query,
+                        page
+                    }
+                })
+            }
         }
     }
 }
