@@ -11,6 +11,7 @@ export default {
             `,
             props: {
                 id: 'example-dropdown-1',
+                icon: 'fa-brands fa-vuejs',
                 items: [-1, 0, 1, 2, 3, 4]
             },
             title: 'page.component.dropdown.text-1'

@@ -67,7 +67,16 @@ export default {
             $props.class
         ]"
     >
-        <slot name="prepend" />
+        <slot name="prepend">
+            <i
+                v-if="prependIcon"
+                :class="[
+                    'vui-input-icon',
+                    'vui-input-icon--prepend',
+                    prependIcon
+                ]"
+            />
+        </slot>
         <input
             :value="typed"
             :disabled="disabled"
@@ -78,27 +87,48 @@ export default {
             :type="type"
             @input="onInput"
         >
-        <i
-            v-if="withIcon && icon"
-            :class="['vui-input-icon', icon]"
-        />
-        <i
-            v-if="withIcon && !icon && type === 'text'"
-            :class="['vui-input-icon', 'fa-font']"
-        />
-        <i
-            v-if="withIcon && !icon && type === 'email'"
-            :class="['vui-input-icon', 'fa-at']"
-        />
-        <i
-            v-if="withIcon && !icon && type === 'password'"
-            :class="['vui-input-icon', 'fa-key']"
-        />
-        <i
-            v-if="withIcon && !icon && type === 'number'"
-            :class="['vui-input-icon', 'fa-arrow-down-1-9']"
-        />
-        <slot name="append" />
+        <slot name="append">
+            <i
+                v-if="withIcon && icon"
+                :class="[
+                    'vui-input-icon',
+                    'vui-input-icon--append',
+                    icon
+                ]"
+            />
+            <i
+                v-if="withIcon && !icon && type === 'text'"
+                :class="[
+                    'vui-input-icon',
+                    'vui-input-icon--append',
+                    'fa-font'
+                ]"
+            />
+            <i
+                v-if="withIcon && !icon && type === 'email'"
+                :class="[
+                    'vui-input-icon',
+                    'vui-input-icon--append',
+                    'fa-at'
+                ]"
+            />
+            <i
+                v-if="withIcon && !icon && type === 'password'"
+                :class="[
+                    'vui-input-icon',
+                    'vui-input-icon--append',
+                    'fa-key'
+                ]"
+            />
+            <i
+                v-if="withIcon && !icon && type === 'number'"
+                :class="[
+                    'vui-input-icon',
+                    'vui-input-icon--append',
+                    'fa-arrow-down-1-9'
+                ]"
+            />
+        </slot>
     </div>
 </template>
 
@@ -129,13 +159,18 @@ export default {
         }
     }
 
-    .vui-input-icon {
+    .vui-input-icon.vui-input-icon--prepend {
+        margin-top: .2rem;
+        line-height: 2rem;
+    }
+    .vui-input-icon.vui-input-icon--append {
         padding: 0 .5rem;
         background-color: $vui-color-grey-extra-light;
         border-left: 1px solid $vui-color-grey;
 
         &:before {
             @include vui-glyph-solid;
+            font-family: inherit;
             line-height: 1.75rem;
         }
     }
