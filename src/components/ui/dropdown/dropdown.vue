@@ -139,11 +139,12 @@ export default {
                 :keyword="keyword"
             >
                 <vui-input
-                    :with-icon="false"
-                    :value="keyword"
                     type="text"
                     class="vui-dropdown-placeholder-label"
+                    :prepend-icon="icon"
+                    :value="keyword"
                     :placeholder="`${placeholderValue}`"
+                    :with-icon="false"
                     @input="onInput"
                 />
             </slot>
@@ -218,8 +219,9 @@ export default {
     .vui-dropdown-placeholder {
         @include animate('vui-dropdown-placeholder');
         @include vui-box-shadow;
-        background-color: $vui-color-white;
         width: 100%;
+        padding-right: 2rem;
+        background-color: $vui-color-white;
         cursor: pointer;
 
         &:before {
@@ -246,6 +248,7 @@ export default {
             padding: .25rem .5rem .25rem 1rem;
             margin: 0;
             background-color: transparent;
+            border: none;
 
             input[type=text] {
                 cursor: pointer;
