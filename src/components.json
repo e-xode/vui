@@ -210,6 +210,17 @@
     },
     {
         "icon": "fa-brands fa-vuejs",
+        "label": "Stars",
+        "name": "vui-stars",
+        "path": "/components/ui/stars/stars.vue",
+        "type": "ui",
+        "doc": {
+            "name": "view-stars",
+            "path": "/views/component/ui/stars/stars.vue"
+        }
+    },
+    {
+        "icon": "fa-brands fa-vuejs",
         "label": "Table",
         "name": "vui-table",
         "path": "/components/html/table/table.vue",

@@ -3,6 +3,10 @@ const props = {
         type: Boolean,
         default: false
     },
+    icon: {
+        default: undefined,
+        type: String
+    },
     items: {
         type: Array,
         required: true

@@ -27,6 +27,10 @@ const props = {
             null
         ]
     },
+    prependIcon: {
+        default: undefined,
+        type: String
+    },
     type: {
         default: 'text',
         type: String

@@ -1,0 +1,4 @@
+{
+    "page.component.stars.doc.prop.disabled": "Bind the disabled state",
+    "page.component.stars.doc.prop.layout": "The progress-bar layout: [error, success, warning]"
+}
