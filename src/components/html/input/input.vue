@@ -101,7 +101,7 @@ export default {
                 :class="[
                     'vui-input-icon',
                     'vui-input-icon--append',
-                    'fa-font'
+                    'fa-solid fa-font'
                 ]"
             />
             <i
@@ -109,7 +109,7 @@ export default {
                 :class="[
                     'vui-input-icon',
                     'vui-input-icon--append',
-                    'fa-at'
+                    'fa-solid fa-at'
                 ]"
             />
             <i
@@ -117,7 +117,7 @@ export default {
                 :class="[
                     'vui-input-icon',
                     'vui-input-icon--append',
-                    'fa-key'
+                    'fa-solid fa-key'
                 ]"
             />
             <i
@@ -125,7 +125,7 @@ export default {
                 :class="[
                     'vui-input-icon',
                     'vui-input-icon--append',
-                    'fa-arrow-down-1-9'
+                    'fa-solid fa-arrow-down-1-9'
                 ]"
             />
         </slot>
