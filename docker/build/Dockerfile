@@ -16,7 +16,7 @@ RUN npm run build
 
 # ----------------------------------------
 
-    FROM node:22-alpine3.19 AS runner
+FROM node:22-alpine3.19 AS runner
 
 ENV NODE_PORT=3001
 
