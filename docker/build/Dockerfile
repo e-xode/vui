@@ -31,4 +31,12 @@ COPY --from=builder /app/dist/ /app/dist/
 COPY ./docker/build/config/nginx.conf /etc/nginx/nginx.conf
 COPY ./docker/build/config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+# Run the whole container as the built-in non-root `node` user (UID/GID 1000) instead of root.
+# vui serves only static docs via nginx (no node runtime). Own /app + the nginx state/log dirs so
+# the unprivileged nginx (master + worker) can write; supervisord + nginx pidfiles move /run → /tmp.
+# The bind-mounted /app/logs must be 1000:1000 on the host (applied by deploy.e-xode.vui.sh).
+RUN mkdir -p /app/logs /var/log/nginx && \
+    chown -R node:node /app /home/node /var/log/nginx /var/lib/nginx
+USER node
+
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
