@@ -31,3 +31,8 @@ created, and is orthogonal to the deployed Docker image.)
 
 🚨 **`audit.yml` is not a merge gate** — it judges the repo's state, not the diff, and goes red
 with no commit at all. Never add it to `required_status_checks`.
+
+## Git
+
+- No `Co-authored-by`/`Co-Authored-By` trailer or any AI/assistant mention on any commit, ever —
+  commit author is always the user's own git account.
