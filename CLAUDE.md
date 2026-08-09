@@ -41,3 +41,11 @@ with no commit at all. Never add it to `required_status_checks`.
   an unmerged release branch. The tag push triggers `docker-build.yml`'s image build (as of
   2026-08-09; previously it rebuilt on every push to `master`). Note the `v` prefix: past tags here
   were bare semver (`0.7.4`), which the new trigger will **not** match.
+
+## Agent workflow
+
+- **Plan escalation (automatic)** — whenever a task needs upfront analysis, exploration, or
+  design work and the session runs below Opus, launch the Plan/Explore agents with `model: opus`
+  immediately — announce in one line, never ask. Sole exception: the user explicitly declined
+  escalation (this task or standing). Incorporate the returned plan faithfully, never re-derive
+  it.
