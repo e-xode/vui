@@ -49,3 +49,7 @@ with no commit at all. Never add it to `required_status_checks`.
   immediately — announce in one line, never ask. Sole exception: the user explicitly declined
   escalation (this task or standing). Incorporate the returned plan faithfully, never re-derive
   it.
+- **Every incoming request is tracked** — a new request arriving while another is in progress is
+  never silently dropped or serialised behind it; if it modifies a different file than the
+  in-progress work, run it in parallel — if it modifies the same file, queue it until the
+  in-progress work finishes.
