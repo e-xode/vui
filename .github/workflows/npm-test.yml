@@ -1,0 +1,53 @@
+name: 'npm-test'
+
+# 🚨 Ce dépôt n'avait AUCUN job lint/test/build sur pull request — 50 fichiers de tests
+# (157 tests) ne s'exécutaient que sur `npm-publish.yml`, déclenché par la création d'une
+# GitHub Release, c'est-à-dire largement après le merge. Voir e-xode/scripts#9.
+#
+# Trois jobs SÉPARÉS : un job unique où lint précède test masquerait un échec de test derrière
+# un échec de lint. `lint` ici n'a PAS de `--fix` (contrairement à d'autres dépôts de la
+# flotte) : il ne réécrit rien, c'est déjà le job de vérification correct tel quel.
+
+on:
+  push:
+    branches: ['master']
+  pull_request:
+    branches: ['master']
+
+concurrency:
+  group: '${{ github.workflow }}-${{ github.ref }}'
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run lint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run test:unit
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build
