@@ -11,7 +11,12 @@ WORKDIR /app
 
 RUN mkdir /home/node/.npm-global
 RUN npm install -g npm@latest
-RUN npm install --production=false
+# `npm ci`, not `npm install`: the latter re-resolves semver ranges at build time and freezes at
+# the mercy of the Docker layer cache, so the image can ship something other than what the
+# lockfile describes — which is what Dependabot and CI actually audit. `--include=dev` is
+# required: NODE_ENV=production above would otherwise drop the devDependencies `npm run build`
+# needs. See e-xode/scripts#9.
+RUN npm ci --include=dev
 RUN npm run build
 
 # ----------------------------------------
