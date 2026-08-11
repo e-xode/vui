@@ -10,7 +10,7 @@ ADD . /app
 WORKDIR /app
 
 RUN mkdir /home/node/.npm-global
-RUN npm install -g npm@latest
+RUN npm install -g npm@12.0.2
 # `npm ci`, not `npm install`: the latter re-resolves semver ranges at build time and freezes at
 # the mercy of the Docker layer cache, so the image can ship something other than what the
 # lockfile describes — which is what Dependabot and CI actually audit. `--include=dev` is
