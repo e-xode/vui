@@ -1,9 +1,14 @@
 # CLAUDE.md
 
-This repo has no broader Claude Code configuration. The block below exists solely as the
-interface read by fleet-wide dependency/security campaigns driven from `e-xode/scripts`
-(`e-xode/scripts#9`) — it is not project documentation and should not be expanded into one
-without a deliberate decision to adopt Claude tooling here.
+This repo carries almost no Claude Code configuration. The block below exists as the interface
+read by fleet-wide dependency/security campaigns driven from `e-xode/scripts`
+(`e-xode/scripts#9`) — it is not project documentation and must not be expanded into one.
+
+One deliberate exception, taken on 2026-09-20: the `governance` skill was added so that
+the fleet's `SessionStart` audit hook has an `audit.py` to run here, like every other fleet
+repository. The reason and its limits are recorded in
+`.claude/skills/governance/references/projet-vui.md`. It does not widen: a second skill
+here needs its own decision.
 
 ## Fleet verification contract
 
@@ -31,6 +36,12 @@ only fires on a GitHub Release being created, and is orthogonal to the deployed 
 
 🚨 **`audit.yml` is not a merge gate** — it judges the repo's state, not the diff, and goes red
 with no commit at all. Never add it to `required_status_checks`.
+
+## Skills index
+
+The harness lists every skill's name and description each turn — that listing is the index, so
+it is not duplicated here. This section carries only what the listing cannot: the skills
+withheld from it. Nothing is withheld here.
 
 ## Git
 
