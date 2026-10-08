@@ -55,7 +55,7 @@ withheld from it. Nothing is withheld here.
 
 ## Agent workflow
 
-Model routing and context delegation: user scope (~/.claude/CLAUDE.md).
+Model routing and context delegation: `.claude/rules/model-routing.md`.
 
 - **Every incoming request is tracked** — a new request arriving while another is in progress is
   never silently dropped or serialised behind it; if it modifies a different file than the
