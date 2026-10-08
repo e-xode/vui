@@ -55,11 +55,8 @@ withheld from it. Nothing is withheld here.
 
 ## Agent workflow
 
-- **Plan escalation (automatic)** — whenever a task needs upfront analysis, exploration, or
-  design work and the session runs below Opus, launch the Plan/Explore agents with `model: opus`
-  immediately — announce in one line, never ask. Sole exception: the user explicitly declined
-  escalation (this task or standing). Incorporate the returned plan faithfully, never re-derive
-  it.
+Model routing and context delegation: user scope (~/.claude/CLAUDE.md).
+
 - **Every incoming request is tracked** — a new request arriving while another is in progress is
   never silently dropped or serialised behind it; if it modifies a different file than the
   in-progress work, run it in parallel — if it modifies the same file, queue it until the
