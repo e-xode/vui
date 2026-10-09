@@ -9,6 +9,9 @@
       "Bash(git push -f:*)",
       "Bash(git filter-branch:*)",
       "Bash(npm publish:*)"
+    ],
+    "allow": [
+      "WebFetch"
     ]
   },
   "enabledPlugins": {
@@ -22,5 +25,9 @@
       }
     }
   },
-  "outputStyle": "exode-dev"
+  "outputStyle": "exode-dev",
+  "statusLine": {
+    "type": "command",
+    "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/statusline.py"
+  }
 }
