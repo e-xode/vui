@@ -30,8 +30,8 @@
         "build:components": "vite --config vite.components.mjs build",
         "build:doc": "vite --config vite.doc.mjs build src/doc",
         "dev": "vite --host --config vite.doc.mjs src/doc",
-        "lint": "eslint --ext .js,.mjs,.vue src",
-        "lint:fix": "eslint --fix --ext .js,.mjs,.vue src",
+        "lint": "eslint src",
+        "lint:fix": "eslint --fix src",
         "preview": "vite --config vite.doc.mjs preview src/doc",
         "test:unit": "vitest --config vite.components.mjs run",
         "test:unit:coverage": "vitest --config vite.components.mjs run --coverage",
@@ -43,34 +43,6 @@
                 "@babel/preset-env"
             ]
         ]
-    },
-    "eslintConfig": {
-        "root": true,
-        "extends": [
-            "plugin:vue/vue3-recommended",
-            "eslint:recommended",
-            "prettier"
-        ],
-        "parserOptions": {
-            "ecmaVersion": "latest"
-        },
-        "rules": {
-            "comma-dangle": ["error", "never"],
-            "indent": ["error", 4, { "SwitchCase": 1 }],
-            "no-console": ["error"],
-            "quotes": ["error", "single"],
-            "semi": ["error", "never"],
-            "vue/attributes-order": ["error"],
-            "vue/require-explicit-emits": ["error"],
-            "vue/html-closing-bracket-newline": ["error"],
-            "vue/html-indent": ["error", 4],
-            "vue/multi-word-component-names": "off",
-            "vue/no-v-html": "off",
-            "vue/order-in-components": ["error"],
-            "vue/require-default-prop": ["error"],
-            "vue/require-prop-types": ["error"],
-            "vue/v-on-event-hyphenation": ["error"]
-        }
     },
     "dependencies": {
         "dayjs": "1.11.21",
@@ -87,6 +59,7 @@
     "devDependencies": {
         "@babel/core": "^7.26.0",
         "@babel/preset-env": "^7.26.0",
+        "@eslint/js": "^8.57.1",
         "@rushstack/eslint-patch": "^1.16.1",
         "@types/jsdom": "^30.0.0",
         "@types/node": "^26.2.0",
@@ -96,11 +69,13 @@
         "eslint": "^8.57.0",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-vue": "^10.11.1",
+        "globals": "^16.5.0",
         "jsdom": "^30.1.2",
         "msw": "3.0.3",
         "prettier": "3.9.6",
         "ramda": "^0.30.1",
         "vite": "^8.2.1",
-        "vitest": "^4.1.8"
+        "vitest": "^4.1.8",
+        "vue-eslint-parser": "^10.3.0"
     }
 }
