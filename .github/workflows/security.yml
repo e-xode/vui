@@ -5,7 +5,7 @@ name: security
 #
 # Pourquoi : `npm audit --omit=dev --audit-level=high` auditait l'arbre entier, donc il était
 # rouge tant qu'une vulnérabilité restait ouverte — y compris sur une PR qui en corrigeait une.
-# Voir e-xode/scripts#9.
+# Voir e-xode/ops#9.
 #
 # `dependency-review-action` fonctionne ici, à la différence des 10 dépôts privés de la flotte :
 # ce dépôt est PUBLIC, l'API Dependency Review n'exige pas GitHub Advanced Security dans ce cas.

@@ -15,7 +15,7 @@ RUN npm install -g npm@12.0.2
 # the mercy of the Docker layer cache, so the image can ship something other than what the
 # lockfile describes — which is what Dependabot and CI actually audit. `--include=dev` is
 # required: NODE_ENV=production above would otherwise drop the devDependencies `npm run build`
-# needs. See e-xode/scripts#9.
+# needs. See e-xode/ops#9.
 RUN npm ci --include=dev
 RUN npm run build
 
