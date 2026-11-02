@@ -1,8 +1,8 @@
 # CLAUDE.md
 
 This repo carries almost no Claude Code configuration. The block below exists as the interface
-read by fleet-wide dependency/security campaigns driven from `e-xode/scripts`
-(`e-xode/scripts#9`) — it is not project documentation and must not be expanded into one.
+read by fleet-wide dependency/security campaigns driven from `e-xode/ops`
+(`e-xode/ops#9`) — it is not project documentation and must not be expanded into one.
 
 One deliberate exception, taken on 2026-09-20: the `governance` skill was added so that
 the fleet's `SessionStart` audit hook has an `audit.py` to run here, like every other fleet
@@ -20,9 +20,9 @@ here needs its own decision.
 | `build` | `npm run build` (static docs + component bundle, no server-side runtime) |
 | `server` | vps671607 |
 | `container` | `e-xode.vui` (port 3001, nginx serving static `dist/`, behind `e-xode.proxy`) |
-| `deploy` | `sudo /home/e-xode.vui/deploy.sh` (symlink → `e-xode/scripts`) |
+| `deploy` | `sudo /home/e-xode.vui/deploy.sh` (symlink → `e-xode/ops`) |
 | `smoke` | `curl -sf https://vui.e-xode.net/` → 200 |
-| `rollback` | ⚠️ no direct lever — `deploy.sh` runs `docker pull …:latest`, unpinned. Reverting means rebuilding an older commit through CI. See `e-xode/scripts#10`. |
+| `rollback` | ⚠️ no direct lever — `deploy.sh` runs `docker pull …:latest`, unpinned. Reverting means rebuilding an older commit through CI. See `e-xode/ops#10`. |
 
 🚨 **This is one of the 3 PUBLIC fleet repos** (branch protection: 1 review, `enforce_admins:
 false`) — GitHub forbids approving your own PR, so a PR opened by the same account that must
