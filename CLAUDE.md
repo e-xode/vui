@@ -52,6 +52,11 @@ withheld from it. Nothing is withheld here.
   an unmerged release branch. The tag push triggers `docker-build.yml`'s image build (as of
   2026-08-09; previously it rebuilt on every push to `master`). Note the `v` prefix: past tags here
   were bare semver (`0.7.4`), which the new trigger will **not** match.
+- Clone alignment (2026-11-03): a release, tag, deploy or campaign runs in a throw-away `git worktree` on
+  the dev server (`git worktree add ~/worktrees/vui-<op> origin/master`), never in the clone a session has
+  open; no local-only commit survives the operation (pushed, or PR merged, before it is declared done). At
+  the end, `git fetch` then `git pull --ff-only` in the session clone if it is clean and on `master`,
+  otherwise leave it and say why. Report `git rev-list --left-right --count origin/master...HEAD` (expect `0 0`).
 
 ## Agent workflow
 
