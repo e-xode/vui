@@ -45,6 +45,8 @@ withheld from it. Nothing is withheld here.
 
 ## Git
 
+- No commit, push, tag or history rewrite on your own initiative. They are allowed when the user asks for
+  them in the current turn, or after you asked and they agreed.
 - No `Co-authored-by`/`Co-Authored-By` trailer or any AI/assistant mention on any commit, ever —
   commit author is always the user's own git account.
 - Release workflow: create a `release/vX.Y.Z` branch, merge it into `master` via PR (1 approving
