@@ -1,0 +1,39 @@
+{
+  "skill_name": "skill-creator",
+  "schema": "evals/1",
+  "evals": [
+    {
+      "id": 1,
+      "name": "trigger-create-skill",
+      "kind": "content",
+      "prompt": "Create a new skill that documents our release checklist",
+      "assertions": [
+        {
+          "text": "Guides through the create/eval/iterate workflow, scaffolds a SKILL.md with valid frontmatter (third-person description, concrete triggers, anti-triggers) and respects the description budget"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "trigger-improve-description",
+      "kind": "content",
+      "prompt": "The release-checklist skill never seems to trigger — help me rewrite its description",
+      "assertions": [
+        {
+          "text": "Applies description best practices (discriminating keywords, third-person, Don't-use-for anti-triggers) and verifies length against the budget rather than editing skill body content"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "negative-add-prop",
+      "kind": "content",
+      "prompt": "Add a disabled prop to the Button component",
+      "assertions": [
+        {
+          "text": "Does NOT trigger skill-creator; this is ordinary component work, not skill authoring"
+        }
+      ]
+    }
+  ]
+}

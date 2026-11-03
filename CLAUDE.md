@@ -7,8 +7,9 @@ read by fleet-wide dependency/security campaigns driven from `e-xode/ops`
 One deliberate exception, taken on 2026-09-20: the `governance` skill was added so that
 the fleet's `SessionStart` audit hook has an `audit.py` to run here, like every other fleet
 repository. The reason and its limits are recorded in
-`.claude/skills/governance/references/projet-vui.md`. It does not widen: a second skill
-here needs its own decision.
+`.claude/skills/governance/references/projet-vui.md`. A second skill, `skill-creator`, was
+added on 2026-11-03 (every fleet project follows the same governance model). It does not widen
+further: another skill here needs its own decision.
 
 ## Fleet verification contract
 

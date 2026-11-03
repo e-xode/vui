@@ -14,7 +14,7 @@ hook reads `deadweight`. A repository without the skill could
 not be measured — it was the only one of the fleet's own repositories left out.
 
 **The decision does not widen.** `CLAUDE.md` stays an interface for fleet campaigns, not project
-documentation. Adding a second skill here needs its own reason.
+documentation. A second skill, `skill-creator`, was added on 2026-11-03 (fleet-wide governance model); any further skill needs its own reason.
 
 ## What was kept
 
