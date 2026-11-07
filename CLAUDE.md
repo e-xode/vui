@@ -48,9 +48,11 @@ withheld from it. Nothing is withheld here.
 
 - No commit, push, tag or history rewrite on your own initiative. They are allowed when the user asks for
   them in the current turn, or after you asked and they agreed.
+- A change lands through a PR (worktree, never the session clone): `~/workspace/e-xode.ops/infra/fleet-pr.e-xode.dev.sh`;
+  the clone stays on the default branch at origin (0 0), never switch branches or tags there.
 - No `Co-authored-by`/`Co-Authored-By` trailer or any AI/assistant mention on any commit, ever —
   commit author is always the user's own git account.
-- Release workflow: create a `release/vX.Y.Z` branch, merge it into `master` via PR (1 approving
+- Release workflow: create a `release/vX.Y.Z` branch (in a worktree), merge it into `master` via the PR route above (1 approving
   review required, `gh pr merge --admin` for self-merge), THEN tag `vX.Y.Z` on `master` — never tag
   an unmerged release branch. The tag push triggers `docker-build.yml`'s image build (as of
   2026-08-09; previously it rebuilt on every push to `master`). Note the `v` prefix: past tags here
