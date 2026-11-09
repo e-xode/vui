@@ -21,7 +21,7 @@ further: another skill here needs its own decision.
 | `build` | `npm run build` (static docs + component bundle, no server-side runtime) |
 | `server` | vps671607 |
 | `container` | `e-xode.vui` (port 3001, nginx serving static `dist/`, behind `e-xode.proxy`) |
-| `deploy` | `sudo /home/e-xode.vui/deploy.sh` (symlink → `e-xode/ops`) |
+| `deploy` | `sudo /home/e-xode.vui/deploy.sh` (symlink → `e-xode/ops`) — run by ops, never by the project agent |
 | `smoke` | `curl -sf https://vui.e-xode.net/` → 200 |
 | `rollback` | ⚠️ no direct lever — `deploy.sh` runs `docker pull …:latest`, unpinned. Reverting means rebuilding an older commit through CI. See `e-xode/ops#10`. |
 
@@ -56,7 +56,9 @@ withheld from it. Nothing is withheld here.
   review required, `gh pr merge --admin` for self-merge), THEN tag `vX.Y.Z` on `master` — never tag
   an unmerged release branch. The tag push triggers `docker-build.yml`'s image build (as of
   2026-08-09; previously it rebuilt on every push to `master`). Note the `v` prefix: past tags here
-  were bare semver (`0.7.4`), which the new trigger will **not** match.
+  were bare semver (`0.7.4`), which the new trigger will **not** match. The chain then stops at a green
+  pipeline and a hand-off to the ops session: the project agent never deploys or uses SSH to a host
+  (`e-xode.ops` → `.claude/reference/release-handoff.md`); the npm publication gate is unchanged.
 - Clone alignment (2026-11-03): a release, tag, deploy or campaign runs in a throw-away `git worktree` on
   the dev server (`git worktree add ~/worktrees/vui-<op> origin/master`), never in the clone a session has
   open; no local-only commit survives the operation (pushed, or PR merged, before it is declared done). At
